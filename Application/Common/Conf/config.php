@@ -15,7 +15,8 @@ return array(
 
     'APP_SUB_DOMAIN_DEPLOY'   =>    true, // 开启子域名配 置
     'APP_SUB_DOMAIN_RULES'    =>    array(
-        'api.lianyangji.io'    => 'Home',
+        'www.lianyangji.io'    => 'Home',
+        'www.lianyangji.io'    => 'Api',
 
     ),
 
