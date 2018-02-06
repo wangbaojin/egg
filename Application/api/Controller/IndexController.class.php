@@ -7,6 +7,6 @@ class IndexController extends Controller
 {
     public function index()
     {
-        echo '12332';
+      echo '111';
     }
 }
