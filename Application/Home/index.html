@@ -1,1 +1,237 @@
- 
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>链养鸡</title>
+    <link rel="stylesheet" href="">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style-type:none;
+        }
+        .nav{
+            width: 100%;
+            height: 50px;
+            background: #333;
+        }
+        .nav img{
+            width: 50px;
+            height: 50px;
+            margin-left: 20%;
+            background: #fff;
+        }
+        .nav ul{
+            display: inline-block;
+            margin-left: 20%;
+        }
+        .nav li{
+            display: inline-block;
+            width: 100px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            float: left;
+            color: #fff;
+        }
+        .banner{
+            width: 100%;
+            height: 400px;
+            background: url(img/banner.jpg);
+        }
+        .banner div{
+            width: 100%;
+            height: 80px;
+            text-align: center;
+            font-size: 24px;
+            color: #fff;
+            padding-top: 150px;
+        }
+        .banner p:nth-of-type(1){
+            font-size: 50px;
+        }
+        .main{
+            width: 80%;
+            height: 100px;
+            box-shadow: 5px 5px 5px #999;
+            padding: 0 10%;
+            position: relative;
+        }
+        .main ul{
+            width: 100%;
+            height: 100px;
+        }
+        .main li{
+            display: inline-block;
+            width: 25%;
+            height: 100px;
+            text-align: center;
+            line-height: 100px;
+            float: left;
+        }
+        .main li:hover{
+            color: #f7ab26;
+        }
+        .mains{
+            width: 220px;
+            height: 225px;
+            position: absolute;
+            right: 14%;
+            top: -200px;
+            background: url(img/walletbg.png) no-repeat center;
+            text-align: center;
+            display: none;
+        }
+        .mains img{
+            width: 160px;
+            height: 160px;
+            margin-top: 20px;
+        }
+        .main:hover .mains{
+            display: block;
+        }
+        .body{
+            width: 70%;
+            height: 120px;
+            padding: 50px 15%;
+            margin-top: 100px;
+        }
+        .body ul{
+            display: inline-block;
+            width: 70%;
+        }
+        .body a{
+            text-decoration: none;
+            color: #999;
+            font-size: 12px;
+        }
+        .body li{
+            display: inline-block;
+            width: 25%;
+            height: 120px;
+            float: left;
+        }
+        .body li p:nth-of-type(1){
+            color: #000;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        .bodyright{
+            width: 30%;
+            height: 120px;
+            float: right;
+        }
+        .bodyright div{
+            float: right;
+            margin-left: 20px;
+        }
+        .bodyright img{
+            width: 100px;
+            height: 100px;
+        }
+        .line{
+            width: 100%;
+            height: 1px;
+            background: #999;
+        }
+        .right p{
+            font-size: 12px;
+        }
+        .left p:nth-of-type(2){
+            font-size: 24px;
+        }
+        .footer{
+            text-align: center;
+            width: 80%;
+            padding: 0 10%;
+            font-size: 12px;
+            color: #999;
+        }
+        .footer a{
+            display: inline-block;
+            width: 100px;
+            text-align: center;
+            border-left: 1px solid #999;
+            text-decoration: none;
+            color: #999;
+        }
+
+        a:hover{color: skyblue;}
+    </style>
+</head>
+<body>
+<div class="nav">
+    <img src="">
+    <ul>
+        <li>首页</li>
+        <li>产品</li>
+        <li>链克</li>
+        <li>社区</li>
+    </ul>
+</div>
+<div class="banner">
+    <div>
+        <p>链养鸡</p>
+        <p>人人可参与的全球区块链数字资产</p>
+    </div>
+</div>
+<div class="main">
+    <ul>
+        <li>链克奖励计划</li>
+        <li>链克介绍</li>
+        <li>链克教程</li>
+        <li>链克APP客户端下载（国际版）</li>
+    </ul>
+    <div class="mains">
+        <!--<img src="img/oneCloudEWM.png">-->
+    </div>
+</div>
+<div class="body">
+    <ul>
+        <li>
+            <p><a href="">关于我们</a></p>
+            <p><a href="">网心科技</a></p>
+            <p><a href="">公司简介</a></p>
+            <p><a href="">发展历程</a></p>
+        </li>
+        <li>
+            <p><a href="">媒体中心</a></p>
+            <p><a href="">新闻动态</a></p>
+            <p><a href="">精彩活动</a></p>
+            <p><a href="">最新公告</a></p>
+        </li><li>
+        <p><a href="">服务支持</a></p>
+        <p><a href="">常见问题</a></p>
+        <p><a href="">售后服务</a></p>
+        <p><a href="">联系我们</a></p>
+    </li><li>
+        <p><a href="">关注我们</a></p>
+        <p><a href="">官方微博</a></p>
+        <p><a href="">官方微信</a></p>
+        <p><a href="">官方社区</a></p>
+    </li>
+    </ul>
+    <div class="bodyright">
+        <div class="right">
+            <!--<img src="img/oneCloudEWM.png">-->
+            <p>扫码下载链养鸡APP</p>
+        </div>
+        <div class="left">
+            <p>服务时间：09:00-21:00</p>
+            <p>888-88888</p>
+        </div>
+
+    </div>
+    <div class="line"></div>
+</div>
+<div class="footer">
+    <span>Copyright © 2018 onethingcloud.com All Rights Reserved</span>
+    <a href="">隱私條款</a>
+    <a href="">法律聲明</a>
+    <a href="">使用者協議</a>
+    <a href="">網站地圖</a>
+</div>
+</body>
+</html>
