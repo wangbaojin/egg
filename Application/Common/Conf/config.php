@@ -3,7 +3,7 @@ return array(
     /* 模块相关配置 */
     'DEFAULT_MODULE' => 'Home',
     'MODULE_DENY_LIST' => array('Common'),
-    'MODULE_ALLOW_LIST'  => array('Home','Api'),
+    'MODULE_ALLOW_LIST'  => array('Home','Api','Common'),
     /* 系统数据加密设置 */
     'DATA_AUTH_KEY' => 'c;goZsfBGAy*|pedW^80nKtY.X[Urvx=6Quh#JO{', //默认数据加>密KEY
 
