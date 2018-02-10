@@ -38,14 +38,11 @@
 <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <div class="container-fluid">
     <h1>链养鸡</h1>
-    <h6>Hello!<?php echo ($name); ?> </h6>
+    <h6>Hello!<?php echo ($admin_name); ?> </h6>
     <div class="row">
         <ul class="nav nav-pills">
-            ...
             <li role="presentation" class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                    首页
-                </a>
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">首页</a>
                 <ul class="dropdown-menu">
                     <li><a href="<?php echo U('AdminTodayPrice/index');?>">今日价格</a></li>
                     <li><a href="<?php echo U('AdminChickenBatch/index');?>">批次管理</a></li>
@@ -55,5 +52,4 @@
         </ul>
     </div>
     <hr>
-
 </div>

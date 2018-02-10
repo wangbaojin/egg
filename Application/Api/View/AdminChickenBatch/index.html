@@ -1,0 +1,37 @@
+<include file="Public/header" />
+<div class="container-fluid">
+    <a href="{:U('AdminChickenBatch/add')}">添加今日价格</a><br><br>
+    <form class="form-inline" name="searchForm" action="__SELF__" method="get">
+        批次名称:<input  type="date" name="name" value="{$_GET.name}"><br>
+        <input type="submit" class="btn btn-success" value="搜索">
+    </form>
+    共:{$count}条!{$_page}
+    <div class="table-responsive">
+        <table class="table">
+            <tr>
+                <th class="active">批次名称</th>
+                <th class="active">鸡舍信息</th>
+                <th class="warning">对外批次编码</th>
+                <th class="warning">发行数量</th>
+                <th class="danger">发行开始时间</th>
+                <th class="danger">发行结束时间</th>
+                <th class="danger">是否是当前发行</th>
+                <th class="active">操作</th>
+            </tr>
+            <volist name="list" id="vo">
+                <tr>
+                    <td class="active" style="padding: 10px">{$vo.name}</td>
+                    <td class="active" style="padding: 10px">{$vo.coop_name}<br>[{$vo.breed}]
+                        {$vo.egg_in_days}天 {$vo.egg_color}<br>预计产蛋:{$vo.lay_eggs}<br>{$vo.feed_type}<hr>{$vo.latitude_longitude}</td>
+                    <td class="warning" style="padding: 10px">{$vo.out_code}</td>
+                    <td class="warning" style="padding: 10px">{$vo.amount}</td>
+                    <td class="danger" style="padding: 10px">{$vo.start_date}</td>
+                    <td class="danger" style="padding: 10px">{$vo.end_date}</td>
+                    <td class="danger" style="padding: 10px">{$vo.is_default_info}</td>
+                    <td class="active" style="padding: 10px"><a href="{:U('AdminChickenBatch/edit')}?id={$vo.id}">编辑</a></td>
+                </tr>
+            </volist>
+        </table>
+    </div>
+    共:{$count}条!{$_page}
+</div>

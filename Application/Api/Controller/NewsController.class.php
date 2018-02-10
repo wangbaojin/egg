@@ -132,7 +132,7 @@ class NewsController extends ApiController
         $data['total_count'] = $m->where($map)->count();
         $data['total_page']  = ceil($data['total_count']/$data['page_limit']);
         $data['now_page']    = ($page > 0 and $page <= $data['total_page']) ? $page : 1;
-        $list = $m->where($map)->page($page,$data['page_limit'])->order('top_num=1,id desc')->select();
+        $list = $m->where($map)->page($page,$data['page_limit'])->order('top_num,id desc')->select();
         if(!$list) $this->api_error(20003,'暂无');
 
         // 第一页的时候记录用户阅读记录

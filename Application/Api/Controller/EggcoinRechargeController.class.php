@@ -145,14 +145,22 @@ class EggcoinRechargeController extends ApiController
    /*充值回调,此处错误应该做日志记录,调试先返回信息便于调试*/
    public function rechargeNotifyUrl()
    {
-      require_once("/usr/local/nginx/alipay/alipay.config.php");
-      require_once("/usr/local/nginx/alipay/lib/alipay_notify.class.php");  
+      require("/usr/local/nginx/alipay/alipay.config.php");
+      require("/usr/local/nginx/alipay/lib/alipay_notify.class.php");  
       $alipayNotify = new AlipayNotify($alipay_config);
       $verify_result = $alipayNotify->verifyNotify();
-      date_default_timezone_set('PRC'); 
+      if($verify_result) {
+           if(I('post.trade_status') == 'TRADE_FINISHED') {
+     }
+     else if(I('post.trade_status') == 'TRADE_SUCCESS') {
+        file_put_contents("/tmp/test.txt","111111", FILE_APPEND);
+
+
+       /*修改订单状态为支付成功*/      
+       date_default_timezone_set('PRC');
       $data = I('post.');
        $order_sn = $data['order_sn'];
-       $order_st = $data['order_st'];
+       //$order_st = $data['order_st'];
        if(!$order_sn) $this->api_error(20001,'订单号错误');
 
        // 验证签名(支付回调签名)
@@ -181,15 +189,7 @@ class EggcoinRechargeController extends ApiController
        {
            $this->api_error(20004,'获取用户信息失败,请重现登录');
        }
-       if($order['state']!=1) $this->api_error(20003,'订单已处理');
-       if($verify_result) {
-           if(I('post.trade_status') == 'TRADE_FINISHED') {
-     }
-     else if(I('post.trade_status') == 'TRADE_SUCCESS') {
-
-
-       /*修改订单状态为支付成功*/      
-            
+       if($order['state']!=1) $this->api_error(20003,'订单已处理');   
       $trans = M();
            $trans->startTrans();
            $saveData['updated_at'] = time();
@@ -205,8 +205,8 @@ class EggcoinRechargeController extends ApiController
            $raise_record['amount']  = $order['total_price'];
            $raise_record['unit']    = '元';
            $raise_record['reason_source_id'] = $order['id'];
-           $raise_record['reason_type'] = 1;//事由类型id：1.充值、2.饲料认购，3.饲料消
-耗；4.药物及其他支出；5.现金收益；6.饲料补扣；7.药物及其他支出补扣'
+           $raise_record['reason_type'] = 1;/*事由类型id：1.充值、2.饲料认购，3.饲料消
+耗；4.药物及其他支出；5.现金收益；6.饲料补扣；7.药物及其他支出补扣'*/
            $raise_record['reason_narration'] = '蛋鸡养殖饲料';
            $raise_record['created_at'] = time();
            $raise_record['state'] = 1; //状态：1.成功;2.失败;3.待处理
@@ -241,8 +241,8 @@ class EggcoinRechargeController extends ApiController
                    $raise_record['amount']  = abs($v['recharge_price']);
                    $raise_record['unit']    = '元';
                    $raise_record['reason_source_id'] = $order['id'];
-                   $raise_record['reason_type'] = 7;//事由类型id：1.充值、2.饲料认购，
-3.饲料消耗；4.药物及其他支出；5.现金收益；6.饲料补扣；7.药物及其他支出补扣'
+                   $raise_record['reason_type'] = 7;/*事由类型id：1.充值、2.饲料认购，
+3.饲料消耗；4.药物及其他支出；5.现金收益；6.饲料补扣；7.药物及其他支出补扣'*/
                    $raise_record['reason_narration'] = '药物及其他支出补扣';
                    $raise_record['created_at'] = time();
                    $raise_record['state'] = 1; //状态：1.成功;2.失败;3.待处理
@@ -266,8 +266,8 @@ class EggcoinRechargeController extends ApiController
                    $raise_record['amount']  = $feed_amount*1000;
                    $raise_record['unit']    = 'g';
                    $raise_record['reason_source_id'] = $order['id'];
-                   $raise_record['reason_type'] = 2;//事由类型id：1.买入、2.饲料买入，
-3.投喂；4.支出；5.收益；6.饲料补扣；7.支出补扣'
+                   $raise_record['reason_type'] = 2;/*事由类型id：1.买入、2.饲料买入，
+3.投喂；4.支出；5.收益；6.饲料补扣；7.支出补扣'*/
                    $raise_record['reason_narration'] = '饲料认购';
                    $raise_record['created_at'] = time();
                    $raise_record['state'] = 1; //状态：1.成功;2.失败;3.待处理
@@ -285,8 +285,8 @@ class EggcoinRechargeController extends ApiController
                        $raise_record['amount']  = $wallet_info['feed_amount']*1000;
                        $raise_record['unit']    = 'g';
                        $raise_record['reason_source_id'] = $order['id'];
-                       $raise_record['reason_type'] = 6;//事由类型id：1.买入、2.饲料买
-入，3.投喂；4.支出；5.收益；6.饲料补扣；7.支出补扣'
+                       $raise_record['reason_type'] = 6;/*事由类型id：1.买入、2.饲料买
+入，3.投喂；4.支出；5.收益；6.饲料补扣；7.支出补扣'*/
                        $raise_record['reason_narration'] = '饲料补扣';
                        $raise_record['created_at'] = time();
                        $raise_record['state'] = 1; //状态：1.成功;2.失败;3.待处理
@@ -305,10 +305,10 @@ class EggcoinRechargeController extends ApiController
                 
      
 
-
-}        
+}
+        
         echo "success";         
-         $this->api_return('success');
+        $this->api_return('success');
  }
 else {
     
@@ -316,9 +316,10 @@ else {
 
 }
 
-   
+ } 
+} 
 
-      
+}      
         // 如果支付成功
 /*       if($order_st='SUCCESS')
        {
@@ -434,4 +435,4 @@ else {
 
        //其他状态
    }*/
-}
+

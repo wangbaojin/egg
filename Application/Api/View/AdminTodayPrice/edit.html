@@ -1,0 +1,93 @@
+<include file="Public/header" />
+<div class="container-fluid">
+    <div class="jumbotron">
+        <small>请在结算之前修改噢,结算之后修改价格将不会改变结算结果</small>
+    </div>
+
+    <form method="post" id="create_form">
+        <div class="form-group">
+            <input type="hidden" name="id" id="id" class="form-control" maxlength="11" value="{$info.id}" placeholder="Egg Price">
+
+            <label>鸡蛋价格[元/kg]:</label>
+            <input type="text" name="egg_price" id="egg_price" class="form-control" value="{$info.egg_price}" maxlength="11"  placeholder="Egg Price">
+        </div>
+        <div class="form-group">
+            <label>饲料价格[元/kg]:</label>
+            <input type="text" name="feed_price" id="feed_price" class="form-control" value="{$info.feed_price}" maxlength="11"  placeholder="Feed Price">
+        </div>
+        <div class="form-group">
+            <label>日期时间:</label>
+            <input type="date" name="delivery_date" class="form-control" value="{$info.delivery_date}" placeholder="Delivery date">
+        </div>
+        <button type="button" onclick="edit()" id="tj" class="btn btn-default">提交</button>
+    </form>
+</div>
+<br>
+
+<script src="__STATIC__/layui/layui.js"></script>
+<script type="text/javascript">
+    layui.use('layer', function(){ //独立版的layer无需执行这一句
+        //var $ = layui.jquery,
+        layer = layui.layer; //独立版的layer无需执行这一句
+    });
+
+    function edit(){
+
+
+        url = "{:U('AdminTodayPrice/edit')}"
+
+        var formData = new FormData($( "#create_form" )[0]);
+
+        egg_price     = $( "#egg_price" ).val();
+        feed_price    = $( "#feed_price" ).val();
+        delivery_date = $('input[name=delivery_date]').val();
+        if(!egg_price || !feed_price || !delivery_date) {
+            layer.msg('程序员小哥哥提示你:信息都不填全就提交?是我拿不动刀了还是你飘了?',{
+                icon:2,
+                time:2000
+            });return false;
+        }
+
+        $('#tj').attr('disabled',true)
+        $('#tj').html('正在提交。。。')
+
+        $.ajax({
+            type: 'POST',
+            url: url,
+            data:formData,
+            processData: false,
+            contentType: false,
+            dataType: 'text',
+            success:function(msg){
+                if(msg=='success') {
+                    layer.msg('修改成功!',{
+                        icon:1,
+                        time:2000
+                    });
+                    $('#tj').html('提交')
+                    $('#tj').attr('disabled',false)
+                    setTimeout("parent.location.reload()", 2000);
+                }
+                else
+                {
+                    layer.msg(msg,{
+                        icon:2,
+                        time:2000
+                    });
+                    $('#tj').html('提交')
+                    $('#tj').attr('disabled',false)
+                }
+            },
+            error:function(){
+                layer.msg('程序员小哥哥提示你:未知错误!请稍后重试!',{
+                    icon:2,
+                    time:2000
+                });
+                $('#tj').html('提交')
+                $('#tj').attr('disabled',false)
+            }
+        });
+    }
+</script>
+</body>
+</html>

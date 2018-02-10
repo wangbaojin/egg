@@ -55,7 +55,7 @@ function send_sms($mobile,$message,$from='养鸡管家',$sprdid='1012818'){
  * @param  [string] $mobile [手机号]
  * @return [int]
  */
-function send_sms_code($mobile){
+function send_sms_code($mobile,$from='链养鸡'){
     if(mb_strlen($mobile) != 11){
         return 2;   //手机格式不正确
     }
@@ -73,7 +73,7 @@ function send_sms_code($mobile){
             $this->api_error('','两次短信发送间隔不能小于1分钟');
         }
     }
-    if(send_sms($mobile,$message)){
+    if(send_sms($mobile,$message,$from)){
         $result = M('sms')->add($data);
         if($result){
             $return_data['code'] = $code;

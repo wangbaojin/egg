@@ -10,7 +10,7 @@ namespace Api\Controller;
 
 use Think\Controller;
 
-class AdminTodayPriceController extends AdminPublicController
+class AdminChickenBatchController extends AdminPublicController
 {
     public function index()
     {
