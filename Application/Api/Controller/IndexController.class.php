@@ -9,4 +9,16 @@ class IndexController extends Controller
     {
       echo '111';
     }
+
+    /*用户合约*/
+    public function provision()
+    {
+        $this->display();
+    }
+
+    /*隐私条款*/
+    public function contract()
+    {
+        $this->display();
+    }
 }

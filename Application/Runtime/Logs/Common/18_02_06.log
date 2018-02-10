@@ -225,3 +225,23 @@ INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
 INFO: [ app_init ] --END-- [ RunTime:0.000157s ]
 ERR: 无法加载模块:Api2
 
+[ 2018-02-06T20:03:11+08:00 ] 223.72.96.125 /favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000153s ]
+
+[ 2018-02-06T20:03:12+08:00 ] 223.72.96.125 /favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000146s ]
+
+[ 2018-02-06T20:36:19+08:00 ] 223.72.96.125 /favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000154s ]
+
+[ 2018-02-06T21:44:58+08:00 ] 94.102.49.174 /cache/global/img/gs.gif
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000149s ]
+
