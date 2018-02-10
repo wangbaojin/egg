@@ -33,6 +33,23 @@ class EggcoinChickenController extends ApiController
         4=>'已退款',
     );
 
+    /* 首页
+     * */
+    public function index()
+    {
+        $user_id = I('user_id');
+        if(!$user_id) $this->api_error(20001,'请先登录');
+
+        // 是否有新闻
+        $readed_id = M('NewsReaded')->where('user_id='.$user_id)->getField('news_id');
+        $last_id   = M('News')->order('id desc')->limit(1)->getField('id');
+        $return_data['news_update'] = $readed_id < $last_id ? 1 : 2;
+
+        // 认养鸡数
+        $return_data['chicken_count'] = M('Chicken')->where('(state=5 or state=4) and user_id='.$user_id)->count();
+        $this->api_return('success',$return_data);
+    }
+
     /*
      * 收益
      * */
@@ -344,7 +361,11 @@ class EggcoinChickenController extends ApiController
        if(!I('get.user_id')) $this->api_error('请先登录');
 
        $map['user_id'] = I('user_id');
-       if(I('state')) $map['state'] = I('state');
+       if(I('state'))
+       {
+           $stateAry     = explode(',',I('state'));
+           $map['state'] = array('in',$stateAry);
+       }
 
        $page = (int)I('page');
        $data['page_limit']  = 20;

@@ -37,7 +37,7 @@
         </div>
         <div class="form-group">
             <label for="exampleInputPassword1">密码:</label>
-            <input type="text" name="pass_wd" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" class="form-control" maxlength="11" id="exampleInputPassword1" placeholder="Password">
+            <input type="password" name="pass_wd" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" class="form-control" maxlength="11" id="exampleInputPassword1" placeholder="Password">
         </div>
         <button type="button" onclick="add()" class="btn btn-default">提交</button>
     </form>
