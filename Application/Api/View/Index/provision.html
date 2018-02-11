@@ -13,11 +13,13 @@
             width: 100%;
             margin: 30px 0;
             text-align: center;
+            font-size: 32px;
         }
         p{
             width: 100%;
             padding: 0 30px;
             color: #242424;
+            font-size: 24px;
         }
     </style>
 </head>

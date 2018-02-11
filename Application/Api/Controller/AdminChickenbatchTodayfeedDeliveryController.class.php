@@ -83,7 +83,7 @@ class AdminChickenbatchTodayfeedDeliveryController extends AdminPublicController
 
         $info = $this->_m->where('id='.$id)->find();
         if(!$info) die('未找到!');
-        if($info['state'] != 1) die('已经结算');
+        //if($info['state'] != 1) die('已经结算');
 
         if($data) {
             // 其他价格

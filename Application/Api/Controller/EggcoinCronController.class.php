@@ -22,21 +22,32 @@ class EggcoinCronController extends ApiController
         echo "<pre>";
         // 待结算的
         $chicken_list = $this->getChicken($delivery_date,$AlreadySettledChickenIdAry);
-        print_r($chicken_list);die;
+        //print_r($chicken_list);die;
 
         foreach ($chicken_list as $k=>$v)
         {
             // 结算详情
-            $delivery_info = $this->getDelivery(1,$age_in_days);
-            print_r($delivery_info);
-            //$this->deliveryChickenIncome($v);
+            $trans = M();
+            $trans->startTrans();
+            $delivery_info = $this->getDelivery($v['chicken_batch'],$v['age_in_days']);
+            if(!$delivery_info) $this->api_error(20001,'获取批次信息失败');
+
+
+            $delivery_res = $this->deliveryChickenIncome($v,$delivery_info);
+            print_r($delivery_info);echo 1;
+            print_r($delivery_res);echo 1;
+
+            //
+            $trans->rollback();
+            die;
+            //$this->deliveryChickenIncome($v,$delivery_info);
         }
 
         echo "<pre>";
         print_r($chicken_list);
     }
 
-    /*获取需要结算的鸡,规则为认养切绑定成功,时间至少提前一天*/
+    /*获取需要结算的鸡,规则为认养且绑定成功,时间至少提前一天*/
     private function getChicken($delivery_date,$ChickenIdAry=array())
     {
         $map['state'] = 5;
@@ -72,7 +83,14 @@ class EggcoinCronController extends ApiController
         $map['chicken_batch'] = $chicken_batch;
         $map['age_in_days'] = $age_in_days;
         $map['state']  = 2;
-        $delivery_list = M('ChickenbatchTodayfeedDelivery')->field('state',true)->find();
+        $delivery_list = M('ChickenbatchTodayfeedDelivery')->where($map)->field('state',true)->find();
+
+        $death_map['age_in_days']   = array('ELT',$age_in_days);
+        $death_map['chicken_batch'] = $chicken_batch;
+        $delivery_list['death']  = M('ChickenbatchTodayfeedDelivery')->where($death_map)->field('state',true)->SUM('death');
+        $delivery_list['amount'] = M('ChickenBatch')->getField('amount');
+        $delivery_list['feed_weight'] = $delivery_list['feed_weight']*1000;// 单位:g
+        $delivery_list['lay_eggs_weight'] = $delivery_list['lay_eggs_weight']*1000;//单位:g
         return $delivery_list;
     }
 
@@ -109,6 +127,7 @@ class EggcoinCronController extends ApiController
             'lay_eggs'  => '总产蛋不可为空',
             'lay_eggs_weight'  => '总蛋重不可为空',
             'feed_weight'  => '饲料消耗不可为空',
+            'amount'  => '批次总栏数不可为空',
             //'expenses'  => '现金支出不可为空',
         );
         $chicken_not_null_param = array(
@@ -128,24 +147,37 @@ class EggcoinCronController extends ApiController
             // 错误日志
             return $return_data;
         }
-        /**
-        `feed_weight` decimal(11,5) DEFAULT '0.00000' COMMENT '投料，单位：g',
-        `expenses` decimal(11,5) DEFAULT '0.00000' COMMENT '现金支出，元',
-        `egg_weight` decimal(11,5) DEFAULT '0.00000' COMMENT '蛋重，单位：g',
-        `egg_num` decimal(11,5) DEFAULT '0.00000' COMMENT '蛋数量，单位：个',
-        `income` decimal(16,5) DEFAULT '0.00000' COMMENT '现金收益，单位：元',
-        `eggcoin_income` decimal(14,8) DEFAULT '0.00000000' COMMENT '数字币收益',
-         **/
-        $arr['delivery_date'] = $delivery_info['delivery_date'];
-        /*投料=*/
-        $arr['feed_weight'] = $delivery_info['feed_weight'];
-        $arr['egg_weight'] = $delivery_info['lay_eggs_weight'];
-        $arr['egg_num'] = $delivery_info['lay_eggs'];
-        if( $delivery_info['expenses']) $arr['expenses'] = $delivery_info['expenses'];
 
+
+        /*剩余鸡数 ＝（发行量－今日总死淘）
+         *
+         * 每只投料=剩余鸡数/总投料
+         * 每只支出=剩余鸡数/现金支出
+         * 每只投料=剩余鸡数/总投料*/
+        $now_amount = $delivery_info['amount']-$delivery_info['death'];
         $arr['chicken_id'] = $chicken_info['id'];
-        $arr['user_id'] = $chicken_info['iuser_id'];
-
+        $arr['user_id']    = $chicken_info['user_id'];
+        $arr['delivery_date'] = $delivery_info['delivery_date'];
+        $arr['feed_weight'] = $now_amount/$delivery_info['feed_weight'];
+        $arr['egg_weight'] = $now_amount/$delivery_info['egg_weight'];
+        $arr['egg_num'] = $now_amount/$delivery_info['lay_eggs'];
+        $arr['income'] = $now_amount/$delivery_info['egg_price'];
+        if($delivery_info['eggcoin_income']) $arr['eggcoin_income'] = $now_amount/$delivery_info['eggcoin_income'];
+        if($delivery_info['expenses']) $arr['expenses'] = $now_amount/$delivery_info['expenses'];
+        if($chicken_info['eggcoin_account_id']) $arr['eggcoin_account_id'] = $chicken_info['eggcoin_account_id'];
+        $arr['created_at'] = time();
+        $arr['age_in_days'] = $delivery_info['age_in_days'];
+        if(!M('ChickenTodayfeedDelivery')->add($arr))
+        {
+            $return_data['msg'] = '添加失败';
+        }
+        else
+        {
+            $return_data['code'] = 1;
+            $return_data['msg']  = '添加成功';
+            $return_data['data'] = $return_data;
+        }
+        return $return_data;
     }
 
 }

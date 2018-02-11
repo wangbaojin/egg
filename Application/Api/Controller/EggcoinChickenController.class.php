@@ -179,7 +179,7 @@ class EggcoinChickenController extends ApiController
        $not_null_param = array(
            'user_id'       => '请先登录',
            'order_sn'      => '哎呦!订单号错误',
-           'chicken_batch' => '该批次已发行完,下次再来吧',
+           'chicken_batch' => '请选择批次',
            'chicken_type'  => '选择个要认养的类型吧',
            'num'           => '您要认购多少只鸡呢?是要买完吗?这么任性的吗?',
        );
@@ -244,9 +244,9 @@ class EggcoinChickenController extends ApiController
     /*购买回调,此处错误应该做日志记录,调试先返回信息便于调试*/
     public function buyChickenNotifyUrl()
     {
-        $data = I('post.');
-        $order_sn = $data['order_sn'];
-        $order_st = $data['order_st'];
+        
+        $order_sn = I('get.order_sn');
+        //$order_st = $data['order_st'];
         if(!$order_sn) $this->api_error(20001,'订单号错误');
 
         // 验证签名(支付回调签名)
@@ -262,8 +262,8 @@ class EggcoinChickenController extends ApiController
         if($order['state']!=1) $this->api_error(20003,'订单已处理');
 
         // 如果支付成功
-        if($order_st='SUCCESS')
-        {
+       // if($order_st='SUCCESS')
+        //{
             // 订单超时
             if(time() > $order['lock_time'])
             {
@@ -306,7 +306,7 @@ class EggcoinChickenController extends ApiController
             }
             $trans->commit();
             $this->api_return('success');
-        }
+        //}
 
         //其他状态
     }
@@ -339,7 +339,7 @@ class EggcoinChickenController extends ApiController
        $lock_data['lock_time']     = time()+1080;// 18分钟
        $lock_data['state']         = 3;// 状态：1.待认养，2.释放，3.锁定，4.待绑定;5.已认养
 
-       $lock_map = array('user_id'=>0,'state'=>1,'is_default'=>1,'chicken_batch'=>$chicken_batch);
+       $lock_map = array('user_id'=>0,'state'=>1,'chicken_batch'=>$chicken_batch);
        $clock_res = $m->where($lock_map)->limit($num)->save($lock_data);
 
        if( $clock_res != $num )

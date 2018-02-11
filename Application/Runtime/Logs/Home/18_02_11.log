@@ -630,3 +630,21 @@ INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000194s ]
 INFO: [ app_begin ] --END-- [ RunTime:0.000210s ]
 ERR: 非法操作:index
 
+[ 2018-02-11T19:43:18+08:00 ] 71.6.142.85 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000149s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000219s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000235s ]
+ERR: 非法操作:index
+
+[ 2018-02-11T19:45:49+08:00 ] 61.160.207.12 /ip.asp?ip=119.28.178.186&dk=80
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000154s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000197s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000219s ]
+ERR: 无法加载控制器:Ip
+
