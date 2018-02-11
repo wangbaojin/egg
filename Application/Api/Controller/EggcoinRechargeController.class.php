@@ -145,9 +145,9 @@ class EggcoinRechargeController extends ApiController
    /*充值回调,此处错误应该做日志记录,调试先返回信息便于调试*/
    public function rechargeNotifyUrl()
    {
-      require("/usr/local/nginx/alipay/alipay.config.php");
-      require("/usr/local/nginx/alipay/lib/alipay_notify.class.php");  
-      $alipayNotify = new AlipayNotify($alipay_config);
+      require_once("/usr/local/nginx/alipay/alipay.config.php");
+      require_once("/usr/local/nginx/alipay/lib/alipay_notify.class.php");  
+      $alipayNotify =  new \Com\Alipay\AlipayNotify($alipay_config);
       $verify_result = $alipayNotify->verifyNotify();
       if($verify_result) {
            if(I('post.trade_status') == 'TRADE_FINISHED') {
@@ -317,9 +317,9 @@ else {
 }
 
  } 
-} 
+ 
 
-}      
+      
         // 如果支付成功
 /*       if($order_st='SUCCESS')
        {
@@ -435,4 +435,6 @@ else {
 
        //其他状态
    }*/
+}}
+?>
 

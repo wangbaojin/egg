@@ -200,6 +200,7 @@ class EggcoinChickenController extends ApiController
        $trans = M();
        $trans->startTrans();
 
+       // 类型判断
        $type_info = M('chicken_type')->where('state=1 && id='.$data['chicken_type'])->find();
        $price = $type_info['price'] - $type_info['discount'];
        if(!$price) $this->api_error(20004,'该类型母鸡已暂停认养');
@@ -338,7 +339,7 @@ class EggcoinChickenController extends ApiController
        $lock_data['lock_time']     = time()+1080;// 18分钟
        $lock_data['state']         = 3;// 状态：1.待认养，2.释放，3.锁定，4.待绑定;5.已认养
 
-       $lock_map = array('user_id'=>0,'state'=>1,'chicken_batch'=>$chicken_batch);
+       $lock_map = array('user_id'=>0,'state'=>1,'is_default'=>1,'chicken_batch'=>$chicken_batch);
        $clock_res = $m->where($lock_map)->limit($num)->save($lock_data);
 
        if( $clock_res != $num )

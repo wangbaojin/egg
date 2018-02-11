@@ -1,8 +1,8 @@
 <include file="Public/header" />
 <div class="container-fluid">
-    <a href="{:U('AdminChickenBatch/add')}">添加今日价格</a><br><br>
+    <a href="{:U('AdminChickenBatch/add')}">添加发行</a><br><br>
     <form class="form-inline" name="searchForm" action="__SELF__" method="get">
-        批次名称:<input  type="date" name="name" value="{$_GET.name}"><br>
+        批次名称:<input  type="text" name="name" value="{$_GET.name}"><br>
         <input type="submit" class="btn btn-success" value="搜索">
     </form>
     共:{$count}条!{$_page}
@@ -13,6 +13,7 @@
                 <th class="active">鸡舍信息</th>
                 <th class="warning">对外批次编码</th>
                 <th class="warning">发行数量</th>
+                <th class="warning">认购状态</th>
                 <th class="danger">发行开始时间</th>
                 <th class="danger">发行结束时间</th>
                 <th class="danger">是否是当前发行</th>
@@ -22,13 +23,23 @@
                 <tr>
                     <td class="active" style="padding: 10px">{$vo.name}</td>
                     <td class="active" style="padding: 10px">{$vo.coop_name}<br>[{$vo.breed}]
-                        {$vo.egg_in_days}天 {$vo.egg_color}<br>预计产蛋:{$vo.lay_eggs}<br>{$vo.feed_type}<hr>{$vo.latitude_longitude}</td>
+                        {$vo.age_in_days}天 {$vo.egg_color}<br>预计产蛋:{$vo.lay_eggs}<br>{$vo.feed_type}
+                        <hr>{$vo.latitude_longitude}<small>{$vo.lairage_date}</small>
+                    </td>
                     <td class="warning" style="padding: 10px">{$vo.out_code}</td>
                     <td class="warning" style="padding: 10px">{$vo.amount}</td>
+                    <td class="warning" style="padding: 10px">
+                        <volist name="vo.chicken_state_info" id="chicken_state_info_vo">
+                            {$chicken_state_info_vo.state_info}:{$chicken_state_info_vo.count}<br>
+                        </volist>
+                    </td>
                     <td class="danger" style="padding: 10px">{$vo.start_date}</td>
                     <td class="danger" style="padding: 10px">{$vo.end_date}</td>
                     <td class="danger" style="padding: 10px">{$vo.is_default_info}</td>
-                    <td class="active" style="padding: 10px"><a href="{:U('AdminChickenBatch/edit')}?id={$vo.id}">编辑</a></td>
+                    <td class="active" style="padding: 10px">
+                        <a href="{:U('AdminChickenBatch/edit')}?id={$vo.id}">编辑</a><br><br>
+                        <a href="{:U('AdminChickenbatchTodayfeedDelivery/add')}?chicken_batch={$vo.id}">结算</a><br>
+                    </td>
                 </tr>
             </volist>
         </table>

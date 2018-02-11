@@ -48,6 +48,7 @@
                 <ul class="dropdown-menu">
                     <li><a href="<?php echo U('AdminTodayPrice/index');?>">今日价格</a></li>
                     <li><a href="<?php echo U('AdminChickenBatch/index');?>">批次管理</a></li>
+                    <li><a href="<?php echo U('AdminChickenbatchTodayfeedDelivery/index');?>">结算管理</a></li>
                 </ul>
             </li>
         </ul>
@@ -56,9 +57,9 @@
     <hr>
 </div>
 <div class="container-fluid">
-    <a href="<?php echo U('AdminChickenBatch/add');?>">添加今日价格</a><br><br>
+    <a href="<?php echo U('AdminChickenBatch/add');?>">添加发行</a><br><br>
     <form class="form-inline" name="searchForm" action="/AdminChickenBatch/index.html" method="get">
-        批次名称:<input  type="date" name="name" value="<?php echo ($_GET["name"]); ?>"><br>
+        批次名称:<input  type="text" name="name" value="<?php echo ($_GET["name"]); ?>"><br>
         <input type="submit" class="btn btn-success" value="搜索">
     </form>
     共:<?php echo ($count); ?>条!<?php echo ($_page); ?>
@@ -69,6 +70,7 @@
                 <th class="active">鸡舍信息</th>
                 <th class="warning">对外批次编码</th>
                 <th class="warning">发行数量</th>
+                <th class="warning">认购状态</th>
                 <th class="danger">发行开始时间</th>
                 <th class="danger">发行结束时间</th>
                 <th class="danger">是否是当前发行</th>
@@ -77,13 +79,21 @@
             <?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
                     <td class="active" style="padding: 10px"><?php echo ($vo["name"]); ?></td>
                     <td class="active" style="padding: 10px"><?php echo ($vo["coop_name"]); ?><br>[<?php echo ($vo["breed"]); ?>]
-                        <?php echo ($vo["egg_in_days"]); ?>天 <?php echo ($vo["egg_color"]); ?><br>预计产蛋:<?php echo ($vo["lay_eggs"]); ?><br><?php echo ($vo["feed_type"]); ?><hr><?php echo ($vo["latitude_longitude"]); ?></td>
+                        <?php echo ($vo["age_in_days"]); ?>天 <?php echo ($vo["egg_color"]); ?><br>预计产蛋:<?php echo ($vo["lay_eggs"]); ?><br><?php echo ($vo["feed_type"]); ?>
+                        <hr><?php echo ($vo["latitude_longitude"]); ?><small><?php echo ($vo["lairage_date"]); ?></small>
+                    </td>
                     <td class="warning" style="padding: 10px"><?php echo ($vo["out_code"]); ?></td>
                     <td class="warning" style="padding: 10px"><?php echo ($vo["amount"]); ?></td>
+                    <td class="warning" style="padding: 10px">
+                        <?php if(is_array($vo["chicken_state_info"])): $i = 0; $__LIST__ = $vo["chicken_state_info"];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$chicken_state_info_vo): $mod = ($i % 2 );++$i; echo ($chicken_state_info_vo["state_info"]); ?>:<?php echo ($chicken_state_info_vo["count"]); ?><br><?php endforeach; endif; else: echo "" ;endif; ?>
+                    </td>
                     <td class="danger" style="padding: 10px"><?php echo ($vo["start_date"]); ?></td>
                     <td class="danger" style="padding: 10px"><?php echo ($vo["end_date"]); ?></td>
                     <td class="danger" style="padding: 10px"><?php echo ($vo["is_default_info"]); ?></td>
-                    <td class="active" style="padding: 10px"><a href="<?php echo U('AdminChickenBatch/edit');?>?id=<?php echo ($vo["id"]); ?>">编辑</a></td>
+                    <td class="active" style="padding: 10px">
+                        <a href="<?php echo U('AdminChickenBatch/edit');?>?id=<?php echo ($vo["id"]); ?>">编辑</a><br><br>
+                        <a href="<?php echo U('AdminChickenbatchTodayfeedDelivery/add');?>?chicken_batch=<?php echo ($vo["id"]); ?>">结算</a><br>
+                    </td>
                 </tr><?php endforeach; endif; else: echo "" ;endif; ?>
         </table>
     </div>

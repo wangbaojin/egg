@@ -25,7 +25,5 @@ class AdminPublicController extends Controller
 
         // 表名称
         $this->_table_name = substr(CONTROLLER_NAME,5);
-        // 实例hua
-        $this->_m = M($this->_table_name);
     }
 }

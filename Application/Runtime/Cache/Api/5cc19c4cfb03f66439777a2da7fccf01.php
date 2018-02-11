@@ -48,6 +48,7 @@
                 <ul class="dropdown-menu">
                     <li><a href="<?php echo U('AdminTodayPrice/index');?>">今日价格</a></li>
                     <li><a href="<?php echo U('AdminChickenBatch/index');?>">批次管理</a></li>
+                    <li><a href="<?php echo U('AdminChickenbatchTodayfeedDelivery/index');?>">结算管理</a></li>
                 </ul>
             </li>
         </ul>

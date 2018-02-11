@@ -1,0 +1,130 @@
+<include file="Public/header" />
+<div class="container-fluid">
+    <div class="jumbotron">
+        <small>当日结算!所有信息必填</small>
+    </div>
+
+    <form method="post" id="create_form">
+        <input type="hidden" name="id" value="{$info.id}" id="id">
+        <div class="form-group">
+            <label>批次:</label>
+            <select name="chicken_batch" id="chicken_batch">
+                <option value="">--请选择--</option>
+                <volist name="chicken_batch" id="vo">
+                    <option value="{$vo.id}" <if condition="$vo['id'] eq $info['chicken_batch']">selected</if>>--{$vo.name}--</option>
+                </volist>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>结算日期:<if condition="$info['guess_age_in_days']">今日日龄提示:{$info.guess_age_in_days}</if></label>
+            <input type="datetime" name="delivery_date" value="{$info.delivery_date}" id="delivery_date" onclick="layui.laydate({elem: this, istime: true, format: 'YYYY-MM-DD'})" class="layui-input form-control" value="{$delivery_date}" placeholder="开始时间">
+        </div>
+        <div class="form-group">
+            <label>产蛋数量[个]:</label>
+            <input type="number" name="lay_eggs" value="{$info.lay_eggs}" id="lay_eggs" class="form-control"   placeholder="产蛋数量">
+        </div>
+        <div class="form-group">
+            <label>总蛋重[kg]:</label>
+            <input type="number" name="lay_eggs_weight" value="{$info.lay_eggs_weight}" id="lay_eggs_weight" class="form-control"   placeholder="总蛋重">
+        </div>
+        <div class="form-group">
+            <label>死淘[只]:</label>
+            <input type="number" name="death" value="{$info.death}" id="death" class="form-control"   placeholder="死淘">
+        </div>
+        <div class="form-group">
+            <label>投料[kg]:</label>
+            <input type="number" name="feed_weight" value="{$info.feed_weight}" id="feed_weight" class="form-control"   placeholder="投料">
+        </div>
+        <div class="form-group">
+            <label>现金支出[元]:</label>
+            <input type="number" name="expenses" value="{$info.expenses}" id="expenses" class="form-control"   placeholder="现金支出">
+        </div>
+
+        <button type="button" onclick="edit()" id="tj" class="btn btn-default">提交</button><br><br>
+    </form>
+</div>
+<br>
+
+<script src="__STATIC__/layui/layui.js"></script>
+<script type="text/javascript">
+    layui.use('layer', function(){ //独立版的layer无需执行这一句
+        //var $ = layui.jquery,
+        layer = layui.layer; //独立版的layer无需执行这一句
+    });
+    layui.use('laydate', function(){
+        var laydate = layui.laydate;
+        var start = {
+            min: laydate.now(),
+            istoday: true,
+            choose: function(datas){
+                end.min = datas; //开始日选好后，重置结束日的最小日期
+                end.start = datas //将结束日的初始值设定为开始日
+            }
+        };
+    });
+
+    function edit(){
+
+
+        url = "{:U('AdminChickenbatchTodayfeedDelivery/edit')}"
+
+        var formData = new FormData($( "#create_form" )[0]);
+
+        id     = $( "#id" ).val();
+        chicken_batch     = $( "#chicken_batch" ).val();
+        lay_eggs    = $( "#lay_eggs" ).val();
+        lay_eggs_weight    = $( "#lay_eggs_weight" ).val();
+        death    = $( "#death" ).val();
+        feed_weight    = $( "#feed_weight" ).val();
+        expenses    = $( "#expenses" ).val();
+        delivery_date    = $( "#delivery_date" ).val();
+        if(!id || !chicken_batch || !lay_eggs || !lay_eggs_weight || !death || !feed_weight || !expenses || !delivery_date) {
+            layer.msg('程序员小哥哥提示你:信息都不填全就提交?是我拿不动刀了还是你飘了?',{
+                icon:2,
+                time:2000
+            });return false;
+        }
+
+        $('#tj').attr('disabled',true)
+        $('#tj').html('正在提交。。。')
+
+        $.ajax({
+            type: 'POST',
+            url: url,
+            data:formData,
+            processData: false,
+            contentType: false,
+            dataType: 'text',
+            success:function(msg){
+                if(msg=='success') {
+                    layer.msg('修改成功!',{
+                        icon:1,
+                        time:2000
+                    });
+                    $('#tj').html('提交')
+                    $('#tj').attr('disabled',false)
+                    setTimeout("parent.location.reload()", 2000);
+                }
+                else
+                {
+                    layer.msg(msg,{
+                        icon:2,
+                        time:2000
+                    });
+                    $('#tj').html('提交')
+                    $('#tj').attr('disabled',false)
+                }
+            },
+            error:function(){
+                layer.msg('程序员小哥哥提示你:未知错误!请稍后重试!',{
+                    icon:2,
+                    time:2000
+                });
+                $('#tj').html('提交')
+                $('#tj').attr('disabled',false)
+            }
+        });
+    }
+</script>
+</body>
+</html>

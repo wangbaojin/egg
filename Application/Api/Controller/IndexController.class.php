@@ -21,4 +21,10 @@ class IndexController extends Controller
     {
         $this->display();
     }
+
+    /*关于我们*/
+    public function about_us()
+    {
+        $this->display();
+    }
 }
