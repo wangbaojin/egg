@@ -1,6 +1,6 @@
 <include file="Public/header" />
 <div class="container-fluid">
-    <a href="{:U('AdminChickenBatch/add')}">添加发行</a><br><br>
+    <a href="{:U('AdminChickenbatchTodayfeedDelivery/add')}">添加结算</a><br><br>
     <form class="form-inline" name="searchForm" action="__SELF__" method="get">
         批次名称:<input  type="date" name="delivery_date" value="{$_GET.delivery_date}"><br>
         <input type="submit" class="btn btn-success" value="搜索">
@@ -13,6 +13,7 @@
                 <th class="active">鸡蛋</th>
                 <th class="danger">饲料</th>
                 <th class="active">现金支出</th>
+                <th class="active">数字资产发行</th>
                 <th class="active">操作</th>
             </tr>
             <volist name="list" id="vo">
@@ -30,6 +31,7 @@
                         共计:{$vo.feed_price} 元<br>
                     </td>
                     <td class="active" style="padding: 10px">{$vo.expenses}元</td>
+                    <td class="active" style="padding: 10px">{$vo.eggcoin_income}枚</td>
                     <td class="active" style="padding: 10px">
 
                         <a href="{:U('AdminChickenbatchTodayfeedDelivery/edit')}?id={$vo.id}">编辑</a><br><br>

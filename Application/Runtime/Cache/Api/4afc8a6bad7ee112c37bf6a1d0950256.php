@@ -78,11 +78,11 @@
         </div>
         <div class="form-group">
             <label>入栏日期:</label>
-            <input type="datetime" name="lairage_date" id="lairage_date" onclick="layui.laydate({elem: this, istime: true, format: 'YYYY-MM-DD 00:00:00'})" class="layui-input form-control" value="<?php echo ($delivery_date); ?>" placeholder="入栏日期">
+            <input type="datetime" name="lairage_date" id="lairage_date" onclick="layui.laydate({elem: this, istime: true, format: 'YYYY-MM-DD'})" class="layui-input form-control" value="<?php echo ($delivery_date); ?>" placeholder="入栏日期">
         </div>
         <div class="form-group">
             <label>日龄[相对于入栏日期计算]:</label>
-            <input type="text" name="egg_in_days" id="egg_in_days" class="form-control"   placeholder="日龄">
+            <input type="text" name="age_in_days" id="age_in_days" class="form-control"   placeholder="日龄">
         </div>
         <div class="form-group">
             <label>预计产蛋:</label>
@@ -155,7 +155,7 @@
         coop_name     = $( "#coop_name" ).val();
         latitude_longitude    = $( "#latitude_longitude" ).val();
         breed    = $( "#breed" ).val();
-        egg_in_days    = $( "#egg_in_days" ).val();
+        age_in_days    = $( "#age_in_days" ).val();
         lay_eggs    = $( "#lay_eggs" ).val();
         egg_color    = $( "#egg_color" ).val();
         feed_type    = $( "#feed_type" ).val();
@@ -165,7 +165,7 @@
         start_time    = $( "#start_time" ).val();
         end_time    = $( "#end_time" ).val();
         lairage_date    = $( "#lairage_date" ).val();
-        if(!lairage_date || !out_code || !start_time || !end_time || !coop_name || !latitude_longitude || !breed || !egg_in_days || !lay_eggs || !egg_color || !feed_type || !name || !amount) {
+        if(!lairage_date || !out_code || !start_time || !end_time || !coop_name || !latitude_longitude || !breed || !age_in_days || !lay_eggs || !egg_color || !feed_type || !name || !amount) {
             layer.msg('程序员小哥哥提示你:信息都不填全就提交?是我拿不动刀了还是你飘了?',{
                 icon:2,
                 time:2000

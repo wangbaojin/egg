@@ -268,13 +268,13 @@ function addVip($user_id,$expiry_time)
     return $m->add($add);
 }
 
-/*记录流水*/
+/*记录饲养流水*/
 function addRecord($data)
 {
     $return_data['code'] = 0;
 
     $not_null_param  = array(
-        'user_id'     => '手机号不能为空',
+        'user_id' => '用户不能为空',
         'amount' => '请填写数量',
         'unit' => '请填写单位',
         'reason_type' => '请填写流水类型',
@@ -295,6 +295,54 @@ function addRecord($data)
     $raise_record['amount']  = $data['amount'];
     $raise_record['unit']    = $data['unit'];
     if($data['reason_source_id']) $raise_record['reason_source_id'] = $data['reason_source_id'];
+    if($data['chicken_id']) $raise_record['chicken_id'] = $data['chicken_id'];
+    $raise_record['reason_type']      = $data['reason_type'];//事由类型id：1.充值、2.饲料认购，3.饲料消耗；4.药物及其他支出；5.现金收益；6.饲料补扣；7.药物及其他支出补扣'
+    $raise_record['reason_narration'] = $data['reason_narration'];
+    $raise_record['created_at'] = time();
+    $raise_record['state'] = $data['state'] ? $data['state'] : 1; //状态：1.成功;2.失败;3.待处理
+    $res =  $raise_record_m->add($raise_record);
+    if(!$res)
+    {
+        $return_data['msg'] = '添加失败';
+    }
+    else
+    {
+        $return_data['code']= 1;
+        $return_data['msg'] = 'success';
+    }
+    return $return_data;
+}
+
+
+/*记录数字发行流水*/
+function addEggcoinRecord($data)
+{
+    $return_data['code'] = 0;
+
+    $not_null_param  = array(
+        'user_id' => '用户不能为空',
+        'eggcoin_account_id' => '钱包id不能为空',
+        'amount' => '请填写数量',
+        'reason_type' => '请填写流水类型',
+        'reason_narration' => '请填写流水标题',
+        'state' => '请填写状态',
+    );
+
+    // 检查参数
+    $check_res = check_not_null_param($not_null_param,$data);
+    if($check_res)
+    {
+        $return_data['msg']  = $check_res;
+        return $return_data;
+    }
+    $raise_record_m = M('EggcoinRecord');
+    $raise_record = array();
+    $raise_record['user_id'] = $data['user_id'];
+    $raise_record['eggcoin_account_id'] = $data['eggcoin_account_id'];
+    $raise_record['amount']  = $data['amount'];
+    if($data['reason_source_id']) $raise_record['reason_source_id'] = $data['reason_source_id'];
+    if($data['chicken_id']) $raise_record['chicken_id'] = $data['chicken_id'];
+    if($data['err_code']) $raise_record['err_code'] = $data['err_code'];
     $raise_record['reason_type']      = $data['reason_type'];//事由类型id：1.充值、2.饲料认购，3.饲料消耗；4.药物及其他支出；5.现金收益；6.饲料补扣；7.药物及其他支出补扣'
     $raise_record['reason_narration'] = $data['reason_narration'];
     $raise_record['created_at'] = time();

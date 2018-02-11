@@ -1,8 +1,8 @@
 <?php
 namespace Com\Alipay;
 class AlipayNotify{ 
-    require_once("alipay_core.function.php");
-    require_once("alipay_rsa.function.php");
+  //  require_once("alipay_core.function.php");
+   // require_once("alipay_rsa.function.php");
     /**
      * HTTPS形式消息验证地址
      */

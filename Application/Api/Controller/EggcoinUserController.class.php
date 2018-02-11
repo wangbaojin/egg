@@ -33,6 +33,7 @@ class EggcoinUserController extends ApiController
         // 微信信息
         $wechart_info = M('UserWechatinfo')->field('user_id,created_at',true)->where('user_id='.I('user_id'))->find();
         $info['wechart_info'] = $wechart_info ? $wechart_info : array();
+        if($info['wechart_info']) $info['wechart_info']['wx_nick_name'] = base64_decode($info['wechart_info']['wx_nick_name']);
 
         // vip
         $vip = M('UserVip')->where('user_id='.I('user_id'))->find();
@@ -74,14 +75,12 @@ class EggcoinUserController extends ApiController
     }
 
     public function register()
-    {  
-        $map['status']=0;
-        $res = M('userkeyinfo')->where($map)->find();
+    {
         $data = array();
-        $data['private_key'] = $res['private'];
-        $data['eggcoin_account_address']  = $res['user_address'];
-        $data['public_key']  = $res['public'];
-        $data['memorizing_words'] = $res['mnemonicphrase'];
+        $data['private_key'] = '=ASD323232J34J23ASDAD9923E232E3JDNANANSDAJNNASDNAN23N2N~';
+        $data['eggcoin_account_address']     = '121213312123ASDAD9923E232E3JDNANANSDAJNNASDNAN23N2N';
+        $data['public_key']  = '=ASD323232J34J23ASDAD9923E232E3JDNANANSDAJNNASDNAN23N2N~=ASD323232J34J23ASDAD99=ASD323232J34J23ASDAD99';
+        $data['memorizing_words'] = 'hello world';
         $this->api_return('success',$data);
     }
 
@@ -218,14 +217,6 @@ class EggcoinUserController extends ApiController
 
             // 添加赠送饲料流水
             $record = array();
-            $record  = array(
-                'user_id'     => '手机号不能为空',
-                'total_price' => '请填写验证码',
-                'unit' => '请填写单位',
-                'reason_type' => '请填写流水类型',
-                'reason_narration' => '请填写流水标题',
-                'state' => '请填写状态',
-            );
             $record['user_id'] = $user_info['id'];
             $record['amount']  = $wallet_map['feed_amount']*1000;
             $record['reason_source_id'] = $user_info['id'];
@@ -254,6 +245,9 @@ class EggcoinUserController extends ApiController
             //$this->api_error(30004,'验证码已超时，请重新获取验证码');
         }
 
+        // 邮箱状态
+        if(!$user_info['email']) $user_info['email_status'] = 3;
+        $user_info['email_status_info'] = $this->_email_status[$user_info['email_status']];
 
         if($user_info['code'] == $data['code'] || $data['code'] == '888888')
         {
@@ -263,6 +257,71 @@ class EggcoinUserController extends ApiController
             $this->api_return('登录成功',$user_info);
         }
         $this->api_error(30005,'验证码不正确,请重新输入');
+    }
+
+    /*微信登录*/
+    public function wechatLogin()
+    {
+        $data['wx_open_id']    = I('post.wx_open_id');
+        if(I('post.wx_pic'))       $data['wx_pic']       = I('post.wx_pic');
+        if(I('post.wx_nick_name')) $data['wx_nick_name'] = base64_encode(I('post.wx_nick_name'));
+        $not_null_param  = array(
+            'wx_open_id' => '请微信授权'
+        );
+
+        // 检查参数
+        $check_res = check_not_null_param($not_null_param,$data);
+        if($check_res) $this->api_error(20001,$check_res);
+
+        $m = M('User');
+        $wechat_m  = M('UserWechatinfo');
+        $wx_user_info = $wechat_m->where('wx_open_id="'.$data['wx_open_id'].'"')->find();
+        $user_info = $m->field('trade_pass_wd,send_time',true)->where('id='.$wx_user_info['user_id'])->find();
+        if(!$wx_user_info or !$wx_user_info['user_id'] or !$user_info) $this->api_error(20002,'该微信未绑定手机号');
+
+        // 检查帐户状态
+        if($user_info['user_st'] != 1) $this->api_error(30003,'该帐号已被禁用,请联系客服');
+
+        // 存在更新微信信息
+        $wechat_m->where('user_id='.$user_info['id'].' and wx_open_id="'.$data['wx_open_id'].'"')->save($data);
+
+        // 检查邀请码
+        if(!$user_info['invite_code']) $m->where('id='.$user_info['id'])->setField('invite_code',strtoupper(substr(md5($user_info['id'].$this->_miyao),8,16)));
+
+        // 添加vip
+        addVip($user_info['id'],time()+85400*365*10);
+
+        // 生成钱包
+        $wallet_m = M('Wallet');
+        $wallet_map['user_id']     = $user_info['id'];
+        $wallet_info               = $wallet_m->where($wallet_map)->find();
+        if(!$wallet_info)
+        {
+            // 给初次用户赠送300g饲料
+            $wallet_map['feed_amount'] = 0.3;
+            $wallet_m->add($wallet_map);
+
+            // 添加赠送饲料流水
+            $record = array();
+            $record['user_id'] = $user_info['id'];
+            $record['amount']  = $wallet_map['feed_amount']*1000;
+            $record['reason_source_id'] = $user_info['id'];
+            $record['reason_type'] = 8;
+            $record['reason_narration'] = 'VIP内侧用户奖励';
+            $record['state'] = 1;
+            $record['unit'] = 'g';
+            $record = addRecord($record);
+            if(!$record) Log::record('用户赠送300g饲料流水记录失败,INFO:'.json_encode($record),'ADD_RECORD',true);
+        }
+
+        // 邮箱状态
+        if(!$user_info['email']) $user_info['email_status'] = 3;
+        $user_info['email_status_info'] = $this->_email_status[$user_info['email_status']];
+
+        session('user_info',$user_info);
+        $session_id = session_id();
+        $user_info['token'] = $session_id;
+        $this->api_return('登录成功',$user_info);
     }
 
     /*用户退出接口*/

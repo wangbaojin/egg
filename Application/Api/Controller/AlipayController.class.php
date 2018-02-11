@@ -13,7 +13,7 @@ class AlipayController extends ApiController
    /*获得支付宝订单签名的接口--充值*/
     public function getAlipayInfo(){
      //$notify_url = "http://api.lianyangji.io/EggcoinRecharge/rechargeNotifyUrl";
-$notify_url = "http://api.lianyangji.io/EggcoinRecharge/test";
+$notify_url = "http://pay.kuailededan.com/notify_url3.php";
       $parter3 = "2088912508777882";
      $seller3 = "server@bkanbing.com";
     $data['order_sn'] = I('get.order_sn');
@@ -39,7 +39,6 @@ $notify_url = "http://api.lianyangji.io/EggcoinRecharge/test";
                     'return_url' => "m.alipay.com",
 
                 );
-
       $order_info_array = argSort($order_info_array);
       $order_info = '';
       foreach ($order_info_array as $key => $val) {

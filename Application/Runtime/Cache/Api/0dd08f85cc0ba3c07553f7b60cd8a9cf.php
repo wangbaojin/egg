@@ -64,14 +64,14 @@
     <form method="post" id="create_form">
         <div class="form-group">
             <label>批次:</label>
-            <select name="chicken_batch" id="chicken_batch" disabled>
+            <select name="chicken_batch" id="chicken_batch">
                 <option value="">--请选择--</option>
                 <?php if(is_array($chicken_batch)): $i = 0; $__LIST__ = $chicken_batch;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><option value="<?php echo ($vo["id"]); ?>" <?php if($vo['id'] == $_GET['chicken_batch']): ?>selected<?php endif; ?>>--<?php echo ($vo["name"]); ?>--</option><?php endforeach; endif; else: echo "" ;endif; ?>
             </select>
         </div>
         <div class="form-group">
-            <label>结算日龄:<?php if($chicken_batch['guess_age_in_days']): ?>日龄提示:<?php echo ($guess_age_in_days); endif; ?></label>
-            <input type="number" name="age_in_days" value="<?php echo ($guess_age_in_days); ?>" id="age_in_days" class="form-control"   placeholder="结算日龄">
+            <label>结算时间:<?php if($chicken_batch['guess_age_in_days']): ?>今日日龄提示:<?php echo ($guess_age_in_days); endif; ?></label>
+            <input type="datetime" name="delivery_date" id="delivery_date" onclick="layui.laydate({elem: this, istime: true, format: 'YYYY-MM-DD'})" class="layui-input form-control" value="<?php echo ($delivery_date); ?>" placeholder="开始时间">
         </div>
         <div class="form-group">
             <label>产蛋数量[个]:</label>
@@ -83,7 +83,7 @@
         </div>
         <div class="form-group">
             <label>死淘[只]:</label>
-            <input type="number" name="death" id="death" class="form-control"   placeholder="死淘">
+            <input type="number" name="death" id="death" value="0" class="form-control"   placeholder="死淘">
         </div>
         <div class="form-group">
             <label>投料[kg]:</label>
@@ -93,10 +93,9 @@
             <label>现金支出[元]:</label>
             <input type="number" name="expenses" id="expenses" class="form-control"   placeholder="现金支出">
         </div>
-
         <div class="form-group">
-            <label>结算时间:</label>
-            <input type="datetime" name="delivery_date" id="delivery_date" onclick="layui.laydate({elem: this, istime: true, format: 'YYYY-MM-DD'})" class="layui-input form-control" value="<?php echo ($delivery_date); ?>" placeholder="开始时间">
+            <label>数字币[枚]:</label>
+            <input type="number" name="eggcoin_income" id="eggcoin_income" class="form-control"   placeholder="数字币">
         </div>
         <button type="button" onclick="add()" id="tj" class="btn btn-default">提交</button><br><br>
     </form>
@@ -135,7 +134,8 @@
         feed_weight    = $( "#feed_weight" ).val();
         expenses    = $( "#expenses" ).val();
         delivery_date    = $( "#delivery_date" ).val();
-        if(!chicken_batch || !lay_eggs || !lay_eggs_weight || !death || !feed_weight || !expenses || !delivery_date) {
+        eggcoin_income    = $( "#eggcoin_income" ).val();
+        if(!eggcoin_income || !chicken_batch || !lay_eggs || !lay_eggs_weight || !death || !feed_weight || !expenses || !delivery_date) {
             layer.msg('程序员小哥哥提示你:信息都不填全就提交?是我拿不动刀了还是你飘了?',{
                 icon:2,
                 time:2000
