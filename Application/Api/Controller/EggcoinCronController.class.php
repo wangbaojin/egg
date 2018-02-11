@@ -128,10 +128,24 @@ class EggcoinCronController extends ApiController
             // 错误日志
             return $return_data;
         }
+        /**
+        `feed_weight` decimal(11,5) DEFAULT '0.00000' COMMENT '投料，单位：g',
+        `expenses` decimal(11,5) DEFAULT '0.00000' COMMENT '现金支出，元',
+        `egg_weight` decimal(11,5) DEFAULT '0.00000' COMMENT '蛋重，单位：g',
+        `egg_num` decimal(11,5) DEFAULT '0.00000' COMMENT '蛋数量，单位：个',
+        `income` decimal(16,5) DEFAULT '0.00000' COMMENT '现金收益，单位：元',
+        `eggcoin_income` decimal(14,8) DEFAULT '0.00000000' COMMENT '数字币收益',
+         **/
+        $arr['delivery_date'] = $delivery_info['delivery_date'];
+        /*投料=*/
+        $arr['feed_weight'] = $delivery_info['feed_weight'];
+        $arr['egg_weight'] = $delivery_info['lay_eggs_weight'];
+        $arr['egg_num'] = $delivery_info['lay_eggs'];
+        if( $delivery_info['expenses']) $arr['expenses'] = $delivery_info['expenses'];
 
-        $arr['user_id'] = $chicken_info['user_id'];
         $arr['chicken_id'] = $chicken_info['id'];
-        $arr['chicken_id'] = $chicken_info['id'];
+        $arr['user_id'] = $chicken_info['iuser_id'];
+
     }
 
 }

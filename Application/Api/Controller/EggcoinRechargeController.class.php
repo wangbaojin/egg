@@ -140,150 +140,140 @@ class EggcoinRechargeController extends ApiController
     /*充值回调,此处错误应该做日志记录,调试先返回信息便于调试*/
     public function rechargeNotifyUrl()
     {
-      //  require_once("/usr/local/nginx/alipay/alipay.config.php");
-       // require_once("/usr/local/nginx/alipay/lib/alipay_notify.class.php");
-       // $alipayNotify = new \Com\Alipay\AlipayNotify();
-       // $verify_result = $alipayNotify->verifyNotify();
-        if ($verify_result) {
-            if (I('post.trade_status') == 'TRADE_FINISHED') {
-            } else if (I('post.trade_status') == 'TRADE_SUCCESS') {
 
-                /*修改订单状态为支付成功*/
-                date_default_timezone_set('PRC');
-                $data = I('post.');
-                $order_sn = $data['order_sn'];
-                //$order_st = $data['order_st'];
-                if (!$order_sn) $this->api_error(20001, '订单号错误');
+        /*修改订单状态为支付成功*/
+        date_default_timezone_set('PRC');
 
-                // 订单、订单详情
-                $m = M('Recharge');
-                $info_m = M('RechargeInfo');
-                $order = $m->where('order_sn=' . $order_sn)->find();
-                $order_info = $info_m->where('order_id=' . $order['id'])->select();
-                if (!$order or !$order_info) $this->api_error(20002, '订单不存在');
+        $order_sn = I('get.order_sn');
+        //$order_st = $data['order_st'];
+        if (!$order_sn) $this->api_error(20001, '订单号错误');
 
-                // 用户钱包信息
-                $wallet_m = M('Wallet');
-                $wallet_info = $wallet_m->where('user_id=' . $order['user_id'])->find();
-                if (!$wallet_info) {
-                    $this->api_error(20004, '获取用户信息失败,请重现登录');
+        // 订单、订单详情
+        $m = M('Recharge');
+        $info_m = M('RechargeInfo');
+        $order = $m->where('order_sn=' . $order_sn)->find();
+        $order_info = $info_m->where('order_id=' . $order['id'])->select();
+        if (!$order or !$order_info) $this->api_error(20002, '订单不存在');
+
+        // 用户钱包信息
+        $wallet_m = M('Wallet');
+        $wallet_info = $wallet_m->where('user_id=' . $order['user_id'])->find();
+        if (!$wallet_info) {
+            $this->api_error(20004, '获取用户信息失败,请重现登录');
+        }
+
+        if ($order['state'] != 1) $this->api_error(20003, '订单已处理');
+        // 用户钱包信息
+        $wallet_m = M('Wallet');
+        $wallet_info = $wallet_m->where('user_id=' . $order['user_id'])->find();
+        if (!$wallet_info) {
+            $this->api_error(20004, '获取用户信息失败,请重现登录');
+        }
+        if ($order['state'] != 1) $this->api_error(20003, '订单已处理');
+        $trans = M();
+        $trans->startTrans();
+        $saveData['updated_at'] = time();
+        $saveData['state'] = 3;
+        $saveData['pay_state'] = 2;
+        $change_res = $m->where('id=' . $order['id'])->save($saveData);
+        if (!$change_res) $this->api_error(20004, '订单状态修改失败');
+
+        // 记录充值流水
+        $raise_record_m = M('ChickenRaiseRecord');
+        $raise_record = array();
+        $raise_record['user_id'] = $order['user_id'];
+        $raise_record['amount'] = $order['total_price'];
+        $raise_record['unit'] = '元';
+        $raise_record['reason_source_id'] = $order['id'];
+        $raise_record['reason_type'] = 1;/*事由类型id：1.充值、2.饲料认购，3.饲料消
+耗；4.药物及其他支出；5.现金收益；6.饲料补扣；7.药物及其他支出补扣'*/
+        $raise_record['reason_narration'] = '蛋鸡养殖饲料';
+        $raise_record['created_at'] = time();
+        $raise_record['state'] = 1; //状态：1.成功;2.失败;3.待处理
+        if (!$raise_record_m->add($raise_record)) {
+            $trans->rollback();
+            $this->api_error(20005, '流水记录失败');
+        }
+
+        foreach ($order_info as $k => $v) {
+            $order_info_data = array();
+            $order_info_data['updated_at'] = time();
+            $order_info_data['state'] = 3;
+            $order_info_res = $info_m->where('id=' . $v['id'])->save($order_info_data);
+            if (!$order_info_res) {
+                $trans->rollback();
+                $this->api_error(20006, '认购失败');
+            }
+            if ($v['goods_id'] == 1) {// 还款
+                $arrears_res = $wallet_m->where('user_id=' . $order['user_id'])->setField('arrears_amount', $wallet_info['arrears_amount'] - $v['recharge_price']);
+                if (!$arrears_res) {
+                    $trans->rollback();
+                    $this->api_error(20006, '还款失败');
                 }
 
-                if ($order['state'] != 1) $this->api_error(20003, '订单已处理');
-                // 用户钱包信息
-                $wallet_m = M('Wallet');
-                $wallet_info = $wallet_m->where('user_id=' . $order['user_id'])->find();
-                if (!$wallet_info) {
-                    $this->api_error(20004, '获取用户信息失败,请重现登录');
-                }
-                if ($order['state'] != 1) $this->api_error(20003, '订单已处理');
-                $trans = M();
-                $trans->startTrans();
-                $saveData['updated_at'] = time();
-                $saveData['state'] = 3;
-                $saveData['pay_state'] = 2;
-                $change_res = $m->where('id=' . $order['id'])->save($saveData);
-                if (!$change_res) $this->api_error(20004, '订单状态修改失败');
-
-                // 记录充值流水
-                $raise_record_m = M('ChickenRaiseRecord');
+                // 记录还款流水=
                 $raise_record = array();
                 $raise_record['user_id'] = $order['user_id'];
-                $raise_record['amount'] = $order['total_price'];
+                $raise_record['amount'] = abs($v['recharge_price']);
                 $raise_record['unit'] = '元';
                 $raise_record['reason_source_id'] = $order['id'];
-                $raise_record['reason_type'] = 1;/*事由类型id：1.充值、2.饲料认购，3.饲料消
-耗；4.药物及其他支出；5.现金收益；6.饲料补扣；7.药物及其他支出补扣'*/
-                $raise_record['reason_narration'] = '蛋鸡养殖饲料';
+                $raise_record['reason_type'] = 7;/*事由类型id：1.充值、2.饲料认购，
+3.饲料消耗；4.药物及其他支出；5.现金收益；6.饲料补扣；7.药物及其他支出补扣'*/
+                $raise_record['reason_narration'] = '药物及其他支出补扣';
                 $raise_record['created_at'] = time();
                 $raise_record['state'] = 1; //状态：1.成功;2.失败;3.待处理
                 if (!$raise_record_m->add($raise_record)) {
                     $trans->rollback();
-                    $this->api_error(20005, '流水记录失败');
+                    $this->api_error(20007, '还款流水记录失败');
                 }
 
-                foreach ($order_info as $k => $v) {
-                    $order_info_data = array();
-                    $order_info_data['updated_at'] = time();
-                    $order_info_data['state'] = 3;
-                    $order_info_res = $info_m->where('id=' . $v['id'])->save($order_info_data);
-                    if (!$order_info_res) {
-                        $trans->rollback();
-                        $this->api_error(20006, '认购失败');
-                    }
-                    if ($v['goods_id'] == 1) {// 还款
-                        $arrears_res = $wallet_m->where('user_id=' . $order['user_id'])->setField('arrears_amount', $wallet_info['arrears_amount'] - $v['recharge_price']);
-                        if (!$arrears_res) {
-                            $trans->rollback();
-                            $this->api_error(20006, '还款失败');
-                        }
+            }
+            if ($v['goods_id'] == 2) {// 饲料认购
 
-                        // 记录还款流水=
-                        $raise_record = array();
-                        $raise_record['user_id'] = $order['user_id'];
-                        $raise_record['amount'] = abs($v['recharge_price']);
-                        $raise_record['unit'] = '元';
-                        $raise_record['reason_source_id'] = $order['id'];
-                        $raise_record['reason_type'] = 7;/*事由类型id：1.充值、2.饲料认购，
-3.饲料消耗；4.药物及其他支出；5.现金收益；6.饲料补扣；7.药物及其他支出补扣'*/
-                        $raise_record['reason_narration'] = '药物及其他支出补扣';
-                        $raise_record['created_at'] = time();
-                        $raise_record['state'] = 1; //状态：1.成功;2.失败;3.待处理
-                        if (!$raise_record_m->add($raise_record)) {
-                            $trans->rollback();
-                            $this->api_error(20007, '还款流水记录失败');
-                        }
+                //认购饲料数,单位:kg; =  充值金额 / 今日蛋价
+                $feed_price = M('TodayPrice')->order('delivery_date')->limit(1)->getField('feed_price');
+                $feed_amount = round($v['recharge_price'] / $feed_price, 2);
+                $feed_res = $wallet_m->where('user_id=' . $order['user_id'])->setField('feed_amount', $wallet_info['feed_amount'] + $feed_amount);
 
-                    }
-                    if ($v['goods_id'] == 2) {// 饲料认购
-
-                        //认购饲料数,单位:kg; =  充值金额 / 今日蛋价
-                        $feed_price = M('TodayPrice')->order('delivery_date')->limit(1)->getField('feed_price');
-                        $feed_amount = round($v['recharge_price'] / $feed_price, 2);
-                        $feed_res = $wallet_m->where('user_id=' . $order['user_id'])->setField('feed_amount', $wallet_info['feed_amount'] + $feed_amount);
-
-                        // 饲料认购流水=
-                        $raise_record = array();
-                        $raise_record['user_id'] = $order['user_id'];
-                        $raise_record['amount'] = $feed_amount * 1000;
-                        $raise_record['unit'] = 'g';
-                        $raise_record['reason_source_id'] = $order['id'];
-                        $raise_record['reason_type'] = 2;/*事由类型id：1.买入、2.饲料买入，
+                // 饲料认购流水=
+                $raise_record = array();
+                $raise_record['user_id'] = $order['user_id'];
+                $raise_record['amount'] = $feed_amount * 1000;
+                $raise_record['unit'] = 'g';
+                $raise_record['reason_source_id'] = $order['id'];
+                $raise_record['reason_type'] = 2;/*事由类型id：1.买入、2.饲料买入，
 3.投喂；4.支出；5.收益；6.饲料补扣；7.支出补扣'*/
-                        $raise_record['reason_narration'] = '饲料认购';
-                        $raise_record['created_at'] = time();
-                        $raise_record['state'] = 1; //状态：1.成功;2.失败;3.待处理
-                        if (!$raise_record_m->add($raise_record) or !$feed_res) {
-                            $trans->rollback();
-                            $this->api_error(20007, '认购饲料失败');
-                        }
+                $raise_record['reason_narration'] = '饲料认购';
+                $raise_record['created_at'] = time();
+                $raise_record['state'] = 1; //状态：1.成功;2.失败;3.待处理
+                if (!$raise_record_m->add($raise_record) or !$feed_res) {
+                    $trans->rollback();
+                    $this->api_error(20007, '认购饲料失败');
+                }
 
-                        // 饲料补扣流水记录
-                        if ($wallet_info['feed_amount'] < 0) {
-                            $raise_record = array();
-                            $raise_record['user_id'] = $order['user_id'];
-                            $raise_record['amount'] = $wallet_info['feed_amount'] * 1000;
-                            $raise_record['unit'] = 'g';
-                            $raise_record['reason_source_id'] = $order['id'];
-                            $raise_record['reason_type'] = 6;/*事由类型id：1.买入、2.饲料买
+                // 饲料补扣流水记录
+                if ($wallet_info['feed_amount'] < 0) {
+                    $raise_record = array();
+                    $raise_record['user_id'] = $order['user_id'];
+                    $raise_record['amount'] = $wallet_info['feed_amount'] * 1000;
+                    $raise_record['unit'] = 'g';
+                    $raise_record['reason_source_id'] = $order['id'];
+                    $raise_record['reason_type'] = 6;/*事由类型id：1.买入、2.饲料买
 入，3.投喂；4.支出；5.收益；6.饲料补扣；7.支出补扣'*/
-                            $raise_record['reason_narration'] = '饲料补扣';
-                            $raise_record['created_at'] = time();
-                            $raise_record['state'] = 1; //状态：1.成功;2.失败;3.待处理
-                            if (!$raise_record_m->add($raise_record)) {
-                                $trans->rollback();
-                                $this->api_error(20007, '饲料补扣流水记录失败');
-                            }
-                        }
-
-
+                    $raise_record['reason_narration'] = '饲料补扣';
+                    $raise_record['created_at'] = time();
+                    $raise_record['state'] = 1; //状态：1.成功;2.失败;3.待处理
+                    if (!$raise_record_m->add($raise_record)) {
+                        $trans->rollback();
+                        $this->api_error(20007, '饲料补扣流水记录失败');
                     }
                 }
-                $trans->commit();
-                //$this->api_return('success');
-                echo "success";
 
 
             }
         }
-    }}
+        $trans->commit();
+
+    }
+
+}

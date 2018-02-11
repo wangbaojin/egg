@@ -621,3 +621,12 @@ INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000200s ]
 INFO: [ app_begin ] --END-- [ RunTime:0.000218s ]
 ERR: 非法操作:index
 
+[ 2018-02-11T19:12:48+08:00 ] 129.78.110.124 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000159s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000194s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000210s ]
+ERR: 非法操作:index
+
