@@ -142,7 +142,7 @@ class EggcoinRechargeController extends ApiController
     {
         require_once("/usr/local/nginx/alipay/alipay.config.php");
         require_once("/usr/local/nginx/alipay/lib/alipay_notify.class.php");
-        $alipayNotify = new \Com\Alipay\AlipayNotify($alipay_config);
+        $alipayNotify = new \Com\Alipay\AlipayNotify();
         $verify_result = $alipayNotify->verifyNotify();
         if ($verify_result) {
             if (I('post.trade_status') == 'TRADE_FINISHED') {
