@@ -279,10 +279,11 @@ class EggcoinRechargeController extends ApiController
 
                     }
                 }
-                    $trans->commit();
-                    //$this->api_return('success');
-                    echo "success";
+                $trans->commit();
+                //$this->api_return('success');
+                echo "success";
 
 
-                }
             }
+        }
+    }}
