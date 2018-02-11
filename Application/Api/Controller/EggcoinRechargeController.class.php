@@ -141,11 +141,10 @@ class EggcoinRechargeController extends ApiController
     public function rechargeNotifyUrl()
     {
 
-
         /*修改订单状态为支付成功*/
         date_default_timezone_set('PRC');
-        $data = I('post.');
-        $order_sn = $data['order_sn'];
+
+        $order_sn = I('get.order_sn');
         //$order_st = $data['order_st'];
         if (!$order_sn) $this->api_error(20001, '订单号错误');
 
