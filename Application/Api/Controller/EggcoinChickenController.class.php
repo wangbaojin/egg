@@ -33,6 +33,7 @@ class EggcoinChickenController extends ApiController
         4=>'已退款',
     );
 
+
     /* 首页
      * */
     public function index()
@@ -51,76 +52,99 @@ class EggcoinChickenController extends ApiController
     }
 
     /*
+     * 待收取收益列表
+     * */
+    public function getCollectChickenDelivery()
+    {
+        $user_id = I('user_id');
+        $m = M('ChickenTodayfeedDelivery');
+        $map['state'] = 2;
+        $map['user_id'] = $user_id;
+        $page = (int)I('page');
+        $data['page_limit'] = 10;
+        $data['total_count'] = $m->where($map)->count();
+        $data['total_page'] = ceil($data['total_count'] / $data['page_limit']);
+        $data['now_page'] = ($page > 0 and $page <= $data['total_page']) ? $page : 1;
+        $list = $m->where($map)->field('id,egg_weight,income')->page($page, $data['page_limit'])->select();
+        if (!$list) $this->api_error(20003, '暂无收益');
+        $data['data'] = $list;
+        $this->api_return('success', $data);
+    }
+
+    /*收取收益*/
+    public function collectChickenDelivery()
+    {
+        $user_id  = I('get.user_id');
+        $delivery_id = I('get.delivery_id');
+        if(!$user_id) $this->api_error(20001,'请先登录');
+        if(!$delivery_id) $this->api_error(20001,'参数错误');
+        $m = M('ChickenTodayfeedDelivery');
+
+        $map['id']      = $delivery_id;
+        $map['user_id'] = $user_id;
+        $map['state']   = 2;
+        $info = $m->where($map)->find();
+        if(!$info) $this->api_error(20002,'暂无可收取收益');
+
+        $trans = M();
+        $trans->startTrans();
+
+        // 修改状态
+        if(!$m->where($map)->setField('state',3))
+        {
+            $this->api_error(20003,'收取失败,请稍后重试');
+        }
+
+        // 修改钱包
+        $wallet_map['user_id'] = $user_id;
+        // 累计收益
+        $total_amount_res = M('Wallet')->where($wallet_map)->setInc('total_amount',$info['income']);
+        // 当前收益
+        $amount_res = M('Wallet')->where($wallet_map)->setInc('amount',$info['income']);
+        if(!$total_amount_res or !$amount_res)
+        {
+            $trans->rollback();
+            $this->api_error(20003,'收取失败,请稍后重试');
+        }
+        $trans->commit();
+        $this->api_return('succes');
+    }
+
+    /*
      * 收益
      * */
     public function getUserChickenProfit()
     {
         $user_id = I('user_id');
-        /*
-         * $page = (int)I('page');
-       $data['page_limit']  = 20;
-       $data['total_count'] = $m->where($map)->count();
-       $data['total_page']  = ceil($data['total_count']/$data['page_limit']);
-       $data['now_page']    = ($page > 0 and $page <= $data['total_page']) ? $page : 1;
-       $list = $m->where($map)->page($page,$data['page_limit'])->select();
-         * */
-        $list = array(
+        $m = M('ChickenTodayfeedDelivery');
+        $map['state']   = 3;
+        $map['user_id'] = $user_id;
+        $page = (int)I('page');
+        $data['page_limit']  = 3;
+        $data['total_count'] = $m->where($map)->count();
+        $data['total_page']  = ceil($data['total_count']/$data['page_limit']);
+        $data['now_page']    = ($page > 0 and $page <= $data['total_page']) ? $page : 1;
+        $date_list = $m->where($map)->page($page,$data['page_limit'])->group('delivery_date')->order('delivery_date desc')->getField('delivery_date',true);
+        if(!$date_list) $this->api_error(20003,'暂无收益');
 
-            array(
-                'created_at'=>'1518162740',
-                'info'=>array(
-                    array(
-                    'egg_weight' => '50g',
-                    'day_price' => '2.2元/kg',
-                    'total_price' => '0.11元'
-                    ),
-                    array(
-                        'egg_weight' => '50g',
-                        'day_price' => '2.2元/kg',
-                        'total_price' => '0.11元'
-                    )
-                )
-            ),
-            array(
-                'created_at'=>'1518076340',
-                'info'=>array(
-                    array(
-                        'egg_weight' => '50g',
-                        'day_price' => '2.2元/kg',
-                        'total_price' => '0.11元',
-                    ),
-                    array(
-                        'egg_weight' => '50g',
-                        'day_price' => '2.2元/kg',
-                        'total_price' => '0.11元',
-                    )
-                ),
-            ),
-            array(
-                'created_at'=>'1517989940',
-                'info'=>array(
-                    array(
-                        'egg_weight' => '50g',
-                        'day_price' => '2.2元/kg',
-                        'total_price' => '0.11元',
-                    ),
-                    array(
-                        'egg_weight' => '50g',
-                        'day_price' => '2.2元/kg',
-                        'total_price' => '0.11元',
-                    )
-                )
-            )
-        );
-        // 钱包
-        $return_data['amount'] = M('Wallet')->where('user_id='.$user_id)->getField('amount');
-
-        $return_data['data'] = $list;
-        $return_data['page_limit'] = 20;
-        $return_data['total_count'] = 20;
-        $return_data['total_page'] = 1;
-        $return_data['now_page'] = 1;
-        $this->api_return('success',$return_data);
+        // 处理列表
+        foreach ($date_list as $dk=>$dv)
+        {
+            $tmp_map = $tmp = array();
+            $tmp_map['delivery_date'] = $dv;
+            $tmp_map['state'] = 3;
+            $tmp_map['user_id'] = $user_id;
+            $tmp_list = $m->where($tmp_map)->select();
+            if(!$tmp_list) continue;
+            foreach ($tmp_list as $k=>$v)
+            {
+                $tmp['egg_weight'] = $v['egg_weight'];
+                $tmp['total_price'] = $v['income'];
+                $tmp['day_price'] = round($v['income']/$v['egg_weight']*1000,2);
+                $data['data'][$dv][] = $tmp;
+            }
+        }
+        $this->api_return('success',$data);
     }
 
     /*
@@ -202,6 +226,9 @@ class EggcoinChickenController extends ApiController
 
        // 类型判断
        $type_info = M('chicken_type')->where('state=1 && id='.$data['chicken_type'])->find();
+
+       if(!$type_info) $this->api_error(20004,'该类型不存在');
+
        $price = $type_info['price'] - $type_info['discount'];
        if(!$price) $this->api_error(20004,'该类型母鸡已暂停认养');
 
@@ -244,15 +271,7 @@ class EggcoinChickenController extends ApiController
     /*购买回调,此处错误应该做日志记录,调试先返回信息便于调试*/
     public function buyChickenNotifyUrl()
     {
-        
-        $order_sn = I('get.order_sn');
-        //$order_st = $data['order_st'];
-        if(!$order_sn) $this->api_error(20001,'订单号错误');
-
-        // 验证签名(支付回调签名)
-
-
-        // 订单、订单详情
+        $order_sn = $_GET['order_sn'];
         $m     = M('ChickenOrder');
         $c_m   = M('Chicken');
         $order = $m->where('order_sn='.$order_sn)->find();
@@ -262,8 +281,6 @@ class EggcoinChickenController extends ApiController
         if($order['state']!=1) $this->api_error(20003,'订单已处理');
 
         // 如果支付成功
-       // if($order_st='SUCCESS')
-        //{
             // 订单超时
             if(time() > $order['lock_time'])
             {
@@ -306,8 +323,8 @@ class EggcoinChickenController extends ApiController
             }
             $trans->commit();
             $this->api_return('success');
-        //}
 
+        
         //其他状态
     }
 

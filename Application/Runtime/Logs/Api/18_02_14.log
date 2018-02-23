@@ -1,0 +1,161 @@
+[ 2018-02-14T00:25:32+08:00 ] 59.63.206.199 /Version/check?signature=5C5188B63288E282901E6A96F87A1208&timestamp=1518539131&version=1.0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000167s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000201s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000218s ]
+NOTIC: [8] Undefined index: HTTP_X_UUID /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 15 行.
+SQL: SHOW COLUMNS FROM `eggcoin_update` [ RunTime:0.0005s ]
+SQL: SELECT `force`,`version`,`url`,`app_type` FROM `eggcoin_update` WHERE `status` = 1 AND `platform` = 'ios' AND `app_type` = '6' ORDER BY `version` DESC LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: version /usr/local/nginx/html/lianyangji/Application/Api/Controller/VersionController.class.php 第 25 行.
+
+[ 2018-02-14T10:48:57+08:00 ] 106.114.69.244 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000156s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000311s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000334s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000241s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000259s ]
+
+[ 2018-02-14T12:03:47+08:00 ] 27.156.90.172 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000183s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000201s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000218s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000223s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000240s ]
+
+[ 2018-02-14T12:12:46+08:00 ] 123.174.188.121 /Version/check?sign=48CC6408C283D7134A86EB7F9DD5A457&timestamp=1518581564&token=ras72t99q24vgh1ir7gkf4r8ij&version=1.0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000160s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000209s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000225s ]
+SQL: SHOW COLUMNS FROM `eggcoin_update` [ RunTime:0.0004s ]
+SQL: SELECT `force`,`version`,`url`,`app_type` FROM `eggcoin_update` WHERE `status` = 1 AND `platform` = 'android' AND `app_type` = '6' ORDER BY `version` DESC LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: version /usr/local/nginx/html/lianyangji/Application/Api/Controller/VersionController.class.php 第 25 行.
+
+[ 2018-02-14T12:12:46+08:00 ] 123.174.188.121 /EggcoinChicken/index?user_id=1&sign=9FE79C8CB1F84A9A00B74E69506B2A7E&timestamp=1518581564&token=ras72t99q24vgh1ir7gkf4r8ij&version=1.0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000172s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000207s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000223s ]
+SQL: SHOW COLUMNS FROM `eggcoin_news_readed` [ RunTime:0.0005s ]
+SQL: SELECT `news_id` FROM `eggcoin_news_readed` WHERE ( user_id=1 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `eggcoin_news` [ RunTime:0.0004s ]
+SQL: SELECT `id` FROM `eggcoin_news` ORDER BY `id` desc LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `eggcoin_chicken` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `eggcoin_chicken` WHERE ( (state=5 or state=4) and user_id=1 ) LIMIT 1   [ RunTime:0.0054s ]
+
+[ 2018-02-14T12:12:52+08:00 ] 123.174.188.121 /EggcoinUser/getUserWallet?user_id=1&sign=64F91BEBA12BF6ED03CB74EF221547D4&timestamp=1518581571&token=ras72t99q24vgh1ir7gkf4r8ij&version=1.0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000230s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000274s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000292s ]
+SQL: SHOW COLUMNS FROM `eggcoin_wallet` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `eggcoin_wallet` WHERE `user_id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `eggcoin_chicken_todayfeed_delivery` [ RunTime:0.0004s ]
+ERR: 1054:Unknown column 'egg_weigh' in 'field list'
+ [ SQL语句 ] : SELECT SUM(egg_weigh) AS tp_SUM FROM `eggcoin_chicken_todayfeed_delivery` LIMIT 1  
+ERR: 1054:Unknown column 'egg_weigh' in 'field list'
+ [ SQL语句 ] : SELECT SUM(egg_weigh) AS tp_SUM FROM `eggcoin_chicken_todayfeed_delivery` LIMIT 1  
+
+[ 2018-02-14T12:12:54+08:00 ] 123.174.188.121 /EggcoinRecharge/getUserFeedRecord?page=1&user_id=1&sign=4ED2815B734948FB476A1E87E0920942&timestamp=1518581573&token=ras72t99q24vgh1ir7gkf4r8ij&version=1.0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000225s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000315s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000336s ]
+SQL: SHOW COLUMNS FROM `eggcoin_chicken_raise_record` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `eggcoin_chicken_raise_record` WHERE `user_id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `eggcoin_chicken_raise_record` WHERE `user_id` = 1 ORDER BY `id` desc LIMIT 0,20   [ RunTime:0.0002s ]
+
+[ 2018-02-14T12:12:55+08:00 ] 123.174.188.121 /EggcoinRecharge/getUserFeedRecord?page=1&user_id=1&sign=BC72AD940E1BC23DE48798F5E6EAA4BF&timestamp=1518581574&token=ras72t99q24vgh1ir7gkf4r8ij&version=1.0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000152s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000232s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000249s ]
+SQL: SHOW COLUMNS FROM `eggcoin_chicken_raise_record` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `eggcoin_chicken_raise_record` WHERE `user_id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `eggcoin_chicken_raise_record` WHERE `user_id` = 1 ORDER BY `id` desc LIMIT 0,20   [ RunTime:0.0003s ]
+
+[ 2018-02-14T12:12:56+08:00 ] 123.174.188.121 /EggcoinRecharge/getUserFeedRecord?page=1&user_id=1&sign=EEF1C88844A4550BA94F4161E351D0AC&timestamp=1518581576&token=ras72t99q24vgh1ir7gkf4r8ij&version=1.0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000153s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000216s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000232s ]
+SQL: SHOW COLUMNS FROM `eggcoin_chicken_raise_record` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `eggcoin_chicken_raise_record` WHERE `user_id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `eggcoin_chicken_raise_record` WHERE `user_id` = 1 ORDER BY `id` desc LIMIT 0,20   [ RunTime:0.0002s ]
+
+[ 2018-02-14T12:12:58+08:00 ] 123.174.188.121 /EggcoinRecharge/getUserFeedRecord?page=1&user_id=1&sign=4EED7460DF92B8D1BA722BD9825F259D&timestamp=1518581577&token=ras72t99q24vgh1ir7gkf4r8ij&version=1.0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000156s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000198s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000215s ]
+SQL: SHOW COLUMNS FROM `eggcoin_chicken_raise_record` [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `eggcoin_chicken_raise_record` WHERE `user_id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `eggcoin_chicken_raise_record` WHERE `user_id` = 1 ORDER BY `id` desc LIMIT 0,20   [ RunTime:0.0003s ]
+
+[ 2018-02-14T12:13:00+08:00 ] 123.174.188.121 /News/todayPrice?sign=97E2DAF4DEA74F9C67D3ACD6454B47D9&timestamp=1518581580&token=ras72t99q24vgh1ir7gkf4r8ij&version=1.0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000152s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000197s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000213s ]
+SQL: SHOW COLUMNS FROM `eggcoin_today_price` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `eggcoin_today_price` ORDER BY `delivery_date` LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2018-02-14T19:50:12+08:00 ] 125.76.60.36 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000156s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000220s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000237s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000220s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000238s ]
+
+[ 2018-02-14T20:08:44+08:00 ] 106.47.172.175 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000163s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000196s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000213s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000226s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000242s ]
+
+[ 2018-02-14T23:26:28+08:00 ] 182.101.59.142 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000225s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000315s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000337s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000328s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000351s ]
+

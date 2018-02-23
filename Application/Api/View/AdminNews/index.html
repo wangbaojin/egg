@@ -1,0 +1,35 @@
+<include file="Public/header" />
+<div class="container-fluid">
+    <a href="{:U('AdminNews/add')}">添加新闻</a><br><br>
+    <form class="form-inline" name="searchForm" action="__SELF__" method="get">
+        标题:<input  type="text" name="title" value="{$_GET.title}"><br>
+        <input type="submit" class="btn btn-success" value="搜索">
+    </form>
+    共:{$count}条!{$_page}
+    <div class="table-responsive">
+        <table class="table">
+            <tr>
+                <th class="active">标题</th>
+                <th class="active">文章来源</th>
+                <th class="warning">发布时间</th>
+                <th class="warning">摘要</th>
+                <th class="warning">封面</th>
+                <th class="active">操作</th>
+            </tr>
+            <volist name="list" id="vo">
+                <tr>
+                    <td class="active" style="padding: 10px">{$vo.title} <small> <font color="red">{$vo.top_num_info}</font></small><br><br><br><a href="{$vo.article_url}">查看原文</a><small> <font color="#deb887">{$vo.create_date}</font></small></td>
+                    <td class="active" style="padding: 10px">{$vo.come_from_info}</td>
+                    <td class="warning" style="padding: 10px">{$vo.newstime_date}</td>
+                    <td class="warning" style="padding: 10px">{$vo.abstract}</td>
+                    <td class="warning" style="padding: 10px"><img src="{$vo.news_cover}" width="100px" alt="未上传"></td>
+                    <td>
+                        <a href="{:U('AdminNews/edit')}?id={$vo.id}">编辑</a><br><br>
+                        <a href="{:U('AdminNews/del')}?id={$vo.id}">删除</a><br><br>
+                    </td>
+                </tr>
+            </volist>
+        </table>
+    </div>
+    共:{$count}条!{$_page}
+</div>

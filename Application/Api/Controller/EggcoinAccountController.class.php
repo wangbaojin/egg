@@ -29,7 +29,7 @@ class EggcoinAccountController extends ApiController
         // 是否已添加
         $map['user_id'] = I('post.user_id');
         $map['eggcoin_account_id'] = $eggcoin_account_id;
-        if(M('CommonEggcoinAccount')->where($map)->find($data)) $this->api_error(20002,'你已经添加过该地址了');
+        if(M('CommonEggcoinAccount')->where($map)->find()) $this->api_error(20002,'你已经添加过该地址了');
 
         // 添加
         $data['custom_name'] = I('post.custom_name');
@@ -129,6 +129,7 @@ class EggcoinAccountController extends ApiController
        $bind_data = array();
        $bind_data['eggcoin_account_id'] = $eggcoin_account_id;
        $bind_data['created'] = $bind_data['updated'] = time();
+       $bind_data['create_date'] = date('Y-m-d',time());
        $bind_data['state']   = 5;
        $find_map['id'] = array('in',$chicken_id_ary);
        if(!$m->where($find_map)->save($bind_data)) $this->api_error(20006,'绑定失败,请稍后重试');

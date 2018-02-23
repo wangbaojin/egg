@@ -23,7 +23,9 @@ class NewsController extends ApiController
         'abstract'    => '文章摘要填下,不要皮',
     );
 
-    private $_pic_path = '/data/uploads/news';
+
+    private $_pic_path = './Public/images/uploads/news';
+
 
     /*今日价格*/
     public function todayPrice()
@@ -132,7 +134,8 @@ class NewsController extends ApiController
         $data['total_count'] = $m->where($map)->count();
         $data['total_page']  = ceil($data['total_count']/$data['page_limit']);
         $data['now_page']    = ($page > 0 and $page <= $data['total_page']) ? $page : 1;
-        $list = $m->where($map)->page($page,$data['page_limit'])->order('top_num,id desc')->select();
+        $list = $m->where($map)->page($page,$data['page_limit'])->order('(top_num=1),id desc')->select();
+
         if(!$list) $this->api_error(20003,'暂无');
 
         // 第一页的时候记录用户阅读记录
@@ -189,10 +192,16 @@ class NewsController extends ApiController
         $arr['create_date'] = date('Y-m-d',$arr['create_time']);
 
         /*发布时间*/
-        $arr['create_date'] = date('Y-m-d',$arr['create_time']);
+        $arr['newstime_date'] = date('Y-m-d H:i:s',$arr['newstime']);
 
-        /*商品图片*/
-        if($arr['news_cover']) $arr['news_cover'] = getSelf() . $arr['news_cover'];
+        /*图片*/
+        if($arr['news_cover']) $arr['news_cover'] = getSelf().$this->_pic_path.$arr['news_cover'];
+
+        /*来源*/
+        if($arr['come_from']) $arr['come_from_info'] = C('NEWS_COME_FROM')[$arr['come_from']];
+
+        /*置顶*/
+        if($arr['top_num']==1) $arr['top_num_info'] = '置顶🔝';
 
         return $arr;
     }

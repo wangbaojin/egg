@@ -1,0 +1,411 @@
+[ 2018-02-23T20:44:12+08:00 ] 60.194.185.2 /AdminChickenBatch/add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000152s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000251s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000268s ]
+SQL: SHOW COLUMNS FROM `eggcoin_chicken_batch` [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000052s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000072s ]
+NOTIC: [8] Undefined variable: start_time /usr/local/nginx/html/lianyangji/Application/Runtime/Cache/Api/4afc8a6bad7ee112c37bf6a1d0950256.php 第 116 行.
+NOTIC: [8] Undefined variable: end_time /usr/local/nginx/html/lianyangji/Application/Runtime/Cache/Api/4afc8a6bad7ee112c37bf6a1d0950256.php 第 120 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003149s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003163s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000069s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000081s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000247s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000261s ]
+
+[ 2018-02-23T20:45:39+08:00 ] 114.242.248.202 /EggcoinUser/wechatLogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000159s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000203s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000220s ]
+SQL: SHOW COLUMNS FROM `eggcoin_user` [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `eggcoin_user_wechatinfo` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `eggcoin_user_wechatinfo` WHERE ( wx_open_id="ogBL-1Le2gV1BWCXjpLkyRvhG4R4" ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `id`,`mobile`,`code`,`email`,`email_status`,`full_name`,`user_st`,`created_at`,`updated_at`,`invite_code` FROM `eggcoin_user` WHERE ( id=8 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: UPDATE `eggcoin_user_wechatinfo` SET `wx_open_id`='ogBL-1Le2gV1BWCXjpLkyRvhG4R4',`wx_pic`='http://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTLOzNmktbnuJsBwnfJ4EvB0TzLFPu6cZKIvagxCr8OibvmPcOD865WhxkVxJcCJ2SYbgkfJyySNI3g/132',`wx_nick_name`='5aSn6YeO',`unionid`='opFnCw10_z6bZE3kHLRtGykYZlFQ',`sex`='0',`city`='Chaoyang',`country`='CN' WHERE ( user_id=8 and wx_open_id="ogBL-1Le2gV1BWCXjpLkyRvhG4R4" ) [ RunTime:0.0108s ]
+
+[ 2018-02-23T20:45:39+08:00 ] 114.242.248.202 /Version/check?sign=E1D79FC089AF6372B3CB739CBCC89F03&timestamp=1519389940&token=lm6bng9ruqglt49sakmaaoinll&version=1.0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000153s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000197s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000212s ]
+SQL: SHOW COLUMNS FROM `eggcoin_update` [ RunTime:0.0005s ]
+SQL: SELECT `force`,`version`,`url`,`app_type` FROM `eggcoin_update` WHERE `status` = 1 AND `platform` = 'android' AND `app_type` = '6' ORDER BY `version` DESC LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: version /usr/local/nginx/html/lianyangji/Application/Api/Controller/VersionController.class.php 第 25 行.
+
+[ 2018-02-23T20:45:40+08:00 ] 114.242.248.202 /EggcoinChicken/index?user_id=8&sign=7AFC72782C8D1F8153FD049B49C33474&timestamp=1519389940&token=lm6bng9ruqglt49sakmaaoinll&version=1.0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000150s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000211s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000227s ]
+SQL: SHOW COLUMNS FROM `eggcoin_news_readed` [ RunTime:0.0004s ]
+SQL: SELECT `news_id` FROM `eggcoin_news_readed` WHERE ( user_id=8 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `eggcoin_news` [ RunTime:0.0004s ]
+SQL: SELECT `id` FROM `eggcoin_news` ORDER BY `id` desc LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `eggcoin_chicken` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `eggcoin_chicken` WHERE ( (state=5 or state=4) and user_id=8 ) LIMIT 1   [ RunTime:0.2968s ]
+
+[ 2018-02-23T20:45:43+08:00 ] 114.242.248.202 /EggcoinChicken/getChickenType?sign=D5B52F1DEA760404D8B6881D7BEBC9BE&timestamp=1519389944&token=lm6bng9ruqglt49sakmaaoinll&version=1.0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000178s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000206s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000223s ]
+SQL: SHOW COLUMNS FROM `eggcoin_chicken_type` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `eggcoin_chicken_type` WHERE ( state=1 )  [ RunTime:0.0002s ]
+
+[ 2018-02-23T20:45:44+08:00 ] 114.242.248.202 /EggcoinChicken/buyChicken?sign=3442E3ABC5F352D51FDC083A07A1593A&timestamp=1519389945&token=lm6bng9ruqglt49sakmaaoinll&version=1.0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000156s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000202s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000220s ]
+SQL: SHOW COLUMNS FROM `eggcoin_chicken_batch` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `eggcoin_chicken_batch` WHERE `state` = 1 AND `is_default` = 1 LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2018-02-23T20:45:46+08:00 ] 114.242.248.202 /EggcoinChicken/confirmBuyChicken
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000204s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000290s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000314s ]
+SQL: SHOW COLUMNS FROM `eggcoin_chicken_order` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `eggcoin_chicken_order` WHERE ( order_sn=201802238994476438005718 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `eggcoin_chicken_type` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `eggcoin_chicken_type` WHERE ( state=1 && id=1 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `eggcoin_chicken` [ RunTime:0.0004s ]
+SQL: UPDATE `eggcoin_chicken` SET `user_id`='8',`chicken_type`='1',`lock_time`='1519391026',`state`='3' WHERE `user_id` = 0 AND `state` = 1 AND `chicken_batch` = 31 LIMIT 1  [ RunTime:0.0818s ]
+SQL: INSERT INTO `eggcoin_chicken_order` (`lock_time`,`order_sn`,`user_id`,`num`,`chicken_batch`,`chicken_type`,`updated`,`created`,`pay_price`,`total_price`,`pay_state`,`state`) VALUES ('1519390846','201802238994476438005718','8','1','31','1','1519389946','1519389946','168','168','1','1') [ RunTime:0.0002s ]
+
+[ 2018-02-23T20:45:46+08:00 ] 114.242.248.202 /Alipay/getChickenAlipayInfo?order_sn=201802238994476438005718&type=0&sign=7DC33F1AB67ABFF9AA2E9187935604FC&timestamp=1519389947&token=lm6bng9ruqglt49sakmaaoinll&version=1.0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000164s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000202s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000219s ]
+
+[ 2018-02-23T20:45:50+08:00 ] 123.57.137.14 /EggcoinChicken/buyChickenNotifyUrl?order_sn=201802238994476438005718
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000153s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000215s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000231s ]
+NOTIC: [8] Undefined index: HTTP_X_PLATFORM /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 12 行.
+NOTIC: [8] Undefined index: HTTP_X_VERNAME /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 13 行.
+NOTIC: [8] Undefined index: HTTP_X_VERCODE /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 14 行.
+NOTIC: [8] Undefined index: HTTP_X_UUID /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 15 行.
+NOTIC: [8] Undefined index: HTTP_X_DEVICE /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 16 行.
+NOTIC: [8] Undefined index: HTTP_X_BUILDVERSION /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 17 行.
+NOTIC: [8] Undefined index: HTTP_X_API_VERSION /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 18 行.
+NOTIC: [8] Undefined index: HTTP_X_APP_TYPE /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 19 行.
+NOTIC: [8] Undefined variable: data /usr/local/nginx/html/lianyangji/Application/Api/Controller/EggcoinChickenController.class.php 第 274 行.
+SQL: SHOW COLUMNS FROM `eggcoin_chicken_order` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `eggcoin_chicken` [ RunTime:0.0004s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT * FROM `eggcoin_chicken_order` WHERE ( order_sn= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT * FROM `eggcoin_chicken_order` WHERE ( order_sn= ) LIMIT 1  
+
+[ 2018-02-23T20:45:58+08:00 ] 114.242.248.202 /EggcoinChicken/getUserChicken?page=1&state=4&user_id=8&sign=1401999D508159935A0DD8463F9115D8&timestamp=1519389955&token=lm6bng9ruqglt49sakmaaoinll&version=1.0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000155s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000200s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000217s ]
+SQL: SHOW COLUMNS FROM `eggcoin_chicken` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `eggcoin_eggcoin_account` [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `eggcoin_chicken` WHERE `user_id` = 8 AND `state` IN ('4') LIMIT 1   [ RunTime:0.2950s ]
+SQL: SELECT * FROM `eggcoin_chicken` WHERE `user_id` = 8 AND `state` IN ('4') LIMIT 0,20   [ RunTime:0.6559s ]
+
+[ 2018-02-23T20:46:13+08:00 ] 114.242.248.202 /EggcoinChicken/getUserChicken?page=1&state=4&user_id=8&sign=51FFADDA5E1EBF6EAF0F76724D655A90&timestamp=1519389972&token=lm6bng9ruqglt49sakmaaoinll&version=1.0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000151s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000210s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000226s ]
+SQL: SHOW COLUMNS FROM `eggcoin_chicken` [ RunTime:0.0038s ]
+SQL: SHOW COLUMNS FROM `eggcoin_eggcoin_account` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `eggcoin_chicken` WHERE `user_id` = 8 AND `state` IN ('4') LIMIT 1   [ RunTime:0.3121s ]
+SQL: SELECT * FROM `eggcoin_chicken` WHERE `user_id` = 8 AND `state` IN ('4') LIMIT 0,20   [ RunTime:0.6754s ]
+
+[ 2018-02-23T20:46:17+08:00 ] 114.242.248.202 /EggcoinChicken/buyChicken?sign=03BC26D3ED230E9C72F0B993CBA853B5&timestamp=1519389978&token=lm6bng9ruqglt49sakmaaoinll&version=1.0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000207s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000209s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000227s ]
+SQL: SHOW COLUMNS FROM `eggcoin_chicken_batch` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `eggcoin_chicken_batch` WHERE `state` = 1 AND `is_default` = 1 LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2018-02-23T20:46:35+08:00 ] 114.242.248.202 /EggcoinChicken/getChickenType?sign=952388F68D242DA8F1A9F52A808E2482&timestamp=1519389996&token=lm6bng9ruqglt49sakmaaoinll&version=1.0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000156s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000224s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000240s ]
+SQL: SHOW COLUMNS FROM `eggcoin_chicken_type` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `eggcoin_chicken_type` WHERE ( state=1 )  [ RunTime:0.0002s ]
+
+[ 2018-02-23T20:46:44+08:00 ] 114.242.248.202 /Version/check?sign=7191E6782D89718BF642C432D2CFA053&timestamp=1519390005&token=lm6bng9ruqglt49sakmaaoinll&version=1.0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000152s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000209s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000226s ]
+SQL: SHOW COLUMNS FROM `eggcoin_update` [ RunTime:0.0005s ]
+SQL: SELECT `force`,`version`,`url`,`app_type` FROM `eggcoin_update` WHERE `status` = 1 AND `platform` = 'android' AND `app_type` = '6' ORDER BY `version` DESC LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: version /usr/local/nginx/html/lianyangji/Application/Api/Controller/VersionController.class.php 第 25 行.
+
+[ 2018-02-23T20:46:44+08:00 ] 114.242.248.202 /EggcoinChicken/index?user_id=8&sign=532C29A91D87EF12FFEF1B1E946A15CB&timestamp=1519390005&token=lm6bng9ruqglt49sakmaaoinll&version=1.0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000149s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000213s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000229s ]
+SQL: SHOW COLUMNS FROM `eggcoin_news_readed` [ RunTime:0.0004s ]
+SQL: SELECT `news_id` FROM `eggcoin_news_readed` WHERE ( user_id=8 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `eggcoin_news` [ RunTime:0.0004s ]
+SQL: SELECT `id` FROM `eggcoin_news` ORDER BY `id` desc LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `eggcoin_chicken` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `eggcoin_chicken` WHERE ( (state=5 or state=4) and user_id=8 ) LIMIT 1   [ RunTime:0.2946s ]
+
+[ 2018-02-23T20:47:11+08:00 ] 114.242.248.202 /EggcoinChicken/getChickenType?sign=1E3FF63895AFE960B3BFA2A0BA350572&timestamp=1519390032&token=lm6bng9ruqglt49sakmaaoinll&version=1.0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000167s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000205s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000221s ]
+SQL: SHOW COLUMNS FROM `eggcoin_chicken_type` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `eggcoin_chicken_type` WHERE ( state=1 )  [ RunTime:0.0002s ]
+
+[ 2018-02-23T20:47:12+08:00 ] 114.242.248.202 /EggcoinChicken/buyChicken?sign=4152F6120AA950D3BFFB6D1DD7F566D5&timestamp=1519390033&token=lm6bng9ruqglt49sakmaaoinll&version=1.0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000149s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000249s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000268s ]
+SQL: SHOW COLUMNS FROM `eggcoin_chicken_batch` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `eggcoin_chicken_batch` WHERE `state` = 1 AND `is_default` = 1 LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2018-02-23T20:47:13+08:00 ] 114.242.248.202 /EggcoinChicken/confirmBuyChicken
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000162s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000191s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000208s ]
+SQL: SHOW COLUMNS FROM `eggcoin_chicken_order` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `eggcoin_chicken_order` WHERE ( order_sn=201802239003250126009886 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `eggcoin_chicken_type` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `eggcoin_chicken_type` WHERE ( state=1 && id=1 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `eggcoin_chicken` [ RunTime:0.0004s ]
+SQL: UPDATE `eggcoin_chicken` SET `user_id`='8',`chicken_type`='1',`lock_time`='1519391113',`state`='3' WHERE `user_id` = 0 AND `state` = 1 AND `chicken_batch` = 31 LIMIT 1  [ RunTime:0.0823s ]
+SQL: INSERT INTO `eggcoin_chicken_order` (`lock_time`,`order_sn`,`user_id`,`num`,`chicken_batch`,`chicken_type`,`updated`,`created`,`pay_price`,`total_price`,`pay_state`,`state`) VALUES ('1519390933','201802239003250126009886','8','1','31','1','1519390033','1519390033','168','168','1','1') [ RunTime:0.0002s ]
+
+[ 2018-02-23T20:47:13+08:00 ] 114.242.248.202 /Alipay/getChickenAlipayInfo?order_sn=201802239003250126009886&type=0&sign=421E27EEE0FEF1455224295C6B70FC72&timestamp=1519390034&token=lm6bng9ruqglt49sakmaaoinll&version=1.0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000149s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000201s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000216s ]
+
+[ 2018-02-23T20:47:17+08:00 ] 123.57.137.14 /EggcoinChicken/buyChickenNotifyUrl?order_sn=201802239003250126009886
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000150s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000197s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000214s ]
+NOTIC: [8] Undefined index: HTTP_X_PLATFORM /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 12 行.
+NOTIC: [8] Undefined index: HTTP_X_VERNAME /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 13 行.
+NOTIC: [8] Undefined index: HTTP_X_VERCODE /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 14 行.
+NOTIC: [8] Undefined index: HTTP_X_UUID /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 15 行.
+NOTIC: [8] Undefined index: HTTP_X_DEVICE /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 16 行.
+NOTIC: [8] Undefined index: HTTP_X_BUILDVERSION /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 17 行.
+NOTIC: [8] Undefined index: HTTP_X_API_VERSION /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 18 行.
+NOTIC: [8] Undefined index: HTTP_X_APP_TYPE /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 19 行.
+NOTIC: [8] Undefined index: order_sn /usr/local/nginx/html/lianyangji/Application/Api/Controller/EggcoinChickenController.class.php 第 274 行.
+SQL: SHOW COLUMNS FROM `eggcoin_chicken_order` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `eggcoin_chicken` [ RunTime:0.0004s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT * FROM `eggcoin_chicken_order` WHERE ( order_sn= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT * FROM `eggcoin_chicken_order` WHERE ( order_sn= ) LIMIT 1  
+
+[ 2018-02-23T20:47:25+08:00 ] 114.242.248.202 /EggcoinChicken/getUserChicken?page=1&state=4&user_id=8&sign=933D17D7933A769EEC6CD4C16C2CABB4&timestamp=1519390041&token=lm6bng9ruqglt49sakmaaoinll&version=1.0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000208s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000196s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000212s ]
+SQL: SHOW COLUMNS FROM `eggcoin_chicken` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `eggcoin_eggcoin_account` [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `eggcoin_chicken` WHERE `user_id` = 8 AND `state` IN ('4') LIMIT 1   [ RunTime:0.2945s ]
+SQL: SELECT * FROM `eggcoin_chicken` WHERE `user_id` = 8 AND `state` IN ('4') LIMIT 0,20   [ RunTime:0.6644s ]
+
+[ 2018-02-23T20:47:32+08:00 ] 183.61.51.68 /Version/check?sign=D85B68EFECFDC02286AA8092CCCB8308&timestamp=1517555314&token=&version=1.0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000170s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000204s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000219s ]
+SQL: SHOW COLUMNS FROM `eggcoin_update` [ RunTime:0.0005s ]
+SQL: SELECT `force`,`version`,`url`,`app_type` FROM `eggcoin_update` WHERE `status` = 1 AND `platform` = 'android' AND `app_type` = '6' ORDER BY `version` DESC LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: version /usr/local/nginx/html/lianyangji/Application/Api/Controller/VersionController.class.php 第 25 行.
+
+[ 2018-02-23T20:47:38+08:00 ] 114.242.248.202 /EggcoinChicken/getUserChicken?page=1&state=4&user_id=8&sign=4233A326A5C675C96F16964790A65B23&timestamp=1519390058&token=lm6bng9ruqglt49sakmaaoinll&version=1.0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000145s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000202s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000217s ]
+SQL: SHOW COLUMNS FROM `eggcoin_chicken` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `eggcoin_eggcoin_account` [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `eggcoin_chicken` WHERE `user_id` = 8 AND `state` IN ('4') LIMIT 1   [ RunTime:0.2956s ]
+SQL: SELECT * FROM `eggcoin_chicken` WHERE `user_id` = 8 AND `state` IN ('4') LIMIT 0,20   [ RunTime:0.6568s ]
+
+[ 2018-02-23T20:47:45+08:00 ] 183.61.51.68 /EggcoinUser/register?sign=7F4DA074146CE6B659DD31B2DF6786BA&timestamp=1517555328&token=&version=1.0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000236s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000196s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000211s ]
+SQL: SHOW COLUMNS FROM `eggcoin_userkeyinfo` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `eggcoin_userkeyinfo` WHERE `status` = 0 LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2018-02-23T20:52:09+08:00 ] 114.242.248.202 /Version/check?sign=CE9B75C8D55090E4A5C6126D74CCE590&timestamp=1519390330&token=lm6bng9ruqglt49sakmaaoinll&version=1.0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000149s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000197s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000212s ]
+SQL: SHOW COLUMNS FROM `eggcoin_update` [ RunTime:0.0005s ]
+SQL: SELECT `force`,`version`,`url`,`app_type` FROM `eggcoin_update` WHERE `status` = 1 AND `platform` = 'android' AND `app_type` = '6' ORDER BY `version` DESC LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: version /usr/local/nginx/html/lianyangji/Application/Api/Controller/VersionController.class.php 第 25 行.
+
+[ 2018-02-23T20:52:10+08:00 ] 114.242.248.202 /EggcoinChicken/index?user_id=8&sign=D6DF64A7B412554A93A04039C425C61F&timestamp=1519390330&token=lm6bng9ruqglt49sakmaaoinll&version=1.0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000174s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000199s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000215s ]
+SQL: SHOW COLUMNS FROM `eggcoin_news_readed` [ RunTime:0.0003s ]
+SQL: SELECT `news_id` FROM `eggcoin_news_readed` WHERE ( user_id=8 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `eggcoin_news` [ RunTime:0.0004s ]
+SQL: SELECT `id` FROM `eggcoin_news` ORDER BY `id` desc LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `eggcoin_chicken` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `eggcoin_chicken` WHERE ( (state=5 or state=4) and user_id=8 ) LIMIT 1   [ RunTime:0.3039s ]
+
+[ 2018-02-23T20:52:13+08:00 ] 114.242.248.202 /EggcoinChicken/getChickenType?sign=FDB1EC3BA3B905BAABDB8698AB4E551A&timestamp=1519390334&token=lm6bng9ruqglt49sakmaaoinll&version=1.0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000159s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000223s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000240s ]
+SQL: SHOW COLUMNS FROM `eggcoin_chicken_type` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `eggcoin_chicken_type` WHERE ( state=1 )  [ RunTime:0.0002s ]
+
+[ 2018-02-23T20:52:14+08:00 ] 114.242.248.202 /EggcoinChicken/buyChicken?sign=55C7F4E7D0EC217CE9CA1A33416020D7&timestamp=1519390335&token=lm6bng9ruqglt49sakmaaoinll&version=1.0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000148s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000215s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000231s ]
+SQL: SHOW COLUMNS FROM `eggcoin_chicken_batch` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `eggcoin_chicken_batch` WHERE `state` = 1 AND `is_default` = 1 LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2018-02-23T20:52:15+08:00 ] 114.242.248.202 /EggcoinChicken/confirmBuyChicken
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000150s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000195s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000212s ]
+SQL: SHOW COLUMNS FROM `eggcoin_chicken_order` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `eggcoin_chicken_order` WHERE ( order_sn=201802239033469567004665 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `eggcoin_chicken_type` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `eggcoin_chicken_type` WHERE ( state=1 && id=1 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `eggcoin_chicken` [ RunTime:0.0004s ]
+SQL: UPDATE `eggcoin_chicken` SET `user_id`='8',`chicken_type`='1',`lock_time`='1519391415',`state`='3' WHERE `user_id` = 0 AND `state` = 1 AND `chicken_batch` = 31 LIMIT 1  [ RunTime:0.0815s ]
+SQL: INSERT INTO `eggcoin_chicken_order` (`lock_time`,`order_sn`,`user_id`,`num`,`chicken_batch`,`chicken_type`,`updated`,`created`,`pay_price`,`total_price`,`pay_state`,`state`) VALUES ('1519391235','201802239033469567004665','8','1','31','1','1519390335','1519390335','168','168','1','1') [ RunTime:0.0004s ]
+
+[ 2018-02-23T20:52:16+08:00 ] 114.242.248.202 /Alipay/getChickenAlipayInfo?order_sn=201802239033469567004665&type=0&sign=1FCF7A8A439739D9B45FD38BFA18FB6A&timestamp=1519390337&token=lm6bng9ruqglt49sakmaaoinll&version=1.0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000146s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000194s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000210s ]
+
+[ 2018-02-23T20:53:04+08:00 ] 123.57.137.14 /EggcoinChicken/buyChickenNotifyUrl?order_sn=201802239033469567004665
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000157s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000197s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000213s ]
+NOTIC: [8] Undefined index: HTTP_X_PLATFORM /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 12 行.
+NOTIC: [8] Undefined index: HTTP_X_VERNAME /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 13 行.
+NOTIC: [8] Undefined index: HTTP_X_VERCODE /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 14 行.
+NOTIC: [8] Undefined index: HTTP_X_UUID /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 15 行.
+NOTIC: [8] Undefined index: HTTP_X_DEVICE /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 16 行.
+NOTIC: [8] Undefined index: HTTP_X_BUILDVERSION /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 17 行.
+NOTIC: [8] Undefined index: HTTP_X_API_VERSION /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 18 行.
+NOTIC: [8] Undefined index: HTTP_X_APP_TYPE /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 19 行.
+SQL: SHOW COLUMNS FROM `eggcoin_chicken_order` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `eggcoin_chicken` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `eggcoin_chicken_order` WHERE ( order_sn=201802239033469567004665 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: UPDATE `eggcoin_chicken_order` SET `state`='3',`pay_state`='2' WHERE ( id=52 ) [ RunTime:0.0160s ]
+SQL: UPDATE `eggcoin_chicken` SET `state`='4' WHERE `user_id` = 8 AND `lock_time` > 1519390383 AND `state` = 3 LIMIT 1  [ RunTime:0.0841s ]
+
+[ 2018-02-23T20:53:12+08:00 ] 114.242.248.202 /EggcoinChicken/getUserChicken?page=1&state=4&user_id=8&sign=5BAF56E922B4392F4FB71A27610811E8&timestamp=1519390387&token=lm6bng9ruqglt49sakmaaoinll&version=1.0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000167s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000241s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000257s ]
+SQL: SHOW COLUMNS FROM `eggcoin_chicken` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `eggcoin_eggcoin_account` [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `eggcoin_chicken` WHERE `user_id` = 8 AND `state` IN ('4') LIMIT 1   [ RunTime:0.3013s ]
+SQL: SELECT * FROM `eggcoin_chicken` WHERE `user_id` = 8 AND `state` IN ('4') LIMIT 0,20   [ RunTime:0.6692s ]
+SQL: SHOW COLUMNS FROM `eggcoin_chicken_batch` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `eggcoin_chicken_batch` WHERE ( id=31 ) LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: egg_in_days /usr/local/nginx/html/lianyangji/Application/Api/Controller/EggcoinChickenController.class.php 第 406 行.
+

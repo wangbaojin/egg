@@ -77,20 +77,30 @@ class AdminChickenBatchController extends AdminPublicController
 
             // 生成鸡
             $i = 1;
+            $y = 1;
             while ($i<=$data['amount'])
             {
                 $tmp = array();
                 $tmp['user_id'] = 0;
                 $tmp['chicken_code']  = $data['out_code'].str_pad($i,6,0,STR_PAD_LEFT);
                 $tmp['chicken_batch'] = $res;
-                $tmp['state'] = 1;
+                $tmp['state']   = 1;
                 $chicken_data[] = $tmp;
+                unset($tmp);
+                if($y>10000 or ($i==$data['amount']))
+                {
+                    $add_res = M('Chicken')->addAll($chicken_data);
+                    if(!$add_res)
+                    {
+                        $trans->rollback();
+                        die('鸡舍鸡入栏失败');
+                    }
+                    unset($chicken_data);
+                    $chicken_data = array();
+                    $y=1;
+                }
                 $i++;
-            }
-            if(!M('Chicken')->addAll($chicken_data))
-            {
-                $trans->rollback();
-                die('鸡舍鸡入栏失败');
+                $y++;
             }
             $trans->commit();
             die('success');

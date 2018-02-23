@@ -14,6 +14,7 @@ class EggcoinUserController extends ApiController
         2 => '待验证',
         3 => '未设置邮箱',
     );
+
     /*
      * 获取我的个人信息
      * */
@@ -68,7 +69,8 @@ class EggcoinUserController extends ApiController
         $info['feed_amount'] = 1000*$info['feed_amount'];
 
         // 待收鸡蛋数量
-        $info['egg_num'] = 0;
+        $delivery = M('ChickenTodayfeedDelivery');
+        $info['egg_num'] = $delivery->SUM('egg_weight');
 
         $data['data'] = $info;
         $this->api_return('success',$data);
@@ -76,12 +78,14 @@ class EggcoinUserController extends ApiController
 
     public function register()
     {
+        $map['status']=0;
+        $res = M('userkeyinfo')->where($map)->find();
         $data = array();
-        $data['private_key'] = '=ASD323232J34J23ASDAD9923E232E3JDNANANSDAJNNASDNAN23N2N~';
-        $data['eggcoin_account_address']     = '121213312123ASDAD9923E232E3JDNANANSDAJNNASDNAN23N2N';
-        $data['public_key']  = '=ASD323232J34J23ASDAD9923E232E3JDNANANSDAJNNASDNAN23N2N~=ASD323232J34J23ASDAD99=ASD323232J34J23ASDAD99';
-        $data['memorizing_words'] = 'hello world';
-        $this->api_return('success',$data);
+        $data['private_key'] = $res['private'];
+        $data['eggcoin_account_address']  = $res['user_address'];
+        $data['public_key']  = $res['public'];
+        $data['memorizing_words'] = $res['mnemonicphrase'];
+         $this->api_return('success',$data);
     }
 
     public function index()
@@ -111,46 +115,42 @@ class EggcoinUserController extends ApiController
         $m   =   M('User');
         $wechat_m  = M('UserWechatinfo');
         $user_info = $m->where('mobile='.$data['mobile'])->find();
-        if($user_info)
+
+        $trans = M();
+        $trans->startTrans();
+
+        // 不存在则手机号注册
+        if(!$user_info)
         {
-            // 检查邀请码
-            if(!$user_info['invite_code']) $m->where('id='.$user_info['id'])->setField('invite_code',strtoupper(substr(md5($user_info['id'].$this->_miyao),8,16)));
-            // 微信信息
-            $use_wechat_info = $wechat_m->where('wx_open_id="'.$data['wx_open_id'].'"')->find();
+            $add_res = $this->addUserByMobile($data['mobile']);
+            if( $add_res['code'] != 1 ) $this->api_error($add_res['code'],'用户注册失败!'.$add_res['msg']);
+        }
 
-            $wechat_data = array();
-            if($data['wx_pic'])       $wechat_data['wx_pic']       = $data['wx_pic'];
-            if($data['wx_nick_name']) $wechat_data['wx_nick_name'] = base64_encode($data['wx_nick_name']);
-
-            if($use_wechat_info)
-            {
-                // 检查微信绑定用户id跟手机号用户是否相同
-                if( $use_wechat_info['user_id'] != $user_info['id'] ) $this->api_error(20002,'该微信已绑定其他手机号');
-
-                // 存在更新微信信息
-                $wechat_m->where('user_id='.$user_info['id'].' and wx_open_id="'.$data['wx_open_id'].'"')->save($wechat_data);
-            }
-            else
-            {
-                if($wechat_m->where('user_id='.$user_info['id'])->find()) $this->api_error(20009,'该手机号已绑定其他微信');
-
-                // 不存在则添加
-                $wechat_data['user_id']    = $user_info['id'];
-                $wechat_data['created_at'] = time();
-                $wechat_data['wx_open_id'] = $data['wx_open_id'];
-                $wechat_add_res = $wechat_m->add($wechat_data);
-                if(!$wechat_add_res) $this->api_error(20003,'微信绑定失败');
+        // 微信信息
+        $wechat_data = array();
+        $wechat_data['user_id'] = $user_info['id'];
+        $wechat_data['created_at'] = time();
+        $wechat_data['wx_open_id'] = $data['wx_open_id'];
+        if ($data['wx_pic'])       $wechat_data['wx_pic']   = $data['wx_pic'];
+        if ($data['wx_nick_name']) $wechat_data['wx_nick_name'] = base64_encode($data['wx_nick_name']);
+        if($data['unionid'])       $wechat_data['unionid']  = $data['unionid'];
+        if($data['sex'])           $wechat_data['sex']      = $data['sex'];//sex	用户的性别，值为1时是男性，值为2时是女性，值为0时是未知
+        if($data['province'])      $wechat_data['province'] = $data['province'];
+        if($data['city'])          $wechat_data['city']     = $data['city'];
+        if($data['country'])       $wechat_data['country']  = $data['country'];
+        $use_wechat_info = $wechat_m->where('user_id='.$user_info['id'].' and wx_open_id="'.$data['wx_open_id'].'"')->find();
+        if(!$use_wechat_info)
+        {
+            // 绑定微信
+            $bind_res = $this->bindWeChat($add_res['data']['user_id'] , $wechat_data);
+            if( $bind_res['code'] != 1 ) {
+                $trans->rollback();
+                $this->api_error($add_res['code'],'用户注册失败!'.$bind_res['msg']);
             }
         }
         else
         {
-            $user_data['mobile']     = $data['mobile'];
-            $user_data['created_at'] = time();
-            $user_data['updated_at'] = time();
-            if($data['trade_pass_wd']) $user_data['trade_pass_wd'] = md5($data['trade_pass_wd']);
-            $add_res = $m->add($user_data);
-            if(!$add_res) $this->api_error(20004,'用户注册失败!请稍后重试');
-            $m->where('id='.$add_res)->setField('invite_code',strtoupper(substr(md5($add_res.$this->_miyao),8,16)));
+            $wechat_m->where('user_id='.$user_info['id'].' and wx_open_id="'.$data['wx_open_id'].'"')->save($wechat_data);
         }
 
         // 发送短信验证码
@@ -190,43 +190,11 @@ class EggcoinUserController extends ApiController
         // 检查参数
         $check_res = check_not_null_param($not_null_param,$data);
         if($check_res) $this->api_error(20001,$check_res);
-
         $user_info = $m->field('trade_pass_wd',true)->where('mobile='.$data['mobile'])->find();
 
         // 检查帐户状态
         if(!$user_info)                $this->api_error(30002,'该手机号未注册');
         if($user_info['user_st'] != 1) $this->api_error(30003,'该手机号已被禁用,请联系客服');
-
-        // 检查邀请码
-        if(!$user_info['invite_code']) $m->where('id='.$user_info['id'])->setField('invite_code',strtoupper(substr(md5($user_info['id'].$this->_miyao),8,16)));
-
-
-
-        // 添加vip
-        addVip($user_info['id'],time()+85400*365*10);
-
-        // 生成钱包
-        $wallet_m = M('Wallet');
-        $wallet_map['user_id']     = $user_info['id'];
-        $wallet_info               = $wallet_m->where($wallet_map)->find();
-        if(!$wallet_info)
-        {
-            // 给初次用户赠送300g饲料
-            $wallet_map['feed_amount'] = 0.3;
-            $wallet_m->add($wallet_map);
-
-            // 添加赠送饲料流水
-            $record = array();
-            $record['user_id'] = $user_info['id'];
-            $record['amount']  = $wallet_map['feed_amount']*1000;
-            $record['reason_source_id'] = $user_info['id'];
-            $record['reason_type'] = 8;
-            $record['reason_narration'] = 'VIP内侧用户奖励';
-            $record['state'] = 1;
-            $record['unit'] = 'g';
-            $record = addRecord($record);
-            if(!$record) Log::record('用户赠送300g饲料流水记录失败,INFO:'.json_encode($record),'ADD_RECORD',true);
-        }
 
 
         //为通过AppStore审核单独加的登录逻辑
@@ -265,6 +233,11 @@ class EggcoinUserController extends ApiController
         $data['wx_open_id']    = I('post.wx_open_id');
         if(I('post.wx_pic'))       $data['wx_pic']       = I('post.wx_pic');
         if(I('post.wx_nick_name')) $data['wx_nick_name'] = base64_encode(I('post.wx_nick_name'));
+        if(I('post.unionid'))   $data['unionid'] = I('post.unionid');
+        if(I('post.sex'))       $data['sex'] = I('post.sex');//sex	用户的性别，值为1时是男性，值为2时是女性，值为0时是未知
+        if(I('post.province'))  $data['sex'] = I('post.province');
+        if(I('post.city'))  $data['city'] = I('post.city');
+        if(I('post.country'))  $data['country'] = I('post.country');
         $not_null_param  = array(
             'wx_open_id' => '请微信授权'
         );
@@ -276,43 +249,17 @@ class EggcoinUserController extends ApiController
         $m = M('User');
         $wechat_m  = M('UserWechatinfo');
         $wx_user_info = $wechat_m->where('wx_open_id="'.$data['wx_open_id'].'"')->find();
+
+        if(!$wx_user_info or !$wx_user_info['user_id']) $this->api_error(20002,'该微信未绑定手机号');
         $user_info = $m->field('trade_pass_wd,send_time',true)->where('id='.$wx_user_info['user_id'])->find();
-        if(!$wx_user_info or !$wx_user_info['user_id'] or !$user_info) $this->api_error(20002,'该微信未绑定手机号');
+        if(!$user_info) $this->api_error(20002,'该微信未绑定手机号');
+
 
         // 检查帐户状态
         if($user_info['user_st'] != 1) $this->api_error(30003,'该帐号已被禁用,请联系客服');
 
         // 存在更新微信信息
         $wechat_m->where('user_id='.$user_info['id'].' and wx_open_id="'.$data['wx_open_id'].'"')->save($data);
-
-        // 检查邀请码
-        if(!$user_info['invite_code']) $m->where('id='.$user_info['id'])->setField('invite_code',strtoupper(substr(md5($user_info['id'].$this->_miyao),8,16)));
-
-        // 添加vip
-        addVip($user_info['id'],time()+85400*365*10);
-
-        // 生成钱包
-        $wallet_m = M('Wallet');
-        $wallet_map['user_id']     = $user_info['id'];
-        $wallet_info               = $wallet_m->where($wallet_map)->find();
-        if(!$wallet_info)
-        {
-            // 给初次用户赠送300g饲料
-            $wallet_map['feed_amount'] = 0.3;
-            $wallet_m->add($wallet_map);
-
-            // 添加赠送饲料流水
-            $record = array();
-            $record['user_id'] = $user_info['id'];
-            $record['amount']  = $wallet_map['feed_amount']*1000;
-            $record['reason_source_id'] = $user_info['id'];
-            $record['reason_type'] = 8;
-            $record['reason_narration'] = 'VIP内侧用户奖励';
-            $record['state'] = 1;
-            $record['unit'] = 'g';
-            $record = addRecord($record);
-            if(!$record) Log::record('用户赠送300g饲料流水记录失败,INFO:'.json_encode($record),'ADD_RECORD',true);
-        }
 
         // 邮箱状态
         if(!$user_info['email']) $user_info['email_status'] = 3;
@@ -556,4 +503,183 @@ class EggcoinUserController extends ApiController
         if(md5($str)==$sign) return true;
     }
 
+    // 根据手机号添加用户
+    private function addUserByMobile($mobile)
+    {
+        $re_data = array('code'=>1,'msg'=>'success');
+
+        if(!$mobile)
+        {
+            $re_data['code'] = 20001;
+            $re_data['msg']  = '手机号不可为空';
+            return $re_data;
+        }
+
+        // 查询手机是否存在
+        $m    = M('User');
+        $info = $m->where('mobile='.$mobile)->find();
+        if(!$info)
+        {
+            $user_data['mobile']  = $mobile;
+            $user_data['user_st'] = 1;
+            $user_data['created_at'] = $user_data['updated_at'] = time();
+            $re_data['data']['user_id'] = $user_id = $m->add($user_data);
+            if(!$user_id)
+            {
+                $re_data['code'] = 20002;
+                $re_data['msg']  = '注册失败';
+            }
+        }
+        else
+        {
+            $re_data['code'] = 20003;
+            $re_data['msg']  = '手机号码已存在';
+        }
+
+        // 新用户操作
+        if($user_id) $this->newUserAction($user_id);
+        return $re_data;
+    }
+
+    // 根据微信号添加用户
+    private function addUserByWechat($wechat_info)
+    {
+        $re_data = array('code'=>1,'msg'=>'success');
+
+        $trans = M();
+        $trans->startTrans();
+
+        // 注册一个账号
+        $user_data['user_st'] = 1;
+        $user_data['created_at'] = $user_data['updated_at'] = time();
+        $re_data['data']['user_id'] = $user_id = M('User')->add($user_data);
+        if(!$user_id) {
+            $re_data['code'] = 20002;
+            $re_data['msg']  = '注册失败';
+            return $re_data;
+        }
+
+        // 新用户操作
+        if($user_id) $this->newUserAction($user_id);
+
+        // 绑定微信
+        $res = $this->bindWeChat($user_id,$wechat_info);
+        if($res['code']!=1)
+        {
+            $trans->rollback();
+            $re_data['code'] = 20002;
+            $re_data['msg']  = '注册失败';
+        }
+        return $re_data;
+    }
+
+    // 新用户操作
+    private function newUserAction($user_id)
+    {
+        // 添加vip
+        addVip($user_id,time()+85400*365*10);
+
+        // 生成钱包
+        $wallet_m = M('Wallet');
+        $wallet_map['user_id']     = $user_id;
+        $wallet_info               = $wallet_m->where($wallet_map)->find();
+        if(!$wallet_info)
+        {
+            // 给初次用户赠送300g饲料
+            $wallet_map['feed_amount'] = 0.3;
+            $wallet_m->add($wallet_map);
+
+            // 添加赠送饲料流水
+            $record = array();
+            $record['user_id'] = $user_id;
+            $record['amount']  = $wallet_map['feed_amount']*1000;
+            $record['reason_source_id'] = $user_id;
+            $record['reason_type'] = 8;
+            $record['reason_narration'] = 'VIP内侧用户奖励';
+            $record['state'] = 1;
+            $record['unit'] = 'g';
+            $record = addRecord($record);
+            if(!$record) Log::record('用户赠送300g饲料流水记录失败,INFO:'.json_encode($record),'ADD_RECORD',true);
+        }
+
+        // 检查邀请码
+        M('User')->where('invite_code = "" and id='.$user_id)->setField('invite_code',strtoupper(substr(md5($user_id.$this->_miyao),8,16)));
+    }
+
+    // 绑定手机
+    private function bindMobile($user_id,$mobile)
+    {
+        $re_data = array('code'=>1,'msg'=>'success');
+
+        if(!$mobile)
+        {
+            $re_data['code'] = 20001;
+            $re_data['msg']  = '手机号不可为空';
+            return $re_data;
+        }
+
+        // 查询手机是否存在
+        $m    = M('User');
+        $info = $m->where('mobile='.$mobile)->find();
+        if(!$info)
+        {
+            if(!$m->where('id='.$user_id)->setField('mobile',$mobile))
+            {
+                $re_data['code'] = 20002;
+                $re_data['msg']  = '绑定失败';
+            }
+        }
+        else
+        {
+            $re_data['code'] = 20003;
+            $re_data['msg']  = '手机号码已存在';
+        }
+        return $re_data;
+    }
+
+    // 绑定微信
+    private function bindWeChat($user_id,$wechat_info)
+    {
+        $re_data = array('code'=>1,'msg'=>'success');
+
+        $arr = array(
+
+        );
+        $not_null_param = array(
+            'wx_open_id'   => '缺少微信用户ID',
+            'wx_pic'       => '缺少微信用户头像',
+            'wx_nick_name' => '缺少微信用户昵称',
+        );
+
+        // 检查参数
+        $check_res = check_not_null_param($not_null_param,$wechat_info);
+        if($check_res) {
+            $re_data['code'] = 20001;
+            $re_data['msg']  = $check_res;
+            return $re_data;
+        }
+
+        // 查询微信账号是否存在
+        $m    = M('UserWechatinfo');
+        $w_info = $m->where('wx_open_id='.$wechat_info['wx_open_id'])->find();
+        if($wechat_info['unionid']) $w_u_info = $m->where('unionid='.$wechat_info['unionid'])->find();
+
+        if(!$w_info and !$w_u_info)
+        {
+            $wechat_info['user_id'] = $user_id;
+            $wechat_info['created_at'] = time();
+            $res = $m->add($wechat_info);
+            if(!$res)
+            {
+                $re_data['code'] = 20002;
+                $re_data['msg']  = '绑定失败';
+            }
+        }
+        else
+        {
+            $re_data['code'] = 20003;
+            $re_data['msg']  = '该微信已被绑定';
+        }
+        return $re_data;
+    }
 }

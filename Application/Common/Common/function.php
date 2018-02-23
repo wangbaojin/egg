@@ -343,7 +343,8 @@ function addEggcoinRecord($data)
     if($data['reason_source_id']) $raise_record['reason_source_id'] = $data['reason_source_id'];
     if($data['chicken_id']) $raise_record['chicken_id'] = $data['chicken_id'];
     if($data['err_code']) $raise_record['err_code'] = $data['err_code'];
-    $raise_record['reason_type']      = $data['reason_type'];//事由类型id：1.充值、2.饲料认购，3.饲料消耗；4.药物及其他支出；5.现金收益；6.饲料补扣；7.药物及其他支出补扣'
+
+    $raise_record['reason_type']      = $data['reason_type'];//事由类型id：1.收益；2.赠送；3.奖励'
     $raise_record['reason_narration'] = $data['reason_narration'];
     $raise_record['created_at'] = time();
     $raise_record['state'] = $data['state'] ? $data['state'] : 1; //状态：1.成功;2.失败;3.待处理
@@ -358,4 +359,10 @@ function addEggcoinRecord($data)
         $return_data['msg'] = 'success';
     }
     return $return_data;
+}
+
+/*递归创建目录*/
+function directory( $dir )
+{
+    is_dir ( $dir )  or  (Directory(dirname( $dir ))  and   mkdir ( $dir , 0777));
 }

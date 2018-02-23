@@ -1,0 +1,127 @@
+<include file="Public/header" />
+<div class="container-fluid">
+    <div class="jumbotron">
+        <small>编辑</small>
+    </div>
+
+    <form method="post" id="create_form">
+        <hr>
+        <input type="hidden" name="id" id="id" value="{$info.id}" class="form-control">
+        <div class="form-group">
+            <label>标题:</label>
+            <input type="text" name="title" id="title" value="{$info.title}" class="form-control"  placeholder="标题">
+        </div>
+        <div class="form-group">
+            <label>原文链接:</label>
+            <input type="text" name="article_url" id="article_url" value="{$info.article_url}" class="form-control"   placeholder="原文链接">
+        </div>
+        <div class="form-group">
+            <label>摘要:</label>
+            <textarea class="form-control" name="abstract" id="abstract">{$info.abstract}</textarea>
+        </div>
+        <div class="form-group">
+            <label>发布时间:</label>
+            <input type="datetime" name="newstime" id="newstime" value="{$info.newstime_date}" onclick="layui.laydate({elem: this, istime: true, format: 'YYYY-MM-DD 00:00:00'})" class="layui-input form-control" value="{$info.newstime}" placeholder="发布时间">
+        </div>
+        <div class="form-group">
+            <label>封面:</label>
+            <input type="file" name="news_cover" id="news_cover" placeholder="封面">
+            <img src="{$info.news_cover}" width="100px" alt="未上传">
+        </div>
+        <div class="form-group">
+            <label>文章来源:</label>
+            <volist name="come_from" id="c_vo">
+                {$c_vo}<input type="radio" <if condition="$info['come_from'] eq $key">checked</if> name="come_from" value="{$key}">
+            </volist>
+            <br>
+        </div>
+        <div class="form-group">
+            <label>是否置顶:<input type="checkbox" <if condition="$info['top_num'] eq 1">checked</if> name="top_num" id="top_num" class="" ><br><small>[选择后该文章将会置顶]</small><br></label>
+        </div>
+        <button type="button" onclick="edit()" id="tj" class="btn btn-default">提交</button><br><br>
+    </form>
+</div>
+<br>
+
+<script src="__STATIC__/layui/layui.js"></script>
+<script type="text/javascript">
+    layui.use('layer', function(){ //独立版的layer无需执行这一句
+        //var $ = layui.jquery,
+        layer = layui.layer; //独立版的layer无需执行这一句
+    });
+    layui.use('laydate', function(){
+        var laydate = layui.laydate;
+        var start = {
+            min: laydate.now(),
+            istoday: true,
+            choose: function(datas){
+                end.min = datas; //开始日选好后，重置结束日的最小日期
+                end.start = datas //将结束日的初始值设定为开始日
+            }
+        };
+    });
+
+    function edit(){
+
+
+        url = "{:U('AdminNews/edit')}"
+
+        var formData = new FormData($( "#create_form" )[0]);
+
+        id       = $( "#id" ).val();
+        title       = $( "#title" ).val();
+        article_url = $( "#article_url" ).val();
+        newstime = $( "#newstime" ).val();
+        top_num  = $( "#top_num" ).val();
+        abstract = $( "#abstract" ).val();
+
+        if(!id || !title || !article_url || !newstime || !top_num || !abstract) {
+            layer.msg('程序员小哥哥提示你:信息都不填全就提交?是我拿不动刀了还是你飘了?',{
+                icon:2,
+                time:2000
+            });return false;
+        }
+
+        $('#tj').attr('disabled',true)
+        $('#tj').html('正在提交。。。')
+
+        $.ajax({
+            type: 'POST',
+            url: url,
+            data:formData,
+            processData: false,
+            contentType: false,
+            dataType: 'text',
+            success:function(msg){
+                if(msg=='success') {
+                    layer.msg('修改成功!',{
+                        icon:1,
+                        time:2000
+                    });
+                    $('#tj').html('提交')
+                    $('#tj').attr('disabled',false)
+                    setTimeout("parent.location.reload()", 2000);
+                }
+                else
+                {
+                    layer.msg(msg,{
+                        icon:2,
+                        time:2000
+                    });
+                    $('#tj').html('提交')
+                    $('#tj').attr('disabled',false)
+                }
+            },
+            error:function(){
+                layer.msg('程序员小哥哥提示你:未知错误!请稍后重试!',{
+                    icon:2,
+                    time:2000
+                });
+                $('#tj').html('提交')
+                $('#tj').attr('disabled',false)
+            }
+        });
+    }
+</script>
+</body>
+</html>
