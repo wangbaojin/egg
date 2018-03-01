@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>fail</title>
+    <title>验证失败</title>
     <style>
         *{
             margin: 0;

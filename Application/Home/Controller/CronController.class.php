@@ -1,8 +1,6 @@
 <?php
 namespace Home\Controller;
 
-namespace Home\Controller;
-
 use Think\Controller;
 use Com\PHPMailer\phpmailerAction;
 

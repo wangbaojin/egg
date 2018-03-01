@@ -2,10 +2,11 @@
 namespace Home\Controller;
 
 use Think\Controller;
+use Think\Think;
 
 class IndexController extends Controller
 {
-    public function zhuye()
+    public function index()
     {
         $this->display();
     }

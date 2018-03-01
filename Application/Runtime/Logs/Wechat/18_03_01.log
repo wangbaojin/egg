@@ -1,0 +1,86 @@
+[ 2018-03-01T00:14:01+08:00 ] 183.57.53.196 /WeChat/getWechatInfo?wx_state%253DeyJpbnZpdGVfY29kZSI6IiIsImZyb20iOiJzaW5nbGVtZXNzYWdlIiwiaXNhcHBpbnN0YWxsZWQiOiIwIiwicmVkaXJlY3RfdXJpIjoiaHR0cDpcL1wvd3d3LmxpYW55YW5namkuaW9cL1NoYXJlQnlDaGlja2VuIn0%253D
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000155s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000202s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000217s ]
+NOTIC: [8] Undefined index: wx_state /usr/local/nginx/html/lianyangji/Application/Wechat/Controller/WeChatController.class.php 第 53 行.
+
+[ 2018-03-01T11:23:49+08:00 ] 60.194.185.2 /ShareByChicken/index?invite_code=&from=singlemessage&isappinstalled=0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000157s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000219s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000236s ]
+NOTIC: [8] Undefined index: wx_info /usr/local/nginx/html/lianyangji/Application/Wechat/Controller/ShareByChickenController.class.php 第 22 行.
+
+[ 2018-03-01T11:23:49+08:00 ] 60.194.185.2 /WeChat/getWechatInfo?wx_state=eyJpbnZpdGVfY29kZSI6IiIsImZyb20iOiJzaW5nbGVtZXNzYWdlIiwiaXNhcHBpbnN0YWxsZWQiOiIwIiwicmVkaXJlY3RfdXJpIjoiaHR0cDpcL1wvd2VjaGF0LmppYWdlaGFvLmNuXC9TaGFyZUJ5Q2hpY2tlbiJ9
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000157s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000204s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000222s ]
+
+[ 2018-03-01T11:23:49+08:00 ] 60.194.185.2 /WeChat/getWechatInfo?wx_state=eyJpbnZpdGVfY29kZSI6IiIsImZyb20iOiJzaW5nbGVtZXNzYWdlIiwiaXNhcHBpbnN0YWxsZWQiOiIwIiwicmVkaXJlY3RfdXJpIjoiaHR0cDpcL1wvd2VjaGF0LmppYWdlaGFvLmNuXC9TaGFyZUJ5Q2hpY2tlbiJ9&code=081sfYSa0jWlfw16P8Sa0j3iTa0sfYSS&state=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000170s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000219s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000236s ]
+NOTIC: [2] Illegal string offset 'code' /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Com/Wechat/Wechat.class.php 第 60 行.
+
+[ 2018-03-01T11:23:49+08:00 ] 60.194.185.2 /ShareByChicken?wx_state=eyJpbnZpdGVfY29kZSI6IiIsImZyb20iOiJzaW5nbGVtZXNzYWdlIiwiaXNhcHBpbnN0YWxsZWQiOiIwIiwicmVkaXJlY3RfdXJpIjoiaHR0cDpcL1wvd2VjaGF0LmppYWdlaGFvLmNuXC9TaGFyZUJ5Q2hpY2tlbiJ9&wx_info=eyJvcGVuaWQiOiJvQ0E2MWpsbnpGcGRRei0zSThvenJhR2JnZFBvIiwibmlja25hbWUiOiJcdTUzZWZcdTU1OWNcdTUzZWZcdThkM2FcdWQ4M2RcdWRjYWYiLCJzZXgiOjEsImxhbmd1YWdlIjoiemhfQ04iLCJjaXR5IjoiTG9zIEFuZ2VsZXMgQ2l0eSIsInByb3ZpbmNlIjoiQ2FsaWZvcm5pYSIsImNvdW50cnkiOiJVUyIsImhlYWRpbWd1cmwiOiJodHRwOlwvXC90aGlyZHd4LnFsb2dvLmNuXC9tbW9wZW5cL3ZpXzMyXC9RMGo0VHdHVGZUTDkxSElEMGRrdmRiclk0Z2NSYWlhaWM0aWNhb29Nb09SU2liUVYwUVZQOTJsUnhhdGttZFJTWktrbjNxVDl5OEtpYWFLSnBUYlRiQWhlOHBnXC8xMzIiLCJwcml2aWxlZ2UiOltdLCJ1bmlvbmlkIjoib3BGbkN3NnNiT0E0dU9YSE5rZjQzajBqbnFjRSJ9
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000160s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000238s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000255s ]
+SQL: SHOW COLUMNS FROM `eggcoin_user_wechatinfo` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `eggcoin_user_wechatinfo` WHERE ( unionid="opFnCw6sbOA4uOXHNkf43j0jnqcE" ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `eggcoin_user` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `eggcoin_user` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined variable: invite_user_info /usr/local/nginx/html/lianyangji/Application/Wechat/Controller/ShareByChickenController.class.php 第 63 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000044s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000062s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002636s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002652s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000071s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000082s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000231s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000245s ]
+
+[ 2018-03-01T11:24:48+08:00 ] 120.204.17.69 /ShareByChicken/index?invite_code=&from=singlemessage&isappinstalled=0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000158s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000209s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000226s ]
+NOTIC: [8] Undefined index: wx_info /usr/local/nginx/html/lianyangji/Application/Wechat/Controller/ShareByChickenController.class.php 第 22 行.
+
+[ 2018-03-01T11:26:29+08:00 ] 101.227.139.194 /ShareByChicken/index?invite_code=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000174s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000211s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000227s ]
+NOTIC: [8] Undefined index: wx_info /usr/local/nginx/html/lianyangji/Application/Wechat/Controller/ShareByChickenController.class.php 第 22 行.
+
+[ 2018-03-01T11:27:29+08:00 ] 183.192.201.97 /WeChat/getWechatInfo?wx_state=eyJpbnZpdGVfY29kZSI6IiIsInJlZGlyZWN0X3VyaSI6Imh0dHA6XC9cL3dlY2hhdC5qaWFnZWhhby5jblwvU2hhcmVCeUNoaWNrZW4ifQ==
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000167s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000203s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000221s ]
+

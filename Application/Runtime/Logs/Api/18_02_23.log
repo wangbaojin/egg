@@ -409,3 +409,80 @@ SQL: SHOW COLUMNS FROM `eggcoin_chicken_batch` [ RunTime:0.0007s ]
 SQL: SELECT * FROM `eggcoin_chicken_batch` WHERE ( id=31 ) LIMIT 1   [ RunTime:0.0002s ]
 NOTIC: [8] Undefined index: egg_in_days /usr/local/nginx/html/lianyangji/Application/Api/Controller/EggcoinChickenController.class.php 第 406 行.
 
+[ 2018-02-23T22:42:10+08:00 ] 61.148.245.8 /Version/check?sign=E6B6E42520F6C48EF7621704EAC1B4E1&timestamp=1519396929&token=&version=1.0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000159s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000193s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000209s ]
+SQL: SHOW COLUMNS FROM `eggcoin_update` [ RunTime:0.0005s ]
+SQL: SELECT `force`,`version`,`url`,`app_type` FROM `eggcoin_update` WHERE `status` = 1 AND `platform` = 'android' AND `app_type` = '6' ORDER BY `version` DESC LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: version /usr/local/nginx/html/lianyangji/Application/Api/Controller/VersionController.class.php 第 25 行.
+
+[ 2018-02-23T22:42:16+08:00 ] 61.148.245.8 /EggcoinUser/register?sign=1526575B0E32F6792DC755DBF4525113&timestamp=1519396936&token=&version=1.0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000157s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000213s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000230s ]
+SQL: SHOW COLUMNS FROM `eggcoin_userkeyinfo` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `eggcoin_userkeyinfo` WHERE `status` = 0 LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2018-02-23T22:48:25+08:00 ] 139.227.101.223 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000151s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000197s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000213s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000216s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000233s ]
+
+[ 2018-02-23T22:54:55+08:00 ] 61.148.245.8 /EggcoinUser/wechatLogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000152s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000194s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000210s ]
+SQL: SHOW COLUMNS FROM `eggcoin_user` [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `eggcoin_user_wechatinfo` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `eggcoin_user_wechatinfo` WHERE ( wx_open_id="ogBL-1CNZq1sT1TeTxQ3M8eUGLlI" ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2018-02-23T22:55:11+08:00 ] 61.148.245.8 /EggcoinUser/sendSmsCode
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000170s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000190s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000207s ]
+SQL: SHOW COLUMNS FROM `eggcoin_user` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `eggcoin_user_wechatinfo` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `eggcoin_user` WHERE ( mobile=18510249173 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `eggcoin_user_wechatinfo` WHERE ( user_id=9 and wx_open_id="ogBL-1CNZq1sT1TeTxQ3M8eUGLlI" ) LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined variable: add_res /usr/local/nginx/html/lianyangji/Application/Api/Controller/EggcoinUserController.class.php 第 145 行.
+ERR: 1054:Unknown column 'ogBL' in 'where clause'
+ [ SQL语句 ] : SELECT * FROM `eggcoin_user_wechatinfo` WHERE ( wx_open_id=ogBL-1CNZq1sT1TeTxQ3M8eUGLlI ) LIMIT 1  
+ERR: 1054:Unknown column 'ogBL' in 'where clause'
+ [ SQL语句 ] : SELECT * FROM `eggcoin_user_wechatinfo` WHERE ( wx_open_id=ogBL-1CNZq1sT1TeTxQ3M8eUGLlI ) LIMIT 1  
+
+[ 2018-02-23T22:55:24+08:00 ] 61.148.245.8 /EggcoinUser/sendSmsCode
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000171s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000193s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000209s ]
+SQL: SHOW COLUMNS FROM `eggcoin_user` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `eggcoin_user_wechatinfo` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `eggcoin_user` WHERE ( mobile=18510249173 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `eggcoin_user_wechatinfo` WHERE ( user_id=9 and wx_open_id="ogBL-1CNZq1sT1TeTxQ3M8eUGLlI" ) LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined variable: add_res /usr/local/nginx/html/lianyangji/Application/Api/Controller/EggcoinUserController.class.php 第 145 行.
+ERR: 1054:Unknown column 'ogBL' in 'where clause'
+ [ SQL语句 ] : SELECT * FROM `eggcoin_user_wechatinfo` WHERE ( wx_open_id=ogBL-1CNZq1sT1TeTxQ3M8eUGLlI ) LIMIT 1  
+ERR: 1054:Unknown column 'ogBL' in 'where clause'
+ [ SQL语句 ] : SELECT * FROM `eggcoin_user_wechatinfo` WHERE ( wx_open_id=ogBL-1CNZq1sT1TeTxQ3M8eUGLlI ) LIMIT 1  
+

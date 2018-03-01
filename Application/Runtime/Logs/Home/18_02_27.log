@@ -1,0 +1,2860 @@
+[ 2018-02-27T01:10:41+08:00 ] 178.73.215.171 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000154s ]
+NOTIC: [8] Undefined index: HTTP_HOST /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 39 行.
+NOTIC: [8] Undefined index: HTTP_HOST /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 46 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000200s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000214s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000023s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000039s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002745s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002760s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000067s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000077s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000224s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000238s ]
+
+[ 2018-02-27T01:22:08+08:00 ] 114.215.45.101 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000154s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000217s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000232s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000023s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000039s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002634s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002650s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000069s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000078s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000235s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000249s ]
+
+[ 2018-02-27T01:33:51+08:00 ] 34.238.126.127 /wls-wsat/CoordinatorPortType
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000156s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000203s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000218s ]
+ERR: 无法加载控制器:Wls-wsat
+
+[ 2018-02-27T04:33:15+08:00 ] 60.191.38.77 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000170s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000199s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000215s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000035s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000052s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002637s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002653s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000066s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000076s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000233s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000248s ]
+
+[ 2018-02-27T04:57:33+08:00 ] 120.132.3.65 /404/search_children.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000155s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000206s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000221s ]
+ERR: 无法加载控制器:404
+
+[ 2018-02-27T05:26:45+08:00 ] 203.208.60.156 /robots.txt
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000165s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000203s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000219s ]
+ERR: 无法加载控制器:Robots
+
+[ 2018-02-27T05:26:45+08:00 ] 203.208.60.156 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000155s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000198s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000213s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000024s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000040s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002696s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002711s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000067s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000078s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000237s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000252s ]
+
+[ 2018-02-27T05:51:52+08:00 ] 203.208.60.156 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000172s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000195s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000209s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000023s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000039s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002682s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002698s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000066s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000076s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000225s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000239s ]
+
+[ 2018-02-27T06:17:34+08:00 ] 203.208.60.198 /robots.txt
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000153s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000227s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000242s ]
+ERR: 无法加载控制器:Robots
+
+[ 2018-02-27T06:17:34+08:00 ] 203.208.60.198 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000156s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000208s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000222s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000024s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000042s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002661s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002676s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000067s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000076s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000310s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000325s ]
+
+[ 2018-02-27T06:48:03+08:00 ] 203.208.60.157 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000156s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000221s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000236s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000024s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000040s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002687s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002702s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000090s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000103s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000235s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000250s ]
+
+[ 2018-02-27T07:57:03+08:00 ] 183.57.53.177 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000153s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000207s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000223s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000023s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000040s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002732s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002747s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000067s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000078s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000320s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000340s ]
+
+[ 2018-02-27T08:01:12+08:00 ] 139.162.108.53 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000159s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000200s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000216s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000023s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000040s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002685s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002701s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000070s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000081s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000293s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000312s ]
+
+[ 2018-02-27T08:13:44+08:00 ] 203.208.60.154 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000177s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000202s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000216s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000028s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000048s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002843s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002862s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000104s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000121s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000305s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000326s ]
+
+[ 2018-02-27T08:39:21+08:00 ] 203.208.60.200 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000154s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000199s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000215s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000023s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000039s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002699s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002714s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000068s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000077s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000232s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000325s ]
+
+[ 2018-02-27T09:25:01+08:00 ] 203.208.60.154 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000160s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000215s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000232s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000024s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000040s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002720s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002735s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000082s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000095s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000245s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000264s ]
+
+[ 2018-02-27T09:27:46+08:00 ] 47.93.90.175 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000165s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000231s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000249s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000024s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000041s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002751s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002768s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000072s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000082s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000311s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000328s ]
+
+[ 2018-02-27T09:44:24+08:00 ] 188.212.102.142 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000149s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000239s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000253s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000023s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000039s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002727s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002743s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000065s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000076s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000223s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000238s ]
+
+[ 2018-02-27T09:44:24+08:00 ] 188.212.102.142 /index.action
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000157s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000217s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000232s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000023s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000039s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002660s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002675s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000083s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000092s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000234s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000248s ]
+
+[ 2018-02-27T11:48:37+08:00 ] 14.17.21.58 /index.action
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000157s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000228s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000244s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000024s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000040s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002654s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002671s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000084s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000096s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000226s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000242s ]
+
+[ 2018-02-27T11:55:27+08:00 ] 207.46.13.27 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000157s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000216s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000231s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000024s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000040s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002653s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002668s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000067s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000076s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000226s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000240s ]
+
+[ 2018-02-27T12:13:29+08:00 ] 60.194.185.2 /ShareByChicken?invite_code=750ACC29D7DF9A05
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000165s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000200s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000214s ]
+NOTIC: [8] Undefined index: wx_info /usr/local/nginx/html/lianyangji/Application/Home/Controller/ShareByChickenController.class.php 第 18 行.
+
+[ 2018-02-27T12:13:31+08:00 ] 60.194.185.2 /ShareByChicken?other_state=eyJpbnZpdGVfY29kZSI6Ijc1MEFDQzI5RDdERjlBMDUifQ==&wx_info=eyJvcGVuaWQiOiJvQ0E2MWpraXdzc0ozNmlnUnRnb3Z2Q2c0NWJvIiwibmlja25hbWUiOiJcdTk2M2ZcdTk1MGIiLCJzZXgiOjEsImxhbmd1YWdlIjoiemhfQ04iLCJjaXR5IjoiIiwicHJvdmluY2UiOiIiLCJjb3VudHJ5IjoiXHU3NjdlXHU2MTU1XHU1OTI3IiwiaGVhZGltZ3VybCI6Imh0dHA6XC9cL3RoaXJkd3gucWxvZ28uY25cL21tb3BlblwvdmlfMzJcL0wxTzRZRm9qdDl3MzZOMVBBaWJEeGdHRDVhZXY1eUpOVVVvVDAxeWdoa1pRZnViOFNlcGtoeGNVemVyNWdCTFRET0lxOFNxeWFoNFFZWkxvNVZSck1CZ1wvMTMyIiwicHJpdmlsZWdlIjpbXSwidW5pb25pZCI6Im9wRm5DdzZjVGpXbk00RHI3RG1tUzBxWkdJdXMifQ==
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000151s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000206s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000221s ]
+SQL: SHOW COLUMNS FROM `eggcoin_user_wechatinfo` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `eggcoin_user_wechatinfo` WHERE ( unionid="opFnCw6cTjWnM4Dr7DmmS0qZGIus" ) LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000255s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000270s ]
+
+[ 2018-02-27T12:13:45+08:00 ] 14.215.176.8 /ShareByChicken?invite_code=750ACC29D7DF9A05
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000167s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000210s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000224s ]
+NOTIC: [8] Undefined index: wx_info /usr/local/nginx/html/lianyangji/Application/Home/Controller/ShareByChickenController.class.php 第 18 行.
+
+[ 2018-02-27T12:22:28+08:00 ] 183.57.53.197 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000149s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000197s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000211s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000023s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000039s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002635s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002651s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000065s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000075s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000228s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000243s ]
+
+[ 2018-02-27T13:14:20+08:00 ] 66.249.73.205 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000157s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000217s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000231s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000024s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000040s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002745s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002759s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000068s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000078s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000249s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000263s ]
+
+[ 2018-02-27T13:46:37+08:00 ] 112.90.82.236 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000155s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000201s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000216s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000024s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000039s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002679s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002699s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000072s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000082s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000337s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000354s ]
+
+[ 2018-02-27T13:54:23+08:00 ] 103.45.99.125 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000154s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000198s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000213s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000023s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000039s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002706s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002721s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000078s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000090s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000367s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000383s ]
+
+[ 2018-02-27T13:54:23+08:00 ] 103.45.99.125 /index.action
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000213s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000236s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000252s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000025s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000040s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002667s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002683s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000086s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000097s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000240s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000255s ]
+
+[ 2018-02-27T14:10:21+08:00 ] 66.249.73.207 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000151s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000200s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000215s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000023s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000039s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002719s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002735s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000067s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000077s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000234s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000248s ]
+
+[ 2018-02-27T14:17:03+08:00 ] 221.229.204.118 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000152s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000198s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000212s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000023s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000039s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002618s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002633s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000066s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000077s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000301s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000315s ]
+
+[ 2018-02-27T14:17:04+08:00 ] 221.229.204.118 /index.action
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000150s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000207s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000221s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000024s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000040s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002642s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002657s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000066s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000076s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000314s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000333s ]
+
+[ 2018-02-27T14:31:38+08:00 ] 195.22.127.224 /wp-includes/wlwmanifest.xml
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000150s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000196s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000212s ]
+ERR: 无法加载控制器:Wp-includes
+
+[ 2018-02-27T15:03:16+08:00 ] 60.194.185.2 /ShareByChicken?invite_code=750ACC29D7DF9A05
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000158s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000229s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000245s ]
+SQL: SHOW COLUMNS FROM `eggcoin_user` [ RunTime:0.0006s ]
+ERR: 1054:Unknown column '750ACC29D7DF9A05' in 'where clause'
+ [ SQL语句 ] : SELECT * FROM `eggcoin_user` WHERE ( invite_code=750ACC29D7DF9A05 ) LIMIT 1  
+ERR: 1054:Unknown column '750ACC29D7DF9A05' in 'where clause'
+ [ SQL语句 ] : SELECT * FROM `eggcoin_user` WHERE ( invite_code=750ACC29D7DF9A05 ) LIMIT 1  
+
+[ 2018-02-27T15:03:49+08:00 ] 60.194.185.2 /ShareByChicken?invite_code=750ACC29D7DF9A05
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000165s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000206s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000221s ]
+SQL: SHOW COLUMNS FROM `eggcoin_user` [ RunTime:0.0089s ]
+SQL: SELECT * FROM `eggcoin_user` WHERE ( invite_code="750ACC29D7DF9A05" ) LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000263s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000278s ]
+
+[ 2018-02-27T15:04:04+08:00 ] 60.194.185.2 /ShareByChicken?invite_code=750ACC29D7DF9A05
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000153s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000209s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000224s ]
+SQL: SHOW COLUMNS FROM `eggcoin_user` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `eggcoin_user` WHERE ( invite_code="750ACC29D7DF9A05" ) LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000254s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000271s ]
+
+[ 2018-02-27T15:05:15+08:00 ] 60.194.185.2 /ShareByChicken?invite_code=750ACC29D7DF9A05
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000165s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000210s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000226s ]
+SQL: SHOW COLUMNS FROM `eggcoin_user` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `eggcoin_user` WHERE ( invite_code="750ACC29D7DF9A05" ) LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000282s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000299s ]
+
+[ 2018-02-27T15:05:56+08:00 ] 60.194.185.2 /ShareByChicken?invite_code=750ACC29D7DF9A05
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000157s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000200s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000215s ]
+
+[ 2018-02-27T15:06:10+08:00 ] 60.194.185.2 /ShareByChicken?invite_code=750ACC29D7DF9A05
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000166s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000250s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000265s ]
+
+[ 2018-02-27T15:06:56+08:00 ] 60.194.185.2 /ShareByChicken?invite_code=750ACC29D7DF9A05
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000155s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000211s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000227s ]
+SQL: SHOW COLUMNS FROM `eggcoin_user` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `eggcoin_user` WHERE ( invite_code="750ACC29D7DF9A05" ) LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000236s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000251s ]
+
+[ 2018-02-27T15:07:05+08:00 ] 60.194.185.2 /ShareByChicken?invite_code=750ACC29D7DF9A05
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000161s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000239s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000256s ]
+NOTIC: [8] Undefined index: wx_info /usr/local/nginx/html/lianyangji/Application/Home/Controller/ShareByChickenController.class.php 第 24 行.
+
+[ 2018-02-27T15:07:41+08:00 ] 60.194.185.2 /ShareByChicken?other_state=eyJpbnZpdGVfY29kZSI6Ijc1MEFDQzI5RDdERjlBMDUifQ==&wx_info=eyJvcGVuaWQiOiJvQ0E2MWpraXdzc0ozNmlnUnRnb3Z2Q2c0NWJvIiwibmlja25hbWUiOiJcdTk2M2ZcdTk1MGIiLCJzZXgiOjEsImxhbmd1YWdlIjoiemhfQ04iLCJjaXR5IjoiIiwicHJvdmluY2UiOiIiLCJjb3VudHJ5IjoiXHU3NjdlXHU2MTU1XHU1OTI3IiwiaGVhZGltZ3VybCI6Imh0dHA6XC9cL3RoaXJkd3gucWxvZ28uY25cL21tb3BlblwvdmlfMzJcL0wxTzRZRm9qdDl3MzZOMVBBaWJEeGdHRDVhZXY1eUpOVVVvVDAxeWdoa1pRZnViOFNlcGtoeGNVemVyNWdCTFRET0lxOFNxeWFoNFFZWkxvNVZSck1CZ1wvMTMyIiwicHJpdmlsZWdlIjpbXSwidW5pb25pZCI6Im9wRm5DdzZjVGpXbk00RHI3RG1tUzBxWkdJdXMifQ==
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000152s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000200s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000214s ]
+NOTIC: [8] Undefined index: state /usr/local/nginx/html/lianyangji/Application/Home/Controller/ShareByChickenController.class.php 第 27 行.
+
+[ 2018-02-27T15:09:47+08:00 ] 60.194.185.2 /ShareByChicken?invite_code=750ACC29D7DF9A05
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000167s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000212s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000229s ]
+NOTIC: [8] Undefined index: wx_info /usr/local/nginx/html/lianyangji/Application/Home/Controller/ShareByChickenController.class.php 第 24 行.
+
+[ 2018-02-27T15:09:52+08:00 ] 60.194.185.2 /ShareByChicken?other_state=&wx_info=eyJvcGVuaWQiOiJvQ0E2MWpraXdzc0ozNmlnUnRnb3Z2Q2c0NWJvIiwibmlja25hbWUiOiJcdTk2M2ZcdTk1MGIiLCJzZXgiOjEsImxhbmd1YWdlIjoiemhfQ04iLCJjaXR5IjoiIiwicHJvdmluY2UiOiIiLCJjb3VudHJ5IjoiXHU3NjdlXHU2MTU1XHU1OTI3IiwiaGVhZGltZ3VybCI6Imh0dHA6XC9cL3RoaXJkd3gucWxvZ28uY25cL21tb3BlblwvdmlfMzJcL0wxTzRZRm9qdDl3MzZOMVBBaWJEeGdHRDVhZXY1eUpOVVVvVDAxeWdoa1pRZnViOFNlcGtoeGNVemVyNWdCTFRET0lxOFNxeWFoNFFZWkxvNVZSck1CZ1wvMTMyIiwicHJpdmlsZWdlIjpbXSwidW5pb25pZCI6Im9wRm5DdzZjVGpXbk00RHI3RG1tUzBxWkdJdXMifQ==
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000166s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000200s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000215s ]
+NOTIC: [8] Undefined index: state /usr/local/nginx/html/lianyangji/Application/Home/Controller/ShareByChickenController.class.php 第 27 行.
+
+[ 2018-02-27T15:11:26+08:00 ] 103.45.103.82 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000152s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000198s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000212s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000024s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000039s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002655s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002669s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000066s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000076s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000305s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000321s ]
+
+[ 2018-02-27T15:11:33+08:00 ] 60.194.185.2 /ShareByChicken?invite_code=750ACC29D7DF9A05
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000158s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000227s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000243s ]
+NOTIC: [8] Undefined index: wx_info /usr/local/nginx/html/lianyangji/Application/Home/Controller/ShareByChickenController.class.php 第 24 行.
+
+[ 2018-02-27T15:11:53+08:00 ] 103.45.103.82 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000154s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000199s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000214s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000024s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000040s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002630s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002647s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000068s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000079s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000326s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000345s ]
+
+[ 2018-02-27T15:18:08+08:00 ] 60.194.185.2 /ShareByChicken?invite_code=750ACC29D7DF9A05
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000152s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000206s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000220s ]
+NOTIC: [8] Undefined index: wx_info /usr/local/nginx/html/lianyangji/Application/Home/Controller/ShareByChickenController.class.php 第 24 行.
+
+[ 2018-02-27T15:22:05+08:00 ] 60.194.185.2 /ShareByChicken?invite_code=750ACC29D7DF9A05
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000312s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000208s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000223s ]
+NOTIC: [8] Undefined index: wx_info /usr/local/nginx/html/lianyangji/Application/Home/Controller/ShareByChickenController.class.php 第 24 行.
+
+[ 2018-02-27T15:28:45+08:00 ] 60.194.185.2 /ShareByChicken?invite_code=750ACC29D7DF9A05
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000159s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000237s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000254s ]
+NOTIC: [8] Undefined index: wx_info /usr/local/nginx/html/lianyangji/Application/Home/Controller/ShareByChickenController.class.php 第 24 行.
+
+[ 2018-02-27T15:33:31+08:00 ] 60.194.185.2 /ShareByChicken?invite_code=750ACC29D7DF9A05&aa=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000150s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000223s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000238s ]
+NOTIC: [8] Undefined index: wx_info /usr/local/nginx/html/lianyangji/Application/Home/Controller/ShareByChickenController.class.php 第 24 行.
+
+[ 2018-02-27T15:34:10+08:00 ] 60.194.185.2 /ShareByChicken?invite_code=750ACC29D7DF9A05&aa=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000151s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000198s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000213s ]
+NOTIC: [8] Undefined index: wx_info /usr/local/nginx/html/lianyangji/Application/Home/Controller/ShareByChickenController.class.php 第 24 行.
+
+[ 2018-02-27T15:34:26+08:00 ] 14.215.176.11 /ShareByChicken?invite_code=750ACC29D7DF9A05&aa=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000155s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000242s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000257s ]
+NOTIC: [8] Undefined index: wx_info /usr/local/nginx/html/lianyangji/Application/Home/Controller/ShareByChickenController.class.php 第 24 行.
+
+[ 2018-02-27T15:35:26+08:00 ] 60.194.185.2 /ShareByChicken?invite_code=750ACC29D7DF9A05&aa=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000156s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000202s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000218s ]
+NOTIC: [8] Undefined index: wx_info /usr/local/nginx/html/lianyangji/Application/Home/Controller/ShareByChickenController.class.php 第 24 行.
+
+[ 2018-02-27T15:36:03+08:00 ] 60.194.185.2 /ShareByChicken?invite_code=750ACC29D7DF9A05&aa=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000174s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000202s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000216s ]
+NOTIC: [8] Undefined index: wx_info /usr/local/nginx/html/lianyangji/Application/Home/Controller/ShareByChickenController.class.php 第 24 行.
+
+[ 2018-02-27T15:39:41+08:00 ] 60.194.185.2 /ShareByChicken?invite_code=750ACC29D7DF9A05
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000150s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000217s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000231s ]
+NOTIC: [8] Undefined index: wx_info /usr/local/nginx/html/lianyangji/Application/Home/Controller/ShareByChickenController.class.php 第 24 行.
+
+[ 2018-02-27T15:41:41+08:00 ] 60.194.185.2 /ShareByChicken?invite_code=750ACC29D7DF9A05&aa=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000151s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000215s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000230s ]
+NOTIC: [8] Undefined index: wx_info /usr/local/nginx/html/lianyangji/Application/Home/Controller/ShareByChickenController.class.php 第 24 行.
+
+[ 2018-02-27T15:42:35+08:00 ] 60.194.185.2 /ShareByChicken?invite_code=750ACC29D7DF9A05&aa=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000161s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000202s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000218s ]
+NOTIC: [8] Undefined index: wx_info /usr/local/nginx/html/lianyangji/Application/Home/Controller/ShareByChickenController.class.php 第 24 行.
+
+[ 2018-02-27T15:44:12+08:00 ] 60.194.185.2 /ShareByChicken?invite_code=750ACC29D7DF9A05&aa=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000165s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000232s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000247s ]
+NOTIC: [8] Undefined index: wx_info /usr/local/nginx/html/lianyangji/Application/Home/Controller/ShareByChickenController.class.php 第 24 行.
+
+[ 2018-02-27T15:44:27+08:00 ] 60.194.185.2 /ShareByChicken?invite_code=750ACC29D7DF9A05&aa=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000161s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000199s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000214s ]
+NOTIC: [8] Undefined index: wx_info /usr/local/nginx/html/lianyangji/Application/Home/Controller/ShareByChickenController.class.php 第 24 行.
+
+[ 2018-02-27T15:46:12+08:00 ] 60.194.185.2 /ShareByChicken?invite_code=750ACC29D7DF9A05
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000164s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000202s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000217s ]
+NOTIC: [8] Undefined index: wx_info /usr/local/nginx/html/lianyangji/Application/Home/Controller/ShareByChickenController.class.php 第 24 行.
+
+[ 2018-02-27T15:50:27+08:00 ] 60.194.185.2 /ShareByChicken?invite_code=750ACC29D7DF9A05&aa=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000159s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000201s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000216s ]
+NOTIC: [8] Undefined index: wx_info /usr/local/nginx/html/lianyangji/Application/Home/Controller/ShareByChickenController.class.php 第 24 行.
+
+[ 2018-02-27T15:50:55+08:00 ] 60.194.185.2 /ShareByChicken?invite_code=750ACC29D7DF9A05&aa=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000153s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000219s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000234s ]
+NOTIC: [8] Undefined index: wx_info /usr/local/nginx/html/lianyangji/Application/Home/Controller/ShareByChickenController.class.php 第 24 行.
+
+[ 2018-02-27T15:50:56+08:00 ] 60.194.185.2 /ShareByChicken?state=&wx_info=eyJvcGVuaWQiOiJvQ0E2MWpraXdzc0ozNmlnUnRnb3Z2Q2c0NWJvIiwibmlja25hbWUiOiJcdTk2M2ZcdTk1MGIiLCJzZXgiOjEsImxhbmd1YWdlIjoiemhfQ04iLCJjaXR5IjoiIiwicHJvdmluY2UiOiIiLCJjb3VudHJ5IjoiXHU3NjdlXHU2MTU1XHU1OTI3IiwiaGVhZGltZ3VybCI6Imh0dHA6XC9cL3RoaXJkd3gucWxvZ28uY25cL21tb3BlblwvdmlfMzJcL0wxTzRZRm9qdDl3MzZOMVBBaWJEeGdHRDVhZXY1eUpOVVVvVDAxeWdoa1pRZnViOFNlcGtoeGNVemVyNWdCTFRET0lxOFNxeWFoNFFZWkxvNVZSck1CZ1wvMTMyIiwicHJpdmlsZWdlIjpbXSwidW5pb25pZCI6Im9wRm5DdzZjVGpXbk00RHI3RG1tUzBxWkdJdXMifQ==
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000151s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000238s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000253s ]
+
+[ 2018-02-27T15:51:26+08:00 ] 60.194.185.2 /ShareByChicken?invite_code=750ACC29D7DF9A05&aa=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000226s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000251s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000269s ]
+NOTIC: [8] Undefined index: wx_info /usr/local/nginx/html/lianyangji/Application/Home/Controller/ShareByChickenController.class.php 第 24 行.
+
+[ 2018-02-27T15:51:28+08:00 ] 60.194.185.2 /ShareByChicken?state=&wx_info=eyJvcGVuaWQiOiJvQ0E2MWpraXdzc0ozNmlnUnRnb3Z2Q2c0NWJvIiwibmlja25hbWUiOiJcdTk2M2ZcdTk1MGIiLCJzZXgiOjEsImxhbmd1YWdlIjoiemhfQ04iLCJjaXR5IjoiIiwicHJvdmluY2UiOiIiLCJjb3VudHJ5IjoiXHU3NjdlXHU2MTU1XHU1OTI3IiwiaGVhZGltZ3VybCI6Imh0dHA6XC9cL3RoaXJkd3gucWxvZ28uY25cL21tb3BlblwvdmlfMzJcL0wxTzRZRm9qdDl3MzZOMVBBaWJEeGdHRDVhZXY1eUpOVVVvVDAxeWdoa1pRZnViOFNlcGtoeGNVemVyNWdCTFRET0lxOFNxeWFoNFFZWkxvNVZSck1CZ1wvMTMyIiwicHJpdmlsZWdlIjpbXSwidW5pb25pZCI6Im9wRm5DdzZjVGpXbk00RHI3RG1tUzBxWkdJdXMifQ==
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000151s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000214s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000229s ]
+
+[ 2018-02-27T15:51:53+08:00 ] 60.194.185.2 /ShareByChicken?state=&wx_info=eyJvcGVuaWQiOiJvQ0E2MWpraXdzc0ozNmlnUnRnb3Z2Q2c0NWJvIiwibmlja25hbWUiOiJcdTk2M2ZcdTk1MGIiLCJzZXgiOjEsImxhbmd1YWdlIjoiemhfQ04iLCJjaXR5IjoiIiwicHJvdmluY2UiOiIiLCJjb3VudHJ5IjoiXHU3NjdlXHU2MTU1XHU1OTI3IiwiaGVhZGltZ3VybCI6Imh0dHA6XC9cL3RoaXJkd3gucWxvZ28uY25cL21tb3BlblwvdmlfMzJcL0wxTzRZRm9qdDl3MzZOMVBBaWJEeGdHRDVhZXY1eUpOVVVvVDAxeWdoa1pRZnViOFNlcGtoeGNVemVyNWdCTFRET0lxOFNxeWFoNFFZWkxvNVZSck1CZ1wvMTMyIiwicHJpdmlsZWdlIjpbXSwidW5pb25pZCI6Im9wRm5DdzZjVGpXbk00RHI3RG1tUzBxWkdJdXMifQ==
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000157s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000202s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000217s ]
+SQL: SHOW COLUMNS FROM `eggcoin_user_wechatinfo` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `eggcoin_user_wechatinfo` WHERE ( unionid="opFnCw6cTjWnM4Dr7DmmS0qZGIus" ) LIMIT 1   [ RunTime:0.0001s ]
+NOTIC: [8] Undefined index: invite_code /usr/local/nginx/html/lianyangji/Application/Home/Controller/ShareByChickenController.class.php 第 57 行.
+SQL: SHOW COLUMNS FROM `eggcoin_user` [ RunTime:0.0004s ]
+NOTIC: [8] Undefined variable: invite_code /usr/local/nginx/html/lianyangji/Application/Home/Controller/ShareByChickenController.class.php 第 60 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000289s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000305s ]
+
+[ 2018-02-27T15:54:26+08:00 ] 60.194.185.2 /ShareByChicken?invite_code=750ACC29D7DF9A05&aa=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000158s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000203s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000218s ]
+SQL: SHOW COLUMNS FROM `eggcoin_user` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `eggcoin_user` WHERE ( invite_code="750ACC29D7DF9A05" ) LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000258s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000274s ]
+
+[ 2018-02-27T15:54:34+08:00 ] 60.194.185.2 /ShareByChicken?invite_code=750ACC29D7DF9A05&aa=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000151s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000215s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000230s ]
+NOTIC: [8] Undefined index: wx_info /usr/local/nginx/html/lianyangji/Application/Home/Controller/ShareByChickenController.class.php 第 24 行.
+
+[ 2018-02-27T15:54:35+08:00 ] 60.194.185.2 /ShareByChicken?state=&wx_info=eyJvcGVuaWQiOiJvQ0E2MWpraXdzc0ozNmlnUnRnb3Z2Q2c0NWJvIiwibmlja25hbWUiOiJcdTk2M2ZcdTk1MGIiLCJzZXgiOjEsImxhbmd1YWdlIjoiemhfQ04iLCJjaXR5IjoiIiwicHJvdmluY2UiOiIiLCJjb3VudHJ5IjoiXHU3NjdlXHU2MTU1XHU1OTI3IiwiaGVhZGltZ3VybCI6Imh0dHA6XC9cL3RoaXJkd3gucWxvZ28uY25cL21tb3BlblwvdmlfMzJcL0wxTzRZRm9qdDl3MzZOMVBBaWJEeGdHRDVhZXY1eUpOVVVvVDAxeWdoa1pRZnViOFNlcGtoeGNVemVyNWdCTFRET0lxOFNxeWFoNFFZWkxvNVZSck1CZ1wvMTMyIiwicHJpdmlsZWdlIjpbXSwidW5pb25pZCI6Im9wRm5DdzZjVGpXbk00RHI3RG1tUzBxWkdJdXMifQ==
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000161s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000201s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000216s ]
+SQL: SHOW COLUMNS FROM `eggcoin_user_wechatinfo` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `eggcoin_user_wechatinfo` WHERE ( unionid="opFnCw6cTjWnM4Dr7DmmS0qZGIus" ) LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: invite_code /usr/local/nginx/html/lianyangji/Application/Home/Controller/ShareByChickenController.class.php 第 60 行.
+SQL: SHOW COLUMNS FROM `eggcoin_user` [ RunTime:0.0004s ]
+NOTIC: [8] Undefined variable: invite_code /usr/local/nginx/html/lianyangji/Application/Home/Controller/ShareByChickenController.class.php 第 63 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000284s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000300s ]
+
+[ 2018-02-27T15:54:43+08:00 ] 60.194.185.2 /ShareByChicken?invite_code=750ACC29D7DF9A05&aa=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000152s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000204s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000219s ]
+SQL: SHOW COLUMNS FROM `eggcoin_user` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `eggcoin_user` WHERE ( invite_code="750ACC29D7DF9A05" ) LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000245s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000261s ]
+
+[ 2018-02-27T15:55:23+08:00 ] 183.61.51.64 /ShareByChicken/index?invite_code=6125206A390D9829
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000171s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000200s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000215s ]
+NOTIC: [8] Undefined index: wx_info /usr/local/nginx/html/lianyangji/Application/Home/Controller/ShareByChickenController.class.php 第 24 行.
+
+[ 2018-02-27T15:55:38+08:00 ] 60.194.185.2 /ShareByChicken?invite_code=750ACC29D7DF9A05&aa=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000150s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000198s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000213s ]
+SQL: SHOW COLUMNS FROM `eggcoin_user` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `eggcoin_user` WHERE ( invite_code="750ACC29D7DF9A05" ) LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000266s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000281s ]
+
+[ 2018-02-27T15:56:01+08:00 ] 60.194.185.2 /ShareByChicken?invite_code=750ACC29D7DF9A05&aa=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000154s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000218s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000233s ]
+SQL: SHOW COLUMNS FROM `eggcoin_user` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `eggcoin_user` WHERE ( invite_code="750ACC29D7DF9A05" ) LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000263s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000278s ]
+
+[ 2018-02-27T15:56:08+08:00 ] 60.194.185.2 /ShareByChicken?invite_code=750ACC29D7DF9A05&aa=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000174s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000231s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000249s ]
+NOTIC: [8] Undefined index: wx_info /usr/local/nginx/html/lianyangji/Application/Home/Controller/ShareByChickenController.class.php 第 24 行.
+
+[ 2018-02-27T15:56:09+08:00 ] 60.194.185.2 /ShareByChicken?state=&wx_info=eyJvcGVuaWQiOiJvQ0E2MWpraXdzc0ozNmlnUnRnb3Z2Q2c0NWJvIiwibmlja25hbWUiOiJcdTk2M2ZcdTk1MGIiLCJzZXgiOjEsImxhbmd1YWdlIjoiemhfQ04iLCJjaXR5IjoiIiwicHJvdmluY2UiOiIiLCJjb3VudHJ5IjoiXHU3NjdlXHU2MTU1XHU1OTI3IiwiaGVhZGltZ3VybCI6Imh0dHA6XC9cL3RoaXJkd3gucWxvZ28uY25cL21tb3BlblwvdmlfMzJcL0wxTzRZRm9qdDl3MzZOMVBBaWJEeGdHRDVhZXY1eUpOVVVvVDAxeWdoa1pRZnViOFNlcGtoeGNVemVyNWdCTFRET0lxOFNxeWFoNFFZWkxvNVZSck1CZ1wvMTMyIiwicHJpdmlsZWdlIjpbXSwidW5pb25pZCI6Im9wRm5DdzZjVGpXbk00RHI3RG1tUzBxWkdJdXMifQ==
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000150s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000209s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000224s ]
+SQL: SHOW COLUMNS FROM `eggcoin_user_wechatinfo` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `eggcoin_user_wechatinfo` WHERE ( unionid="opFnCw6cTjWnM4Dr7DmmS0qZGIus" ) LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: invite_code /usr/local/nginx/html/lianyangji/Application/Home/Controller/ShareByChickenController.class.php 第 60 行.
+SQL: SHOW COLUMNS FROM `eggcoin_user` [ RunTime:0.0004s ]
+NOTIC: [8] Undefined variable: invite_code /usr/local/nginx/html/lianyangji/Application/Home/Controller/ShareByChickenController.class.php 第 63 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000232s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000247s ]
+
+[ 2018-02-27T15:56:22+08:00 ] 120.204.17.67 /ShareByChicken/index?invite_code=6125206A390D9829
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000166s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000203s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000219s ]
+NOTIC: [8] Undefined index: wx_info /usr/local/nginx/html/lianyangji/Application/Home/Controller/ShareByChickenController.class.php 第 24 行.
+
+[ 2018-02-27T15:57:44+08:00 ] 60.194.185.2 /ShareByChicken?state=&wx_info=eyJvcGVuaWQiOiJvQ0E2MWpraXdzc0ozNmlnUnRnb3Z2Q2c0NWJvIiwibmlja25hbWUiOiJcdTk2M2ZcdTk1MGIiLCJzZXgiOjEsImxhbmd1YWdlIjoiemhfQ04iLCJjaXR5IjoiIiwicHJvdmluY2UiOiIiLCJjb3VudHJ5IjoiXHU3NjdlXHU2MTU1XHU1OTI3IiwiaGVhZGltZ3VybCI6Imh0dHA6XC9cL3RoaXJkd3gucWxvZ28uY25cL21tb3BlblwvdmlfMzJcL0wxTzRZRm9qdDl3MzZOMVBBaWJEeGdHRDVhZXY1eUpOVVVvVDAxeWdoa1pRZnViOFNlcGtoeGNVemVyNWdCTFRET0lxOFNxeWFoNFFZWkxvNVZSck1CZ1wvMTMyIiwicHJpdmlsZWdlIjpbXSwidW5pb25pZCI6Im9wRm5DdzZjVGpXbk00RHI3RG1tUzBxWkdJdXMifQ==
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000152s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000210s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000226s ]
+NOTIC: [8] Undefined index: invite_code /usr/local/nginx/html/lianyangji/Application/Home/Controller/ShareByChickenController.class.php 第 61 行.
+SQL: SHOW COLUMNS FROM `eggcoin_user` [ RunTime:0.0005s ]
+NOTIC: [2] Illegal string offset 'invite_code' /usr/local/nginx/html/lianyangji/Application/Home/Controller/ShareByChickenController.class.php 第 64 行.
+NOTIC: [8] Uninitialized string offset: 0 /usr/local/nginx/html/lianyangji/Application/Home/Controller/ShareByChickenController.class.php 第 64 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000284s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000300s ]
+
+[ 2018-02-27T15:57:56+08:00 ] 60.194.185.2 /ShareByChicken?state=&wx_info=eyJvcGVuaWQiOiJvQ0E2MWpraXdzc0ozNmlnUnRnb3Z2Q2c0NWJvIiwibmlja25hbWUiOiJcdTk2M2ZcdTk1MGIiLCJzZXgiOjEsImxhbmd1YWdlIjoiemhfQ04iLCJjaXR5IjoiIiwicHJvdmluY2UiOiIiLCJjb3VudHJ5IjoiXHU3NjdlXHU2MTU1XHU1OTI3IiwiaGVhZGltZ3VybCI6Imh0dHA6XC9cL3RoaXJkd3gucWxvZ28uY25cL21tb3BlblwvdmlfMzJcL0wxTzRZRm9qdDl3MzZOMVBBaWJEeGdHRDVhZXY1eUpOVVVvVDAxeWdoa1pRZnViOFNlcGtoeGNVemVyNWdCTFRET0lxOFNxeWFoNFFZWkxvNVZSck1CZ1wvMTMyIiwicHJpdmlsZWdlIjpbXSwidW5pb25pZCI6Im9wRm5DdzZjVGpXbk00RHI3RG1tUzBxWkdJdXMifQ==
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000159s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000209s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000225s ]
+NOTIC: [8] Undefined index: invite_code /usr/local/nginx/html/lianyangji/Application/Home/Controller/ShareByChickenController.class.php 第 61 行.
+SQL: SHOW COLUMNS FROM `eggcoin_user` [ RunTime:0.0005s ]
+NOTIC: [2] Illegal string offset 'invite_code' /usr/local/nginx/html/lianyangji/Application/Home/Controller/ShareByChickenController.class.php 第 65 行.
+NOTIC: [8] Uninitialized string offset: 0 /usr/local/nginx/html/lianyangji/Application/Home/Controller/ShareByChickenController.class.php 第 65 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000280s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000296s ]
+
+[ 2018-02-27T15:59:27+08:00 ] 60.194.185.2 /ShareByChicken?state=&wx_info=eyJvcGVuaWQiOiJvQ0E2MWpraXdzc0ozNmlnUnRnb3Z2Q2c0NWJvIiwibmlja25hbWUiOiJcdTk2M2ZcdTk1MGIiLCJzZXgiOjEsImxhbmd1YWdlIjoiemhfQ04iLCJjaXR5IjoiIiwicHJvdmluY2UiOiIiLCJjb3VudHJ5IjoiXHU3NjdlXHU2MTU1XHU1OTI3IiwiaGVhZGltZ3VybCI6Imh0dHA6XC9cL3RoaXJkd3gucWxvZ28uY25cL21tb3BlblwvdmlfMzJcL0wxTzRZRm9qdDl3MzZOMVBBaWJEeGdHRDVhZXY1eUpOVVVvVDAxeWdoa1pRZnViOFNlcGtoeGNVemVyNWdCTFRET0lxOFNxeWFoNFFZWkxvNVZSck1CZ1wvMTMyIiwicHJpdmlsZWdlIjpbXSwidW5pb25pZCI6Im9wRm5DdzZjVGpXbk00RHI3RG1tUzBxWkdJdXMifQ==
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000150s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000232s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000247s ]
+ERR: syntax error, unexpected ']'
+
+[ 2018-02-27T15:59:36+08:00 ] 60.194.185.2 /ShareByChicken?state=&wx_info=eyJvcGVuaWQiOiJvQ0E2MWpraXdzc0ozNmlnUnRnb3Z2Q2c0NWJvIiwibmlja25hbWUiOiJcdTk2M2ZcdTk1MGIiLCJzZXgiOjEsImxhbmd1YWdlIjoiemhfQ04iLCJjaXR5IjoiIiwicHJvdmluY2UiOiIiLCJjb3VudHJ5IjoiXHU3NjdlXHU2MTU1XHU1OTI3IiwiaGVhZGltZ3VybCI6Imh0dHA6XC9cL3RoaXJkd3gucWxvZ28uY25cL21tb3BlblwvdmlfMzJcL0wxTzRZRm9qdDl3MzZOMVBBaWJEeGdHRDVhZXY1eUpOVVVvVDAxeWdoa1pRZnViOFNlcGtoeGNVemVyNWdCTFRET0lxOFNxeWFoNFFZWkxvNVZSck1CZ1wvMTMyIiwicHJpdmlsZWdlIjpbXSwidW5pb25pZCI6Im9wRm5DdzZjVGpXbk00RHI3RG1tUzBxWkdJdXMifQ==
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000151s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000218s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000232s ]
+NOTIC: [8] Undefined index: invite_code /usr/local/nginx/html/lianyangji/Application/Home/Controller/ShareByChickenController.class.php 第 61 行.
+SQL: SHOW COLUMNS FROM `eggcoin_user` [ RunTime:0.0006s ]
+NOTIC: [8] Undefined variable: invite_code /usr/local/nginx/html/lianyangji/Application/Home/Controller/ShareByChickenController.class.php 第 65 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000258s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000274s ]
+
+[ 2018-02-27T16:00:40+08:00 ] 60.194.185.2 /ShareByChicken?invite_code=750ACC29D7DF9A05&aa=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000170s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000199s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000214s ]
+NOTIC: [8] Undefined index: wx_info /usr/local/nginx/html/lianyangji/Application/Home/Controller/ShareByChickenController.class.php 第 25 行.
+
+[ 2018-02-27T16:00:41+08:00 ] 60.194.185.2 /ShareByChicken?state=&wx_info=eyJvcGVuaWQiOiJvQ0E2MWpraXdzc0ozNmlnUnRnb3Z2Q2c0NWJvIiwibmlja25hbWUiOiJcdTk2M2ZcdTk1MGIiLCJzZXgiOjEsImxhbmd1YWdlIjoiemhfQ04iLCJjaXR5IjoiIiwicHJvdmluY2UiOiIiLCJjb3VudHJ5IjoiXHU3NjdlXHU2MTU1XHU1OTI3IiwiaGVhZGltZ3VybCI6Imh0dHA6XC9cL3RoaXJkd3gucWxvZ28uY25cL21tb3BlblwvdmlfMzJcL0wxTzRZRm9qdDl3MzZOMVBBaWJEeGdHRDVhZXY1eUpOVVVvVDAxeWdoa1pRZnViOFNlcGtoeGNVemVyNWdCTFRET0lxOFNxeWFoNFFZWkxvNVZSck1CZ1wvMTMyIiwicHJpdmlsZWdlIjpbXSwidW5pb25pZCI6Im9wRm5DdzZjVGpXbk00RHI3RG1tUzBxWkdJdXMifQ==
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000169s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000201s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000217s ]
+SQL: SHOW COLUMNS FROM `eggcoin_user_wechatinfo` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `eggcoin_user_wechatinfo` WHERE ( unionid="opFnCw6cTjWnM4Dr7DmmS0qZGIus" ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `eggcoin_user` [ RunTime:0.0004s ]
+NOTIC: [8] Undefined variable: invite_code /usr/local/nginx/html/lianyangji/Application/Home/Controller/ShareByChickenController.class.php 第 65 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000250s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000265s ]
+
+[ 2018-02-27T16:00:44+08:00 ] 60.194.185.2 /ShareByChicken?state=&wx_info=eyJvcGVuaWQiOiJvQ0E2MWpraXdzc0ozNmlnUnRnb3Z2Q2c0NWJvIiwibmlja25hbWUiOiJcdTk2M2ZcdTk1MGIiLCJzZXgiOjEsImxhbmd1YWdlIjoiemhfQ04iLCJjaXR5IjoiIiwicHJvdmluY2UiOiIiLCJjb3VudHJ5IjoiXHU3NjdlXHU2MTU1XHU1OTI3IiwiaGVhZGltZ3VybCI6Imh0dHA6XC9cL3RoaXJkd3gucWxvZ28uY25cL21tb3BlblwvdmlfMzJcL0wxTzRZRm9qdDl3MzZOMVBBaWJEeGdHRDVhZXY1eUpOVVVvVDAxeWdoa1pRZnViOFNlcGtoeGNVemVyNWdCTFRET0lxOFNxeWFoNFFZWkxvNVZSck1CZ1wvMTMyIiwicHJpdmlsZWdlIjpbXSwidW5pb25pZCI6Im9wRm5DdzZjVGpXbk00RHI3RG1tUzBxWkdJdXMifQ==
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000152s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000219s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000235s ]
+NOTIC: [8] Undefined index: invite_code /usr/local/nginx/html/lianyangji/Application/Home/Controller/ShareByChickenController.class.php 第 61 行.
+SQL: SHOW COLUMNS FROM `eggcoin_user` [ RunTime:0.0005s ]
+NOTIC: [8] Undefined variable: invite_code /usr/local/nginx/html/lianyangji/Application/Home/Controller/ShareByChickenController.class.php 第 65 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000237s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000252s ]
+
+[ 2018-02-27T16:02:33+08:00 ] 60.194.185.2 /ShareByChicken?state=&wx_info=eyJvcGVuaWQiOiJvQ0E2MWpraXdzc0ozNmlnUnRnb3Z2Q2c0NWJvIiwibmlja25hbWUiOiJcdTk2M2ZcdTk1MGIiLCJzZXgiOjEsImxhbmd1YWdlIjoiemhfQ04iLCJjaXR5IjoiIiwicHJvdmluY2UiOiIiLCJjb3VudHJ5IjoiXHU3NjdlXHU2MTU1XHU1OTI3IiwiaGVhZGltZ3VybCI6Imh0dHA6XC9cL3RoaXJkd3gucWxvZ28uY25cL21tb3BlblwvdmlfMzJcL0wxTzRZRm9qdDl3MzZOMVBBaWJEeGdHRDVhZXY1eUpOVVVvVDAxeWdoa1pRZnViOFNlcGtoeGNVemVyNWdCTFRET0lxOFNxeWFoNFFZWkxvNVZSck1CZ1wvMTMyIiwicHJpdmlsZWdlIjpbXSwidW5pb25pZCI6Im9wRm5DdzZjVGpXbk00RHI3RG1tUzBxWkdJdXMifQ==
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000158s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000218s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000234s ]
+NOTIC: [8] Undefined index: invite_code /usr/local/nginx/html/lianyangji/Application/Home/Controller/ShareByChickenController.class.php 第 61 行.
+SQL: SHOW COLUMNS FROM `eggcoin_user` [ RunTime:0.0006s ]
+NOTIC: [8] Undefined variable: invite_code /usr/local/nginx/html/lianyangji/Application/Home/Controller/ShareByChickenController.class.php 第 65 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000253s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000268s ]
+
+[ 2018-02-27T16:02:41+08:00 ] 60.194.185.2 /ShareByChicken?state=&wx_info=eyJvcGVuaWQiOiJvQ0E2MWpraXdzc0ozNmlnUnRnb3Z2Q2c0NWJvIiwibmlja25hbWUiOiJcdTk2M2ZcdTk1MGIiLCJzZXgiOjEsImxhbmd1YWdlIjoiemhfQ04iLCJjaXR5IjoiIiwicHJvdmluY2UiOiIiLCJjb3VudHJ5IjoiXHU3NjdlXHU2MTU1XHU1OTI3IiwiaGVhZGltZ3VybCI6Imh0dHA6XC9cL3RoaXJkd3gucWxvZ28uY25cL21tb3BlblwvdmlfMzJcL0wxTzRZRm9qdDl3MzZOMVBBaWJEeGdHRDVhZXY1eUpOVVVvVDAxeWdoa1pRZnViOFNlcGtoeGNVemVyNWdCTFRET0lxOFNxeWFoNFFZWkxvNVZSck1CZ1wvMTMyIiwicHJpdmlsZWdlIjpbXSwidW5pb25pZCI6Im9wRm5DdzZjVGpXbk00RHI3RG1tUzBxWkdJdXMifQ==
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000166s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000202s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000218s ]
+ERR: Unsupported operand types
+
+[ 2018-02-27T16:04:57+08:00 ] 60.194.185.2 /ShareByChicken?state=&wx_info=eyJvcGVuaWQiOiJvQ0E2MWpraXdzc0ozNmlnUnRnb3Z2Q2c0NWJvIiwibmlja25hbWUiOiJcdTk2M2ZcdTk1MGIiLCJzZXgiOjEsImxhbmd1YWdlIjoiemhfQ04iLCJjaXR5IjoiIiwicHJvdmluY2UiOiIiLCJjb3VudHJ5IjoiXHU3NjdlXHU2MTU1XHU1OTI3IiwiaGVhZGltZ3VybCI6Imh0dHA6XC9cL3RoaXJkd3gucWxvZ28uY25cL21tb3BlblwvdmlfMzJcL0wxTzRZRm9qdDl3MzZOMVBBaWJEeGdHRDVhZXY1eUpOVVVvVDAxeWdoa1pRZnViOFNlcGtoeGNVemVyNWdCTFRET0lxOFNxeWFoNFFZWkxvNVZSck1CZ1wvMTMyIiwicHJpdmlsZWdlIjpbXSwidW5pb25pZCI6Im9wRm5DdzZjVGpXbk00RHI3RG1tUzBxWkdJdXMifQ==
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000158s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000218s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000235s ]
+SQL: SHOW COLUMNS FROM `eggcoin_user_wechatinfo` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `eggcoin_user_wechatinfo` WHERE ( unionid="opFnCw6cTjWnM4Dr7DmmS0qZGIus" ) LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: invite_code /usr/local/nginx/html/lianyangji/Application/Home/Controller/ShareByChickenController.class.php 第 61 行.
+SQL: SHOW COLUMNS FROM `eggcoin_user` [ RunTime:0.0004s ]
+NOTIC: [8] Undefined variable: invite_code /usr/local/nginx/html/lianyangji/Application/Home/Controller/ShareByChickenController.class.php 第 65 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000251s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000267s ]
+
+[ 2018-02-27T16:05:00+08:00 ] 60.194.185.2 /ShareByChicken?invite_code=750ACC29D7DF9A05&aa=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000226s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000215s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000234s ]
+SQL: SHOW COLUMNS FROM `eggcoin_user` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `eggcoin_user` WHERE ( invite_code="750ACC29D7DF9A05" ) LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000266s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000283s ]
+
+[ 2018-02-27T16:05:06+08:00 ] 60.194.185.2 /ShareByChicken?invite_code=750ACC29D7DF9A05&aa=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000156s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000202s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000223s ]
+SQL: SHOW COLUMNS FROM `eggcoin_user` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `eggcoin_user` WHERE ( invite_code="750ACC29D7DF9A05" ) LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000265s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000280s ]
+
+[ 2018-02-27T16:08:40+08:00 ] 60.194.185.2 /ShareByChicken?invite_code=750ACC29D7DF9A05&aa=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000172s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000229s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000249s ]
+SQL: SHOW COLUMNS FROM `eggcoin_user` [ RunTime:0.0006s ]
+NOTIC: [2] Illegal string offset 'invite_code' /usr/local/nginx/html/lianyangji/Application/Home/Controller/ShareByChickenController.class.php 第 61 行.
+NOTIC: [8] Uninitialized string offset: 0 /usr/local/nginx/html/lianyangji/Application/Home/Controller/ShareByChickenController.class.php 第 61 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000311s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000329s ]
+
+[ 2018-02-27T16:08:46+08:00 ] 60.194.185.2 /ShareByChicken?invite_code=750ACC29D7DF9A05&aa=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000160s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000207s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000223s ]
+NOTIC: [8] Undefined index: wx_info /usr/local/nginx/html/lianyangji/Application/Home/Controller/ShareByChickenController.class.php 第 25 行.
+
+[ 2018-02-27T16:08:47+08:00 ] 60.194.185.2 /ShareByChicken?state=Array&wx_info=eyJvcGVuaWQiOiJvQ0E2MWpraXdzc0ozNmlnUnRnb3Z2Q2c0NWJvIiwibmlja25hbWUiOiJcdTk2M2ZcdTk1MGIiLCJzZXgiOjEsImxhbmd1YWdlIjoiemhfQ04iLCJjaXR5IjoiIiwicHJvdmluY2UiOiIiLCJjb3VudHJ5IjoiXHU3NjdlXHU2MTU1XHU1OTI3IiwiaGVhZGltZ3VybCI6Imh0dHA6XC9cL3RoaXJkd3gucWxvZ28uY25cL21tb3BlblwvdmlfMzJcL0wxTzRZRm9qdDl3MzZOMVBBaWJEeGdHRDVhZXY1eUpOVVVvVDAxeWdoa1pRZnViOFNlcGtoeGNVemVyNWdCTFRET0lxOFNxeWFoNFFZWkxvNVZSck1CZ1wvMTMyIiwicHJpdmlsZWdlIjpbXSwidW5pb25pZCI6Im9wRm5DdzZjVGpXbk00RHI3RG1tUzBxWkdJdXMifQ==
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000175s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000234s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000249s ]
+SQL: SHOW COLUMNS FROM `eggcoin_user_wechatinfo` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `eggcoin_user_wechatinfo` WHERE ( unionid="opFnCw6cTjWnM4Dr7DmmS0qZGIus" ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `eggcoin_user` [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000285s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000301s ]
+
+[ 2018-02-27T16:10:33+08:00 ] 60.194.185.2 /ShareByChicken?state=Array&wx_info=eyJvcGVuaWQiOiJvQ0E2MWpraXdzc0ozNmlnUnRnb3Z2Q2c0NWJvIiwibmlja25hbWUiOiJcdTk2M2ZcdTk1MGIiLCJzZXgiOjEsImxhbmd1YWdlIjoiemhfQ04iLCJjaXR5IjoiIiwicHJvdmluY2UiOiIiLCJjb3VudHJ5IjoiXHU3NjdlXHU2MTU1XHU1OTI3IiwiaGVhZGltZ3VybCI6Imh0dHA6XC9cL3RoaXJkd3gucWxvZ28uY25cL21tb3BlblwvdmlfMzJcL0wxTzRZRm9qdDl3MzZOMVBBaWJEeGdHRDVhZXY1eUpOVVVvVDAxeWdoa1pRZnViOFNlcGtoeGNVemVyNWdCTFRET0lxOFNxeWFoNFFZWkxvNVZSck1CZ1wvMTMyIiwicHJpdmlsZWdlIjpbXSwidW5pb25pZCI6Im9wRm5DdzZjVGpXbk00RHI3RG1tUzBxWkdJdXMifQ==
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000153s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000201s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000216s ]
+SQL: SHOW COLUMNS FROM `eggcoin_user` [ RunTime:0.0005s ]
+NOTIC: [2] Illegal string offset 'invite_code' /usr/local/nginx/html/lianyangji/Application/Home/Controller/ShareByChickenController.class.php 第 62 行.
+NOTIC: [8] Uninitialized string offset: 0 /usr/local/nginx/html/lianyangji/Application/Home/Controller/ShareByChickenController.class.php 第 62 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000262s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000277s ]
+
+[ 2018-02-27T16:10:41+08:00 ] 60.194.185.2 /ShareByChicken?invite_code=750ACC29D7DF9A05&aa=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000164s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000201s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000216s ]
+SQL: SHOW COLUMNS FROM `eggcoin_user` [ RunTime:0.0006s ]
+NOTIC: [2] Illegal string offset 'invite_code' /usr/local/nginx/html/lianyangji/Application/Home/Controller/ShareByChickenController.class.php 第 62 行.
+NOTIC: [8] Uninitialized string offset: 0 /usr/local/nginx/html/lianyangji/Application/Home/Controller/ShareByChickenController.class.php 第 62 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000270s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000285s ]
+
+[ 2018-02-27T16:10:44+08:00 ] 60.194.185.2 /ShareByChicken?invite_code=750ACC29D7DF9A05&aa=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000182s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000224s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000242s ]
+SQL: SHOW COLUMNS FROM `eggcoin_user` [ RunTime:0.0006s ]
+NOTIC: [2] Illegal string offset 'invite_code' /usr/local/nginx/html/lianyangji/Application/Home/Controller/ShareByChickenController.class.php 第 62 行.
+NOTIC: [8] Uninitialized string offset: 0 /usr/local/nginx/html/lianyangji/Application/Home/Controller/ShareByChickenController.class.php 第 62 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000247s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000262s ]
+
+[ 2018-02-27T16:10:49+08:00 ] 60.194.185.2 /ShareByChicken?invite_code=750ACC29D7DF9A05&aa=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000164s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000243s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000258s ]
+NOTIC: [8] Undefined index: wx_info /usr/local/nginx/html/lianyangji/Application/Home/Controller/ShareByChickenController.class.php 第 25 行.
+
+[ 2018-02-27T16:12:21+08:00 ] 60.194.185.2 /ShareByChicken?invite_code=750ACC29D7DF9A05&aa=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000155s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000209s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000224s ]
+NOTIC: [8] Undefined index: wx_info /usr/local/nginx/html/lianyangji/Application/Home/Controller/ShareByChickenController.class.php 第 25 行.
+
+[ 2018-02-27T16:12:22+08:00 ] 60.194.185.2 /ShareByChicken?state=eyJpbnZpdGVfY29kZSI6Ijc1MEFDQzI5RDdERjlBMDUiLCJhYSI6IjEiLCJyZWRpcmVjdF91cmkiOiJodHRwOlwvXC93d3cubGlhbnlhbmdqaS5pb1wvU2hhcmVCeUNoaWNrZW4ifQ==&wx_info=eyJvcGVuaWQiOiJvQ0E2MWpraXdzc0ozNmlnUnRnb3Z2Q2c0NWJvIiwibmlja25hbWUiOiJcdTk2M2ZcdTk1MGIiLCJzZXgiOjEsImxhbmd1YWdlIjoiemhfQ04iLCJjaXR5IjoiIiwicHJvdmluY2UiOiIiLCJjb3VudHJ5IjoiXHU3NjdlXHU2MTU1XHU1OTI3IiwiaGVhZGltZ3VybCI6Imh0dHA6XC9cL3RoaXJkd3gucWxvZ28uY25cL21tb3BlblwvdmlfMzJcL0wxTzRZRm9qdDl3MzZOMVBBaWJEeGdHRDVhZXY1eUpOVVVvVDAxeWdoa1pRZnViOFNlcGtoeGNVemVyNWdCTFRET0lxOFNxeWFoNFFZWkxvNVZSck1CZ1wvMTMyIiwicHJpdmlsZWdlIjpbXSwidW5pb25pZCI6Im9wRm5DdzZjVGpXbk00RHI3RG1tUzBxWkdJdXMifQ==
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000151s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000216s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000231s ]
+SQL: SHOW COLUMNS FROM `eggcoin_user_wechatinfo` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `eggcoin_user_wechatinfo` WHERE ( unionid="opFnCw6cTjWnM4Dr7DmmS0qZGIus" ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `eggcoin_user` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `eggcoin_user` WHERE ( invite_code="750ACC29D7DF9A05" ) LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000267s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000282s ]
+
+[ 2018-02-27T16:13:21+08:00 ] 60.194.185.2 /ShareByChicken?state=eyJpbnZpdGVfY29kZSI6Ijc1MEFDQzI5RDdERjlBMDUiLCJhYSI6IjEiLCJyZWRpcmVjdF91cmkiOiJodHRwOlwvXC93d3cubGlhbnlhbmdqaS5pb1wvU2hhcmVCeUNoaWNrZW4ifQ==&wx_info=eyJvcGVuaWQiOiJvQ0E2MWpraXdzc0ozNmlnUnRnb3Z2Q2c0NWJvIiwibmlja25hbWUiOiJcdTk2M2ZcdTk1MGIiLCJzZXgiOjEsImxhbmd1YWdlIjoiemhfQ04iLCJjaXR5IjoiIiwicHJvdmluY2UiOiIiLCJjb3VudHJ5IjoiXHU3NjdlXHU2MTU1XHU1OTI3IiwiaGVhZGltZ3VybCI6Imh0dHA6XC9cL3RoaXJkd3gucWxvZ28uY25cL21tb3BlblwvdmlfMzJcL0wxTzRZRm9qdDl3MzZOMVBBaWJEeGdHRDVhZXY1eUpOVVVvVDAxeWdoa1pRZnViOFNlcGtoeGNVemVyNWdCTFRET0lxOFNxeWFoNFFZWkxvNVZSck1CZ1wvMTMyIiwicHJpdmlsZWdlIjpbXSwidW5pb25pZCI6Im9wRm5DdzZjVGpXbk00RHI3RG1tUzBxWkdJdXMifQ==
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000238s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000325s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000345s ]
+SQL: SHOW COLUMNS FROM `eggcoin_user` [ RunTime:0.0005s ]
+NOTIC: [2] Illegal string offset 'invite_code' /usr/local/nginx/html/lianyangji/Application/Home/Controller/ShareByChickenController.class.php 第 62 行.
+NOTIC: [8] Uninitialized string offset: 0 /usr/local/nginx/html/lianyangji/Application/Home/Controller/ShareByChickenController.class.php 第 62 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000246s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000264s ]
+
+[ 2018-02-27T16:13:26+08:00 ] 60.194.185.2 /ShareByChicken?state=eyJpbnZpdGVfY29kZSI6Ijc1MEFDQzI5RDdERjlBMDUiLCJhYSI6IjEiLCJyZWRpcmVjdF91cmkiOiJodHRwOlwvXC93d3cubGlhbnlhbmdqaS5pb1wvU2hhcmVCeUNoaWNrZW4ifQ==&wx_info=eyJvcGVuaWQiOiJvQ0E2MWpraXdzc0ozNmlnUnRnb3Z2Q2c0NWJvIiwibmlja25hbWUiOiJcdTk2M2ZcdTk1MGIiLCJzZXgiOjEsImxhbmd1YWdlIjoiemhfQ04iLCJjaXR5IjoiIiwicHJvdmluY2UiOiIiLCJjb3VudHJ5IjoiXHU3NjdlXHU2MTU1XHU1OTI3IiwiaGVhZGltZ3VybCI6Imh0dHA6XC9cL3RoaXJkd3gucWxvZ28uY25cL21tb3BlblwvdmlfMzJcL0wxTzRZRm9qdDl3MzZOMVBBaWJEeGdHRDVhZXY1eUpOVVVvVDAxeWdoa1pRZnViOFNlcGtoeGNVemVyNWdCTFRET0lxOFNxeWFoNFFZWkxvNVZSck1CZ1wvMTMyIiwicHJpdmlsZWdlIjpbXSwidW5pb25pZCI6Im9wRm5DdzZjVGpXbk00RHI3RG1tUzBxWkdJdXMifQ==
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000149s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000199s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000214s ]
+SQL: SHOW COLUMNS FROM `eggcoin_user` [ RunTime:0.0005s ]
+NOTIC: [2] Illegal string offset 'invite_code' /usr/local/nginx/html/lianyangji/Application/Home/Controller/ShareByChickenController.class.php 第 62 行.
+NOTIC: [8] Uninitialized string offset: 0 /usr/local/nginx/html/lianyangji/Application/Home/Controller/ShareByChickenController.class.php 第 62 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000299s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000315s ]
+
+[ 2018-02-27T16:13:28+08:00 ] 60.194.185.2 /ShareByChicken?state=eyJpbnZpdGVfY29kZSI6Ijc1MEFDQzI5RDdERjlBMDUiLCJhYSI6IjEiLCJyZWRpcmVjdF91cmkiOiJodHRwOlwvXC93d3cubGlhbnlhbmdqaS5pb1wvU2hhcmVCeUNoaWNrZW4ifQ==&wx_info=eyJvcGVuaWQiOiJvQ0E2MWpraXdzc0ozNmlnUnRnb3Z2Q2c0NWJvIiwibmlja25hbWUiOiJcdTk2M2ZcdTk1MGIiLCJzZXgiOjEsImxhbmd1YWdlIjoiemhfQ04iLCJjaXR5IjoiIiwicHJvdmluY2UiOiIiLCJjb3VudHJ5IjoiXHU3NjdlXHU2MTU1XHU1OTI3IiwiaGVhZGltZ3VybCI6Imh0dHA6XC9cL3RoaXJkd3gucWxvZ28uY25cL21tb3BlblwvdmlfMzJcL0wxTzRZRm9qdDl3MzZOMVBBaWJEeGdHRDVhZXY1eUpOVVVvVDAxeWdoa1pRZnViOFNlcGtoeGNVemVyNWdCTFRET0lxOFNxeWFoNFFZWkxvNVZSck1CZ1wvMTMyIiwicHJpdmlsZWdlIjpbXSwidW5pb25pZCI6Im9wRm5DdzZjVGpXbk00RHI3RG1tUzBxWkdJdXMifQ==
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000166s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000216s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000232s ]
+SQL: SHOW COLUMNS FROM `eggcoin_user` [ RunTime:0.0005s ]
+NOTIC: [2] Illegal string offset 'invite_code' /usr/local/nginx/html/lianyangji/Application/Home/Controller/ShareByChickenController.class.php 第 62 行.
+NOTIC: [8] Uninitialized string offset: 0 /usr/local/nginx/html/lianyangji/Application/Home/Controller/ShareByChickenController.class.php 第 62 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000235s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000249s ]
+
+[ 2018-02-27T16:14:31+08:00 ] 60.194.185.2 /ShareByChicken?invite_code=750ACC29D7DF9A05&aa=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000156s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000199s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000215s ]
+SQL: SHOW COLUMNS FROM `eggcoin_user` [ RunTime:0.0005s ]
+NOTIC: [2] Illegal string offset 'invite_code' /usr/local/nginx/html/lianyangji/Application/Home/Controller/ShareByChickenController.class.php 第 62 行.
+NOTIC: [8] Uninitialized string offset: 0 /usr/local/nginx/html/lianyangji/Application/Home/Controller/ShareByChickenController.class.php 第 62 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000260s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000274s ]
+
+[ 2018-02-27T16:14:44+08:00 ] 60.194.185.2 /ShareByChicken?invite_code=750ACC29D7DF9A05&aa=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000156s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000205s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000219s ]
+NOTIC: [8] Undefined index: wx_info /usr/local/nginx/html/lianyangji/Application/Home/Controller/ShareByChickenController.class.php 第 25 行.
+
+[ 2018-02-27T16:14:46+08:00 ] 60.194.185.2 /ShareByChicken?state=eyJpbnZpdGVfY29kZSI6Ijc1MEFDQzI5RDdERjlBMDUiLCJhYSI6IjEiLCJyZWRpcmVjdF91cmkiOiJodHRwOlwvXC93d3cubGlhbnlhbmdqaS5pb1wvU2hhcmVCeUNoaWNrZW4ifQ==&wx_info=eyJvcGVuaWQiOiJvQ0E2MWpraXdzc0ozNmlnUnRnb3Z2Q2c0NWJvIiwibmlja25hbWUiOiJcdTk2M2ZcdTk1MGIiLCJzZXgiOjEsImxhbmd1YWdlIjoiemhfQ04iLCJjaXR5IjoiIiwicHJvdmluY2UiOiIiLCJjb3VudHJ5IjoiXHU3NjdlXHU2MTU1XHU1OTI3IiwiaGVhZGltZ3VybCI6Imh0dHA6XC9cL3RoaXJkd3gucWxvZ28uY25cL21tb3BlblwvdmlfMzJcL0wxTzRZRm9qdDl3MzZOMVBBaWJEeGdHRDVhZXY1eUpOVVVvVDAxeWdoa1pRZnViOFNlcGtoeGNVemVyNWdCTFRET0lxOFNxeWFoNFFZWkxvNVZSck1CZ1wvMTMyIiwicHJpdmlsZWdlIjpbXSwidW5pb25pZCI6Im9wRm5DdzZjVGpXbk00RHI3RG1tUzBxWkdJdXMifQ==
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000149s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000203s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000217s ]
+SQL: SHOW COLUMNS FROM `eggcoin_user_wechatinfo` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `eggcoin_user_wechatinfo` WHERE ( unionid="opFnCw6cTjWnM4Dr7DmmS0qZGIus" ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `eggcoin_user` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `eggcoin_user` WHERE ( invite_code="750ACC29D7DF9A05" ) LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000254s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000271s ]
+
+[ 2018-02-27T16:14:53+08:00 ] 60.194.185.2 /ShareByChicken?state=eyJpbnZpdGVfY29kZSI6Ijc1MEFDQzI5RDdERjlBMDUiLCJhYSI6IjEiLCJyZWRpcmVjdF91cmkiOiJodHRwOlwvXC93d3cubGlhbnlhbmdqaS5pb1wvU2hhcmVCeUNoaWNrZW4ifQ==&wx_info=eyJvcGVuaWQiOiJvQ0E2MWpraXdzc0ozNmlnUnRnb3Z2Q2c0NWJvIiwibmlja25hbWUiOiJcdTk2M2ZcdTk1MGIiLCJzZXgiOjEsImxhbmd1YWdlIjoiemhfQ04iLCJjaXR5IjoiIiwicHJvdmluY2UiOiIiLCJjb3VudHJ5IjoiXHU3NjdlXHU2MTU1XHU1OTI3IiwiaGVhZGltZ3VybCI6Imh0dHA6XC9cL3RoaXJkd3gucWxvZ28uY25cL21tb3BlblwvdmlfMzJcL0wxTzRZRm9qdDl3MzZOMVBBaWJEeGdHRDVhZXY1eUpOVVVvVDAxeWdoa1pRZnViOFNlcGtoeGNVemVyNWdCTFRET0lxOFNxeWFoNFFZWkxvNVZSck1CZ1wvMTMyIiwicHJpdmlsZWdlIjpbXSwidW5pb25pZCI6Im9wRm5DdzZjVGpXbk00RHI3RG1tUzBxWkdJdXMifQ==
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000175s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000205s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000221s ]
+SQL: SHOW COLUMNS FROM `eggcoin_user` [ RunTime:0.0005s ]
+NOTIC: [2] Illegal string offset 'invite_code' /usr/local/nginx/html/lianyangji/Application/Home/Controller/ShareByChickenController.class.php 第 62 行.
+NOTIC: [8] Uninitialized string offset: 0 /usr/local/nginx/html/lianyangji/Application/Home/Controller/ShareByChickenController.class.php 第 62 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000271s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000286s ]
+
+[ 2018-02-27T16:15:14+08:00 ] 60.194.185.2 /ShareByChicken?state=eyJpbnZpdGVfY29kZSI6Ijc1MEFDQzI5RDdERjlBMDUiLCJhYSI6IjEiLCJyZWRpcmVjdF91cmkiOiJodHRwOlwvXC93d3cubGlhbnlhbmdqaS5pb1wvU2hhcmVCeUNoaWNrZW4ifQ==&wx_info=eyJvcGVuaWQiOiJvQ0E2MWpraXdzc0ozNmlnUnRnb3Z2Q2c0NWJvIiwibmlja25hbWUiOiJcdTk2M2ZcdTk1MGIiLCJzZXgiOjEsImxhbmd1YWdlIjoiemhfQ04iLCJjaXR5IjoiIiwicHJvdmluY2UiOiIiLCJjb3VudHJ5IjoiXHU3NjdlXHU2MTU1XHU1OTI3IiwiaGVhZGltZ3VybCI6Imh0dHA6XC9cL3RoaXJkd3gucWxvZ28uY25cL21tb3BlblwvdmlfMzJcL0wxTzRZRm9qdDl3MzZOMVBBaWJEeGdHRDVhZXY1eUpOVVVvVDAxeWdoa1pRZnViOFNlcGtoeGNVemVyNWdCTFRET0lxOFNxeWFoNFFZWkxvNVZSck1CZ1wvMTMyIiwicHJpdmlsZWdlIjpbXSwidW5pb25pZCI6Im9wRm5DdzZjVGpXbk00RHI3RG1tUzBxWkdJdXMifQ==
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000171s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000257s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000278s ]
+SQL: SHOW COLUMNS FROM `eggcoin_user` [ RunTime:0.0005s ]
+NOTIC: [2] Illegal string offset 'invite_code' /usr/local/nginx/html/lianyangji/Application/Home/Controller/ShareByChickenController.class.php 第 62 行.
+NOTIC: [8] Uninitialized string offset: 0 /usr/local/nginx/html/lianyangji/Application/Home/Controller/ShareByChickenController.class.php 第 62 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000267s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000283s ]
+
+[ 2018-02-27T16:15:21+08:00 ] 60.194.185.2 /ShareByChicken?state=eyJpbnZpdGVfY29kZSI6Ijc1MEFDQzI5RDdERjlBMDUiLCJhYSI6IjEiLCJyZWRpcmVjdF91cmkiOiJodHRwOlwvXC93d3cubGlhbnlhbmdqaS5pb1wvU2hhcmVCeUNoaWNrZW4ifQ==&wx_info=eyJvcGVuaWQiOiJvQ0E2MWpraXdzc0ozNmlnUnRnb3Z2Q2c0NWJvIiwibmlja25hbWUiOiJcdTk2M2ZcdTk1MGIiLCJzZXgiOjEsImxhbmd1YWdlIjoiemhfQ04iLCJjaXR5IjoiIiwicHJvdmluY2UiOiIiLCJjb3VudHJ5IjoiXHU3NjdlXHU2MTU1XHU1OTI3IiwiaGVhZGltZ3VybCI6Imh0dHA6XC9cL3RoaXJkd3gucWxvZ28uY25cL21tb3BlblwvdmlfMzJcL0wxTzRZRm9qdDl3MzZOMVBBaWJEeGdHRDVhZXY1eUpOVVVvVDAxeWdoa1pRZnViOFNlcGtoeGNVemVyNWdCTFRET0lxOFNxeWFoNFFZWkxvNVZSck1CZ1wvMTMyIiwicHJpdmlsZWdlIjpbXSwidW5pb25pZCI6Im9wRm5DdzZjVGpXbk00RHI3RG1tUzBxWkdJdXMifQ==
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000151s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000203s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000218s ]
+SQL: SHOW COLUMNS FROM `eggcoin_user` [ RunTime:0.0005s ]
+NOTIC: [2] Illegal string offset 'invite_code' /usr/local/nginx/html/lianyangji/Application/Home/Controller/ShareByChickenController.class.php 第 63 行.
+NOTIC: [8] Uninitialized string offset: 0 /usr/local/nginx/html/lianyangji/Application/Home/Controller/ShareByChickenController.class.php 第 63 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000240s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000254s ]
+
+[ 2018-02-27T16:15:36+08:00 ] 60.194.185.2 /ShareByChicken?state=eyJpbnZpdGVfY29kZSI6Ijc1MEFDQzI5RDdERjlBMDUiLCJhYSI6IjEiLCJyZWRpcmVjdF91cmkiOiJodHRwOlwvXC93d3cubGlhbnlhbmdqaS5pb1wvU2hhcmVCeUNoaWNrZW4ifQ==&wx_info=eyJvcGVuaWQiOiJvQ0E2MWpraXdzc0ozNmlnUnRnb3Z2Q2c0NWJvIiwibmlja25hbWUiOiJcdTk2M2ZcdTk1MGIiLCJzZXgiOjEsImxhbmd1YWdlIjoiemhfQ04iLCJjaXR5IjoiIiwicHJvdmluY2UiOiIiLCJjb3VudHJ5IjoiXHU3NjdlXHU2MTU1XHU1OTI3IiwiaGVhZGltZ3VybCI6Imh0dHA6XC9cL3RoaXJkd3gucWxvZ28uY25cL21tb3BlblwvdmlfMzJcL0wxTzRZRm9qdDl3MzZOMVBBaWJEeGdHRDVhZXY1eUpOVVVvVDAxeWdoa1pRZnViOFNlcGtoeGNVemVyNWdCTFRET0lxOFNxeWFoNFFZWkxvNVZSck1CZ1wvMTMyIiwicHJpdmlsZWdlIjpbXSwidW5pb25pZCI6Im9wRm5DdzZjVGpXbk00RHI3RG1tUzBxWkdJdXMifQ==
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000151s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000203s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000218s ]
+SQL: SHOW COLUMNS FROM `eggcoin_user` [ RunTime:0.0006s ]
+NOTIC: [2] Illegal string offset 'invite_code' /usr/local/nginx/html/lianyangji/Application/Home/Controller/ShareByChickenController.class.php 第 63 行.
+NOTIC: [8] Uninitialized string offset: 0 /usr/local/nginx/html/lianyangji/Application/Home/Controller/ShareByChickenController.class.php 第 63 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000332s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000349s ]
+
+[ 2018-02-27T16:15:48+08:00 ] 60.194.185.2 /ShareByChicken?state=eyJpbnZpdGVfY29kZSI6Ijc1MEFDQzI5RDdERjlBMDUiLCJhYSI6IjEiLCJyZWRpcmVjdF91cmkiOiJodHRwOlwvXC93d3cubGlhbnlhbmdqaS5pb1wvU2hhcmVCeUNoaWNrZW4ifQ==&wx_info=eyJvcGVuaWQiOiJvQ0E2MWpraXdzc0ozNmlnUnRnb3Z2Q2c0NWJvIiwibmlja25hbWUiOiJcdTk2M2ZcdTk1MGIiLCJzZXgiOjEsImxhbmd1YWdlIjoiemhfQ04iLCJjaXR5IjoiIiwicHJvdmluY2UiOiIiLCJjb3VudHJ5IjoiXHU3NjdlXHU2MTU1XHU1OTI3IiwiaGVhZGltZ3VybCI6Imh0dHA6XC9cL3RoaXJkd3gucWxvZ28uY25cL21tb3BlblwvdmlfMzJcL0wxTzRZRm9qdDl3MzZOMVBBaWJEeGdHRDVhZXY1eUpOVVVvVDAxeWdoa1pRZnViOFNlcGtoeGNVemVyNWdCTFRET0lxOFNxeWFoNFFZWkxvNVZSck1CZ1wvMTMyIiwicHJpdmlsZWdlIjpbXSwidW5pb25pZCI6Im9wRm5DdzZjVGpXbk00RHI3RG1tUzBxWkdJdXMifQ==
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000165s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000213s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000229s ]
+SQL: SHOW COLUMNS FROM `eggcoin_user` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `eggcoin_user` WHERE ( invite_code="750ACC29D7DF9A05" ) LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000246s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000261s ]
+
+[ 2018-02-27T16:16:23+08:00 ] 60.194.185.2 /ShareByChicken?state=eyJpbnZpdGVfY29kZSI6Ijc1MEFDQzI5RDdERjlBMDUiLCJhYSI6IjEiLCJyZWRpcmVjdF91cmkiOiJodHRwOlwvXC93d3cubGlhbnlhbmdqaS5pb1wvU2hhcmVCeUNoaWNrZW4ifQ==&wx_info=eyJvcGVuaWQiOiJvQ0E2MWpraXdzc0ozNmlnUnRnb3Z2Q2c0NWJvIiwibmlja25hbWUiOiJcdTk2M2ZcdTk1MGIiLCJzZXgiOjEsImxhbmd1YWdlIjoiemhfQ04iLCJjaXR5IjoiIiwicHJvdmluY2UiOiIiLCJjb3VudHJ5IjoiXHU3NjdlXHU2MTU1XHU1OTI3IiwiaGVhZGltZ3VybCI6Imh0dHA6XC9cL3RoaXJkd3gucWxvZ28uY25cL21tb3BlblwvdmlfMzJcL0wxTzRZRm9qdDl3MzZOMVBBaWJEeGdHRDVhZXY1eUpOVVVvVDAxeWdoa1pRZnViOFNlcGtoeGNVemVyNWdCTFRET0lxOFNxeWFoNFFZWkxvNVZSck1CZ1wvMTMyIiwicHJpdmlsZWdlIjpbXSwidW5pb25pZCI6Im9wRm5DdzZjVGpXbk00RHI3RG1tUzBxWkdJdXMifQ==
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000156s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000204s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000220s ]
+SQL: SHOW COLUMNS FROM `eggcoin_user` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `eggcoin_user` WHERE ( invite_code="750ACC29D7DF9A05" ) LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000238s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000253s ]
+
+[ 2018-02-27T16:18:26+08:00 ] 60.194.185.2 /ShareByChicken?state=eyJpbnZpdGVfY29kZSI6Ijc1MEFDQzI5RDdERjlBMDUiLCJhYSI6IjEiLCJyZWRpcmVjdF91cmkiOiJodHRwOlwvXC93d3cubGlhbnlhbmdqaS5pb1wvU2hhcmVCeUNoaWNrZW4ifQ==&wx_info=eyJvcGVuaWQiOiJvQ0E2MWpraXdzc0ozNmlnUnRnb3Z2Q2c0NWJvIiwibmlja25hbWUiOiJcdTk2M2ZcdTk1MGIiLCJzZXgiOjEsImxhbmd1YWdlIjoiemhfQ04iLCJjaXR5IjoiIiwicHJvdmluY2UiOiIiLCJjb3VudHJ5IjoiXHU3NjdlXHU2MTU1XHU1OTI3IiwiaGVhZGltZ3VybCI6Imh0dHA6XC9cL3RoaXJkd3gucWxvZ28uY25cL21tb3BlblwvdmlfMzJcL0wxTzRZRm9qdDl3MzZOMVBBaWJEeGdHRDVhZXY1eUpOVVVvVDAxeWdoa1pRZnViOFNlcGtoeGNVemVyNWdCTFRET0lxOFNxeWFoNFFZWkxvNVZSck1CZ1wvMTMyIiwicHJpdmlsZWdlIjpbXSwidW5pb25pZCI6Im9wRm5DdzZjVGpXbk00RHI3RG1tUzBxWkdJdXMifQ==
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000151s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000207s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000221s ]
+SQL: SHOW COLUMNS FROM `eggcoin_user` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `eggcoin_user` WHERE ( invite_code="750ACC29D7DF9A05" ) LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000230s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000245s ]
+
+[ 2018-02-27T16:18:35+08:00 ] 60.194.185.2 /ShareByChicken?invite_code=750ACC29D7DF9A05&aa=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000151s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000202s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000217s ]
+NOTIC: [8] Undefined index: state /usr/local/nginx/html/lianyangji/Application/Home/Controller/ShareByChickenController.class.php 第 53 行.
+SQL: SHOW COLUMNS FROM `eggcoin_user` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `eggcoin_user` WHERE ( invite_code="750ACC29D7DF9A05" ) LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000236s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000251s ]
+
+[ 2018-02-27T16:18:41+08:00 ] 60.194.185.2 /ShareByChicken?invite_code=750ACC29D7DF9A05&aa=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000165s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000201s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000216s ]
+NOTIC: [8] Undefined index: state /usr/local/nginx/html/lianyangji/Application/Home/Controller/ShareByChickenController.class.php 第 53 行.
+SQL: SHOW COLUMNS FROM `eggcoin_user` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `eggcoin_user` WHERE ( invite_code="750ACC29D7DF9A05" ) LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000272s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000288s ]
+
+[ 2018-02-27T16:18:51+08:00 ] 60.194.185.2 /ShareByChicken?invite_code=750ACC29D7DF9A05&aa=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000169s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000202s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000216s ]
+NOTIC: [8] Undefined index: wx_info /usr/local/nginx/html/lianyangji/Application/Home/Controller/ShareByChickenController.class.php 第 25 行.
+
+[ 2018-02-27T16:18:52+08:00 ] 60.194.185.2 /ShareByChicken?state=eyJpbnZpdGVfY29kZSI6Ijc1MEFDQzI5RDdERjlBMDUiLCJhYSI6IjEiLCJyZWRpcmVjdF91cmkiOiJodHRwOlwvXC93d3cubGlhbnlhbmdqaS5pb1wvU2hhcmVCeUNoaWNrZW4ifQ==&wx_info=eyJvcGVuaWQiOiJvQ0E2MWpraXdzc0ozNmlnUnRnb3Z2Q2c0NWJvIiwibmlja25hbWUiOiJcdTk2M2ZcdTk1MGIiLCJzZXgiOjEsImxhbmd1YWdlIjoiemhfQ04iLCJjaXR5IjoiIiwicHJvdmluY2UiOiIiLCJjb3VudHJ5IjoiXHU3NjdlXHU2MTU1XHU1OTI3IiwiaGVhZGltZ3VybCI6Imh0dHA6XC9cL3RoaXJkd3gucWxvZ28uY25cL21tb3BlblwvdmlfMzJcL0wxTzRZRm9qdDl3MzZOMVBBaWJEeGdHRDVhZXY1eUpOVVVvVDAxeWdoa1pRZnViOFNlcGtoeGNVemVyNWdCTFRET0lxOFNxeWFoNFFZWkxvNVZSck1CZ1wvMTMyIiwicHJpdmlsZWdlIjpbXSwidW5pb25pZCI6Im9wRm5DdzZjVGpXbk00RHI3RG1tUzBxWkdJdXMifQ==
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000156s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000200s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000215s ]
+SQL: SHOW COLUMNS FROM `eggcoin_user_wechatinfo` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `eggcoin_user_wechatinfo` WHERE ( unionid="opFnCw6cTjWnM4Dr7DmmS0qZGIus" ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `eggcoin_user` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `eggcoin_user` WHERE ( invite_code="750ACC29D7DF9A05" ) LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000250s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000272s ]
+
+[ 2018-02-27T16:19:06+08:00 ] 60.194.185.2 /ShareByChicken?state=eyJpbnZpdGVfY29kZSI6Ijc1MEFDQzI5RDdERjlBMDUiLCJhYSI6IjEiLCJyZWRpcmVjdF91cmkiOiJodHRwOlwvXC93d3cubGlhbnlhbmdqaS5pb1wvU2hhcmVCeUNoaWNrZW4ifQ==&wx_info=eyJvcGVuaWQiOiJvQ0E2MWpraXdzc0ozNmlnUnRnb3Z2Q2c0NWJvIiwibmlja25hbWUiOiJcdTk2M2ZcdTk1MGIiLCJzZXgiOjEsImxhbmd1YWdlIjoiemhfQ04iLCJjaXR5IjoiIiwicHJvdmluY2UiOiIiLCJjb3VudHJ5IjoiXHU3NjdlXHU2MTU1XHU1OTI3IiwiaGVhZGltZ3VybCI6Imh0dHA6XC9cL3RoaXJkd3gucWxvZ28uY25cL21tb3BlblwvdmlfMzJcL0wxTzRZRm9qdDl3MzZOMVBBaWJEeGdHRDVhZXY1eUpOVVVvVDAxeWdoa1pRZnViOFNlcGtoeGNVemVyNWdCTFRET0lxOFNxeWFoNFFZWkxvNVZSck1CZ1wvMTMyIiwicHJpdmlsZWdlIjpbXSwidW5pb25pZCI6Im9wRm5DdzZjVGpXbk00RHI3RG1tUzBxWkdJdXMifQ==
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000166s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000200s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000214s ]
+SQL: SHOW COLUMNS FROM `eggcoin_user` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `eggcoin_user` WHERE ( invite_code="750ACC29D7DF9A05" ) LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000255s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000271s ]
+
+[ 2018-02-27T16:21:33+08:00 ] 60.194.185.2 /ShareByChicken?state=eyJpbnZpdGVfY29kZSI6Ijc1MEFDQzI5RDdERjlBMDUiLCJhYSI6IjEiLCJyZWRpcmVjdF91cmkiOiJodHRwOlwvXC93d3cubGlhbnlhbmdqaS5pb1wvU2hhcmVCeUNoaWNrZW4ifQ==&wx_info=eyJvcGVuaWQiOiJvQ0E2MWpraXdzc0ozNmlnUnRnb3Z2Q2c0NWJvIiwibmlja25hbWUiOiJcdTk2M2ZcdTk1MGIiLCJzZXgiOjEsImxhbmd1YWdlIjoiemhfQ04iLCJjaXR5IjoiIiwicHJvdmluY2UiOiIiLCJjb3VudHJ5IjoiXHU3NjdlXHU2MTU1XHU1OTI3IiwiaGVhZGltZ3VybCI6Imh0dHA6XC9cL3RoaXJkd3gucWxvZ28uY25cL21tb3BlblwvdmlfMzJcL0wxTzRZRm9qdDl3MzZOMVBBaWJEeGdHRDVhZXY1eUpOVVVvVDAxeWdoa1pRZnViOFNlcGtoeGNVemVyNWdCTFRET0lxOFNxeWFoNFFZWkxvNVZSck1CZ1wvMTMyIiwicHJpdmlsZWdlIjpbXSwidW5pb25pZCI6Im9wRm5DdzZjVGpXbk00RHI3RG1tUzBxWkdJdXMifQ==
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000150s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000225s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000239s ]
+SQL: SHOW COLUMNS FROM `eggcoin_user_wechatinfo` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `eggcoin_user_wechatinfo` WHERE ( unionid="opFnCw6cTjWnM4Dr7DmmS0qZGIus" ) LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: wx_state /usr/local/nginx/html/lianyangji/Application/Home/Controller/ShareByChickenController.class.php 第 53 行.
+SQL: SHOW COLUMNS FROM `eggcoin_user` [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000272s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000289s ]
+
+[ 2018-02-27T16:21:49+08:00 ] 60.194.185.2 /ShareByChicken
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000215s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000273s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000294s ]
+NOTIC: [8] Undefined index: wx_info /usr/local/nginx/html/lianyangji/Application/Home/Controller/ShareByChickenController.class.php 第 25 行.
+
+[ 2018-02-27T16:21:50+08:00 ] 60.194.185.2 /ShareByChicken?wx_state=eyJyZWRpcmVjdF91cmkiOiJodHRwOlwvXC93d3cubGlhbnlhbmdqaS5pb1wvU2hhcmVCeUNoaWNrZW4ifQ==&wx_info=eyJvcGVuaWQiOiJvQ0E2MWpraXdzc0ozNmlnUnRnb3Z2Q2c0NWJvIiwibmlja25hbWUiOiJcdTk2M2ZcdTk1MGIiLCJzZXgiOjEsImxhbmd1YWdlIjoiemhfQ04iLCJjaXR5IjoiIiwicHJvdmluY2UiOiIiLCJjb3VudHJ5IjoiXHU3NjdlXHU2MTU1XHU1OTI3IiwiaGVhZGltZ3VybCI6Imh0dHA6XC9cL3RoaXJkd3gucWxvZ28uY25cL21tb3BlblwvdmlfMzJcL0wxTzRZRm9qdDl3MzZOMVBBaWJEeGdHRDVhZXY1eUpOVVVvVDAxeWdoa1pRZnViOFNlcGtoeGNVemVyNWdCTFRET0lxOFNxeWFoNFFZWkxvNVZSck1CZ1wvMTMyIiwicHJpdmlsZWdlIjpbXSwidW5pb25pZCI6Im9wRm5DdzZjVGpXbk00RHI3RG1tUzBxWkdJdXMifQ==
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000154s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000234s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000251s ]
+SQL: SHOW COLUMNS FROM `eggcoin_user_wechatinfo` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `eggcoin_user_wechatinfo` WHERE ( unionid="opFnCw6cTjWnM4Dr7DmmS0qZGIus" ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `eggcoin_user` [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000283s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000299s ]
+
+[ 2018-02-27T16:22:35+08:00 ] 60.194.185.2 /ShareByChicken?wx_state=eyJyZWRpcmVjdF91cmkiOiJodHRwOlwvXC93d3cubGlhbnlhbmdqaS5pb1wvU2hhcmVCeUNoaWNrZW4ifQ==&wx_info=eyJvcGVuaWQiOiJvQ0E2MWpraXdzc0ozNmlnUnRnb3Z2Q2c0NWJvIiwibmlja25hbWUiOiJcdTk2M2ZcdTk1MGIiLCJzZXgiOjEsImxhbmd1YWdlIjoiemhfQ04iLCJjaXR5IjoiIiwicHJvdmluY2UiOiIiLCJjb3VudHJ5IjoiXHU3NjdlXHU2MTU1XHU1OTI3IiwiaGVhZGltZ3VybCI6Imh0dHA6XC9cL3RoaXJkd3gucWxvZ28uY25cL21tb3BlblwvdmlfMzJcL0wxTzRZRm9qdDl3MzZOMVBBaWJEeGdHRDVhZXY1eUpOVVVvVDAxeWdoa1pRZnViOFNlcGtoeGNVemVyNWdCTFRET0lxOFNxeWFoNFFZWkxvNVZSck1CZ1wvMTMyIiwicHJpdmlsZWdlIjpbXSwidW5pb25pZCI6Im9wRm5DdzZjVGpXbk00RHI3RG1tUzBxWkdJdXMifQ==
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000165s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000205s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000222s ]
+SQL: SHOW COLUMNS FROM `eggcoin_user` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `eggcoin_user` WHERE `id` = 9 LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000303s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000322s ]
+
+[ 2018-02-27T16:22:54+08:00 ] 60.194.185.2 /ShareByChicken?wx_state=eyJyZWRpcmVjdF91cmkiOiJodHRwOlwvXC93d3cubGlhbnlhbmdqaS5pb1wvU2hhcmVCeUNoaWNrZW4ifQ==&wx_info=eyJvcGVuaWQiOiJvQ0E2MWpraXdzc0ozNmlnUnRnb3Z2Q2c0NWJvIiwibmlja25hbWUiOiJcdTk2M2ZcdTk1MGIiLCJzZXgiOjEsImxhbmd1YWdlIjoiemhfQ04iLCJjaXR5IjoiIiwicHJvdmluY2UiOiIiLCJjb3VudHJ5IjoiXHU3NjdlXHU2MTU1XHU1OTI3IiwiaGVhZGltZ3VybCI6Imh0dHA6XC9cL3RoaXJkd3gucWxvZ28uY25cL21tb3BlblwvdmlfMzJcL0wxTzRZRm9qdDl3MzZOMVBBaWJEeGdHRDVhZXY1eUpOVVVvVDAxeWdoa1pRZnViOFNlcGtoeGNVemVyNWdCTFRET0lxOFNxeWFoNFFZWkxvNVZSck1CZ1wvMTMyIiwicHJpdmlsZWdlIjpbXSwidW5pb25pZCI6Im9wRm5DdzZjVGpXbk00RHI3RG1tUzBxWkdJdXMifQ==
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000152s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000201s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000216s ]
+SQL: SHOW COLUMNS FROM `eggcoin_user` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `eggcoin_user` WHERE `id` = 9 LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000262s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000292s ]
+
+[ 2018-02-27T16:23:12+08:00 ] 60.194.185.2 /ShareByChicken?invite_code=750ACC29D7DF9A05&aa=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000164s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000202s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000217s ]
+NOTIC: [8] Undefined index: wx_state /usr/local/nginx/html/lianyangji/Application/Home/Controller/ShareByChickenController.class.php 第 53 行.
+SQL: SHOW COLUMNS FROM `eggcoin_user` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `eggcoin_user` WHERE `id` = 9 LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000253s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000269s ]
+
+[ 2018-02-27T16:23:52+08:00 ] 60.194.185.2 /ShareByChicken?invite_code=750ACC29D7DF9A05&aa=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000154s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000227s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000242s ]
+NOTIC: [8] Undefined index: wx_info /usr/local/nginx/html/lianyangji/Application/Home/Controller/ShareByChickenController.class.php 第 25 行.
+
+[ 2018-02-27T16:23:54+08:00 ] 60.194.185.2 /ShareByChicken?wx_state=eyJpbnZpdGVfY29kZSI6Ijc1MEFDQzI5RDdERjlBMDUiLCJhYSI6IjEiLCJyZWRpcmVjdF91cmkiOiJodHRwOlwvXC93d3cubGlhbnlhbmdqaS5pb1wvU2hhcmVCeUNoaWNrZW4ifQ==&wx_info=eyJvcGVuaWQiOiJvQ0E2MWpraXdzc0ozNmlnUnRnb3Z2Q2c0NWJvIiwibmlja25hbWUiOiJcdTk2M2ZcdTk1MGIiLCJzZXgiOjEsImxhbmd1YWdlIjoiemhfQ04iLCJjaXR5IjoiIiwicHJvdmluY2UiOiIiLCJjb3VudHJ5IjoiXHU3NjdlXHU2MTU1XHU1OTI3IiwiaGVhZGltZ3VybCI6Imh0dHA6XC9cL3RoaXJkd3gucWxvZ28uY25cL21tb3BlblwvdmlfMzJcL0wxTzRZRm9qdDl3MzZOMVBBaWJEeGdHRDVhZXY1eUpOVVVvVDAxeWdoa1pRZnViOFNlcGtoeGNVemVyNWdCTFRET0lxOFNxeWFoNFFZWkxvNVZSck1CZ1wvMTMyIiwicHJpdmlsZWdlIjpbXSwidW5pb25pZCI6Im9wRm5DdzZjVGpXbk00RHI3RG1tUzBxWkdJdXMifQ==
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000158s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000202s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000217s ]
+SQL: SHOW COLUMNS FROM `eggcoin_user_wechatinfo` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `eggcoin_user_wechatinfo` WHERE ( unionid="opFnCw6cTjWnM4Dr7DmmS0qZGIus" ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `eggcoin_user` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `eggcoin_user` WHERE `id` = 9 LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000238s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000253s ]
+
+[ 2018-02-27T16:24:09+08:00 ] 60.194.185.2 /ShareByChicken?wx_state=eyJpbnZpdGVfY29kZSI6Ijc1MEFDQzI5RDdERjlBMDUiLCJhYSI6IjEiLCJyZWRpcmVjdF91cmkiOiJodHRwOlwvXC93d3cubGlhbnlhbmdqaS5pb1wvU2hhcmVCeUNoaWNrZW4ifQ==&wx_info=eyJvcGVuaWQiOiJvQ0E2MWpraXdzc0ozNmlnUnRnb3Z2Q2c0NWJvIiwibmlja25hbWUiOiJcdTk2M2ZcdTk1MGIiLCJzZXgiOjEsImxhbmd1YWdlIjoiemhfQ04iLCJjaXR5IjoiIiwicHJvdmluY2UiOiIiLCJjb3VudHJ5IjoiXHU3NjdlXHU2MTU1XHU1OTI3IiwiaGVhZGltZ3VybCI6Imh0dHA6XC9cL3RoaXJkd3gucWxvZ28uY25cL21tb3BlblwvdmlfMzJcL0wxTzRZRm9qdDl3MzZOMVBBaWJEeGdHRDVhZXY1eUpOVVVvVDAxeWdoa1pRZnViOFNlcGtoeGNVemVyNWdCTFRET0lxOFNxeWFoNFFZWkxvNVZSck1CZ1wvMTMyIiwicHJpdmlsZWdlIjpbXSwidW5pb25pZCI6Im9wRm5DdzZjVGpXbk00RHI3RG1tUzBxWkdJdXMifQ==
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000148s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000201s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000216s ]
+SQL: SHOW COLUMNS FROM `eggcoin_user` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `eggcoin_user` WHERE `id` = 9 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `eggcoin_user` WHERE ( invite_code="750ACC29D7DF9A05" ) LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000244s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000258s ]
+
+[ 2018-02-27T16:24:28+08:00 ] 60.194.185.2 /ShareByChicken?wx_state=eyJpbnZpdGVfY29kZSI6Ijc1MEFDQzI5RDdERjlBMDUiLCJhYSI6IjEiLCJyZWRpcmVjdF91cmkiOiJodHRwOlwvXC93d3cubGlhbnlhbmdqaS5pb1wvU2hhcmVCeUNoaWNrZW4ifQ==&wx_info=eyJvcGVuaWQiOiJvQ0E2MWpraXdzc0ozNmlnUnRnb3Z2Q2c0NWJvIiwibmlja25hbWUiOiJcdTk2M2ZcdTk1MGIiLCJzZXgiOjEsImxhbmd1YWdlIjoiemhfQ04iLCJjaXR5IjoiIiwicHJvdmluY2UiOiIiLCJjb3VudHJ5IjoiXHU3NjdlXHU2MTU1XHU1OTI3IiwiaGVhZGltZ3VybCI6Imh0dHA6XC9cL3RoaXJkd3gucWxvZ28uY25cL21tb3BlblwvdmlfMzJcL0wxTzRZRm9qdDl3MzZOMVBBaWJEeGdHRDVhZXY1eUpOVVVvVDAxeWdoa1pRZnViOFNlcGtoeGNVemVyNWdCTFRET0lxOFNxeWFoNFFZWkxvNVZSck1CZ1wvMTMyIiwicHJpdmlsZWdlIjpbXSwidW5pb25pZCI6Im9wRm5DdzZjVGpXbk00RHI3RG1tUzBxWkdJdXMifQ==
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000149s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000214s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000229s ]
+SQL: SHOW COLUMNS FROM `eggcoin_user_wechatinfo` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `eggcoin_user_wechatinfo` WHERE ( unionid="opFnCw6cTjWnM4Dr7DmmS0qZGIus" ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `eggcoin_user` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `eggcoin_user` WHERE `id` = 9 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `eggcoin_user` WHERE ( invite_code="750ACC29D7DF9A05" ) LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000236s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000251s ]
+
+[ 2018-02-27T16:25:31+08:00 ] 14.215.176.18 /ShareByChicken
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000163s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000209s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000223s ]
+NOTIC: [8] Undefined index: wx_info /usr/local/nginx/html/lianyangji/Application/Home/Controller/ShareByChickenController.class.php 第 25 行.
+
+[ 2018-02-27T16:27:04+08:00 ] 60.194.185.2 /ShareByChicken?wx_state=eyJpbnZpdGVfY29kZSI6Ijc1MEFDQzI5RDdERjlBMDUiLCJhYSI6IjEiLCJyZWRpcmVjdF91cmkiOiJodHRwOlwvXC93d3cubGlhbnlhbmdqaS5pb1wvU2hhcmVCeUNoaWNrZW4ifQ==&wx_info=eyJvcGVuaWQiOiJvQ0E2MWpraXdzc0ozNmlnUnRnb3Z2Q2c0NWJvIiwibmlja25hbWUiOiJcdTk2M2ZcdTk1MGIiLCJzZXgiOjEsImxhbmd1YWdlIjoiemhfQ04iLCJjaXR5IjoiIiwicHJvdmluY2UiOiIiLCJjb3VudHJ5IjoiXHU3NjdlXHU2MTU1XHU1OTI3IiwiaGVhZGltZ3VybCI6Imh0dHA6XC9cL3RoaXJkd3gucWxvZ28uY25cL21tb3BlblwvdmlfMzJcL0wxTzRZRm9qdDl3MzZOMVBBaWJEeGdHRDVhZXY1eUpOVVVvVDAxeWdoa1pRZnViOFNlcGtoeGNVemVyNWdCTFRET0lxOFNxeWFoNFFZWkxvNVZSck1CZ1wvMTMyIiwicHJpdmlsZWdlIjpbXSwidW5pb25pZCI6Im9wRm5DdzZjVGpXbk00RHI3RG1tUzBxWkdJdXMifQ==
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000148s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000213s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000227s ]
+SQL: SHOW COLUMNS FROM `eggcoin_user` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `eggcoin_user` WHERE `id` = 9 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `eggcoin_user` WHERE ( invite_code="750ACC29D7DF9A05" ) LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000246s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000260s ]
+
+[ 2018-02-27T16:37:13+08:00 ] 66.249.65.202 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000156s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000225s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000240s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000024s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000040s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002669s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002684s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000070s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000081s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000225s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000239s ]
+
+[ 2018-02-27T16:41:34+08:00 ] 60.194.185.2 /ShareByChicken?wx_state=eyJpbnZpdGVfY29kZSI6Ijc1MEFDQzI5RDdERjlBMDUiLCJhYSI6IjEiLCJyZWRpcmVjdF91cmkiOiJodHRwOlwvXC93d3cubGlhbnlhbmdqaS5pb1wvU2hhcmVCeUNoaWNrZW4ifQ==&wx_info=eyJvcGVuaWQiOiJvQ0E2MWpraXdzc0ozNmlnUnRnb3Z2Q2c0NWJvIiwibmlja25hbWUiOiJcdTk2M2ZcdTk1MGIiLCJzZXgiOjEsImxhbmd1YWdlIjoiemhfQ04iLCJjaXR5IjoiIiwicHJvdmluY2UiOiIiLCJjb3VudHJ5IjoiXHU3NjdlXHU2MTU1XHU1OTI3IiwiaGVhZGltZ3VybCI6Imh0dHA6XC9cL3RoaXJkd3gucWxvZ28uY25cL21tb3BlblwvdmlfMzJcL0wxTzRZRm9qdDl3MzZOMVBBaWJEeGdHRDVhZXY1eUpOVVVvVDAxeWdoa1pRZnViOFNlcGtoeGNVemVyNWdCTFRET0lxOFNxeWFoNFFZWkxvNVZSck1CZ1wvMTMyIiwicHJpdmlsZWdlIjpbXSwidW5pb25pZCI6Im9wRm5DdzZjVGpXbk00RHI3RG1tUzBxWkdJdXMifQ==
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000159s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000199s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000214s ]
+SQL: SHOW COLUMNS FROM `eggcoin_user` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `eggcoin_user` WHERE `id` = 9 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `eggcoin_user` WHERE ( invite_code="750ACC29D7DF9A05" ) LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000257s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000273s ]
+
+[ 2018-02-27T16:41:39+08:00 ] 60.194.185.2 /ShareByChicken?wx_state=eyJpbnZpdGVfY29kZSI6Ijc1MEFDQzI5RDdERjlBMDUiLCJhYSI6IjEiLCJyZWRpcmVjdF91cmkiOiJodHRwOlwvXC93d3cubGlhbnlhbmdqaS5pb1wvU2hhcmVCeUNoaWNrZW4ifQ==&wx_info=eyJvcGVuaWQiOiJvQ0E2MWpraXdzc0ozNmlnUnRnb3Z2Q2c0NWJvIiwibmlja25hbWUiOiJcdTk2M2ZcdTk1MGIiLCJzZXgiOjEsImxhbmd1YWdlIjoiemhfQ04iLCJjaXR5IjoiIiwicHJvdmluY2UiOiIiLCJjb3VudHJ5IjoiXHU3NjdlXHU2MTU1XHU1OTI3IiwiaGVhZGltZ3VybCI6Imh0dHA6XC9cL3RoaXJkd3gucWxvZ28uY25cL21tb3BlblwvdmlfMzJcL0wxTzRZRm9qdDl3MzZOMVBBaWJEeGdHRDVhZXY1eUpOVVVvVDAxeWdoa1pRZnViOFNlcGtoeGNVemVyNWdCTFRET0lxOFNxeWFoNFFZWkxvNVZSck1CZ1wvMTMyIiwicHJpdmlsZWdlIjpbXSwidW5pb25pZCI6Im9wRm5DdzZjVGpXbk00RHI3RG1tUzBxWkdJdXMifQ==
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000152s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000206s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000221s ]
+SQL: SHOW COLUMNS FROM `eggcoin_user` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `eggcoin_user` WHERE `id` = 9 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `eggcoin_user` WHERE ( invite_code="750ACC29D7DF9A05" ) LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000270s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000286s ]
+
+[ 2018-02-27T16:41:40+08:00 ] 60.194.185.2 /ShareByChicken?wx_state=eyJpbnZpdGVfY29kZSI6Ijc1MEFDQzI5RDdERjlBMDUiLCJhYSI6IjEiLCJyZWRpcmVjdF91cmkiOiJodHRwOlwvXC93d3cubGlhbnlhbmdqaS5pb1wvU2hhcmVCeUNoaWNrZW4ifQ==&wx_info=eyJvcGVuaWQiOiJvQ0E2MWpraXdzc0ozNmlnUnRnb3Z2Q2c0NWJvIiwibmlja25hbWUiOiJcdTk2M2ZcdTk1MGIiLCJzZXgiOjEsImxhbmd1YWdlIjoiemhfQ04iLCJjaXR5IjoiIiwicHJvdmluY2UiOiIiLCJjb3VudHJ5IjoiXHU3NjdlXHU2MTU1XHU1OTI3IiwiaGVhZGltZ3VybCI6Imh0dHA6XC9cL3RoaXJkd3gucWxvZ28uY25cL21tb3BlblwvdmlfMzJcL0wxTzRZRm9qdDl3MzZOMVBBaWJEeGdHRDVhZXY1eUpOVVVvVDAxeWdoa1pRZnViOFNlcGtoeGNVemVyNWdCTFRET0lxOFNxeWFoNFFZWkxvNVZSck1CZ1wvMTMyIiwicHJpdmlsZWdlIjpbXSwidW5pb25pZCI6Im9wRm5DdzZjVGpXbk00RHI3RG1tUzBxWkdJdXMifQ==
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000165s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000319s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000335s ]
+SQL: SHOW COLUMNS FROM `eggcoin_user` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `eggcoin_user` WHERE `id` = 9 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `eggcoin_user` WHERE ( invite_code="750ACC29D7DF9A05" ) LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000266s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000281s ]
+
+[ 2018-02-27T17:09:50+08:00 ] 103.45.99.125 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000172s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000207s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000222s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000022s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000038s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002818s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002833s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000067s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000078s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000226s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000240s ]
+
+[ 2018-02-27T17:09:50+08:00 ] 103.45.99.125 /index.action
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000195s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000216s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000232s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000024s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000040s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002653s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002668s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000083s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000094s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000233s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000248s ]
+
+[ 2018-02-27T17:23:59+08:00 ] 119.147.207.144 /index.action
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000153s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000215s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000231s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000023s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000040s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002654s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002670s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000068s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000079s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000234s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000248s ]
+
+[ 2018-02-27T17:30:53+08:00 ] 47.93.112.232 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000162s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000200s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000214s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000023s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000039s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002629s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002645s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000066s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000076s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000298s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000313s ]
+
+[ 2018-02-27T17:44:56+08:00 ] 60.194.185.2 /ShareByChicken/index?invite_code=0C6C82A49CEFE076&from=singlemessage
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000160s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000215s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000230s ]
+NOTIC: [8] Undefined index: wx_info /usr/local/nginx/html/lianyangji/Application/Home/Controller/ShareByChickenController.class.php 第 25 行.
+
+[ 2018-02-27T17:45:02+08:00 ] 60.194.185.2 /ShareByChicken?wx_state=eyJpbnZpdGVfY29kZSI6IjBDNkM4MkE0OUNFRkUwNzYiLCJmcm9tIjoic2luZ2xlbWVzc2FnZSIsInJlZGlyZWN0X3VyaSI6Imh0dHA6XC9cL3d3dy5saWFueWFuZ2ppLmlvXC9TaGFyZUJ5Q2hpY2tlbiJ9&wx_info=eyJvcGVuaWQiOiJvQ0E2MWp0UnhhdjA0b3BzSE1KTHZLQXdlYmFjIiwibmlja25hbWUiOiJcdTgzYjFcdTU5NjUiLCJzZXgiOjEsImxhbmd1YWdlIjoiemhfQ04iLCJjaXR5IjoiXHU1OTJhXHU1MzlmIiwicHJvdmluY2UiOiJcdTVjNzFcdTg5N2YiLCJjb3VudHJ5IjoiXHU0ZTJkXHU1NmZkIiwiaGVhZGltZ3VybCI6Imh0dHA6XC9cL3RoaXJkd3gucWxvZ28uY25cL21tb3BlblwvdmlfMzJcL0RZQUlPZ3E4M2VwRGUzdDRmcjFzaWNxcjFPdHRUc0hISHlDc3lRWHRvQ1lCY1ZBdGNrb3B6U2JSazJYWms5b3dpY2lhR1FrUUNBSVBWT05jY0ZDMEpRWlVBXC8xMzIiLCJwcml2aWxlZ2UiOltdLCJ1bmlvbmlkIjoib3BGbkN3em4teUFiOGFPd1dwemk5RWFYbDFHZyJ9
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000155s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000200s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000216s ]
+SQL: SHOW COLUMNS FROM `eggcoin_user_wechatinfo` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `eggcoin_user_wechatinfo` WHERE ( unionid="opFnCwzn-yAb8aOwWpzi9EaXl1Gg" ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `eggcoin_user` [ RunTime:0.0004s ]
+SQL: INSERT INTO `eggcoin_user` (`user_st`,`updated_at`,`created_at`) VALUES ('1','1519724702','1519724702') [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `eggcoin_user_vip` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `eggcoin_user_vip` WHERE ( user_id=23 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `eggcoin_wallet` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `eggcoin_wallet` WHERE `user_id` = 23 LIMIT 1   [ RunTime:0.0001s ]
+SQL: INSERT INTO `eggcoin_wallet` (`user_id`,`feed_amount`) VALUES ('23','0.3') [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `eggcoin_chicken_raise_record` [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: chicken_id /usr/local/nginx/html/lianyangji/Application/Common/Common/function.php 第 298 行.
+SQL: INSERT INTO `eggcoin_chicken_raise_record` (`user_id`,`amount`,`unit`,`reason_source_id`,`reason_type`,`reason_narration`,`created_at`,`state`) VALUES ('23','300','g','23','8','VIP内侧用户奖励','1519724702','1') [ RunTime:0.0001s ]
+SQL: UPDATE `eggcoin_user` SET `invite_code`='B69472D65E8FF715' WHERE ( invite_code = "" and id=23 ) [ RunTime:0.0002s ]
+SQL: SELECT * FROM `eggcoin_user_wechatinfo` WHERE ( wx_open_id="oCA61jtRxav04opsHMJLvKAwebac" ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `eggcoin_user_wechatinfo` WHERE ( unionid="opFnCwzn-yAb8aOwWpzi9EaXl1Gg" ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: INSERT INTO `eggcoin_user_wechatinfo` (`wx_open_id`,`wx_pic`,`wx_nick_name`,`unionid`,`sex`,`province`,`city`,`country`,`user_id`,`created_at`) VALUES ('oCA61jtRxav04opsHMJLvKAwebac','http://thirdwx.qlogo.cn/mmopen/vi_32/DYAIOgq83epDe3t4fr1sicqr1OttTsHHHyCsyQXtoCYBcVAtckopzSbRk2XZk9owiciaGQkQCAIPVONccFC0JQZUA/132','6I6x5aWl','opFnCwzn-yAb8aOwWpzi9EaXl1Gg','1','山西','太原','中国','23','1519724702') [ RunTime:0.0001s ]
+SQL: SELECT * FROM `eggcoin_user` WHERE `id` = 23 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `eggcoin_user` WHERE ( invite_code="0C6C82A49CEFE076" ) LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000272s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000289s ]
+
+[ 2018-02-27T17:45:57+08:00 ] 60.194.185.2 /ShareByChicken/index?invite_code=0C6C82A49CEFE076&from=singlemessage
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000150s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000245s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000264s ]
+NOTIC: [8] Undefined index: wx_info /usr/local/nginx/html/lianyangji/Application/Home/Controller/ShareByChickenController.class.php 第 25 行.
+
+[ 2018-02-27T17:46:01+08:00 ] 60.194.185.2 /ShareByChicken?wx_state=eyJpbnZpdGVfY29kZSI6IjBDNkM4MkE0OUNFRkUwNzYiLCJmcm9tIjoic2luZ2xlbWVzc2FnZSIsInJlZGlyZWN0X3VyaSI6Imh0dHA6XC9cL3d3dy5saWFueWFuZ2ppLmlvXC9TaGFyZUJ5Q2hpY2tlbiJ9&wx_info=eyJvcGVuaWQiOiJvQ0E2MWpwNF9WQkJ3WUtWVWcwWWFORUNqVFk4Iiwibmlja25hbWUiOiJcdThmZGJcdTUxZmJcdTc2ODRcdTUxNTRcdTViNTAiLCJzZXgiOjEsImxhbmd1YWdlIjoiemhfQ04iLCJjaXR5IjoiXHU2NzFkXHU5NjMzIiwicHJvdmluY2UiOiJcdTUzMTdcdTRlYWMiLCJjb3VudHJ5IjoiXHU0ZTJkXHU1NmZkIiwiaGVhZGltZ3VybCI6Imh0dHA6XC9cL3RoaXJkd3gucWxvZ28uY25cL21tb3BlblwvdmlfMzJcL1NReWlhUTNsNW9nRnJDaWJvb3plYlVSeDR0NDNpYkhwZGZIdmFzbnFaWlI3RGhVRGN6aWNXS2p3cjNkNlZiYTdrZ1lxc3ZDbjFYOWQyMlRqTjNSRXI1blZXUVwvMTMyIiwicHJpdmlsZWdlIjpbXSwidW5pb25pZCI6Im9wRm5Dd18zLXowTlQzQUVqakw2dEhFbjB3dlEifQ==
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000152s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000230s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000245s ]
+SQL: SHOW COLUMNS FROM `eggcoin_user_wechatinfo` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `eggcoin_user_wechatinfo` WHERE ( unionid="opFnCw_3-z0NT3AEjjL6tHEn0wvQ" ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `eggcoin_user` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `eggcoin_user` WHERE `id` = 10 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `eggcoin_user` WHERE ( invite_code="0C6C82A49CEFE076" ) LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000237s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000252s ]
+
+[ 2018-02-27T17:46:02+08:00 ] 120.204.17.46 /ShareByChicken?wx_state=eyJpbnZpdGVfY29kZSI6IjBDNkM4MkE0OUNFRkUwNzYiLCJmcm9tIjoic2luZ2xlbWVzc2FnZSIsInJlZGlyZWN0X3VyaSI6Imh0dHA6XC9cL3d3dy5saWFueWFuZ2ppLmlvXC9TaGFyZUJ5Q2hpY2tlbiJ9&wx_info=eyJvcGVuaWQiOiJvQ0E2MWp0UnhhdjA0b3BzSE1KTHZLQXdlYmFjIiwibmlja25hbWUiOiJcdTgzYjFcdTU5NjUiLCJzZXgiOjEsImxhbmd1YWdlIjoiemhfQ04iLCJjaXR5IjoiXHU1OTJhXHU1MzlmIiwicHJvdmluY2UiOiJcdTVjNzFcdTg5N2YiLCJjb3VudHJ5IjoiXHU0ZTJkXHU1NmZkIiwiaGVhZGltZ3VybCI6Imh0dHA6XC9cL3RoaXJkd3gucWxvZ28uY25cL21tb3BlblwvdmlfMzJcL0RZQUlPZ3E4M2VwRGUzdDRmcjFzaWNxcjFPdHRUc0hISHlDc3lRWHRvQ1lCY1ZBdGNrb3B6U2JSazJYWms5b3dpY2lhR1FrUUNBSVBWT05jY0ZDMEpRWlVBXC8xMzIiLCJwcml2aWxlZ2UiOltdLCJ1bmlvbmlkIjoib3BGbkN3em4teUFiOGFPd1dwemk5RWFYbDFHZyJ9
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000149s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000202s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000217s ]
+SQL: SHOW COLUMNS FROM `eggcoin_user_wechatinfo` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `eggcoin_user_wechatinfo` WHERE ( unionid="opFnCwzn-yAb8aOwWpzi9EaXl1Gg" ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `eggcoin_user` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `eggcoin_user` WHERE `id` = 23 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `eggcoin_user` WHERE ( invite_code="0C6C82A49CEFE076" ) LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000273s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000292s ]
+
+[ 2018-02-27T17:46:08+08:00 ] 60.194.185.2 /ShareByChicken?wx_state=eyJpbnZpdGVfY29kZSI6IjBDNkM4MkE0OUNFRkUwNzYiLCJmcm9tIjoic2luZ2xlbWVzc2FnZSIsInJlZGlyZWN0X3VyaSI6Imh0dHA6XC9cL3d3dy5saWFueWFuZ2ppLmlvXC9TaGFyZUJ5Q2hpY2tlbiJ9&wx_info=eyJvcGVuaWQiOiJvQ0E2MWpwNF9WQkJ3WUtWVWcwWWFORUNqVFk4Iiwibmlja25hbWUiOiJcdThmZGJcdTUxZmJcdTc2ODRcdTUxNTRcdTViNTAiLCJzZXgiOjEsImxhbmd1YWdlIjoiemhfQ04iLCJjaXR5IjoiXHU2NzFkXHU5NjMzIiwicHJvdmluY2UiOiJcdTUzMTdcdTRlYWMiLCJjb3VudHJ5IjoiXHU0ZTJkXHU1NmZkIiwiaGVhZGltZ3VybCI6Imh0dHA6XC9cL3RoaXJkd3gucWxvZ28uY25cL21tb3BlblwvdmlfMzJcL1NReWlhUTNsNW9nRnJDaWJvb3plYlVSeDR0NDNpYkhwZGZIdmFzbnFaWlI3RGhVRGN6aWNXS2p3cjNkNlZiYTdrZ1lxc3ZDbjFYOWQyMlRqTjNSRXI1blZXUVwvMTMyIiwicHJpdmlsZWdlIjpbXSwidW5pb25pZCI6Im9wRm5Dd18zLXowTlQzQUVqakw2dEhFbjB3dlEifQ==
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000234s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000294s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000312s ]
+SQL: SHOW COLUMNS FROM `eggcoin_user` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `eggcoin_user` WHERE `id` = 10 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `eggcoin_user` WHERE ( invite_code="0C6C82A49CEFE076" ) LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000270s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000287s ]
+
+[ 2018-02-27T17:46:28+08:00 ] 111.206.36.15 /ShareByChicken/index?invite_code=0C6C82A49CEFE076&from=singlemessage
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000170s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000199s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000213s ]
+NOTIC: [8] Undefined index: wx_info /usr/local/nginx/html/lianyangji/Application/Home/Controller/ShareByChickenController.class.php 第 25 行.
+
+[ 2018-02-27T17:47:02+08:00 ] 120.204.17.68 /ShareByChicken?wx_state=eyJpbnZpdGVfY29kZSI6IjBDNkM4MkE0OUNFRkUwNzYiLCJmcm9tIjoic2luZ2xlbWVzc2FnZSIsInJlZGlyZWN0X3VyaSI6Imh0dHA6XC9cL3d3dy5saWFueWFuZ2ppLmlvXC9TaGFyZUJ5Q2hpY2tlbiJ9&wx_info=eyJvcGVuaWQiOiJvQ0E2MWpwNF9WQkJ3WUtWVWcwWWFORUNqVFk4Iiwibmlja25hbWUiOiJcdThmZGJcdTUxZmJcdTc2ODRcdTUxNTRcdTViNTAiLCJzZXgiOjEsImxhbmd1YWdlIjoiemhfQ04iLCJjaXR5IjoiXHU2NzFkXHU5NjMzIiwicHJvdmluY2UiOiJcdTUzMTdcdTRlYWMiLCJjb3VudHJ5IjoiXHU0ZTJkXHU1NmZkIiwiaGVhZGltZ3VybCI6Imh0dHA6XC9cL3RoaXJkd3gucWxvZ28uY25cL21tb3BlblwvdmlfMzJcL1NReWlhUTNsNW9nRnJDaWJvb3plYlVSeDR0NDNpYkhwZGZIdmFzbnFaWlI3RGhVRGN6aWNXS2p3cjNkNlZiYTdrZ1lxc3ZDbjFYOWQyMlRqTjNSRXI1blZXUVwvMTMyIiwicHJpdmlsZWdlIjpbXSwidW5pb25pZCI6Im9wRm5Dd18zLXowTlQzQUVqakw2dEhFbjB3dlEifQ==
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000155s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000246s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000265s ]
+SQL: SHOW COLUMNS FROM `eggcoin_user_wechatinfo` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `eggcoin_user_wechatinfo` WHERE ( unionid="opFnCw_3-z0NT3AEjjL6tHEn0wvQ" ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `eggcoin_user` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `eggcoin_user` WHERE `id` = 10 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `eggcoin_user` WHERE ( invite_code="0C6C82A49CEFE076" ) LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000285s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000302s ]
+
+[ 2018-02-27T17:54:58+08:00 ] 60.194.185.2 /ShareByChicken?wx_state=eyJpbnZpdGVfY29kZSI6IjBDNkM4MkE0OUNFRkUwNzYiLCJmcm9tIjoic2luZ2xlbWVzc2FnZSIsInJlZGlyZWN0X3VyaSI6Imh0dHA6XC9cL3d3dy5saWFueWFuZ2ppLmlvXC9TaGFyZUJ5Q2hpY2tlbiJ9&wx_info=eyJvcGVuaWQiOiJvQ0E2MWp0UnhhdjA0b3BzSE1KTHZLQXdlYmFjIiwibmlja25hbWUiOiJcdTgzYjFcdTU5NjUiLCJzZXgiOjEsImxhbmd1YWdlIjoiemhfQ04iLCJjaXR5IjoiXHU1OTJhXHU1MzlmIiwicHJvdmluY2UiOiJcdTVjNzFcdTg5N2YiLCJjb3VudHJ5IjoiXHU0ZTJkXHU1NmZkIiwiaGVhZGltZ3VybCI6Imh0dHA6XC9cL3RoaXJkd3gucWxvZ28uY25cL21tb3BlblwvdmlfMzJcL0RZQUlPZ3E4M2VwRGUzdDRmcjFzaWNxcjFPdHRUc0hISHlDc3lRWHRvQ1lCY1ZBdGNrb3B6U2JSazJYWms5b3dpY2lhR1FrUUNBSVBWT05jY0ZDMEpRWlVBXC8xMzIiLCJwcml2aWxlZ2UiOltdLCJ1bmlvbmlkIjoib3BGbkN3em4teUFiOGFPd1dwemk5RWFYbDFHZyJ9
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000149s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000216s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000231s ]
+SQL: SHOW COLUMNS FROM `eggcoin_user` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `eggcoin_user` WHERE `id` = 23 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `eggcoin_user` WHERE ( invite_code="0C6C82A49CEFE076" ) LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000269s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000284s ]
+
+[ 2018-02-27T18:09:50+08:00 ] 199.30.228.145 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000160s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000196s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000210s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000024s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000039s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002655s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002670s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000065s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000076s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000229s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000330s ]
+
+[ 2018-02-27T18:59:52+08:00 ] 66.249.73.205 /robots.txt
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000178s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000211s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000227s ]
+ERR: 无法加载控制器:Robots
+
+[ 2018-02-27T18:59:52+08:00 ] 66.249.73.207 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000168s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000197s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000212s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000024s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000040s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002982s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002996s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000066s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000076s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000272s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000287s ]
+
+[ 2018-02-27T19:26:56+08:00 ] 60.194.185.2 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000187s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000204s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000219s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000024s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000042s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002705s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002722s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000070s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000081s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000226s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000242s ]
+
+[ 2018-02-27T19:27:39+08:00 ] 60.194.185.2 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000158s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000211s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000226s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000023s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000040s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002734s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002751s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000079s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000090s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000312s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000328s ]
+
+[ 2018-02-27T19:28:46+08:00 ] 111.206.36.10 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000157s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000214s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000232s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000023s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000040s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002653s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002669s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000084s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000098s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000393s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000412s ]
+
+[ 2018-02-27T19:33:18+08:00 ] 60.194.185.2 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000160s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000203s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000219s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000024s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000040s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002704s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002720s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000071s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000083s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000228s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000243s ]
+
+[ 2018-02-27T19:33:42+08:00 ] 60.194.185.2 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000151s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000202s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000217s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000023s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000040s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002782s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002797s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000066s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000077s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000222s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000236s ]
+
+[ 2018-02-27T19:33:49+08:00 ] 14.215.176.7 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000150s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000212s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000227s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000023s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000039s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002667s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002683s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000064s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000074s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000220s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000240s ]
+
+[ 2018-02-27T19:34:04+08:00 ] 60.194.185.2 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000152s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000202s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000217s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000022s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000039s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002660s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002675s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000067s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000077s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000303s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000318s ]
+
+[ 2018-02-27T19:34:17+08:00 ] 101.227.139.171 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000160s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000217s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000233s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000029s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000045s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002653s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002668s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000068s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000079s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000226s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000241s ]
+
+[ 2018-02-27T19:34:53+08:00 ] 223.104.13.43 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000154s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000198s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000214s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000024s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000040s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002655s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002671s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000068s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000079s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000227s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000242s ]
+
+[ 2018-02-27T19:35:22+08:00 ] 101.199.120.145 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000157s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000218s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000233s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000024s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000040s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002650s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002665s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000086s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000098s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000241s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000258s ]
+
+[ 2018-02-27T19:35:23+08:00 ] 101.199.112.53 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000152s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000241s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000271s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000027s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000045s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002698s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002714s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000076s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000089s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000223s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000237s ]
+
+[ 2018-02-27T19:35:23+08:00 ] 106.120.161.66 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000150s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000218s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000232s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000023s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000038s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002641s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002657s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000078s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000090s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000241s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000257s ]
+
+[ 2018-02-27T19:35:26+08:00 ] 106.120.162.96 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000174s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000203s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000218s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000023s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000041s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002626s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002642s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000067s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000079s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000333s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000353s ]
+
+[ 2018-02-27T19:35:44+08:00 ] 220.181.132.195 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000152s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000198s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000221s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000023s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000040s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002627s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002642s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000066s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000076s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000232s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000247s ]
+
+[ 2018-02-27T19:35:53+08:00 ] 183.192.201.97 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000155s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000201s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000216s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000024s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000039s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002665s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002680s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000067s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000076s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000222s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000238s ]
+
+[ 2018-02-27T19:39:34+08:00 ] 61.148.244.175 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000153s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000204s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000221s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000023s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000041s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002807s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002823s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000073s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000084s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000304s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000319s ]
+
+[ 2018-02-27T19:39:35+08:00 ] 125.39.132.70 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000155s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000200s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000214s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000024s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000041s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002726s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002741s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000067s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000077s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000233s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000248s ]
+
+[ 2018-02-27T19:39:35+08:00 ] 125.39.46.46 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000144s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000211s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000225s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000022s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000037s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002591s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002605s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000080s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000091s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000222s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000236s ]
+
+[ 2018-02-27T19:39:35+08:00 ] 125.39.45.236 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000219s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000220s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000235s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000022s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000038s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002725s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002740s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000084s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000095s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000224s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000239s ]
+
+[ 2018-02-27T19:39:35+08:00 ] 111.30.142.252 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000161s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000202s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000216s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000030s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000046s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.030474s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.030492s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000069s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000079s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000251s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000266s ]
+
+[ 2018-02-27T19:39:35+08:00 ] 111.30.142.78 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000154s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000201s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000214s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000022s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000039s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002631s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002647s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000065s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000074s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000231s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000246s ]
+
+[ 2018-02-27T19:39:35+08:00 ] 125.39.46.45 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000168s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000244s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000261s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000024s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000040s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002799s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002816s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000074s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000085s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000230s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000244s ]
+
+[ 2018-02-27T19:39:35+08:00 ] 125.39.45.236 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000142s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000198s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000212s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000022s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000038s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002569s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002585s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000065s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000075s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000239s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000254s ]
+
+[ 2018-02-27T19:39:35+08:00 ] 111.30.142.78 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000145s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000196s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000210s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000021s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000038s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002629s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002644s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000063s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000073s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000229s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000243s ]
+
+[ 2018-02-27T19:39:36+08:00 ] 111.30.142.227 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000165s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000201s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000215s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000024s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000040s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002624s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002639s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000066s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000076s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000222s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000236s ]
+
+[ 2018-02-27T19:39:36+08:00 ] 111.30.142.252 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000145s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000219s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000234s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000022s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000038s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002648s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002664s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000064s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000075s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000228s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000243s ]
+
+[ 2018-02-27T19:40:34+08:00 ] 183.192.201.97 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000153s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000209s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000225s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000024s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000039s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002613s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002628s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000065s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000076s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000316s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000332s ]
+
+[ 2018-02-27T19:46:42+08:00 ] 60.194.185.2 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000159s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000204s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000219s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000023s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000040s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002637s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002652s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000067s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000078s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000242s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000256s ]
+
+[ 2018-02-27T20:12:01+08:00 ] 196.52.43.111 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000156s ]
+NOTIC: [8] Undefined index: HTTP_HOST /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 39 行.
+NOTIC: [8] Undefined index: HTTP_HOST /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 46 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000199s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000213s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000023s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000038s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002672s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002687s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000067s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000078s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000297s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000313s ]
+
+[ 2018-02-27T20:21:21+08:00 ] 66.249.73.207 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000169s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000211s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000226s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000023s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000040s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002908s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002924s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000072s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000084s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000244s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000260s ]
+
+[ 2018-02-27T20:49:18+08:00 ] 61.149.11.46 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000166s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000200s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000214s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000024s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000039s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002671s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002687s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000068s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000078s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000232s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000246s ]
+
+[ 2018-02-27T21:02:19+08:00 ] 60.194.185.2 /ShareByChicken/index?invite_code=&from=singlemessage&isappinstalled=0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000170s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000392s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000416s ]
+NOTIC: [8] Undefined index: wx_info /usr/local/nginx/html/lianyangji/Application/Home/Controller/ShareByChickenController.class.php 第 25 行.
+
+[ 2018-02-27T21:02:22+08:00 ] 60.194.185.2 /ShareByChicken?wx_state=eyJpbnZpdGVfY29kZSI6IiIsImZyb20iOiJzaW5nbGVtZXNzYWdlIiwiaXNhcHBpbnN0YWxsZWQiOiIwIiwicmVkaXJlY3RfdXJpIjoiaHR0cDpcL1wvd3d3LmxpYW55YW5namkuaW9cL1NoYXJlQnlDaGlja2VuIn0=&wx_info=eyJvcGVuaWQiOiJvQ0E2MWpsbnpGcGRRei0zSThvenJhR2JnZFBvIiwibmlja25hbWUiOiJcdTUzZWZcdTU1OWNcdTUzZWZcdThkM2FcdWQ4M2RcdWRjYWYiLCJzZXgiOjEsImxhbmd1YWdlIjoiemhfQ04iLCJjaXR5IjoiTG9zIEFuZ2VsZXMgQ2l0eSIsInByb3ZpbmNlIjoiQ2FsaWZvcm5pYSIsImNvdW50cnkiOiJVUyIsImhlYWRpbWd1cmwiOiJodHRwOlwvXC90aGlyZHd4LnFsb2dvLmNuXC9tbW9wZW5cL3ZpXzMyXC9RMGo0VHdHVGZUTDkxSElEMGRrdmRiclk0Z2NSYWlhaWM0aWNhb29Nb09SU2liUVYwUVZQOTJsUnhhdGttZFJTWktrbjNxVDl5OEtpYWFLSnBUYlRiQWhlOHBnXC8xMzIiLCJwcml2aWxlZ2UiOltdLCJ1bmlvbmlkIjoib3BGbkN3NnNiT0E0dU9YSE5rZjQzajBqbnFjRSJ9
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000153s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000200s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000214s ]
+SQL: SHOW COLUMNS FROM `eggcoin_user_wechatinfo` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `eggcoin_user_wechatinfo` WHERE ( unionid="opFnCw6sbOA4uOXHNkf43j0jnqcE" ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `eggcoin_user` [ RunTime:0.0004s ]
+SQL: INSERT INTO `eggcoin_user` (`user_st`,`updated_at`,`created_at`) VALUES ('1','1519736542','1519736542') [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `eggcoin_user_vip` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `eggcoin_user_vip` WHERE ( user_id=31 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `eggcoin_wallet` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `eggcoin_wallet` WHERE `user_id` = 31 LIMIT 1   [ RunTime:0.0001s ]
+SQL: INSERT INTO `eggcoin_wallet` (`user_id`,`feed_amount`) VALUES ('31','0.3') [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `eggcoin_chicken_raise_record` [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: chicken_id /usr/local/nginx/html/lianyangji/Application/Common/Common/function.php 第 298 行.
+SQL: INSERT INTO `eggcoin_chicken_raise_record` (`user_id`,`amount`,`unit`,`reason_source_id`,`reason_type`,`reason_narration`,`created_at`,`state`) VALUES ('31','300','g','31','8','VIP内侧用户奖励','1519736542','1') [ RunTime:0.0002s ]
+SQL: UPDATE `eggcoin_user` SET `invite_code`='CEE6AE512C63820E' WHERE ( invite_code = "" and id=31 ) [ RunTime:0.0002s ]
+SQL: SELECT * FROM `eggcoin_user_wechatinfo` WHERE ( wx_open_id="oCA61jlnzFpdQz-3I8ozraGbgdPo" ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `eggcoin_user_wechatinfo` WHERE ( unionid="opFnCw6sbOA4uOXHNkf43j0jnqcE" ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: INSERT INTO `eggcoin_user_wechatinfo` (`wx_open_id`,`wx_pic`,`wx_nick_name`,`unionid`,`sex`,`province`,`city`,`country`,`user_id`,`created_at`) VALUES ('oCA61jlnzFpdQz-3I8ozraGbgdPo','http://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTL91HID0dkvdbrY4gcRaiaic4icaooMoORSibQV0QVP92lRxatkmdRSZKkn3qT9y8KiaaKJpTbTbAhe8pg/132','5Y+v5Zac5Y+v6LS68J+Srw==','opFnCw6sbOA4uOXHNkf43j0jnqcE','1','California','Los Angeles City','US','31','1519736542') [ RunTime:0.0001s ]
+SQL: SELECT * FROM `eggcoin_user` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined variable: invite_user_info /usr/local/nginx/html/lianyangji/Application/Home/Controller/ShareByChickenController.class.php 第 66 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000321s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000337s ]
+
+[ 2018-02-27T21:02:38+08:00 ] 60.194.185.2 /ShareByChicken/index?invite_code=&from=singlemessage&isappinstalled=0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000151s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000199s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000215s ]
+NOTIC: [8] Undefined index: wx_state /usr/local/nginx/html/lianyangji/Application/Home/Controller/ShareByChickenController.class.php 第 53 行.
+SQL: SHOW COLUMNS FROM `eggcoin_user` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `eggcoin_user` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined variable: invite_user_info /usr/local/nginx/html/lianyangji/Application/Home/Controller/ShareByChickenController.class.php 第 66 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000333s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000350s ]
+
+[ 2018-02-27T21:03:19+08:00 ] 120.204.17.46 /ShareByChicken/index?invite_code=&from=singlemessage&isappinstalled=0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000155s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000229s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000244s ]
+NOTIC: [8] Undefined index: wx_info /usr/local/nginx/html/lianyangji/Application/Home/Controller/ShareByChickenController.class.php 第 25 行.
+
+[ 2018-02-27T21:03:22+08:00 ] 183.192.201.97 /ShareByChicken?wx_state=eyJpbnZpdGVfY29kZSI6IiIsImZyb20iOiJzaW5nbGVtZXNzYWdlIiwiaXNhcHBpbnN0YWxsZWQiOiIwIiwicmVkaXJlY3RfdXJpIjoiaHR0cDpcL1wvd3d3LmxpYW55YW5namkuaW9cL1NoYXJlQnlDaGlja2VuIn0=&wx_info=eyJvcGVuaWQiOiJvQ0E2MWpsbnpGcGRRei0zSThvenJhR2JnZFBvIiwibmlja25hbWUiOiJcdTUzZWZcdTU1OWNcdTUzZWZcdThkM2FcdWQ4M2RcdWRjYWYiLCJzZXgiOjEsImxhbmd1YWdlIjoiemhfQ04iLCJjaXR5IjoiTG9zIEFuZ2VsZXMgQ2l0eSIsInByb3ZpbmNlIjoiQ2FsaWZvcm5pYSIsImNvdW50cnkiOiJVUyIsImhlYWRpbWd1cmwiOiJodHRwOlwvXC90aGlyZHd4LnFsb2dvLmNuXC9tbW9wZW5cL3ZpXzMyXC9RMGo0VHdHVGZUTDkxSElEMGRrdmRiclk0Z2NSYWlhaWM0aWNhb29Nb09SU2liUVYwUVZQOTJsUnhhdGttZFJTWktrbjNxVDl5OEtpYWFLSnBUYlRiQWhlOHBnXC8xMzIiLCJwcml2aWxlZ2UiOltdLCJ1bmlvbmlkIjoib3BGbkN3NnNiT0E0dU9YSE5rZjQzajBqbnFjRSJ9
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000158s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000215s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000231s ]
+SQL: SHOW COLUMNS FROM `eggcoin_user_wechatinfo` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `eggcoin_user_wechatinfo` WHERE ( unionid="opFnCw6sbOA4uOXHNkf43j0jnqcE" ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `eggcoin_user` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `eggcoin_user` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0001s ]
+NOTIC: [8] Undefined variable: invite_user_info /usr/local/nginx/html/lianyangji/Application/Home/Controller/ShareByChickenController.class.php 第 66 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000257s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000272s ]
+
+[ 2018-02-27T21:05:52+08:00 ] 101.226.65.107 /ShareByChicken/index?invite_code=&from=singlemessage&isappinstalled=0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000153s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000203s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000217s ]
+NOTIC: [8] Undefined index: wx_info /usr/local/nginx/html/lianyangji/Application/Home/Controller/ShareByChickenController.class.php 第 25 行.
+
+[ 2018-02-27T21:51:39+08:00 ] 5.189.191.207 /robots.txt
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000167s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000215s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000230s ]
+ERR: 无法加载控制器:Robots
+
+[ 2018-02-27T21:51:43+08:00 ] 5.189.191.207 /9022631.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000154s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000201s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000216s ]
+ERR: 无法加载控制器:9022631
+
+[ 2018-02-27T23:23:15+08:00 ] 128.1.84.26 /phpmyadmin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000164s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000201s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000216s ]
+ERR: 无法加载控制器:Phpmyadmin
+
+[ 2018-02-27T23:25:06+08:00 ] 141.212.122.48 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000154s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000199s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000213s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000023s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000039s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002671s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002686s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000066s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000077s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000226s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000248s ]
+
+[ 2018-02-27T23:34:53+08:00 ] 115.231.222.152 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000167s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000212s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000230s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000036s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000053s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002661s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002676s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000077s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000090s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000227s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000241s ]
+
+[ 2018-02-27T23:34:53+08:00 ] 115.231.222.152 /index.action
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000161s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000205s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000220s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000023s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000040s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002668s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002683s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000067s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000077s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000234s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000249s ]
+
+[ 2018-02-27T23:49:02+08:00 ] 71.6.202.198 /ccvv
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000161s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000207s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000222s ]
+ERR: 无法加载控制器:Ccvv
+
+[ 2018-02-27T23:53:39+08:00 ] 223.93.147.165 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000156s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000208s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000225s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000024s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000040s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002777s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002792s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000085s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000097s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000242s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000257s ]
+

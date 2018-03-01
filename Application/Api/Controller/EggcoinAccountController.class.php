@@ -40,6 +40,39 @@ class EggcoinAccountController extends ApiController
         $this->api_return('添加成功');
     }
 
+    /*删除常用货币钱包*/
+    public function delCommonEggcoinAccount()
+    {
+        $not_null_param = array(
+            'user_id'            => '请先登录',
+            'eggcoin_account_id' => '请选择要删除钱包'
+        );
+        $check_res = check_not_null_param($not_null_param,I('post.'));
+        if($check_res) $this->api_error(20001,$check_res);
+
+        $map['user_id'] = I('post.user_id');
+        $map['eggcoin_account_id'] = I('post.eggcoin_account_id');
+        if(!M('CommonEggcoinAccount')->where($map)->delete()) $this->api_error(20002,'删除失败!请稍后重试');
+        $this->api_return('success');
+    }
+
+    /*修改常用货币钱包备注*/
+    public function changeCustomNameCommonEggcoinAccount()
+    {
+        $not_null_param = array(
+            'user_id'            => '请先登录',
+            'eggcoin_account_id' => '请选择要修改的钱包',
+            'custom_name' => '请填写自定义名称',
+        );
+        $check_res = check_not_null_param($not_null_param,I('post.'));
+        if($check_res) $this->api_error(20001,$check_res);
+
+        $map['user_id'] = I('post.user_id');
+        $map['eggcoin_account_id'] = I('post.eggcoin_account_id');
+        if(!M('CommonEggcoinAccount')->where($map)->setField('custom_name',I('post.custom_name'))) $this->api_error(20002,'更改失败!请稍后重试');
+        $this->api_return('success');
+    }
+
     /*
      *  获取常用数字货币钱包
      * */

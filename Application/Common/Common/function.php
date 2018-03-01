@@ -296,7 +296,7 @@ function addRecord($data)
     $raise_record['unit']    = $data['unit'];
     if($data['reason_source_id']) $raise_record['reason_source_id'] = $data['reason_source_id'];
     if($data['chicken_id']) $raise_record['chicken_id'] = $data['chicken_id'];
-    $raise_record['reason_type']      = $data['reason_type'];//事由类型id：1.充值、2.饲料认购，3.饲料消耗；4.药物及其他支出；5.现金收益；6.饲料补扣；7.药物及其他支出补扣'
+    $raise_record['reason_type']      = $data['reason_type'];//事由类型id：1=>'充值',2=>'认购',3=>'投喂',4=>'支出',5=>'收益',6=>'饲料补扣',7=>'支出补扣',8=>'赠送',9=>'奖励',
     $raise_record['reason_narration'] = $data['reason_narration'];
     $raise_record['created_at'] = time();
     $raise_record['state'] = $data['state'] ? $data['state'] : 1; //状态：1.成功;2.失败;3.待处理
@@ -365,4 +365,285 @@ function addEggcoinRecord($data)
 function directory( $dir )
 {
     is_dir ( $dir )  or  (Directory(dirname( $dir ))  and   mkdir ( $dir , 0777));
+}
+
+
+
+// 根据手机号添加用户
+function addUserByMobile($mobile)
+{
+    $re_data = array('code'=>1,'msg'=>'success');
+
+    if(!$mobile)
+    {
+        $re_data['code'] = 20001;
+        $re_data['msg']  = '手机号不可为空';
+        return $re_data;
+    }
+
+    // 查询手机是否存在
+    $m    = M('User');
+    $info = $m->where('mobile='.$mobile)->find();
+    if(!$info)
+    {
+        $user_data['mobile']  = $mobile;
+        $user_data['user_st'] = 1;
+        $user_data['created_at'] = $user_data['updated_at'] = time();
+        $re_data['data']['user_id'] = $user_id = $m->add($user_data);
+        if(!$user_id)
+        {
+            $re_data['code'] = 20002;
+            $re_data['msg']  = '注册失败';
+        }
+    }
+    else
+    {
+        $re_data['code'] = 20003;
+        $re_data['msg']  = '手机号码已存在';
+    }
+
+    // 新用户操作
+    if($user_id) newUserAction($user_id);
+    return $re_data;
+}
+
+// 根据微信号添加用户
+function addUserByWechat($wechat_info)
+{
+    $re_data = array('code'=>1,'msg'=>'success');
+
+    // 查询微信账号是否存在
+    $m        = M('UserWechatinfo');
+    //$w_info   = $m->where('wx_open_id="'.$wechat_info['wx_open_id'].'"')->find();
+    $w_u_info = $m->where('unionid="'.$wechat_info['unionid'].'"')->find();
+
+    if($w_u_info)
+    {
+        $re_data['code'] = 20003;
+        $re_data['msg']  = '该微信已被绑定';
+        $re_data['data']['user_id']  = $w_u_info['user_id'];
+        return $re_data;
+    }
+
+    $trans = M();
+    $trans->startTrans();
+
+    // 注册一个账号
+    $user_data['user_st'] = 1;
+    $user_data['created_at'] = $user_data['updated_at'] = time();
+    $re_data['data']['user_id'] = $user_id = M('User')->add($user_data);
+    if(!$user_id) {
+        $re_data['code'] = 20002;
+        $re_data['msg']  = '注册失败';
+        return $re_data;
+    }
+
+    // 新用户操作
+    if($user_id) newUserAction($user_id);
+
+    // 绑定微信
+    $res = bindWeChat($user_id,$wechat_info);
+    if($res['code']!=1)
+    {
+        $trans->rollback();
+        $re_data['code'] = 20002;
+        $re_data['msg']  = '注册失败!'.$res['msg'];
+    }
+    $trans->commit();
+    return $re_data;
+}
+
+// 新用户操作
+function newUserAction($user_id)
+{
+    // 添加vip
+    addVip($user_id,time()+85400*365*10);
+
+    // 生成钱包
+    $wallet_m = M('Wallet');
+    $wallet_map['user_id']     = $user_id;
+    $wallet_info               = $wallet_m->where($wallet_map)->find();
+    if(!$wallet_info)
+    {
+        // 给初次用户赠送300g饲料
+        $wallet_map['feed_amount'] = 0.3;
+        $wallet_m->add($wallet_map);
+
+        // 添加赠送饲料流水
+        $record = array();
+        $record['user_id'] = $user_id;
+        $record['amount']  = $wallet_map['feed_amount']*1000;
+        $record['reason_source_id'] = $user_id;
+        $record['reason_type'] = 8;
+        $record['reason_narration'] = 'VIP内侧用户奖励';
+        $record['state'] = 1;
+        $record['unit'] = 'g';
+        $record = addRecord($record);
+        if(!$record) Log::record('用户赠送300g饲料流水记录失败,INFO:'.json_encode($record),'ADD_RECORD',true);
+    }
+
+    // 检查邀请码
+    M('User')->where('invite_code = "" and id='.$user_id)->setField('invite_code',strtoupper(substr(md5($user_id.'teemo'),8,16)));
+}
+
+// 绑定手机
+function bindMobile($user_id,$mobile)
+{
+    $re_data = array('code'=>1,'msg'=>'success');
+
+    if(!$mobile)
+    {
+        $re_data['code'] = 20001;
+        $re_data['msg']  = '手机号不可为空';
+        return $re_data;
+    }
+
+    // 查询手机是否存在
+    $m    = M('User');
+    $info = $m->where('mobile='.$mobile)->find();
+    if(!$info)
+    {
+        if(!$m->where('id='.$user_id)->setField('mobile',$mobile))
+        {
+            $re_data['code'] = 20002;
+            $re_data['msg']  = '绑定失败';
+        }
+    }
+    else
+    {
+        $re_data['code'] = 20003;
+        $re_data['msg']  = '手机号码已存在';
+    }
+    return $re_data;
+}
+
+// 绑定微信
+function bindWeChat($user_id,$wechat_info)
+{
+    $re_data = array('code'=>1,'msg'=>'success');
+
+    $arr = array(
+
+    );
+    $not_null_param = array(
+        'wx_open_id'   => '获取微信open_id失败',
+        'unionid'   => '获取微信信息失败',
+        'wx_pic'       => '缺少微信用户头像',
+        'wx_nick_name' => '缺少微信用户昵称',
+    );
+
+    // 检查参数
+    $check_res = check_not_null_param($not_null_param,$wechat_info);
+    if($check_res) {
+        $re_data['code'] = 20001;
+        $re_data['msg']  = $check_res;
+        return $re_data;
+    }
+
+    // 查询微信账号是否存在
+    $m        = M('UserWechatinfo');
+    $w_info   = $m->where('wx_open_id="'.$wechat_info['wx_open_id'].'"')->find();
+    $w_u_info = $m->where('unionid="'.$wechat_info['unionid'].'"')->find();
+
+    if(!$w_info and !$w_u_info)
+    {
+        $wechat_info['user_id'] = $user_id;
+        $wechat_info['created_at'] = time();
+        $res = $m->add($wechat_info);
+        if(!$res)
+        {
+            $re_data['code'] = 20002;
+            $re_data['msg']  = '绑定失败';
+        }
+    }
+    else
+    {
+        $re_data['code'] = 20003;
+        $re_data['msg']  = '该微信已被绑定';
+    }
+    return $re_data;
+}
+
+// 根据用户id获取用户信息
+function getUserInfoByUserId($user_id)
+{
+    $re_data = array('code'=>1,'msg'=>'success');
+    $m = M('User');
+    if(!$user_id)
+    {
+        $re_data['code'] = 20001;
+        $re_data['msg']  = '缺少参数';
+        return $re_data;
+    }
+
+    $map['user_id'] = $m_map['id'] = $user_id;
+
+    $info = $m->where($m_map)->field('code,send_time,trade_pass_wd,user_st',true)->find();
+    if(!$info)
+    {
+        $re_data['code'] = 20002;
+        $re_data['msg']  = '用户不存在';
+        return $re_data;
+    }
+
+    // 邮箱状态
+    if(!$info['email']) $info['email_status'] = 3;
+    $info['email_status_info'] = getEmailStatusInfo[$info['email_status']];
+
+    // 微信信息
+    $wechart_info = M('UserWechatinfo')->field('user_id,created_at',true)->where($map)->find();
+    $info['wechart_info'] = $wechart_info ? $wechart_info : array();
+    if($info['wechart_info']) $info['wechart_info']['wx_nick_name'] = base64_decode($info['wechart_info']['wx_nick_name']);
+
+    // vip
+    $vip = M('UserVip')->where($map)->find();
+    $info['vip'] = $vip ? 1 : 2;
+
+    // 昵称
+    if(!$info['full_name']) $info['full_name'] = $wechart_info['wx_nick_name'];
+
+    // 微博
+    $info['weibo_info'] = array();
+    $re_data['data'] = $info;
+    return $re_data;
+}
+
+/*邮箱状态*/
+function getEmailStatusInfo($status)
+{
+    $status_info = array(
+        1 => '已验证通过',
+        2 => '待验证',
+        3 => '未设置邮箱',
+    );
+    return $status_info[$status];
+}
+
+/*任务奖励*/
+function task_reward($task='')
+{
+    $reward = array(
+        'sign_reward' => 10,
+        'share_reward' => 20,
+        'friend_login_reward' => 30,
+        'transfer_success_reward' => 40
+    );
+    if(!$task) return $reward;
+    return $reward[$task];
+}
+
+/*
+     *  获取当前发行批次鸡
+     * */
+function getCurrentBatch()
+{
+    $m = M('ChickenBatch');
+    $map = array();
+    $map['state'] = 1;
+    $map['is_default'] = 1;
+
+    // 发行时间
+    //$map['start_time'] = array('lt',time());
+    //$map['end_time']   = array('gt',time());
+    return $m->where($map)->find();
 }

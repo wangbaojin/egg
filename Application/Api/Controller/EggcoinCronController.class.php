@@ -34,7 +34,6 @@ class EggcoinCronController extends ApiController
             $delivery_res = $this->deliveryChickenIncome($v,$delivery_info);
             print_r($v);echo '<br>';
             print_r($delivery_res);echo '<hr>';
-
         }
     }
 
@@ -234,8 +233,6 @@ class EggcoinCronController extends ApiController
                     $return_data['msg']  = '饲料消耗记录失败'.$record['msg'];
                     return $return_data;
                 }
-
-
             }
 
             $wallet_change = $this->changeUserWalletFeedAndArrears($arr['user_id'],-$feed_weight,$arr['expenses']);

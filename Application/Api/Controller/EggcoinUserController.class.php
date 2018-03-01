@@ -6,7 +6,7 @@ use Com\PHPMailer\phpmailerAction;
 use Think\Log;
 class EggcoinUserController extends ApiController
 {
-    private $_miyao = 'teemo';// 不能修改
+    //private $_miyao = 'teemo';// 不能修改
     private $_email_confirm_timeout = 300;//
 
     private $_email_status = array(
@@ -70,7 +70,9 @@ class EggcoinUserController extends ApiController
 
         // 待收鸡蛋数量
         $delivery = M('ChickenTodayfeedDelivery');
-        $info['egg_num'] = $delivery->SUM('egg_weight');
+        $map['state']    = 2;
+        $egg_num = $delivery->where($map)->SUM('egg_num');
+        $info['egg_num'] = $egg_num ? $egg_num : '0';
 
         $data['data'] = $info;
         $this->api_return('success',$data);
@@ -122,13 +124,14 @@ class EggcoinUserController extends ApiController
         // 不存在则手机号注册
         if(!$user_info)
         {
-            $add_res = $this->addUserByMobile($data['mobile']);
+            $add_res = addUserByMobile($data['mobile']);
             if( $add_res['code'] != 1 ) $this->api_error($add_res['code'],'用户注册失败!'.$add_res['msg']);
         }
+        $user_id = $user_info ? $user_info['id'] : $add_res['data']['user_id'];
 
         // 微信信息
         $wechat_data = array();
-        $wechat_data['user_id'] = $user_info['id'];
+        $wechat_data['user_id'] = $user_id;
         $wechat_data['created_at'] = time();
         $wechat_data['wx_open_id'] = $data['wx_open_id'];
         if ($data['wx_pic'])       $wechat_data['wx_pic']   = $data['wx_pic'];
@@ -138,21 +141,21 @@ class EggcoinUserController extends ApiController
         if($data['province'])      $wechat_data['province'] = $data['province'];
         if($data['city'])          $wechat_data['city']     = $data['city'];
         if($data['country'])       $wechat_data['country']  = $data['country'];
-        $use_wechat_info = $wechat_m->where('user_id='.$user_info['id'].' and wx_open_id="'.$data['wx_open_id'].'"')->find();
+        $use_wechat_info = $wechat_m->where('user_id='.$user_id.' and wx_open_id="'.$data['wx_open_id'].'"')->find();
         if(!$use_wechat_info)
         {
             // 绑定微信
-            $bind_res = $this->bindWeChat($add_res['data']['user_id'] , $wechat_data);
-            if( $bind_res['code'] != 1 ) {
+            $bind_res = bindWeChat( $user_id , $wechat_data );
+            if( $bind_res['code'] != 1 or $bind_res['code']!=20003) {
                 $trans->rollback();
                 $this->api_error($add_res['code'],'用户注册失败!'.$bind_res['msg']);
             }
         }
         else
         {
-            $wechat_m->where('user_id='.$user_info['id'].' and wx_open_id="'.$data['wx_open_id'].'"')->save($wechat_data);
+            $wechat_m->where('user_id='.$user_id.' and wx_open_id="'.$data['wx_open_id'].'"')->save($wechat_data);
         }
-
+        $trans->commit();
         // 发送短信验证码
         $result = send_sms_code($data['mobile']);
         switch ($result)
@@ -239,7 +242,8 @@ class EggcoinUserController extends ApiController
         if(I('post.city'))  $data['city'] = I('post.city');
         if(I('post.country'))  $data['country'] = I('post.country');
         $not_null_param  = array(
-            'wx_open_id' => '请微信授权'
+            'wx_open_id' => '请微信授权',
+            'unionid' => '请微信授权'
         );
 
         // 检查参数
@@ -248,11 +252,14 @@ class EggcoinUserController extends ApiController
 
         $m = M('User');
         $wechat_m  = M('UserWechatinfo');
-        $wx_user_info = $wechat_m->where('wx_open_id="'.$data['wx_open_id'].'"')->find();
+        // 此处因为关联开放平台账号,所以用unionid来判断唯一;
+        $wx_user_info = $wechat_m->where('unionid="'.$data['unionid'].'"')->find();
 
         if(!$wx_user_info or !$wx_user_info['user_id']) $this->api_error(20002,'该微信未绑定手机号');
+
         $user_info = $m->field('trade_pass_wd,send_time',true)->where('id='.$wx_user_info['user_id'])->find();
-        if(!$user_info) $this->api_error(20002,'该微信未绑定手机号');
+        // h5有可能只微信注册,并未绑定手机,APP登录必须绑定手机号
+        if(!$user_info or !$user_info['mobile']) $this->api_error(20002,'该微信未绑定手机号');
 
 
         // 检查帐户状态
@@ -570,6 +577,7 @@ class EggcoinUserController extends ApiController
             $re_data['code'] = 20002;
             $re_data['msg']  = '注册失败';
         }
+        $trans->commit();
         return $re_data;
     }
 
@@ -661,8 +669,8 @@ class EggcoinUserController extends ApiController
 
         // 查询微信账号是否存在
         $m    = M('UserWechatinfo');
-        $w_info = $m->where('wx_open_id='.$wechat_info['wx_open_id'])->find();
-        if($wechat_info['unionid']) $w_u_info = $m->where('unionid='.$wechat_info['unionid'])->find();
+        $w_info = $m->where('wx_open_id="'.$wechat_info['wx_open_id'].'"')->find();
+        if($wechat_info['unionid']) $w_u_info = $m->where('unionid="'.$wechat_info['unionid'].'"')->find();
 
         if(!$w_info and !$w_u_info)
         {
