@@ -3,7 +3,7 @@
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
 	<meta charset="UTF-8">
-	<script type="text/javascript" src="../../../../Public/js/Wechat/resize.js"></script>
+	<script type="text/javascript" src="/Public/js/Wechat/resize.js"></script>
 	<title>认购母鸡</title>
 	<style>
 		*{
@@ -66,7 +66,7 @@
 	        background: url(../../../../Public/images/Wechat/select.png) no-repeat center;
 	    	background-size: 60%;
 	    }
-	    .type .active{
+	    .active{
 	        display: inline-block;
 	        width: .75rem;
 	        height: .75rem;
@@ -119,13 +119,6 @@
 	        background: url(../../../../Public/images/Wechat/select.png) no-repeat center;
 	    	background-size: 60%;
 	    }
-	    .type1 .active{
-	        display: inline-block;
-	        width: .75rem;
-	        height: .75rem;
-	        background: url(../../../../Public/images/Wechat/tick.png) no-repeat center;
-	    	background-size: 60%;
-	    }
 	    .type1 div span:nth-of-type(1){
 	        font-size: .3rem;
 	        color: #ff0000;
@@ -171,7 +164,7 @@
 			<div class="banner"></div>
             <div class="type">
                 <div>
-                    <i></i>
+                    <i class="typei"></i>
                     <span>168元/只</span>
                     <span>199元/只</span>
                     <span>母鸡及食物等套餐</span>
@@ -184,7 +177,7 @@
             </div>
             <div class="type1">
                 <div>
-                    <i></i>
+                    <i class="type1i"></i>
                     <span>29.9元/只</span>
                     <span>39.9元/只</span>
                     <span>母鸡</span>
@@ -200,13 +193,26 @@
         
 	</div>
 </body>
-<script type="text/javascript" src="../../../../Public/js/Wechat/zepto.min.js"></script>
+<script type="text/javascript" src="/Public/js/Wechat/jquery-3.2.1.min.js"></script>
+<script src="/Public/js/Wechat/jquery.cookie.js"></script>
 <script type="text/javascript" charset="utf-8" async defer>
-    $(".buy").click(function(){
-	    location.href="buy.html";
-	});
+    $.cookie('chicken_type','');
 	$(".button").click(function(){
-	    location.href="pay.html";
+		location.href="{:U('ShareByChicken/pay')}";
+	});
+	$(".type").click(function(){
+		$(".type1").css("border", "none");
+		$(".type1i").css({"background":"url(../../../../Public/images/Wechat/select.png) no-repeat center","background-size":"60%"});
+		$(".type").css("border", "2px solid #6ebc5e");
+		$(".typei").css({"background":"url(../../../../Public/images/Wechat/tick.png) no-repeat center","background-size":"60%"});
+		$.cookie('chicken_type',1,300);
+	});
+	$(".type1").click(function(){
+		$(".type").css("border", "none");
+		$(".typei").css({"background":"url(../../../../Public/images/Wechat/select.png) no-repeat center","background-size":"60%"});
+		$(".type1").css("border", "2px solid #6ebc5e");
+		$(".type1i").css({"background":"url(../../../../Public/images/Wechat/tick.png) no-repeat center","background-size":"60%"});
+		$.cookie('chicken_type',2,300);
 	});
 </script>
 </html>

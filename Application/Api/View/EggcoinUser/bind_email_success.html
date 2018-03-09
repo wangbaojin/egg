@@ -18,10 +18,10 @@
             background: #333;
         }
         .nav img{
-            width: 50px;
-            height: 50px;
+            width: 32px;
+            height: 32px;
+            margin-bottom: 9px;
             margin-left: 50px;
-            background: #fff;
         }
         .nav ul{
             display: inline-block;
@@ -46,7 +46,7 @@
 </head>
 <body>
 <div class="nav">
-    <img src="">
+    <img src="/Public/images/Api/icon.png">
     <ul>
         <li>链养鸡</li>
     </ul>

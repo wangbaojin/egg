@@ -27,4 +27,10 @@ class IndexController extends Controller
     {
         $this->display();
     }
+
+    /*活动*/
+    public function activity()
+    {
+        $this->display();
+    }
 }

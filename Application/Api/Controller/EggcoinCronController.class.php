@@ -9,7 +9,6 @@ namespace Api\Controller;
 class EggcoinCronController extends ApiController
 {
 
-
     /*各个鸡结算,每天12点以后到5点结算前一天的收益*/
     public function chicken_todayfeed_delivery()
     {
@@ -65,7 +64,6 @@ class EggcoinCronController extends ApiController
         $map['delivery_date'] = $delivery_date;
         $idAry = M('ChickenTodayfeedDelivery')->where($map)->getField('chicken_id',true);
         return $idAry;
-
     }
 
     /*获取批次收益*/
@@ -108,7 +106,7 @@ class EggcoinCronController extends ApiController
         if(!$wallet) return;
 
         if($feed_amount)    $saveData['feed_amount']   =  $wallet['feed_amount']/1000 + $feed_amount/1000;
-        if($arrears_amount) $saveData['arrears_amount'] = $wallet['arrears_amount'] + $wallet['arrears_amount'];
+        if($arrears_amount) $saveData['arrears_amount'] = $arrears_amount + $wallet['arrears_amount'];
         if($saveData)
         {
             return M('Wallet')->where('user_id='.$user_id)->save($saveData);
@@ -135,7 +133,7 @@ class EggcoinCronController extends ApiController
             'create_date' => '认养开始时间不可为空',
             'breed' => '母鸡品种不可为空',
             'age_in_days' => '鸡龄不可为空',
-            'eggcoin_account_id' => '钱包地址不可为空',
+            //'eggcoin_account_id' => '钱包地址不可为空',
             'delivery_date'  => '结算日期不能为空',
         );
         $delivery_check_res = check_not_null_param($delivery_not_null_param,$delivery_info);
@@ -168,12 +166,17 @@ class EggcoinCronController extends ApiController
         $arr['user_id']    = $chicken_info['user_id'];
         $arr['age_in_days']    = $chicken_info['age_in_days'];
         $arr['delivery_date'] = $chicken_info['delivery_date'];
-        $arr['feed_weight'] = round($delivery_info['feed_weight']/$now_amount,5);
-        $arr['egg_weight'] = round($delivery_info['lay_eggs_weight']/$now_amount,5);
-        $arr['egg_num'] = round($delivery_info['lay_eggs']/$now_amount,5);
-        $arr['income'] = round($delivery_info['egg_price']/$now_amount,5);
-        if($delivery_info['eggcoin_income']) $arr['eggcoin_income'] = round($delivery_info['eggcoin_income']/$now_amount,5);
-        if($delivery_info['expenses']) $arr['expenses'] = round($delivery_info['expenses']/$now_amount,5);
+        // 每只鸡单日支出 = 该批次当日总消耗 / 该批次发行数-总死淘(即当前批次剩余存栏)
+        $arr['feed_weight'] = round($delivery_info['feed_weight']/$now_amount,5); // 饲料消耗
+        $arr['egg_weight'] = round($delivery_info['lay_eggs_weight']/$now_amount,5);// 每颗鸡蛋重
+        if($delivery_info['expenses']) $arr['expenses'] = round($delivery_info['expenses']/$now_amount,5); // 现金支出
+
+        // 每只鸡当日收入 = 该批次当日总收入 / 该批次发行数
+        $arr['egg_num'] = round($delivery_info['lay_eggs']/$delivery_info['amount'],5);// 用户收取蛋数
+        $arr['income'] = round($delivery_info['egg_price']/$delivery_info['amount'],5);// 用户收入
+        if($delivery_info['eggcoin_income']) $arr['eggcoin_income'] = round($delivery_info['eggcoin_income']/$now_amount,5); // 数字货币收入
+        if($delivery_info['avg_eggcoin_income']) $arr['eggcoin_income'] = $arr['avg_eggcoin_income']; // 平均每只鸡数字货币收入
+
         if($chicken_info['eggcoin_account_id']) $arr['eggcoin_account_id'] = $chicken_info['eggcoin_account_id'];
         $arr['created_at'] = time();
         $arr['state'] = 2;//1.待确认；2.待结算；3.已结算
@@ -294,12 +297,31 @@ class EggcoinCronController extends ApiController
         // 数字发行
         $eggcoin_data = array();
         $eggcoin_data['user_id'] = $arr['user_id'];
+        $eggcoin_data['chicken_id'] = $chicken_info['id'];
         $eggcoin_data['eggcoin_account_id'] = $chicken_info['eggcoin_account_id'];
-        $eggcoin_data['amount'] = $arr['eggcoin_income'];
+        $eggcoin_data['amount'] = (int)ceil($arr['eggcoin_income']);
         $eggcoin_data['reason_type'] = 1;//事由类型id：1.收益；2.赠送；3.奖励'
         $eggcoin_data['reason_narration'] = '母鸡产出';//事由名称
         $eggcoin_data['reason_source_id'] = $delivery_res;
-        $eggcoin_data['state'] = 3;//状态：1.成功;2.失败;3.待处理'
+        $eggcoin_data['state'] = 1;//状态：1.成功;2.失败;3.待处理'
+
+        // 钱包地址
+        $eggcoin_account = getEggcoinAccountInfoById($chicken_info['eggcoin_account_id']);
+        if(!$chicken_info['eggcoin_account_id'] or !$eggcoin_account or !$eggcoin_account['account_address'])
+        {
+            $eggcoin_data['state']    = 3;//状态：1.成功;2.失败;3.待处理'
+            $eggcoin_data['err_code'] = 'ADDRESS_NULL';
+        }
+        else
+        {
+            $issueEggCoin_res = issueEggCoin($eggcoin_data['amount'],$eggcoin_account['account_address']);
+            if($issueEggCoin_res['retcode']!=1)
+            {
+                $eggcoin_data['state']    = 3;//状态：1.成功;2.失败;3.待处理'
+                $eggcoin_data['err_code'] = 'ISSUE_ERROR';
+            }
+        }
+
         $eggcoin_record = addEggcoinRecord($eggcoin_data);
         if($eggcoin_record['code']==0)
         {

@@ -74,7 +74,7 @@ class EggcoinWithdrawalsController extends ApiController
         if(!$w_m->where('amount >= '.$data['apply_amount'].' and user_id='.$data['user_id'])->save($wallet_change_data))
         {
             $trans->rollback();
-            $this->api_error(20005,'啊偶!申请金额冻结失败,请稍后重试');
+            $this->api_error(20005,'啊偶!申请提现金额失败,请稍后重试');
         }
         $trans->commit();
         $this->api_return('success');

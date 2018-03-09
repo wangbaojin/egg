@@ -46,6 +46,9 @@
             <li role="presentation" class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">首页</a>
                 <ul class="dropdown-menu">
+                    <li><a href="<?php echo U('AdminUser/index');?>">用户管理</a></li>
+                    <li><a href="<?php echo U('AdminWithdrawals/index');?>">提现管理</a></li>
+                    <li><a href="<?php echo U('AdminChickenOrder/index');?>">订单管理</a></li>
                     <li><a href="<?php echo U('AdminTodayPrice/index');?>">今日价格</a></li>
                     <li><a href="<?php echo U('AdminNews/index');?>">新闻管理</a></li>
                     <li><a href="<?php echo U('AdminChickenBatch/index');?>">批次管理</a></li>

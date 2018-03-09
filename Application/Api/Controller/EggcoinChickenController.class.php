@@ -61,7 +61,7 @@ class EggcoinChickenController extends ApiController
         $map['state'] = 2;
         $map['user_id'] = $user_id;
         $page = (int)I('page');
-        $data['page_limit'] = 10;
+        $data['page_limit'] = 5;
         $data['total_count'] = $m->where($map)->count();
         $data['total_page'] = ceil($data['total_count'] / $data['page_limit']);
         $data['now_page'] = ($page > 0 and $page <= $data['total_page']) ? $page : 1;
@@ -191,7 +191,7 @@ class EggcoinChickenController extends ApiController
         $map['state'] = 3;
         $map['user_id'] = $user_id;
         $page = (int)I('page');
-        $data['page_limit'] = 3;
+        $data['page_limit'] = 20;
         $data['total_count'] = $m->where($map)->count();
         $data['total_page'] = ceil($data['total_count'] / $data['page_limit']);
         $data['now_page'] = ($page > 0 and $page <= $data['total_page']) ? $page : 1;
@@ -230,7 +230,7 @@ class EggcoinChickenController extends ApiController
         if (!$list) $this->api_error(20002, '暂无可认养的鸡');
 
         foreach ($list as $k => $v) {
-            $list[$k]['discount_price'] = $v['discount'] ? $v['price'] - $v['discount'] : $v['price'];
+            $list[$k]['discount_price'] = $v['discount'] ? round(($v['price'] - $v['discount']),2) : $v['price'];
         }
         $data['data'] = $list;
         $this->api_return('success', $data);
@@ -248,7 +248,7 @@ class EggcoinChickenController extends ApiController
         $data['data']['order_sn'] = order_no();
 
         // 可认购量
-        $data['data']['buy_limit'] = 10;
+        $data['data']['buy_limit'] = 5;
         $this->api_return('success', $data);
     }
 
@@ -273,7 +273,7 @@ class EggcoinChickenController extends ApiController
         $m = M('ChickenOrder');
         if ($res = $m->where('order_sn=' . $data['order_sn'])->find()) {
             //$this->api_error(20002, '订单号错误');
-             $this->api_return('success');
+            $this->api_return('success');
         }
 
         $data['created'] = $data['updated'] = time();
@@ -286,7 +286,7 @@ class EggcoinChickenController extends ApiController
 
         if (!$type_info) $this->api_error(20004, '该类型不存在');
 
-        $price = $type_info['price'] - $type_info['discount'];
+        $price = round($type_info['price'] - $type_info['discount'],2);
         if (!$price) $this->api_error(20004, '该类型母鸡已暂停认养');
 
         // 是否认购成功、主要判断改该批次是否还有剩余的鸡:
@@ -313,6 +313,41 @@ class EggcoinChickenController extends ApiController
         $order_info['total_price'] = $order_info['pay_price'] = $price * $data['num'];
         $order_info['pay_state'] = 1;
         $order_info['state'] = 1;
+
+        $count = M('Chicken')->where('state=4 or state=5')->count();
+        if($data['invite_code'] and $count<1) {// 如果之前未购买,现在被邀请购买则记录
+            $invite_m = M('InviteBuy');
+            $user_id = M('User')->where('invite_code='.$data['invite_code'])->getField('id');
+
+            if($user_id)
+            {
+                $invite_map['invite_user_id'] = $user_id;
+                $invite_map['user_id'] = $order_info['user_id'];
+                $invite_info = $invite_m->where($invite_map)->find();
+                if(!$invite_info)
+                {
+                    $invite_add['invite_user_id'] = $user_id;
+                    $invite_add['user_id']   = $order_info['user_id'];
+                    $invite_add['add_date']  = date('Y-m-d');
+                    $invite_add['buy_state'] = 2;//状态：1.已购买；2.未购买
+                    $invite_add['buy_num']   = $order_info['num'];
+                    $invite_add['order_sn']  = $order_info['order_sn'];
+                    $invite_m->add($invite_map);
+                }
+                if($invite_info and $invite_info['buy_state']==2)
+                {
+                    $invite_update['buy_num']   = $order_info['num'];
+                    $invite_update['order_sn']  = $order_info['order_sn'];
+                    $invite_m->where($invite_map)->save($invite_update);
+                }
+            }
+            else
+            {
+                // 记录邀请码无效
+                Log::record('邀请码无效,INFO:' . json_encode($data), 'confirmBuyChicken', true);
+            }
+        }
+
         if (!$m->add($order_info)) {
             $trans->rollback();
             $this->api_error(20006, '认养失败');
@@ -326,7 +361,6 @@ class EggcoinChickenController extends ApiController
     /*购买回调,此处错误应该做日志记录,调试先返回信息便于调试*/
     public function buyChickenNotifyUrl()
     {
-
         $order_sn = $_GET['order_sn'];
 
         $m = M('ChickenOrder');
@@ -344,7 +378,7 @@ class EggcoinChickenController extends ApiController
             $saveData['pay_state'] = 2;
             $saveData['err_msg'] = 'ORDER_TIMEOUT';
             $change_res = $m->where('id=' . $order['id'])->save($saveData);
-            if (!$change_res) Log::record('订单支付超时状态修改失败,INFO:' . json_encode($data), 'BUY_ChICKEN', true);
+            if (!$change_res) Log::record('订单支付超时状态修改失败,INFO:' . json_encode($saveData), 'BUY_ChICKEN', true);
             $this->api_error(20004, '订单超时');
         }
 
@@ -354,7 +388,7 @@ class EggcoinChickenController extends ApiController
         $saveData['pay_state'] = 2;
         $change_res = $m->where('id=' . $order['id'])->save($saveData);
         if (!$change_res) {
-            Log::record('订单状态修改失败,INFO:' . json_encode($data), 'BUY_ChICKEN', true);
+            Log::record('订单状态修改失败,INFO:' . json_encode($saveData), 'BUY_ChICKEN', true);
             $this->api_error(20005, '订单状态修改失败');
         }
 
@@ -370,13 +404,32 @@ class EggcoinChickenController extends ApiController
         $clock_res = $c_m->where($unlock_map)->limit($order['num'])->save($lock_data);
         if ($order['num'] != $clock_res) {
             $trans->rollback();
-            Log::record('认购鸡失败,INFO:' . json_encode($data), 'BUY_ChICKEN', true);
+            Log::record('认购鸡失败,INFO:' . json_encode($saveData), 'BUY_ChICKEN', true);
             $this->api_error(20006, '认购鸡失败');
+        }
+
+        // 查看有没有邀请购买
+        $invite_m = M('InviteBuy');
+        $invite_map['order_sn'] = $order_sn;
+        $invite_map['buy_state'] = 2;
+        $invite_map['user_id']  = $order['user_id'];
+        $invite_info = $invite_m->where($invite_map)->find();
+        if($invite_info)
+        {
+            $change_invite_st= $invite_m->where($invite_map)->setField('state',1);
+            if($change_invite_st)
+            {
+                // 发放奖励
+                invite_success_reward($invite_info['invite_user_id']);
+            }
+            else
+            {
+                // 记录邀请码无效
+                Log::record('邀请奖励状态修改失败,INFO:' . json_encode($order), 'buyChickenNotifyUrl', true);
+            }
         }
         $trans->commit();
         $this->api_return('success');
-
-
     }
 
     /*锁定鸡*/
@@ -405,5 +458,17 @@ class EggcoinChickenController extends ApiController
         $data['msg'] = 'success';
         $data['code'] = 1;
         return $data;
+    }
+
+    /*解锁超时的鸡*/
+    public function unlockChicken()
+    {
+        $c_m = M('Chicken');
+        $unlock_map = array();
+        $unlock_map['state'] = 3;
+        $unlock_map['lock_time'] = array('LT',time());
+        $unlock_data = array('user_id'=>0,'state'=>1);
+        $c_m->where($unlock_map)->save($unlock_data);
+        //$list = $c_m->where($unlock_map)->select();
     }
 }

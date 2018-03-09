@@ -1,0 +1,55 @@
+<include file="Public/header" />
+<div class="container-fluid">
+    <form class="form-inline" name="searchForm" action="__SELF__" method="get">
+        手机号:<input  type="text" name="mobile" value="{$_GET.mobile}"><br><br>
+        <input type="submit" class="btn btn-success" value="搜索"><br>
+    </form>
+    共:{$count}条!{$_page}
+    <div class="table-responsive">
+        <table class="table">
+            <tr>
+                <th class="active">订单信息</th>
+                <th class="warning">提现信息</th>
+                <th class="active">用户信息</th>
+                <th class="active">用户钱包</th>
+                <th class="active">状态</th>
+                <th class="active">操作</th>
+            </tr>
+            <volist name="list" id="vo">
+                <tr>
+                    <td class="active" style="padding: 10px;width: 100px">
+                        ID:{$vo.id}<br>
+                        {$vo.order_sn}<br>{$vo.created_date}
+                        <hr>
+                        {$vo.state_info}
+                    </td>
+                    <td class="warning" style="padding: 10px">
+                        提现金额:<b>{$vo.apply_amount}</b>元<br><hr>
+                        提现支付宝账户:<b>{$vo.zhifubao_account} </b><br>
+
+                    </td>
+                    <td class="active" style="padding: 10px">
+                        ID:{$vo.user_info.id}&nbsp; {$vo.user_info.full_name}<br>
+                        <small>{$vo.user_info.vip_info} [{$vo.user_info.created_date}]</small><br>
+                        {$vo.user_info.mobile} &nbsp;<br>
+                        {$vo.user_info.email}{$vo.user_info.email_status_info}
+                    </td>
+                    <td class="active" style="padding: 10px">
+                        总收益:<b>{$vo.wallet.total_amount}</b> 元<br>
+                        当前余额:<b>{$vo.wallet.amount}</b> 元<br>
+                        冻结提现金额:<b>{$vo.wallet.freezing_amount}</b> 元<br>
+                        饲料剩余:<b>{$vo.wallet.feed_amount}</b> kg<br>
+                        其他支出:<b>{$vo.wallet.arrears_amount}</b> 元<br>
+                    </td>
+                    <td class="active" style="padding: 10px">
+                        {$vo.pay_state_info}
+                    </td>
+                    <td class="active" style="padding: 10px">
+                        <button>同意</button>
+                    </td>
+                </tr>
+            </volist>
+        </table>
+    </div>
+    共:{$count}条!{$_page}
+</div>

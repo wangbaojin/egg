@@ -38,11 +38,11 @@ class EggcoinChickenController extends PublicController
 
     private $_need_login = array(
         'index',
+        'confirmBuyChicken',
     );
 
     public function _initialize() {
 
-        echo "<pre>";
         //判断接口是否需要微信登录
         $this->_user_id = session('user_id');
         $res = in_array(ACTION_NAME,$this->_need_login);

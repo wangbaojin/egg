@@ -1,0 +1,42 @@
+<include file="Public/header" />
+<div class="container-fluid">
+    <form class="form-inline" name="searchForm" action="__SELF__" method="get">
+        手机号:<input  type="text" name="mobile" value="{$_GET.mobile}"><br><br>
+        <input type="submit" class="btn btn-success" value="搜索"><br>
+    </form>
+    共:{$count}条!{$_page}
+    <div class="table-responsive">
+        <table class="table">
+            <tr>
+                <th class="active">订单信息</th>
+                <th class="warning">商品信息</th>
+                <th class="active">用户信息</th>
+                <th class="active">操作</th>
+            </tr>
+            <volist name="list" id="vo">
+                <tr>
+                    <td class="active" style="padding: 10px;width: 100px">ID:{$vo.id}<br>
+                        订单金额:{$vo.total_price} 支付金额:{$vo.pay_price}<br>
+
+                        {$vo.order_sn}<br>{$vo.pay_state_info} | {$vo.state_info}</td>
+                    <td class="warning" style="padding: 10px">{$vo.goods_info}<br><hr>
+                        {$vo.chicken_batch.breed} <br>
+                        {$vo.chicken_batch.coop_name}<br>
+                        {$vo.chicken_batch.name}<br>
+
+                    </td>
+                    <td class="active" style="padding: 10px">
+                        <img src="{$vo.user_info.pic}" width="100px"><br>
+                        ID:{$vo.user_info.id}&nbsp; {$vo.user_info.full_name}<br>
+                        <small>{$vo.user_info.vip_info} [{$vo.user_info.created_date}]</small><br>
+                        {$vo.user_info.mobile} &nbsp;<br>
+                        {$vo.user_info.email}{$vo.user_info.email_status_info}
+                    </td>
+                    <td class="active" style="padding: 10px">
+                    </td>
+                </tr>
+            </volist>
+        </table>
+    </div>
+    共:{$count}条!{$_page}
+</div>

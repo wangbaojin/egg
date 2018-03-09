@@ -126,21 +126,69 @@ class NewsController extends ApiController
     public function getList()
     {
         $m = M('News');
+        $page = (int)I('page');
 
         // 分页
-        $map = array();
-        $page = (int)I('page');
-        $data['page_limit']  = 20;
+        $map['dis_st']  = 1;
+        $map['top_num'] = array('eq',0);
+
+        // 第一页的时候记录用户阅读记录
+        $user_id = I('get.user_id');
+        if($user_id && $page==1)
+        {
+            $readed_m = M('NewsReaded');
+            $readed_info = $readed_m->where('user_id='.$user_id)->find();
+            $last_id  = $m->order('id desc')->limit(1)->getField('id');
+            if($readed_info)
+            {
+                $readed_m->where('user_id='.$user_id)->setField('news_id',$last_id);
+            }
+            else
+            {
+                $readed_data['user_id'] = $user_id;
+                $readed_data['news_id'] = $last_id;
+                $readed_m->add($readed_data);
+            }
+        }
+
+        $data['page_limit'] = 20;
         $data['total_count'] = $m->where($map)->count();
-        $data['total_page']  = ceil($data['total_count']/$data['page_limit']);
-        $data['now_page']    = ($page > 0 and $page <= $data['total_page']) ? $page : 1;
-        $list = $m->where($map)->page($page,$data['page_limit'])->order('(top_num=1),id desc')->select();
+        $data['total_page'] = ceil($data['total_count'] / $data['page_limit']);
+        $data['now_page'] = ($page > 0 and $page <= $data['total_page']) ? $page : 1;
+        $date_list = $m->where($map)->page($page, $data['page_limit'])->group('newstime_date')->order('newstime_date desc')->getField('newstime_date', true);
+        if (!$date_list) $this->api_error(20003, '暂无收益');
+
+        // 处理列表
+        foreach ($date_list as $dk => $dv) {
+            $tmp_map = $f_tmp = array();
+            $tmp_map['newstime_date'] = $dv;
+            $tmp_map['top_num'] = array('eq',0);
+            $tmp_list = $m->where($tmp_map)->select();
+            if (!$tmp_list) continue;
+            foreach ($tmp_list as $k => $v) {
+                $f_tmp['info_list'][] = $this->disposeData($v);
+            }
+            $f_tmp['newstime_date'] = $dv;
+            $data['data'][] = $f_tmp;
+        }
+        $this->api_return('success', $data);
+    }
+
+    /*置顶新闻列表*/
+    public function getTopList()
+    {
+        $m = M('News');
+
+        // 分页
+        $map['top_num'] = array('neq',0);
+        $data['total_count'] = $m->where($map)->count();
+        $list = $m->where($map)->order('id desc')->select();
 
         if(!$list) $this->api_error(20003,'暂无');
 
         // 第一页的时候记录用户阅读记录
         $user_id = I('get.user_id');
-        if($user_id && $page==1)
+        if($user_id)
         {
             $readed_m = M('NewsReaded');
             $readed_info = $readed_m->where('user_id='.$user_id)->find();
@@ -192,10 +240,10 @@ class NewsController extends ApiController
         $arr['create_date'] = date('Y-m-d',$arr['create_time']);
 
         /*发布时间*/
-        $arr['newstime_date'] = date('Y-m-d H:i:s',$arr['newstime']);
+        $arr['newstime_date'] = date('Y-m-d',$arr['newstime']);
 
         /*图片*/
-        if($arr['news_cover']) $arr['news_cover'] = getSelf().$this->_pic_path.$arr['news_cover'];
+        $arr['news_cover'] = $arr['news_cover'] ? getSelf().$this->_pic_path.$arr['news_cover'] : '';
 
         /*来源*/
         if($arr['come_from']) $arr['come_from_info'] = C('NEWS_COME_FROM')[$arr['come_from']];

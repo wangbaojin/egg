@@ -1,0 +1,1120 @@
+[ 2018-03-03T00:03:29+08:00 ] 106.121.16.163 /EggcoinUser/getUserInfo?signature=89C6F7C5ACE0FA68BB04BE3A2885823E&timestamp=1520006609&user_id=13&version=1.0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000159s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000225s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000241s ]
+NOTIC: [8] Undefined index: HTTP_X_UUID /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 15 行.
+SQL: SHOW COLUMNS FROM `eggcoin_user` [ RunTime:0.0006s ]
+SQL: SELECT `id`,`mobile`,`email`,`email_status`,`full_name`,`created_at`,`updated_at`,`invite_code` FROM `eggcoin_user` WHERE `id` = 13 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `eggcoin_user_wechatinfo` [ RunTime:0.0004s ]
+SQL: SELECT `wx_open_id`,`wx_pic`,`wx_nick_name`,`unionid`,`province`,`city`,`country`,`sex` FROM `eggcoin_user_wechatinfo` WHERE ( user_id=13 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `eggcoin_user_vip` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `eggcoin_user_vip` WHERE ( user_id=13 ) LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2018-03-03T00:22:25+08:00 ] 45.77.128.220 /AdminNews/add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000160s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000220s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000237s ]
+SQL: SHOW COLUMNS FROM `eggcoin_news` [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000038s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000054s ]
+NOTIC: [8] Undefined variable: info /usr/local/nginx/html/lianyangji/Application/Runtime/Cache/Api/a78b8b83fb029782b8d35bfa791ee2e0.php 第 81 行.
+NOTIC: [8] Undefined variable: info /usr/local/nginx/html/lianyangji/Application/Runtime/Cache/Api/a78b8b83fb029782b8d35bfa791ee2e0.php 第 85 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003164s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003178s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000078s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000090s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000229s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000242s ]
+
+[ 2018-03-03T00:22:37+08:00 ] 45.77.128.220 /AdminNews/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000163s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000205s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000222s ]
+SQL: SHOW COLUMNS FROM `eggcoin_news` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `eggcoin_news` LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `eggcoin_news` ORDER BY (top_num=1) desc,`id` desc LIMIT 0,20   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000039s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000057s ]
+NOTIC: [8] Undefined index: title /usr/local/nginx/html/lianyangji/Application/Runtime/Cache/Api/3bdd6a0ca56ea7216db5a682579526e2.php 第 63 行.
+NOTIC: [8] Undefined variable: _page /usr/local/nginx/html/lianyangji/Application/Runtime/Cache/Api/3bdd6a0ca56ea7216db5a682579526e2.php 第 66 行.
+NOTIC: [8] Undefined index: top_num_info /usr/local/nginx/html/lianyangji/Application/Runtime/Cache/Api/3bdd6a0ca56ea7216db5a682579526e2.php 第 78 行.
+NOTIC: [8] Undefined index: top_num_info /usr/local/nginx/html/lianyangji/Application/Runtime/Cache/Api/3bdd6a0ca56ea7216db5a682579526e2.php 第 78 行.
+NOTIC: [8] Undefined index: top_num_info /usr/local/nginx/html/lianyangji/Application/Runtime/Cache/Api/3bdd6a0ca56ea7216db5a682579526e2.php 第 78 行.
+NOTIC: [8] Undefined index: top_num_info /usr/local/nginx/html/lianyangji/Application/Runtime/Cache/Api/3bdd6a0ca56ea7216db5a682579526e2.php 第 78 行.
+NOTIC: [8] Undefined index: top_num_info /usr/local/nginx/html/lianyangji/Application/Runtime/Cache/Api/3bdd6a0ca56ea7216db5a682579526e2.php 第 78 行.
+NOTIC: [8] Undefined index: top_num_info /usr/local/nginx/html/lianyangji/Application/Runtime/Cache/Api/3bdd6a0ca56ea7216db5a682579526e2.php 第 78 行.
+NOTIC: [8] Undefined index: top_num_info /usr/local/nginx/html/lianyangji/Application/Runtime/Cache/Api/3bdd6a0ca56ea7216db5a682579526e2.php 第 78 行.
+NOTIC: [8] Undefined index: top_num_info /usr/local/nginx/html/lianyangji/Application/Runtime/Cache/Api/3bdd6a0ca56ea7216db5a682579526e2.php 第 78 行.
+NOTIC: [8] Undefined variable: _page /usr/local/nginx/html/lianyangji/Application/Runtime/Cache/Api/3bdd6a0ca56ea7216db5a682579526e2.php 第 90 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003280s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003295s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000091s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000103s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000274s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000292s ]
+
+[ 2018-03-03T00:22:47+08:00 ] 45.77.128.220 /AdminNews/edit.html?id=8
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000161s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000221s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000238s ]
+SQL: SHOW COLUMNS FROM `eggcoin_news` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `eggcoin_news` WHERE ( id=8 ) LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000038s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000054s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003338s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003355s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000083s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000096s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000261s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000275s ]
+
+[ 2018-03-03T00:25:04+08:00 ] 45.77.128.220 /AdminNews/edit.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000162s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000205s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000223s ]
+SQL: SHOW COLUMNS FROM `eggcoin_news` [ RunTime:0.0006s ]
+NOTIC: [8] Undefined index: top_num /usr/local/nginx/html/lianyangji/Application/Api/Controller/AdminNewsController.class.php 第 166 行.
+SQL: UPDATE `eggcoin_news` SET `id`='8',`title`='刷票登顶的 MC 天佑和火币网的投票 ICO',`article_url`='https://mp.weixin.qq.com/s/lZbLxROkRQ9j8JbibPV_ZQ',`abstract`='A 股上市费用 3800 万人民币，港股上市费用 3000 万港币，火币上币费用 8000 个 ETH。ICO 项目和他们疯狂的 16 天',`newstime`='1520006400',`come_from`='3',`top_num`='0',`newstime_date`='2018-03-03' WHERE ( id=8 ) [ RunTime:0.0002s ]
+
+[ 2018-03-03T00:25:07+08:00 ] 45.77.128.220 /AdminNews/edit.html?id=8
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000163s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000237s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000266s ]
+SQL: SHOW COLUMNS FROM `eggcoin_news` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `eggcoin_news` WHERE ( id=8 ) LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000036s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000053s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003242s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003259s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000094s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000106s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000237s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000250s ]
+
+[ 2018-03-03T00:25:11+08:00 ] 60.194.185.2 /Version/check?signature=92307D0D78009DAFC29B04C7E1295303&timestamp=1520007910&version=1.0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000173s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000216s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000234s ]
+NOTIC: [8] Undefined index: HTTP_X_UUID /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 15 行.
+SQL: SHOW COLUMNS FROM `eggcoin_update` [ RunTime:0.0005s ]
+SQL: SELECT `force`,`version`,`url`,`app_type` FROM `eggcoin_update` WHERE `status` = 1 AND `platform` = 'ios' AND `app_type` = '6' ORDER BY `version` DESC LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: version /usr/local/nginx/html/lianyangji/Application/Api/Controller/VersionController.class.php 第 25 行.
+
+[ 2018-03-03T00:25:11+08:00 ] 60.194.185.2 /EggcoinChicken/index?signature=B90A71749EC9993DD32CF20C399DB5CB&timestamp=1520007911&user_id=13&version=1.0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000162s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000203s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000220s ]
+NOTIC: [8] Undefined index: HTTP_X_UUID /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 15 行.
+SQL: SHOW COLUMNS FROM `eggcoin_news_readed` [ RunTime:0.0005s ]
+SQL: SELECT `news_id` FROM `eggcoin_news_readed` WHERE ( user_id=13 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `eggcoin_news` [ RunTime:0.0004s ]
+SQL: SELECT `id` FROM `eggcoin_news` ORDER BY `id` desc LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `eggcoin_chicken` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `eggcoin_chicken` WHERE ( (state=5 or state=4) and user_id=13 ) LIMIT 1   [ RunTime:0.3065s ]
+
+[ 2018-03-03T00:25:12+08:00 ] 60.194.185.2 /News/getList?page=1&signature=6A2302DBC5B8AB44D1CFF9C518DB4095&timestamp=1520007912&version=1.0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000160s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000219s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000236s ]
+NOTIC: [8] Undefined index: HTTP_X_UUID /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 15 行.
+SQL: SHOW COLUMNS FROM `eggcoin_news` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `eggcoin_news` WHERE `dis_st` = 1 AND `top_num` = 0 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `newstime_date` FROM `eggcoin_news` WHERE `dis_st` = 1 AND `top_num` = 0 GROUP BY newstime_date ORDER BY `newstime_date` desc LIMIT 0,20   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `eggcoin_news` WHERE `newstime_date` = '2018-03-03' AND `top_num` = 0  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `eggcoin_news` WHERE `newstime_date` = '2018-03-02' AND `top_num` = 0  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `eggcoin_news` WHERE `newstime_date` = '2018-03-01' AND `top_num` = 0  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `eggcoin_news` WHERE `newstime_date` = '2018-02-22' AND `top_num` = 0  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `eggcoin_news` WHERE `newstime_date` = '2018-02-01' AND `top_num` = 0  [ RunTime:0.0001s ]
+
+[ 2018-03-03T00:25:12+08:00 ] 60.194.185.2 /News/getTopList?signature=E7D94D872D935A797292E42D96B487D9&timestamp=1520007912&user_id=13&version=1.0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000155s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000202s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000219s ]
+NOTIC: [8] Undefined index: HTTP_X_UUID /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 15 行.
+SQL: SHOW COLUMNS FROM `eggcoin_news` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `eggcoin_news` WHERE `top_num` <> 0 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `eggcoin_news` WHERE `top_num` <> 0 ORDER BY `id` desc  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `eggcoin_news_readed` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `eggcoin_news_readed` WHERE ( user_id=13 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `id` FROM `eggcoin_news` ORDER BY `id` desc LIMIT 1   [ RunTime:0.0001s ]
+SQL: UPDATE `eggcoin_news_readed` SET `news_id`='9' WHERE ( user_id=13 ) [ RunTime:0.0001s ]
+
+[ 2018-03-03T00:25:14+08:00 ] 60.194.185.2 /News/getList?page=1&signature=E0B9AD821EB930918EB650E658828D23&timestamp=1520007914&version=1.0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000158s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000238s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000256s ]
+NOTIC: [8] Undefined index: HTTP_X_UUID /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 15 行.
+SQL: SHOW COLUMNS FROM `eggcoin_news` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `eggcoin_news` WHERE `dis_st` = 1 AND `top_num` = 0 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `newstime_date` FROM `eggcoin_news` WHERE `dis_st` = 1 AND `top_num` = 0 GROUP BY newstime_date ORDER BY `newstime_date` desc LIMIT 0,20   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `eggcoin_news` WHERE `newstime_date` = '2018-03-03' AND `top_num` = 0  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `eggcoin_news` WHERE `newstime_date` = '2018-03-02' AND `top_num` = 0  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `eggcoin_news` WHERE `newstime_date` = '2018-03-01' AND `top_num` = 0  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `eggcoin_news` WHERE `newstime_date` = '2018-02-22' AND `top_num` = 0  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `eggcoin_news` WHERE `newstime_date` = '2018-02-01' AND `top_num` = 0  [ RunTime:0.0001s ]
+
+[ 2018-03-03T00:25:25+08:00 ] 60.194.185.2 /News/getList?page=1&signature=C7ABFEE7743A669852724B735653EA8C&timestamp=1520007924&version=1.0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000174s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000197s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000214s ]
+NOTIC: [8] Undefined index: HTTP_X_UUID /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 15 行.
+SQL: SHOW COLUMNS FROM `eggcoin_news` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `eggcoin_news` WHERE `dis_st` = 1 AND `top_num` = 0 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `newstime_date` FROM `eggcoin_news` WHERE `dis_st` = 1 AND `top_num` = 0 GROUP BY newstime_date ORDER BY `newstime_date` desc LIMIT 0,20   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `eggcoin_news` WHERE `newstime_date` = '2018-03-03' AND `top_num` = 0  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `eggcoin_news` WHERE `newstime_date` = '2018-03-02' AND `top_num` = 0  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `eggcoin_news` WHERE `newstime_date` = '2018-03-01' AND `top_num` = 0  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `eggcoin_news` WHERE `newstime_date` = '2018-02-22' AND `top_num` = 0  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `eggcoin_news` WHERE `newstime_date` = '2018-02-01' AND `top_num` = 0  [ RunTime:0.0001s ]
+
+[ 2018-03-03T00:44:37+08:00 ] 60.194.185.2 /AdminNews/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000178s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000206s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000223s ]
+SQL: SHOW COLUMNS FROM `eggcoin_news` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `eggcoin_news` LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `eggcoin_news` ORDER BY (top_num=1) desc,`id` desc LIMIT 0,20   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000032s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000047s ]
+NOTIC: [8] Undefined index: title /usr/local/nginx/html/lianyangji/Application/Runtime/Cache/Api/3bdd6a0ca56ea7216db5a682579526e2.php 第 63 行.
+NOTIC: [8] Undefined variable: _page /usr/local/nginx/html/lianyangji/Application/Runtime/Cache/Api/3bdd6a0ca56ea7216db5a682579526e2.php 第 66 行.
+NOTIC: [8] Undefined index: top_num_info /usr/local/nginx/html/lianyangji/Application/Runtime/Cache/Api/3bdd6a0ca56ea7216db5a682579526e2.php 第 78 行.
+NOTIC: [8] Undefined index: top_num_info /usr/local/nginx/html/lianyangji/Application/Runtime/Cache/Api/3bdd6a0ca56ea7216db5a682579526e2.php 第 78 行.
+NOTIC: [8] Undefined index: top_num_info /usr/local/nginx/html/lianyangji/Application/Runtime/Cache/Api/3bdd6a0ca56ea7216db5a682579526e2.php 第 78 行.
+NOTIC: [8] Undefined index: top_num_info /usr/local/nginx/html/lianyangji/Application/Runtime/Cache/Api/3bdd6a0ca56ea7216db5a682579526e2.php 第 78 行.
+NOTIC: [8] Undefined index: top_num_info /usr/local/nginx/html/lianyangji/Application/Runtime/Cache/Api/3bdd6a0ca56ea7216db5a682579526e2.php 第 78 行.
+NOTIC: [8] Undefined index: top_num_info /usr/local/nginx/html/lianyangji/Application/Runtime/Cache/Api/3bdd6a0ca56ea7216db5a682579526e2.php 第 78 行.
+NOTIC: [8] Undefined index: top_num_info /usr/local/nginx/html/lianyangji/Application/Runtime/Cache/Api/3bdd6a0ca56ea7216db5a682579526e2.php 第 78 行.
+NOTIC: [8] Undefined index: top_num_info /usr/local/nginx/html/lianyangji/Application/Runtime/Cache/Api/3bdd6a0ca56ea7216db5a682579526e2.php 第 78 行.
+NOTIC: [8] Undefined variable: _page /usr/local/nginx/html/lianyangji/Application/Runtime/Cache/Api/3bdd6a0ca56ea7216db5a682579526e2.php 第 90 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003091s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003106s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000076s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000088s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000272s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000289s ]
+
+[ 2018-03-03T00:44:47+08:00 ] 60.194.185.2 /AdminNews/edit.html?id=9
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000165s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000203s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000220s ]
+SQL: SHOW COLUMNS FROM `eggcoin_news` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `eggcoin_news` WHERE ( id=9 ) LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000036s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000053s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003333s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003350s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000078s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000090s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000238s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000252s ]
+
+[ 2018-03-03T00:45:09+08:00 ] 111.206.36.140 /AdminNews/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000171s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000228s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000246s ]
+
+[ 2018-03-03T00:45:11+08:00 ] 111.206.36.140 /AdminLogin/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000188s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000226s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000244s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000027s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000044s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002508s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002524s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000074s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000086s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000236s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000249s ]
+
+[ 2018-03-03T00:45:56+08:00 ] 60.194.185.2 /AdminNews/edit.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000159s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000208s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000225s ]
+SQL: SHOW COLUMNS FROM `eggcoin_news` [ RunTime:0.0006s ]
+NOTIC: [8] Undefined index: top_num /usr/local/nginx/html/lianyangji/Application/Api/Controller/AdminNewsController.class.php 第 166 行.
+SQL: UPDATE `eggcoin_news` SET `id`='9',`title`='火币投票上币机制遭质疑，深扒背后的金钱游戏',`article_url`='https://mp.weixin.qq.com/s/PNMw9dnXAsm_7re4CivEWQ',`abstract`='火币投票上币制度催生了许多刷票机构。一位专门承接投票生意的业务员透露，他们公司建有16个QQ群，每个群接近500人，拥有全国各地8000多位火币注册用户。这些业务员所在的机构从上币方接单后，会按20元或15元的价格分派给群里的用户去投票，投完返回截图即可领取相应酬劳的QQ红包。',`newstime`='1520006400',`come_from`='3',`top_num`='0',`newstime_date`='2018-03-03' WHERE ( id=9 ) [ RunTime:0.0002s ]
+
+[ 2018-03-03T00:45:58+08:00 ] 60.194.185.2 /AdminNews/edit.html?id=9
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000159s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000219s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000236s ]
+SQL: SHOW COLUMNS FROM `eggcoin_news` [ RunTime:0.0267s ]
+SQL: SELECT * FROM `eggcoin_news` WHERE ( id=9 ) LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000037s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000052s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003306s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003324s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000075s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000086s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000228s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000242s ]
+
+[ 2018-03-03T00:46:02+08:00 ] 60.194.185.2 /AdminNews/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000168s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000203s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000221s ]
+SQL: SHOW COLUMNS FROM `eggcoin_news` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `eggcoin_news` LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `eggcoin_news` ORDER BY (top_num=1) desc,`id` desc LIMIT 0,20   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000032s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000048s ]
+NOTIC: [8] Undefined index: title /usr/local/nginx/html/lianyangji/Application/Runtime/Cache/Api/3bdd6a0ca56ea7216db5a682579526e2.php 第 63 行.
+NOTIC: [8] Undefined variable: _page /usr/local/nginx/html/lianyangji/Application/Runtime/Cache/Api/3bdd6a0ca56ea7216db5a682579526e2.php 第 66 行.
+NOTIC: [8] Undefined index: top_num_info /usr/local/nginx/html/lianyangji/Application/Runtime/Cache/Api/3bdd6a0ca56ea7216db5a682579526e2.php 第 78 行.
+NOTIC: [8] Undefined index: top_num_info /usr/local/nginx/html/lianyangji/Application/Runtime/Cache/Api/3bdd6a0ca56ea7216db5a682579526e2.php 第 78 行.
+NOTIC: [8] Undefined index: top_num_info /usr/local/nginx/html/lianyangji/Application/Runtime/Cache/Api/3bdd6a0ca56ea7216db5a682579526e2.php 第 78 行.
+NOTIC: [8] Undefined index: top_num_info /usr/local/nginx/html/lianyangji/Application/Runtime/Cache/Api/3bdd6a0ca56ea7216db5a682579526e2.php 第 78 行.
+NOTIC: [8] Undefined index: top_num_info /usr/local/nginx/html/lianyangji/Application/Runtime/Cache/Api/3bdd6a0ca56ea7216db5a682579526e2.php 第 78 行.
+NOTIC: [8] Undefined index: top_num_info /usr/local/nginx/html/lianyangji/Application/Runtime/Cache/Api/3bdd6a0ca56ea7216db5a682579526e2.php 第 78 行.
+NOTIC: [8] Undefined index: top_num_info /usr/local/nginx/html/lianyangji/Application/Runtime/Cache/Api/3bdd6a0ca56ea7216db5a682579526e2.php 第 78 行.
+NOTIC: [8] Undefined index: top_num_info /usr/local/nginx/html/lianyangji/Application/Runtime/Cache/Api/3bdd6a0ca56ea7216db5a682579526e2.php 第 78 行.
+NOTIC: [8] Undefined variable: _page /usr/local/nginx/html/lianyangji/Application/Runtime/Cache/Api/3bdd6a0ca56ea7216db5a682579526e2.php 第 90 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003051s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003065s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000073s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000084s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000227s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000242s ]
+
+[ 2018-03-03T00:46:04+08:00 ] 111.206.36.144 /AdminNews/edit.html?id=9
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000158s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000203s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000220s ]
+
+[ 2018-03-03T00:46:07+08:00 ] 111.206.36.144 /AdminLogin/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000158s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000218s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000234s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000026s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000043s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002417s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002432s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000069s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000081s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000242s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000255s ]
+
+[ 2018-03-03T00:53:52+08:00 ] 125.84.182.215 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000160s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000205s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000221s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000228s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000246s ]
+
+[ 2018-03-03T01:01:39+08:00 ] 125.84.180.136 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000183s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000228s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000245s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000225s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000243s ]
+
+[ 2018-03-03T01:07:09+08:00 ] 112.117.16.107 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000217s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000204s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000220s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000228s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000245s ]
+
+[ 2018-03-03T03:10:37+08:00 ] 219.142.243.251 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000162s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000202s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000219s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000250s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000270s ]
+
+[ 2018-03-03T03:12:53+08:00 ] 180.212.136.5 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000179s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000209s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000226s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000224s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000242s ]
+
+[ 2018-03-03T03:14:04+08:00 ] 221.11.230.5 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000172s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000206s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000224s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000227s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000245s ]
+
+[ 2018-03-03T03:22:56+08:00 ] 58.19.57.186 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000180s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000211s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000228s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000238s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000256s ]
+
+[ 2018-03-03T03:26:37+08:00 ] 106.114.70.5 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000232s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000303s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000327s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000343s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000370s ]
+
+[ 2018-03-03T03:35:14+08:00 ] 116.52.118.237 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000159s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000203s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000221s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000225s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000242s ]
+
+[ 2018-03-03T05:33:20+08:00 ] 27.156.89.99 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000163s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000222s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000239s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000252s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000269s ]
+
+[ 2018-03-03T07:19:35+08:00 ] 150.255.23.135 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000167s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000207s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000228s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000223s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000240s ]
+
+[ 2018-03-03T07:23:11+08:00 ] 125.76.60.102 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000158s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000204s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000221s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000243s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000260s ]
+
+[ 2018-03-03T07:42:53+08:00 ] 106.121.16.163 /Version/check?signature=A914BC6F3FEC725BE3FD81BDD325406C&timestamp=1520034173&version=1.0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000160s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000215s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000231s ]
+NOTIC: [8] Undefined index: HTTP_X_UUID /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 15 行.
+SQL: SHOW COLUMNS FROM `eggcoin_update` [ RunTime:0.0005s ]
+SQL: SELECT `force`,`version`,`url`,`app_type` FROM `eggcoin_update` WHERE `status` = 1 AND `platform` = 'ios' AND `app_type` = '6' ORDER BY `version` DESC LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: version /usr/local/nginx/html/lianyangji/Application/Api/Controller/VersionController.class.php 第 25 行.
+
+[ 2018-03-03T07:42:53+08:00 ] 106.121.16.163 /EggcoinChicken/index?signature=27B7080AB305478E46DC7CBBDF6B35F4&timestamp=1520034173&user_id=13&version=1.0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000167s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000253s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000277s ]
+NOTIC: [8] Undefined index: HTTP_X_UUID /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 15 行.
+SQL: SHOW COLUMNS FROM `eggcoin_news_readed` [ RunTime:0.0005s ]
+SQL: SELECT `news_id` FROM `eggcoin_news_readed` WHERE ( user_id=13 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `eggcoin_news` [ RunTime:0.0004s ]
+SQL: SELECT `id` FROM `eggcoin_news` ORDER BY `id` desc LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `eggcoin_chicken` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `eggcoin_chicken` WHERE ( (state=5 or state=4) and user_id=13 ) LIMIT 1   [ RunTime:0.3033s ]
+
+[ 2018-03-03T07:42:54+08:00 ] 106.121.16.163 /News/getList?page=1&signature=C95495AE0E19AE6FD30B34521A7C55E5&timestamp=1520034174&version=1.0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000168s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000218s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000238s ]
+NOTIC: [8] Undefined index: HTTP_X_UUID /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 15 行.
+SQL: SHOW COLUMNS FROM `eggcoin_news` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `eggcoin_news` WHERE `dis_st` = 1 AND `top_num` = 0 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `newstime_date` FROM `eggcoin_news` WHERE `dis_st` = 1 AND `top_num` = 0 GROUP BY newstime_date ORDER BY `newstime_date` desc LIMIT 0,20   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `eggcoin_news` WHERE `newstime_date` = '2018-03-03' AND `top_num` = 0  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `eggcoin_news` WHERE `newstime_date` = '2018-03-02' AND `top_num` = 0  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `eggcoin_news` WHERE `newstime_date` = '2018-03-01' AND `top_num` = 0  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `eggcoin_news` WHERE `newstime_date` = '2018-02-22' AND `top_num` = 0  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `eggcoin_news` WHERE `newstime_date` = '2018-02-01' AND `top_num` = 0  [ RunTime:0.0002s ]
+
+[ 2018-03-03T07:42:54+08:00 ] 106.121.16.163 /News/getTopList?signature=B66416F79423C5161F5DA838666D7941&timestamp=1520034174&user_id=13&version=1.0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000157s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000215s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000233s ]
+NOTIC: [8] Undefined index: HTTP_X_UUID /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 15 行.
+SQL: SHOW COLUMNS FROM `eggcoin_news` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `eggcoin_news` WHERE `top_num` <> 0 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `eggcoin_news` WHERE `top_num` <> 0 ORDER BY `id` desc  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `eggcoin_news_readed` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `eggcoin_news_readed` WHERE ( user_id=13 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `id` FROM `eggcoin_news` ORDER BY `id` desc LIMIT 1   [ RunTime:0.0001s ]
+SQL: UPDATE `eggcoin_news_readed` SET `news_id`='9' WHERE ( user_id=13 ) [ RunTime:0.0001s ]
+
+[ 2018-03-03T07:44:01+08:00 ] 106.121.16.163 /EggcoinUser/getUserInfo?signature=0B5EBB1D5ABD7B2D6A53E3D487995DE7&timestamp=1520034240&user_id=13&version=1.0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000171s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000200s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000218s ]
+NOTIC: [8] Undefined index: HTTP_X_UUID /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 15 行.
+SQL: SHOW COLUMNS FROM `eggcoin_user` [ RunTime:0.0006s ]
+SQL: SELECT `id`,`mobile`,`email`,`email_status`,`full_name`,`created_at`,`updated_at`,`invite_code` FROM `eggcoin_user` WHERE `id` = 13 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `eggcoin_user_wechatinfo` [ RunTime:0.0004s ]
+SQL: SELECT `wx_open_id`,`wx_pic`,`wx_nick_name`,`unionid`,`province`,`city`,`country`,`sex` FROM `eggcoin_user_wechatinfo` WHERE ( user_id=13 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `eggcoin_user_vip` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `eggcoin_user_vip` WHERE ( user_id=13 ) LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2018-03-03T07:44:03+08:00 ] 106.121.16.163 /EggcoinUser/getUserInfo?signature=344B5E72586610361AC0FA7148EE5802&timestamp=1520034242&user_id=13&version=1.0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000161s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000215s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000233s ]
+NOTIC: [8] Undefined index: HTTP_X_UUID /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 15 行.
+SQL: SHOW COLUMNS FROM `eggcoin_user` [ RunTime:0.0006s ]
+SQL: SELECT `id`,`mobile`,`email`,`email_status`,`full_name`,`created_at`,`updated_at`,`invite_code` FROM `eggcoin_user` WHERE `id` = 13 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `eggcoin_user_wechatinfo` [ RunTime:0.0004s ]
+SQL: SELECT `wx_open_id`,`wx_pic`,`wx_nick_name`,`unionid`,`province`,`city`,`country`,`sex` FROM `eggcoin_user_wechatinfo` WHERE ( user_id=13 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `eggcoin_user_vip` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `eggcoin_user_vip` WHERE ( user_id=13 ) LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2018-03-03T07:45:20+08:00 ] 106.121.16.163 /Index/about_us
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000160s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000208s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000226s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000030s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000048s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002810s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002827s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000072s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000084s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000250s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000266s ]
+
+[ 2018-03-03T07:45:30+08:00 ] 106.121.16.163 /Index/introduce
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000161s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000221s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000238s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000023s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000039s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002377s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002394s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000069s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000081s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000257s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000271s ]
+
+[ 2018-03-03T07:46:29+08:00 ] 120.204.17.68 /Index/introduce
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000156s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000215s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000233s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000022s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000038s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002350s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002367s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000071s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000082s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000220s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000263s ]
+
+[ 2018-03-03T11:32:53+08:00 ] 61.148.244.241 /Version/check?signature=21875B9005961521EA35CCC4B4182B87&timestamp=1520047973&version=1.0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000153s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000204s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000220s ]
+NOTIC: [8] Undefined index: HTTP_X_UUID /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 15 行.
+SQL: SHOW COLUMNS FROM `eggcoin_update` [ RunTime:0.0004s ]
+SQL: SELECT `force`,`version`,`url`,`app_type` FROM `eggcoin_update` WHERE `status` = 1 AND `platform` = 'ios' AND `app_type` = '6' ORDER BY `version` DESC LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: version /usr/local/nginx/html/lianyangji/Application/Api/Controller/VersionController.class.php 第 25 行.
+
+[ 2018-03-03T11:32:54+08:00 ] 61.148.244.241 /EggcoinChicken/index?signature=0E115AEE46686658AFAE911B98353CE0&timestamp=1520047973&user_id=13&version=1.0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000156s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000206s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000224s ]
+NOTIC: [8] Undefined index: HTTP_X_UUID /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 15 行.
+SQL: SHOW COLUMNS FROM `eggcoin_news_readed` [ RunTime:0.0005s ]
+SQL: SELECT `news_id` FROM `eggcoin_news_readed` WHERE ( user_id=13 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `eggcoin_news` [ RunTime:0.0005s ]
+SQL: SELECT `id` FROM `eggcoin_news` ORDER BY `id` desc LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `eggcoin_chicken` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `eggcoin_chicken` WHERE ( (state=5 or state=4) and user_id=13 ) LIMIT 1   [ RunTime:0.3041s ]
+
+[ 2018-03-03T12:20:02+08:00 ] 114.249.56.212 /Version/check?signature=4086F80F9F9A146AE3B996D82554DB88&timestamp=1520050802&version=1.0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000174s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000204s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000222s ]
+NOTIC: [8] Undefined index: HTTP_X_UUID /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 15 行.
+SQL: SHOW COLUMNS FROM `eggcoin_update` [ RunTime:0.0005s ]
+SQL: SELECT `force`,`version`,`url`,`app_type` FROM `eggcoin_update` WHERE `status` = 1 AND `platform` = 'ios' AND `app_type` = '6' ORDER BY `version` DESC LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: version /usr/local/nginx/html/lianyangji/Application/Api/Controller/VersionController.class.php 第 25 行.
+
+[ 2018-03-03T12:42:16+08:00 ] 223.104.63.175 /Index/introduce
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000158s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000223s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000241s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000021s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000038s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002311s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002328s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000069s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000080s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000248s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000262s ]
+
+[ 2018-03-03T12:42:49+08:00 ] 117.136.79.153 /Index/introduce?from=groupmessage&isappinstalled=0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000162s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000230s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000251s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000041s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000059s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002348s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002366s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000068s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000081s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000226s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000239s ]
+
+[ 2018-03-03T12:43:29+08:00 ] 120.204.17.69 /Index/introduce
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000155s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000200s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000218s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000022s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000039s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002292s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002309s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000068s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000080s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000265s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000280s ]
+
+[ 2018-03-03T12:43:42+08:00 ] 120.204.17.67 /Index/introduce?from=groupmessage&isappinstalled=0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000175s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000208s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000226s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000040s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000069s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002689s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002716s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000158s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000182s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000282s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000302s ]
+
+[ 2018-03-03T12:46:51+08:00 ] 123.147.250.247 /Index/introduce?from=groupmessage&isappinstalled=0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000170s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000202s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000219s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000022s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000039s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002315s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002332s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000070s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000081s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000224s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000236s ]
+
+[ 2018-03-03T13:39:23+08:00 ] 66.102.6.160 /AdminNews/add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000174s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000224s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000243s ]
+
+[ 2018-03-03T13:39:23+08:00 ] 66.102.6.160 /AdminLogin/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000181s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000207s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000223s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000027s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000044s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002485s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002500s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000072s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000084s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000234s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000248s ]
+
+[ 2018-03-03T14:27:55+08:00 ] 116.30.178.196 /Index/introduce?from=groupmessage&isappinstalled=0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000160s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000218s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000236s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000022s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000040s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002356s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002372s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000070s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000082s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000226s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000256s ]
+
+[ 2018-03-03T16:35:34+08:00 ] 36.102.208.90 /Version/check?signature=F709C80DF375C519E7D3E1197596A276&timestamp=1520066134&version=1.0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000190s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000240s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000258s ]
+NOTIC: [8] Undefined index: HTTP_X_UUID /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 15 行.
+SQL: SHOW COLUMNS FROM `eggcoin_update` [ RunTime:0.0005s ]
+SQL: SELECT `force`,`version`,`url`,`app_type` FROM `eggcoin_update` WHERE `status` = 1 AND `platform` = 'ios' AND `app_type` = '6' ORDER BY `version` DESC LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: version /usr/local/nginx/html/lianyangji/Application/Api/Controller/VersionController.class.php 第 25 行.
+
+[ 2018-03-03T16:35:56+08:00 ] 36.102.208.90 /Version/check?signature=00541C7B527E59AA6ADF24ECE3D4BE3A&timestamp=1520066156&version=1.0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000177s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000204s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000222s ]
+NOTIC: [8] Undefined index: HTTP_X_UUID /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 15 行.
+SQL: SHOW COLUMNS FROM `eggcoin_update` [ RunTime:0.0005s ]
+SQL: SELECT `force`,`version`,`url`,`app_type` FROM `eggcoin_update` WHERE `status` = 1 AND `platform` = 'ios' AND `app_type` = '6' ORDER BY `version` DESC LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: version /usr/local/nginx/html/lianyangji/Application/Api/Controller/VersionController.class.php 第 25 行.
+
+[ 2018-03-03T16:35:57+08:00 ] 36.102.208.90 /EggcoinChicken/index?signature=00541C7B527E59AA6ADF24ECE3D4BE3A&timestamp=1520066156&version=1.0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000192s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000214s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000231s ]
+NOTIC: [8] Undefined index: HTTP_X_UUID /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 15 行.
+
+[ 2018-03-03T16:37:03+08:00 ] 36.102.208.90 /Version/check?signature=42703DC58FAC253515EA57200E913070&timestamp=1520066223&version=1.0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000160s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000247s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000266s ]
+NOTIC: [8] Undefined index: HTTP_X_UUID /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 15 行.
+SQL: SHOW COLUMNS FROM `eggcoin_update` [ RunTime:0.0005s ]
+SQL: SELECT `force`,`version`,`url`,`app_type` FROM `eggcoin_update` WHERE `status` = 1 AND `platform` = 'ios' AND `app_type` = '6' ORDER BY `version` DESC LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: version /usr/local/nginx/html/lianyangji/Application/Api/Controller/VersionController.class.php 第 25 行.
+
+[ 2018-03-03T16:37:03+08:00 ] 36.102.208.90 /EggcoinChicken/index?signature=42703DC58FAC253515EA57200E913070&timestamp=1520066223&version=1.0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000160s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000202s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000219s ]
+NOTIC: [8] Undefined index: HTTP_X_UUID /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 15 行.
+
+[ 2018-03-03T17:50:22+08:00 ] 58.246.221.75 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000184s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000205s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000221s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000271s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000289s ]
+
+[ 2018-03-03T17:50:23+08:00 ] 183.192.201.97 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000159s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000209s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000225s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000237s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000256s ]
+
+[ 2018-03-03T18:14:21+08:00 ] 36.102.208.90 /Version/check?signature=18A3999A003B22ED74A054BEA225F5E5&timestamp=1520072060&version=1.0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000161s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000233s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000252s ]
+NOTIC: [8] Undefined index: HTTP_X_UUID /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 15 行.
+SQL: SHOW COLUMNS FROM `eggcoin_update` [ RunTime:0.0005s ]
+SQL: SELECT `force`,`version`,`url`,`app_type` FROM `eggcoin_update` WHERE `status` = 1 AND `platform` = 'ios' AND `app_type` = '6' ORDER BY `version` DESC LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: version /usr/local/nginx/html/lianyangji/Application/Api/Controller/VersionController.class.php 第 25 行.
+
+[ 2018-03-03T18:14:21+08:00 ] 36.102.208.90 /EggcoinChicken/index?signature=34B58EB7847B590D5F308E5620D196EC&timestamp=1520072061&version=1.0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000170s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000222s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000240s ]
+NOTIC: [8] Undefined index: HTTP_X_UUID /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 15 行.
+
+[ 2018-03-03T18:15:09+08:00 ] 58.250.143.191 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000163s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000236s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000254s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000238s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000255s ]
+
+[ 2018-03-03T18:15:10+08:00 ] 14.116.137.168 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000158s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000223s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000240s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000231s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000248s ]
+
+[ 2018-03-03T18:42:01+08:00 ] 124.88.64.193 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000173s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000206s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000226s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000244s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000262s ]
+
+[ 2018-03-03T20:28:18+08:00 ] 114.242.249.85 /Version/check?sign=40EC24636640123BB8B8FB9E704BA3DC&timestamp=1520080098&token=lm6bng9ruqglt49sakmaaoinll&version=1.0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000165s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000204s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000220s ]
+SQL: SHOW COLUMNS FROM `eggcoin_update` [ RunTime:0.0005s ]
+SQL: SELECT `force`,`version`,`url`,`app_type` FROM `eggcoin_update` WHERE `status` = 1 AND `platform` = 'android' AND `app_type` = '6' ORDER BY `version` DESC LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: version /usr/local/nginx/html/lianyangji/Application/Api/Controller/VersionController.class.php 第 25 行.
+
+[ 2018-03-03T20:28:19+08:00 ] 114.242.249.85 /EggcoinChicken/index?user_id=8&sign=B9992292FE70ADEA480BBA538D35CD6C&timestamp=1520080099&token=lm6bng9ruqglt49sakmaaoinll&version=1.0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000154s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000218s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000236s ]
+SQL: SHOW COLUMNS FROM `eggcoin_news_readed` [ RunTime:0.0004s ]
+SQL: SELECT `news_id` FROM `eggcoin_news_readed` WHERE ( user_id=8 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `eggcoin_news` [ RunTime:0.0004s ]
+SQL: SELECT `id` FROM `eggcoin_news` ORDER BY `id` desc LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `eggcoin_chicken` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `eggcoin_chicken` WHERE ( (state=5 or state=4) and user_id=8 ) LIMIT 1   [ RunTime:0.3091s ]
+
+[ 2018-03-03T20:28:20+08:00 ] 114.242.249.85 /EggcoinUser/getUserWallet?user_id=8&sign=DA49877864ED0C4346C8B6B0B7288D6D&timestamp=1520080101&token=lm6bng9ruqglt49sakmaaoinll&version=1.0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000158s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000224s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000243s ]
+SQL: SHOW COLUMNS FROM `eggcoin_wallet` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `eggcoin_wallet` WHERE `user_id` = 8 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `eggcoin_chicken_todayfeed_delivery` [ RunTime:0.0004s ]
+SQL: SELECT SUM(egg_num) AS tp_SUM FROM `eggcoin_chicken_todayfeed_delivery` WHERE `user_id` = 8 AND `state` = 2 LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2018-03-03T20:28:22+08:00 ] 114.242.249.85 /EggcoinRecharge/getUserFeedRecord?page=1&user_id=8&sign=F8CA76AED58246D85A0AFC26C6648AFB&timestamp=1520080103&token=lm6bng9ruqglt49sakmaaoinll&version=1.0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000177s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000218s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000235s ]
+SQL: SHOW COLUMNS FROM `eggcoin_chicken_raise_record` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `eggcoin_chicken_raise_record` WHERE `user_id` = 8 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `eggcoin_chicken_raise_record` WHERE `user_id` = 8 ORDER BY `id` desc LIMIT 0,20   [ RunTime:0.0002s ]
+
+[ 2018-03-03T20:28:24+08:00 ] 114.242.249.85 /News/todayPrice?sign=BADBBDDAB9E27D77809BCFC8D536B95F&timestamp=1520080104&token=lm6bng9ruqglt49sakmaaoinll&version=1.0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000157s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000226s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000244s ]
+SQL: SHOW COLUMNS FROM `eggcoin_today_price` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `eggcoin_today_price` ORDER BY `delivery_date` LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2018-03-03T20:28:26+08:00 ] 114.242.249.85 /EggcoinRecharge/recharge?total_price=2&user_id=8&sign=99A2DCDF17DA9EBBE7810F2EF36BB64A&timestamp=1520080106&token=lm6bng9ruqglt49sakmaaoinll&version=1.0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000163s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000202s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000220s ]
+SQL: SHOW COLUMNS FROM `eggcoin_recharge` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `eggcoin_recharge_info` [ RunTime:0.0004s ]
+SQL: INSERT INTO `eggcoin_recharge` (`user_id`,`updated_at`,`created_at`,`total_price`,`pay_price`,`order_sn`,`pay_state`,`state`) VALUES ('8','1520080106','1520080106','2','2','201803038010616405007120','1','1') [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `eggcoin_wallet` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `eggcoin_wallet` WHERE ( user_id=8 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: INSERT INTO `eggcoin_recharge_info` (`order_id`,`recharge_price`,`goods_id`,`created_at`,`updated_at`,`state`) VALUES ('2','2','2','1520080106','1520080106','1') [ RunTime:0.0002s ]
+
+[ 2018-03-03T20:28:26+08:00 ] 114.242.249.85 /Alipay/getAlipayInfo?order_sn=201803038010616405007120&type=0&sign=07A26DE3E5F8FEC0DDA4B60D0C882F8C&timestamp=1520080106&token=lm6bng9ruqglt49sakmaaoinll&version=1.0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000163s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000203s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000219s ]
+
+[ 2018-03-03T20:28:32+08:00 ] 114.242.249.85 /EggcoinRecharge/getUserFeedRecord?page=1&user_id=8&sign=6A4E4F976D12C481221E2B6E595B54F3&timestamp=1520080112&token=lm6bng9ruqglt49sakmaaoinll&version=1.0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000164s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000200s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000217s ]
+SQL: SHOW COLUMNS FROM `eggcoin_chicken_raise_record` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `eggcoin_chicken_raise_record` WHERE `user_id` = 8 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `eggcoin_chicken_raise_record` WHERE `user_id` = 8 ORDER BY `id` desc LIMIT 0,20   [ RunTime:0.0002s ]
+
+[ 2018-03-03T20:28:32+08:00 ] 123.57.137.14 /EggcoinRecharge/rechargeNotifyUrl?order_sn=201803038010616405007120
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000184s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000223s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000242s ]
+NOTIC: [8] Undefined index: HTTP_X_PLATFORM /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 12 行.
+NOTIC: [8] Undefined index: HTTP_X_VERNAME /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 13 行.
+NOTIC: [8] Undefined index: HTTP_X_VERCODE /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 14 行.
+NOTIC: [8] Undefined index: HTTP_X_UUID /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 15 行.
+NOTIC: [8] Undefined index: HTTP_X_DEVICE /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 16 行.
+NOTIC: [8] Undefined index: HTTP_X_BUILDVERSION /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 17 行.
+NOTIC: [8] Undefined index: HTTP_X_API_VERSION /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 18 行.
+NOTIC: [8] Undefined index: HTTP_X_APP_TYPE /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 19 行.
+SQL: SHOW COLUMNS FROM `eggcoin_recharge` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `eggcoin_recharge_info` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `eggcoin_recharge` WHERE ( order_sn=201803038010616405007120 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `eggcoin_recharge_info` WHERE ( order_id=2 )  [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `eggcoin_wallet` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `eggcoin_wallet` WHERE ( user_id=8 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: UPDATE `eggcoin_recharge` SET `updated_at`='1520080112',`state`='3',`pay_state`='2' WHERE ( id=2 ) [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `eggcoin_chicken_raise_record` [ RunTime:0.0004s ]
+SQL: INSERT INTO `eggcoin_chicken_raise_record` (`user_id`,`amount`,`unit`,`reason_source_id`,`reason_type`,`reason_narration`,`created_at`,`state`) VALUES ('8','2.00','元','2','1','蛋鸡养殖饲料','1520080112','1') [ RunTime:0.0002s ]
+SQL: UPDATE `eggcoin_recharge_info` SET `updated_at`='1520080112',`state`='3' WHERE ( id=2 ) [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `eggcoin_today_price` [ RunTime:0.0005s ]
+SQL: SELECT `feed_price` FROM `eggcoin_today_price` ORDER BY `delivery_date` LIMIT 1   [ RunTime:0.0002s ]
+SQL: UPDATE `eggcoin_wallet` SET `feed_amount`='1.21' WHERE ( user_id=8 ) [ RunTime:0.0001s ]
+SQL: INSERT INTO `eggcoin_chicken_raise_record` (`user_id`,`amount`,`unit`,`reason_source_id`,`reason_type`,`reason_narration`,`created_at`,`state`) VALUES ('8','910','g','2','2','饲料认购','1520080112','1') [ RunTime:0.0001s ]
+

@@ -37,7 +37,7 @@ function send_sms_post($data,$target){
     return $gets;
 }
 
-function send_sms($mobile,$message,$from='养鸡管家',$sprdid='1012818'){
+function send_sms($mobile,$message,$from='链养鸡',$sprdid='1012818'){
     $target = "http://cf.51welink.com/submitdata/Service.asmx/g_Submit";
     $post_data = "sname=dljiaruk&spwd=oc46WhbB&scorpid=&sprdid=".$sprdid."&sdst=".$mobile."&smsg=".rawurlencode($message."【".$from."】");
     $gets = send_sms_post($post_data, $target);
@@ -109,7 +109,7 @@ function curl_request($url,$data='',$header=0){
         curl_setopt($ch,CURLOPT_POSTFIELDS,$data);
     }
     //$header = array('Content-Type: application/json; charset=utf-8');
-    curl_setopt($curl, CURLOPT_HTTPHEADER,$header);
+    curl_setopt($url, CURLOPT_HTTPHEADER,$header);
     //curl_setopt ($ch,CURLOPT_HEADER,0);
     $token_outopt = curl_exec($ch);
     curl_close($ch);
@@ -234,21 +234,21 @@ function check_not_null_param($not_null_param,$data)
 }
 
 /*获取钱包id,不存在则添加*/
-function getEggcoinAccountId($eggcoin_account_address,$custom_name='')
+function getEggcoinAccountId($eggcoin_account_address)
 {
     $m   = M('EggcoinAccount');
-    $res = $m->where('account_address="'.$eggcoin_account_address.'"')->find();
-    if($res) return $res;
-    $add['account_address'] = $eggcoin_account_address;
-    $add['custom_name']     = $custom_name;
-    $add['created']         = date('Y-m-d H:i:s');
-    $add['state']           = 1;
-    $res = $m->add($add);
+    $res = $m->where('account_address="'.$eggcoin_account_address.'"')->getField('id');
+    if(!$res) {
+        $add['account_address'] = $eggcoin_account_address;
+        $add['created']         = date('Y-m-d H:i:s');
+        $add['state']           = 1;
+        $res = $m->add($add);
+    }
     return $res;
 }
 
 /*根据id获取钱包地址*/
-function getEggcoinAccountInfo($eggcoin_account_id)
+function getEggcoinAccountInfoById($eggcoin_account_id)
 {
     $m = M('EggcoinAccount');
     if($eggcoin_account_id)
@@ -261,7 +261,7 @@ function getEggcoinAccountInfo($eggcoin_account_id)
 function addVip($user_id,$expiry_time)
 {
     $m = M('UserVip');
-    if($m->where('user_id='.$user_id)->find()); return true;
+    if($m->where('user_id='.$user_id)->find()) return true;
     $add['user_id'] = $user_id;
     $add['expiry_time'] = $expiry_time;
     $add['created'] = time();
@@ -313,6 +313,30 @@ function addRecord($data)
     return $return_data;
 }
 
+function issueEggCoin($amount,$account_address)
+{
+    $return_data = array('code'=>0,'msg'=>'');
+    if(!$amount or !$account_address)
+    {
+        $return_data['msg'] = '参数错误';
+        return $return_data;
+    }
+    //$amount=1;
+    //$account_address = '1KofcVX71Zpq5imj9Vw9hahFxu843NcTxY';
+    $account_address = '16xnbGyGqzDeD52gMjHunfa2psZdCJPvYW';
+    $url  = "http://api.lianyangji.io:8080/HelloSpringMVC/eggcoin/sendEggcoin?amount=".$amount."&owner_account=".$account_address;
+
+    $json = file_get_contents($url);
+    $arr  = json_decode($json,true);
+    if($arr && $arr['retcode']==0)
+    {
+        $return_data['code'] = 1;
+        $return_data['msg']  = 'success';
+    } else {
+        $return_data['msg'] = $arr['retmsg'] ? $arr['retmsg'] : 'ERROR';
+    }
+    return $return_data;
+}
 
 /*记录数字发行流水*/
 function addEggcoinRecord($data)
@@ -321,7 +345,7 @@ function addEggcoinRecord($data)
 
     $not_null_param  = array(
         'user_id' => '用户不能为空',
-        'eggcoin_account_id' => '钱包id不能为空',
+        //'eggcoin_account_id' => '钱包id不能为空',
         'amount' => '请填写数量',
         'reason_type' => '请填写流水类型',
         'reason_narration' => '请填写流水标题',
@@ -338,7 +362,7 @@ function addEggcoinRecord($data)
     $raise_record_m = M('EggcoinRecord');
     $raise_record = array();
     $raise_record['user_id'] = $data['user_id'];
-    $raise_record['eggcoin_account_id'] = $data['eggcoin_account_id'];
+    if($data['eggcoin_account_id']) $raise_record['eggcoin_account_id'] = $data['eggcoin_account_id'];
     $raise_record['amount']  = $data['amount'];
     if($data['reason_source_id']) $raise_record['reason_source_id'] = $data['reason_source_id'];
     if($data['chicken_id']) $raise_record['chicken_id'] = $data['chicken_id'];
@@ -419,6 +443,9 @@ function addUserByWechat($wechat_info)
 
     if($w_u_info)
     {
+        // 更新信息
+        $m->where('unionid="'.$wechat_info['unionid'].'"')->save($wechat_info);
+
         $re_data['code'] = 20003;
         $re_data['msg']  = '该微信已被绑定';
         $re_data['data']['user_id']  = $w_u_info['user_id'];
@@ -456,8 +483,9 @@ function addUserByWechat($wechat_info)
 // 新用户操作
 function newUserAction($user_id)
 {
+    //echo $user_id;die;
     // 添加vip
-    addVip($user_id,time()+85400*365*10);
+    if($user_id <= 10000) addVip($user_id,time()+85400*365*10);
 
     // 生成钱包
     $wallet_m = M('Wallet');
@@ -526,7 +554,7 @@ function bindWeChat($user_id,$wechat_info)
 
     );
     $not_null_param = array(
-        'wx_open_id'   => '获取微信open_id失败',
+        //'wx_open_id'   => '获取微信open_id失败',
         'unionid'   => '获取微信信息失败',
         'wx_pic'       => '缺少微信用户头像',
         'wx_nick_name' => '缺少微信用户昵称',
@@ -542,10 +570,11 @@ function bindWeChat($user_id,$wechat_info)
 
     // 查询微信账号是否存在
     $m        = M('UserWechatinfo');
-    $w_info   = $m->where('wx_open_id="'.$wechat_info['wx_open_id'].'"')->find();
+    //$w_info   = $m->where('wx_open_id="'.$wechat_info['wx_open_id'].'"')->find();
     $w_u_info = $m->where('unionid="'.$wechat_info['unionid'].'"')->find();
 
-    if(!$w_info and !$w_u_info)
+    //if(!$w_info and !$w_u_info)
+    if(!$w_u_info)
     {
         $wechat_info['user_id'] = $user_id;
         $wechat_info['created_at'] = time();
@@ -588,19 +617,28 @@ function getUserInfoByUserId($user_id)
 
     // 邮箱状态
     if(!$info['email']) $info['email_status'] = 3;
-    $info['email_status_info'] = getEmailStatusInfo[$info['email_status']];
+    $info['email_status_info'] = getEmailStatusInfo($info['email_status']);
 
     // 微信信息
     $wechart_info = M('UserWechatinfo')->field('user_id,created_at',true)->where($map)->find();
     $info['wechart_info'] = $wechart_info ? $wechart_info : array();
-    if($info['wechart_info']) $info['wechart_info']['wx_nick_name'] = base64_decode($info['wechart_info']['wx_nick_name']);
+    if($info['wechart_info'])
+    {
+        $info['wechart_info']['wx_nick_name'] = base64_decode($info['wechart_info']['wx_nick_name']);
+        $info['wechart_info']['sex_info'] = getWechatUserSexInfo($info['wechart_info']['sex']);
+    }
 
     // vip
     $vip = M('UserVip')->where($map)->find();
     $info['vip'] = $vip ? 1 : 2;
+    $info['vip_info'] = $info['vip']==1 ? '内侧会员' : '普通会员';
 
     // 昵称
-    if(!$info['full_name']) $info['full_name'] = $wechart_info['wx_nick_name'];
+    if(!$info['full_name']) $info['full_name'] = $info['wechart_info']['wx_nick_name'];
+    if(!$info['pic']) $info['pic'] = $info['wechart_info']['wx_pic'];
+
+    // 注册时间
+    $info['created_date'] = date('Y-m-d',$info['created_at']);
 
     // 微博
     $info['weibo_info'] = array();
@@ -608,9 +646,22 @@ function getUserInfoByUserId($user_id)
     return $re_data;
 }
 
+/*微信性别*/
+function getWechatUserSexInfo($id)
+{
+    if(!$id) return '未知';
+    $info = array(
+        1 => '🚹男士',
+        2 => '🚺女士',
+        3 => '未知',
+    );
+    return $info[$id];
+}
+
 /*邮箱状态*/
 function getEmailStatusInfo($status)
 {
+    if(!$status) return '未设置邮箱';
     $status_info = array(
         1 => '已验证通过',
         2 => '待验证',
@@ -623,6 +674,7 @@ function getEmailStatusInfo($status)
 function task_reward($task='')
 {
     $reward = array(
+        'invite_reward' => 1,
         'sign_reward' => 10,
         'share_reward' => 20,
         'friend_login_reward' => 30,
@@ -631,6 +683,50 @@ function task_reward($task='')
     if(!$task) return $reward;
     return $reward[$task];
 }
+
+/*邀请购买成功奖励*/
+function invite_success_reward($user_id,$invite_id)
+{
+    // 数字发行
+    $eggcoin_data = array();
+    $eggcoin_data['user_id'] = $user_id;
+    $eggcoin_data['amount'] = task_reward('invite_reward');
+    $eggcoin_data['reason_type'] = 3;//事由类型id：1.收益；2.赠送；3.奖励'
+    $eggcoin_data['reason_narration'] = '邀请购买';//事由名称
+    $eggcoin_data['reason_source_id'] = $invite_id;
+    $eggcoin_data['state'] = 1;//状态：1.成功;2.失败;3.待处理'
+
+    // 钱包地址
+    $eggcoin_account_id = M('Chicken')->where('state=5 and user_id='.$user_id)->order('created desc')->getField('eggcoin_account_id');
+    if($eggcoin_account_id) $eggcoin_account = getEggcoinAccountInfoById($eggcoin_account_id);
+    if(!$eggcoin_account_id or !$eggcoin_account or !$eggcoin_account['account_address'])
+    {
+        $eggcoin_data['state']    = 3;//状态：1.成功;2.失败;3.待处理'
+        $eggcoin_data['err_code'] = 'ADDRESS_NULL';
+    }
+    else
+    {
+        // 发放币
+        $issueEggCoin_res = issueEggCoin($eggcoin_data['amount'], $eggcoin_account['account_address']);
+        if ($issueEggCoin_res['retcode'] != 0) {
+            $eggcoin_data['state'] = 3;//状态：1.成功;2.失败;3.待处理'
+            $eggcoin_data['err_code'] = 'ISSUE_ERROR';
+        }
+        $eggcoin_data['eggcoin_account_id'] = $eggcoin_account_id;
+    }
+
+    $eggcoin_record = addEggcoinRecord($eggcoin_data);
+    if($eggcoin_record['code']==0)
+    {
+        //Log::record('数字发行记录失败,INFO:' . json_encode($eggcoin_data), 'invite_success_reward', true);
+    }
+    return $eggcoin_record;
+}
+
+/*分享成功奖励*/
+
+
+/*邀请好友登录成功奖励*/
 
 /*
      *  获取当前发行批次鸡

@@ -2,6 +2,7 @@
 namespace WeChat\Controller;
 use Think\Controller;
 use Com\Wechat\Wechat;
+use Com\Wechat\Wechatjssdk;
 
 class WeChatController extends Controller
 {
@@ -74,5 +75,14 @@ class WeChatController extends Controller
         }else{
             return false;
         }
+    }
+
+    /*微信jssdk*/
+    public function getSignPackage()
+    {
+        $url = urldecode($_GET['url']);
+        $this->_wxjsdk = new Wechatjssdk();
+        $ticket = $this->_wxjsdk->getSignPackage($url);
+        echo json_encode($ticket);
     }
 }

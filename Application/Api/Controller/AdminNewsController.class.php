@@ -81,6 +81,7 @@ class AdminNewsController extends AdminPublicController
             }
             $data['create_time'] = time();
             $data['newstime'] = strtotime($data['newstime']);
+            $data['newstime_date'] = date('Y-m-d',$data['newstime']);
             $res = $this->_m->add($data);
             if(!$res) die('添加失败');
 
@@ -173,6 +174,7 @@ class AdminNewsController extends AdminPublicController
             }
 
             $data['newstime'] = strtotime($data['newstime']);
+            $data['newstime_date'] = date('Y-m-d',$data['newstime']);
             $res = $this->_m->where('id='.$data['id'])->save($data);
             $msg = 'success';
 

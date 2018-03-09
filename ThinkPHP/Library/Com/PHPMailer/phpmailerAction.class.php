@@ -33,11 +33,11 @@ class phpmailerAction
         $mail->Port = 587;
 
         // SMTP username
-        $mail->Username = 'chenjinfeng@yangjiguanjia.com';
+        $mail->Username = 'service@jiwo.io';
         // SMTP password
-        $mail->Password = 'Mailcjf8753135';
+        $mail->Password = 'Lianyangji0207';
         //Set who the message is to be sent from
-        $mail->setFrom('chenjinfeng@yangjiguanjia.com','快乐de蛋');
+        $mail->setFrom('service@jiwo.io','链养鸡');
         //Set an alternative reply-to address
         //$mail->addReplyTo('replyto@example.com', 'First Last');
         //Set who the message is to be sent to

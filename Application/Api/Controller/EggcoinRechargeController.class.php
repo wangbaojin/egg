@@ -150,13 +150,10 @@ class EggcoinRechargeController extends ApiController
    /*充值回调,此处错误应该做日志记录,调试先返回信息便于调试*/
    public function rechargeNotifyUrl()
    {
-       $data = I('post.');
-       $order_sn = $data['order_sn'];
-       $order_st = $data['order_st'];
+       
+       $order_sn = $_GET['order_sn'];
+    
        if(!$order_sn) $this->api_error(20001,'订单号错误');
-
-       // 验证签名(支付回调签名)
-
 
        // 订单、订单详情
        $m      = M('Recharge');
@@ -173,11 +170,9 @@ class EggcoinRechargeController extends ApiController
            $this->api_error(20004,'获取用户信息失败,请重现登录');
        }
 
-       if($order['state']!=1) $this->api_error(20003,'订单已处理');
+       
 
-        // 如果支付成功
-       if($order_st='SUCCESS')
-       {
+
            $trans = M();
            $trans->startTrans();
            $saveData['updated_at'] = time();
@@ -286,7 +281,7 @@ class EggcoinRechargeController extends ApiController
            }
            $trans->commit();
            $this->api_return('success');
-       }
+       
 
        //其他状态
    }

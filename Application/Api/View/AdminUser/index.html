@@ -1,0 +1,41 @@
+<include file="Public/header" />
+<div class="container-fluid">
+    <form class="form-inline" name="searchForm" action="__SELF__" method="get">
+        手机号:<input  type="text" name="mobile" value="{$_GET.mobile}"><br>
+        <input type="submit" class="btn btn-success" value="搜索">
+    </form>
+    共:{$count}条!{$_page}
+    <div class="table-responsive">
+        <table class="table">
+            <tr>
+                <th class="active">用户基本信息</th>
+                <th class="active">微信信息</th>
+                <th class="warning">微博信息</th>
+                <th class="active">操作</th>
+            </tr>
+            <volist name="list" id="vo">
+                <tr>
+                    <td class="active" style="padding: 10px">
+                        <img src="{$vo.pic}" width="100px"><br>
+                        ID:{$vo.id}&nbsp; {$vo.full_name}<br>
+                        <small>{$vo.vip_info} [{$vo.created_date}]</small><br>
+                        {$vo.mobile} &nbsp;<br>
+                        {$vo.email}{$vo.email_status_info}
+                    </td>
+                    <td class="active" style="padding: 10px">
+                        <img src="{$vo.wechart_info.wx_pic}" width="100px"><br>
+                        {$vo.wechart_info.wx_nick_name}<br>
+                        {$vo.wechart_info.country} &nbsp;<br>
+                        {$vo.wechart_info.sex_info}
+                    </td>
+                    <td class="active" style="padding: 10px">暂无
+                    </td>
+                    <td class="active" style="padding: 10px">
+                        <a href="">编辑</a><br><br>
+                    </td>
+                </tr>
+            </volist>
+        </table>
+    </div>
+    共:{$count}条!{$_page}
+</div>

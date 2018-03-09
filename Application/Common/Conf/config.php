@@ -3,7 +3,7 @@ return array(
     /* 模块相关配置 */
     'DEFAULT_MODULE' => 'Home',
     'MODULE_DENY_LIST' => array('Common'),
-    'MODULE_ALLOW_LIST'  => array('Home','Api','Common','Wechat'),
+    'MODULE_ALLOW_LIST'  => array('Home','Api','Common','Wechat','Wechat2'),
     /* 系统数据加密设置 */
     'DATA_AUTH_KEY' => 'c;goZsfBGAy*|pedW^80nKtY.X[Urvx=6Quh#JO{', //默认数据加>密KEY
 
@@ -18,6 +18,7 @@ return array(
         'www.lianyangji.io'    => 'Home',
         'api.lianyangji.io'    => 'Api',
         'wechat.jiagehao.cn'    => 'Wechat',
+        'www.jiagehao.cn'    => 'Wechat2',
     ),
     'DB_TYPE'               =>  'mysql',     // 数据库类型
     'DB_HOST'               =>  '127.0.0.1', // 服务器地址

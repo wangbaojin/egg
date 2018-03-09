@@ -35,7 +35,6 @@ class EggcoinAccountController extends ApiController
         $data['custom_name'] = I('post.custom_name');
         $data['user_id']     = I('post.user_id');
         $data['eggcoin_account_id'] = $eggcoin_account_id;
-
         if(!M('CommonEggcoinAccount')->add($data)) $this->api_error(20002,'啊偶!服务器开小差了,请稍后再试');
         $this->api_return('添加成功');
     }
@@ -89,7 +88,7 @@ class EggcoinAccountController extends ApiController
         if(!$list) $this->api_error(20002,'啊偶!你还没有添加常用钱包地址,先去添加吧');
         foreach ($list as $k=>$v)
         {
-            $eggcoin_account = getEggcoinAccountInfo($v['eggcoin_account_id']);
+            $eggcoin_account = getEggcoinAccountInfoById($v['eggcoin_account_id']);
             $list[$k]['eggcoin_account_address'] = $eggcoin_account['account_address'];
         }
         $data['data'] = $list;
@@ -143,8 +142,8 @@ class EggcoinAccountController extends ApiController
        $chicken_id_ary = explode(',',$data['chicken_id']);
 
        // 钱包地址id
-       $eggcoin_account_id = getEggcoinAccountId($data['eggcoin_account_address']);
-       if(!$eggcoin_account_id) $this->api_error(20005,'钱包记录失败,请稍后重试');
+       $eggcoin_account = getEggcoinAccountId($data['eggcoin_account_address']);
+       if(!$eggcoin_account or !$eggcoin_account['id']) $this->api_error(20005,'钱包记录失败,请稍后重试');
 
        $m = M('Chicken');
        foreach ($chicken_id_ary as $k=>$v)
@@ -160,7 +159,7 @@ class EggcoinAccountController extends ApiController
 
        // 检查鸡
        $bind_data = array();
-       $bind_data['eggcoin_account_id'] = $eggcoin_account_id;
+       $bind_data['eggcoin_account_id'] = $eggcoin_account['id'];
        $bind_data['created'] = $bind_data['updated'] = time();
        $bind_data['create_date'] = date('Y-m-d',time());
        $bind_data['state']   = 5;

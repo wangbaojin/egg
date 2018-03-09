@@ -1,0 +1,750 @@
+[ 2018-03-08T23:44:02+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000205s ]
+NOTIC: [8] Undefined index: REQUEST_METHOD /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/App.class.php 第 32 行.
+NOTIC: [8] Undefined index: HTTP_HOST /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 39 行.
+NOTIC: [8] Undefined index: HTTP_HOST /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 46 行.
+NOTIC: [8] Undefined index: REQUEST_URI /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 141 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 11 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 12 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 13 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 14 行.
+NOTIC: [8] Use of undefined constant _PHP_FILE_ - assumed '_PHP_FILE_' /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 201 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000248s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000821s ]
+NOTIC: [8] Undefined index: HTTP_X_PLATFORM /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 12 行.
+NOTIC: [8] Undefined index: HTTP_X_VERNAME /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 13 行.
+NOTIC: [8] Undefined index: HTTP_X_VERCODE /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 14 行.
+NOTIC: [8] Undefined index: HTTP_X_UUID /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 15 行.
+NOTIC: [8] Undefined index: HTTP_X_DEVICE /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 16 行.
+NOTIC: [8] Undefined index: HTTP_X_BUILDVERSION /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 17 行.
+NOTIC: [8] Undefined index: HTTP_X_API_VERSION /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 18 行.
+NOTIC: [8] Undefined index: HTTP_X_APP_TYPE /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 19 行.
+SQL: SHOW COLUMNS FROM `eggcoin_chicken` [ RunTime:0.0008s ]
+SQL: UPDATE `eggcoin_chicken` SET `user_id`='0',`state`='1' WHERE `state` = 3 AND `lock_time` < 1520523841 [ RunTime:0.8258s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000395s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000415s ]
+
+[ 2018-03-08T23:45:01+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000221s ]
+NOTIC: [8] Undefined index: REQUEST_METHOD /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/App.class.php 第 32 行.
+NOTIC: [8] Undefined index: HTTP_HOST /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 39 行.
+NOTIC: [8] Undefined index: HTTP_HOST /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 46 行.
+NOTIC: [8] Undefined index: REQUEST_URI /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 141 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 11 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 12 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 13 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 14 行.
+NOTIC: [8] Use of undefined constant _PHP_FILE_ - assumed '_PHP_FILE_' /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 201 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000230s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000274s ]
+ERR: 无法加载控制器:Eggcoin
+
+[ 2018-03-08T23:45:02+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000206s ]
+NOTIC: [8] Undefined index: REQUEST_METHOD /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/App.class.php 第 32 行.
+NOTIC: [8] Undefined index: HTTP_HOST /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 39 行.
+NOTIC: [8] Undefined index: HTTP_HOST /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 46 行.
+NOTIC: [8] Undefined index: REQUEST_URI /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 141 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 11 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 12 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 13 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 14 行.
+NOTIC: [8] Use of undefined constant _PHP_FILE_ - assumed '_PHP_FILE_' /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 201 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000223s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000239s ]
+NOTIC: [8] Undefined index: HTTP_X_PLATFORM /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 12 行.
+NOTIC: [8] Undefined index: HTTP_X_VERNAME /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 13 行.
+NOTIC: [8] Undefined index: HTTP_X_VERCODE /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 14 行.
+NOTIC: [8] Undefined index: HTTP_X_UUID /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 15 行.
+NOTIC: [8] Undefined index: HTTP_X_DEVICE /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 16 行.
+NOTIC: [8] Undefined index: HTTP_X_BUILDVERSION /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 17 行.
+NOTIC: [8] Undefined index: HTTP_X_API_VERSION /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 18 行.
+NOTIC: [8] Undefined index: HTTP_X_APP_TYPE /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 19 行.
+SQL: SHOW COLUMNS FROM `eggcoin_chicken` [ RunTime:0.0009s ]
+SQL: UPDATE `eggcoin_chicken` SET `user_id`='0',`state`='1' WHERE `state` = 3 AND `lock_time` < 1520523901 [ RunTime:0.8297s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000445s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000467s ]
+
+[ 2018-03-08T23:46:01+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000235s ]
+NOTIC: [8] Undefined index: REQUEST_METHOD /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/App.class.php 第 32 行.
+NOTIC: [8] Undefined index: HTTP_HOST /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 39 行.
+NOTIC: [8] Undefined index: HTTP_HOST /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 46 行.
+NOTIC: [8] Undefined index: REQUEST_URI /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 141 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 11 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 12 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 13 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 14 行.
+NOTIC: [8] Use of undefined constant _PHP_FILE_ - assumed '_PHP_FILE_' /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 201 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000250s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000267s ]
+ERR: 无法加载控制器:Eggcoin
+
+[ 2018-03-08T23:46:02+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000173s ]
+NOTIC: [8] Undefined index: REQUEST_METHOD /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/App.class.php 第 32 行.
+NOTIC: [8] Undefined index: HTTP_HOST /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 39 行.
+NOTIC: [8] Undefined index: HTTP_HOST /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 46 行.
+NOTIC: [8] Undefined index: REQUEST_URI /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 141 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 11 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 12 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 13 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 14 行.
+NOTIC: [8] Use of undefined constant _PHP_FILE_ - assumed '_PHP_FILE_' /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 201 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000296s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000317s ]
+NOTIC: [8] Undefined index: HTTP_X_PLATFORM /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 12 行.
+NOTIC: [8] Undefined index: HTTP_X_VERNAME /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 13 行.
+NOTIC: [8] Undefined index: HTTP_X_VERCODE /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 14 行.
+NOTIC: [8] Undefined index: HTTP_X_UUID /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 15 行.
+NOTIC: [8] Undefined index: HTTP_X_DEVICE /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 16 行.
+NOTIC: [8] Undefined index: HTTP_X_BUILDVERSION /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 17 行.
+NOTIC: [8] Undefined index: HTTP_X_API_VERSION /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 18 行.
+NOTIC: [8] Undefined index: HTTP_X_APP_TYPE /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 19 行.
+SQL: SHOW COLUMNS FROM `eggcoin_chicken` [ RunTime:0.0006s ]
+SQL: UPDATE `eggcoin_chicken` SET `user_id`='0',`state`='1' WHERE `state` = 3 AND `lock_time` < 1520523961 [ RunTime:0.6766s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000359s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000386s ]
+
+[ 2018-03-08T23:47:01+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000175s ]
+NOTIC: [8] Undefined index: REQUEST_METHOD /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/App.class.php 第 32 行.
+NOTIC: [8] Undefined index: HTTP_HOST /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 39 行.
+NOTIC: [8] Undefined index: HTTP_HOST /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 46 行.
+NOTIC: [8] Undefined index: REQUEST_URI /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 141 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 11 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 12 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 13 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 14 行.
+NOTIC: [8] Use of undefined constant _PHP_FILE_ - assumed '_PHP_FILE_' /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 201 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000194s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000209s ]
+ERR: 无法加载控制器:Eggcoin
+
+[ 2018-03-08T23:47:01+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000212s ]
+NOTIC: [8] Undefined index: REQUEST_METHOD /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/App.class.php 第 32 行.
+NOTIC: [8] Undefined index: HTTP_HOST /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 39 行.
+NOTIC: [8] Undefined index: HTTP_HOST /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 46 行.
+NOTIC: [8] Undefined index: REQUEST_URI /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 141 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 11 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 12 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 13 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 14 行.
+NOTIC: [8] Use of undefined constant _PHP_FILE_ - assumed '_PHP_FILE_' /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 201 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000200s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000216s ]
+NOTIC: [8] Undefined index: HTTP_X_PLATFORM /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 12 行.
+NOTIC: [8] Undefined index: HTTP_X_VERNAME /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 13 行.
+NOTIC: [8] Undefined index: HTTP_X_VERCODE /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 14 行.
+NOTIC: [8] Undefined index: HTTP_X_UUID /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 15 行.
+NOTIC: [8] Undefined index: HTTP_X_DEVICE /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 16 行.
+NOTIC: [8] Undefined index: HTTP_X_BUILDVERSION /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 17 行.
+NOTIC: [8] Undefined index: HTTP_X_API_VERSION /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 18 行.
+NOTIC: [8] Undefined index: HTTP_X_APP_TYPE /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 19 行.
+SQL: SHOW COLUMNS FROM `eggcoin_chicken` [ RunTime:0.0006s ]
+SQL: UPDATE `eggcoin_chicken` SET `user_id`='0',`state`='1' WHERE `state` = 3 AND `lock_time` < 1520524021 [ RunTime:0.6920s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000428s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000450s ]
+
+[ 2018-03-08T23:48:01+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000213s ]
+NOTIC: [8] Undefined index: REQUEST_METHOD /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/App.class.php 第 32 行.
+NOTIC: [8] Undefined index: HTTP_HOST /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 39 行.
+NOTIC: [8] Undefined index: HTTP_HOST /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 46 行.
+NOTIC: [8] Undefined index: REQUEST_URI /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 141 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 11 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 12 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 13 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 14 行.
+NOTIC: [8] Use of undefined constant _PHP_FILE_ - assumed '_PHP_FILE_' /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 201 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000263s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000305s ]
+ERR: 无法加载控制器:Eggcoin
+
+[ 2018-03-08T23:48:02+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000204s ]
+NOTIC: [8] Undefined index: REQUEST_METHOD /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/App.class.php 第 32 行.
+NOTIC: [8] Undefined index: HTTP_HOST /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 39 行.
+NOTIC: [8] Undefined index: HTTP_HOST /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 46 行.
+NOTIC: [8] Undefined index: REQUEST_URI /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 141 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 11 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 12 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 13 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 14 行.
+NOTIC: [8] Use of undefined constant _PHP_FILE_ - assumed '_PHP_FILE_' /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 201 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000197s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000213s ]
+NOTIC: [8] Undefined index: HTTP_X_PLATFORM /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 12 行.
+NOTIC: [8] Undefined index: HTTP_X_VERNAME /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 13 行.
+NOTIC: [8] Undefined index: HTTP_X_VERCODE /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 14 行.
+NOTIC: [8] Undefined index: HTTP_X_UUID /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 15 行.
+NOTIC: [8] Undefined index: HTTP_X_DEVICE /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 16 行.
+NOTIC: [8] Undefined index: HTTP_X_BUILDVERSION /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 17 行.
+NOTIC: [8] Undefined index: HTTP_X_API_VERSION /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 18 行.
+NOTIC: [8] Undefined index: HTTP_X_APP_TYPE /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 19 行.
+SQL: SHOW COLUMNS FROM `eggcoin_chicken` [ RunTime:0.0007s ]
+SQL: UPDATE `eggcoin_chicken` SET `user_id`='0',`state`='1' WHERE `state` = 3 AND `lock_time` < 1520524081 [ RunTime:0.6644s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000381s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000400s ]
+
+[ 2018-03-08T23:49:01+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000223s ]
+NOTIC: [8] Undefined index: REQUEST_METHOD /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/App.class.php 第 32 行.
+NOTIC: [8] Undefined index: HTTP_HOST /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 39 行.
+NOTIC: [8] Undefined index: HTTP_HOST /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 46 行.
+NOTIC: [8] Undefined index: REQUEST_URI /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 141 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 11 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 12 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 13 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 14 行.
+NOTIC: [8] Use of undefined constant _PHP_FILE_ - assumed '_PHP_FILE_' /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 201 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000222s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000239s ]
+ERR: 无法加载控制器:Eggcoin
+
+[ 2018-03-08T23:49:02+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000181s ]
+NOTIC: [8] Undefined index: REQUEST_METHOD /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/App.class.php 第 32 行.
+NOTIC: [8] Undefined index: HTTP_HOST /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 39 行.
+NOTIC: [8] Undefined index: HTTP_HOST /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 46 行.
+NOTIC: [8] Undefined index: REQUEST_URI /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 141 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 11 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 12 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 13 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 14 行.
+NOTIC: [8] Use of undefined constant _PHP_FILE_ - assumed '_PHP_FILE_' /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 201 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000201s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000216s ]
+NOTIC: [8] Undefined index: HTTP_X_PLATFORM /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 12 行.
+NOTIC: [8] Undefined index: HTTP_X_VERNAME /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 13 行.
+NOTIC: [8] Undefined index: HTTP_X_VERCODE /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 14 行.
+NOTIC: [8] Undefined index: HTTP_X_UUID /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 15 行.
+NOTIC: [8] Undefined index: HTTP_X_DEVICE /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 16 行.
+NOTIC: [8] Undefined index: HTTP_X_BUILDVERSION /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 17 行.
+NOTIC: [8] Undefined index: HTTP_X_API_VERSION /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 18 行.
+NOTIC: [8] Undefined index: HTTP_X_APP_TYPE /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 19 行.
+SQL: SHOW COLUMNS FROM `eggcoin_chicken` [ RunTime:0.0007s ]
+SQL: UPDATE `eggcoin_chicken` SET `user_id`='0',`state`='1' WHERE `state` = 3 AND `lock_time` < 1520524141 [ RunTime:0.8097s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000396s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000416s ]
+
+[ 2018-03-08T23:50:01+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000225s ]
+NOTIC: [8] Undefined index: REQUEST_METHOD /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/App.class.php 第 32 行.
+NOTIC: [8] Undefined index: HTTP_HOST /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 39 行.
+NOTIC: [8] Undefined index: HTTP_HOST /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 46 行.
+NOTIC: [8] Undefined index: REQUEST_URI /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 141 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 11 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 12 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 13 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 14 行.
+NOTIC: [8] Use of undefined constant _PHP_FILE_ - assumed '_PHP_FILE_' /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 201 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000219s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000237s ]
+ERR: 无法加载控制器:Eggcoin
+
+[ 2018-03-08T23:50:02+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000211s ]
+NOTIC: [8] Undefined index: REQUEST_METHOD /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/App.class.php 第 32 行.
+NOTIC: [8] Undefined index: HTTP_HOST /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 39 行.
+NOTIC: [8] Undefined index: HTTP_HOST /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 46 行.
+NOTIC: [8] Undefined index: REQUEST_URI /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 141 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 11 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 12 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 13 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 14 行.
+NOTIC: [8] Use of undefined constant _PHP_FILE_ - assumed '_PHP_FILE_' /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 201 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000269s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000287s ]
+NOTIC: [8] Undefined index: HTTP_X_PLATFORM /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 12 行.
+NOTIC: [8] Undefined index: HTTP_X_VERNAME /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 13 行.
+NOTIC: [8] Undefined index: HTTP_X_VERCODE /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 14 行.
+NOTIC: [8] Undefined index: HTTP_X_UUID /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 15 行.
+NOTIC: [8] Undefined index: HTTP_X_DEVICE /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 16 行.
+NOTIC: [8] Undefined index: HTTP_X_BUILDVERSION /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 17 行.
+NOTIC: [8] Undefined index: HTTP_X_API_VERSION /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 18 行.
+NOTIC: [8] Undefined index: HTTP_X_APP_TYPE /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 19 行.
+SQL: SHOW COLUMNS FROM `eggcoin_chicken` [ RunTime:0.0006s ]
+SQL: UPDATE `eggcoin_chicken` SET `user_id`='0',`state`='1' WHERE `state` = 3 AND `lock_time` < 1520524201 [ RunTime:0.6560s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000386s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000407s ]
+
+[ 2018-03-08T23:51:01+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000308s ]
+NOTIC: [8] Undefined index: REQUEST_METHOD /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/App.class.php 第 32 行.
+NOTIC: [8] Undefined index: HTTP_HOST /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 39 行.
+NOTIC: [8] Undefined index: HTTP_HOST /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 46 行.
+NOTIC: [8] Undefined index: REQUEST_URI /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 141 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 11 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 12 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 13 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 14 行.
+NOTIC: [8] Use of undefined constant _PHP_FILE_ - assumed '_PHP_FILE_' /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 201 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000382s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000413s ]
+ERR: 无法加载控制器:Eggcoin
+
+[ 2018-03-08T23:51:01+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000216s ]
+NOTIC: [8] Undefined index: REQUEST_METHOD /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/App.class.php 第 32 行.
+NOTIC: [8] Undefined index: HTTP_HOST /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 39 行.
+NOTIC: [8] Undefined index: HTTP_HOST /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 46 行.
+NOTIC: [8] Undefined index: REQUEST_URI /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 141 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 11 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 12 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 13 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 14 行.
+NOTIC: [8] Use of undefined constant _PHP_FILE_ - assumed '_PHP_FILE_' /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 201 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000255s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000276s ]
+NOTIC: [8] Undefined index: HTTP_X_PLATFORM /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 12 行.
+NOTIC: [8] Undefined index: HTTP_X_VERNAME /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 13 行.
+NOTIC: [8] Undefined index: HTTP_X_VERCODE /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 14 行.
+NOTIC: [8] Undefined index: HTTP_X_UUID /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 15 行.
+NOTIC: [8] Undefined index: HTTP_X_DEVICE /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 16 行.
+NOTIC: [8] Undefined index: HTTP_X_BUILDVERSION /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 17 行.
+NOTIC: [8] Undefined index: HTTP_X_API_VERSION /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 18 行.
+NOTIC: [8] Undefined index: HTTP_X_APP_TYPE /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 19 行.
+SQL: SHOW COLUMNS FROM `eggcoin_chicken` [ RunTime:0.0009s ]
+SQL: UPDATE `eggcoin_chicken` SET `user_id`='0',`state`='1' WHERE `state` = 3 AND `lock_time` < 1520524261 [ RunTime:0.7097s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000388s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000409s ]
+
+[ 2018-03-08T23:52:01+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000207s ]
+NOTIC: [8] Undefined index: REQUEST_METHOD /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/App.class.php 第 32 行.
+NOTIC: [8] Undefined index: HTTP_HOST /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 39 行.
+NOTIC: [8] Undefined index: HTTP_HOST /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 46 行.
+NOTIC: [8] Undefined index: REQUEST_URI /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 141 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 11 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 12 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 13 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 14 行.
+NOTIC: [8] Use of undefined constant _PHP_FILE_ - assumed '_PHP_FILE_' /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 201 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000217s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000232s ]
+ERR: 无法加载控制器:Eggcoin
+
+[ 2018-03-08T23:52:02+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000198s ]
+NOTIC: [8] Undefined index: REQUEST_METHOD /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/App.class.php 第 32 行.
+NOTIC: [8] Undefined index: HTTP_HOST /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 39 行.
+NOTIC: [8] Undefined index: HTTP_HOST /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 46 行.
+NOTIC: [8] Undefined index: REQUEST_URI /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 141 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 11 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 12 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 13 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 14 行.
+NOTIC: [8] Use of undefined constant _PHP_FILE_ - assumed '_PHP_FILE_' /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 201 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000237s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000253s ]
+NOTIC: [8] Undefined index: HTTP_X_PLATFORM /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 12 行.
+NOTIC: [8] Undefined index: HTTP_X_VERNAME /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 13 行.
+NOTIC: [8] Undefined index: HTTP_X_VERCODE /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 14 行.
+NOTIC: [8] Undefined index: HTTP_X_UUID /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 15 行.
+NOTIC: [8] Undefined index: HTTP_X_DEVICE /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 16 行.
+NOTIC: [8] Undefined index: HTTP_X_BUILDVERSION /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 17 行.
+NOTIC: [8] Undefined index: HTTP_X_API_VERSION /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 18 行.
+NOTIC: [8] Undefined index: HTTP_X_APP_TYPE /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 19 行.
+SQL: SHOW COLUMNS FROM `eggcoin_chicken` [ RunTime:0.0006s ]
+SQL: UPDATE `eggcoin_chicken` SET `user_id`='0',`state`='1' WHERE `state` = 3 AND `lock_time` < 1520524321 [ RunTime:0.6735s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000381s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000404s ]
+
+[ 2018-03-08T23:53:01+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000186s ]
+NOTIC: [8] Undefined index: REQUEST_METHOD /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/App.class.php 第 32 行.
+NOTIC: [8] Undefined index: HTTP_HOST /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 39 行.
+NOTIC: [8] Undefined index: HTTP_HOST /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 46 行.
+NOTIC: [8] Undefined index: REQUEST_URI /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 141 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 11 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 12 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 13 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 14 行.
+NOTIC: [8] Use of undefined constant _PHP_FILE_ - assumed '_PHP_FILE_' /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 201 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000229s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000246s ]
+ERR: 无法加载控制器:Eggcoin
+
+[ 2018-03-08T23:53:02+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000173s ]
+NOTIC: [8] Undefined index: REQUEST_METHOD /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/App.class.php 第 32 行.
+NOTIC: [8] Undefined index: HTTP_HOST /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 39 行.
+NOTIC: [8] Undefined index: HTTP_HOST /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 46 行.
+NOTIC: [8] Undefined index: REQUEST_URI /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 141 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 11 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 12 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 13 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 14 行.
+NOTIC: [8] Use of undefined constant _PHP_FILE_ - assumed '_PHP_FILE_' /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 201 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000223s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000239s ]
+NOTIC: [8] Undefined index: HTTP_X_PLATFORM /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 12 行.
+NOTIC: [8] Undefined index: HTTP_X_VERNAME /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 13 行.
+NOTIC: [8] Undefined index: HTTP_X_VERCODE /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 14 行.
+NOTIC: [8] Undefined index: HTTP_X_UUID /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 15 行.
+NOTIC: [8] Undefined index: HTTP_X_DEVICE /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 16 行.
+NOTIC: [8] Undefined index: HTTP_X_BUILDVERSION /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 17 行.
+NOTIC: [8] Undefined index: HTTP_X_API_VERSION /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 18 行.
+NOTIC: [8] Undefined index: HTTP_X_APP_TYPE /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 19 行.
+SQL: SHOW COLUMNS FROM `eggcoin_chicken` [ RunTime:0.0006s ]
+SQL: UPDATE `eggcoin_chicken` SET `user_id`='0',`state`='1' WHERE `state` = 3 AND `lock_time` < 1520524381 [ RunTime:0.6601s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000361s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000381s ]
+
+[ 2018-03-08T23:54:01+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000168s ]
+NOTIC: [8] Undefined index: REQUEST_METHOD /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/App.class.php 第 32 行.
+NOTIC: [8] Undefined index: HTTP_HOST /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 39 行.
+NOTIC: [8] Undefined index: HTTP_HOST /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 46 行.
+NOTIC: [8] Undefined index: REQUEST_URI /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 141 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 11 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 12 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 13 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 14 行.
+NOTIC: [8] Use of undefined constant _PHP_FILE_ - assumed '_PHP_FILE_' /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 201 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000204s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000221s ]
+ERR: 无法加载控制器:Eggcoin
+
+[ 2018-03-08T23:54:02+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000174s ]
+NOTIC: [8] Undefined index: REQUEST_METHOD /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/App.class.php 第 32 行.
+NOTIC: [8] Undefined index: HTTP_HOST /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 39 行.
+NOTIC: [8] Undefined index: HTTP_HOST /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 46 行.
+NOTIC: [8] Undefined index: REQUEST_URI /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 141 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 11 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 12 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 13 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 14 行.
+NOTIC: [8] Use of undefined constant _PHP_FILE_ - assumed '_PHP_FILE_' /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 201 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000234s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000251s ]
+NOTIC: [8] Undefined index: HTTP_X_PLATFORM /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 12 行.
+NOTIC: [8] Undefined index: HTTP_X_VERNAME /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 13 行.
+NOTIC: [8] Undefined index: HTTP_X_VERCODE /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 14 行.
+NOTIC: [8] Undefined index: HTTP_X_UUID /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 15 行.
+NOTIC: [8] Undefined index: HTTP_X_DEVICE /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 16 行.
+NOTIC: [8] Undefined index: HTTP_X_BUILDVERSION /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 17 行.
+NOTIC: [8] Undefined index: HTTP_X_API_VERSION /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 18 行.
+NOTIC: [8] Undefined index: HTTP_X_APP_TYPE /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 19 行.
+SQL: SHOW COLUMNS FROM `eggcoin_chicken` [ RunTime:0.0006s ]
+SQL: UPDATE `eggcoin_chicken` SET `user_id`='0',`state`='1' WHERE `state` = 3 AND `lock_time` < 1520524441 [ RunTime:0.6890s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000371s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000392s ]
+
+[ 2018-03-08T23:55:01+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000217s ]
+NOTIC: [8] Undefined index: REQUEST_METHOD /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/App.class.php 第 32 行.
+NOTIC: [8] Undefined index: HTTP_HOST /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 39 行.
+NOTIC: [8] Undefined index: HTTP_HOST /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 46 行.
+NOTIC: [8] Undefined index: REQUEST_URI /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 141 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 11 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 12 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 13 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 14 行.
+NOTIC: [8] Use of undefined constant _PHP_FILE_ - assumed '_PHP_FILE_' /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 201 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000230s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000246s ]
+ERR: 无法加载控制器:Eggcoin
+
+[ 2018-03-08T23:55:01+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000172s ]
+NOTIC: [8] Undefined index: REQUEST_METHOD /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/App.class.php 第 32 行.
+NOTIC: [8] Undefined index: HTTP_HOST /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 39 行.
+NOTIC: [8] Undefined index: HTTP_HOST /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 46 行.
+NOTIC: [8] Undefined index: REQUEST_URI /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 141 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 11 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 12 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 13 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 14 行.
+NOTIC: [8] Use of undefined constant _PHP_FILE_ - assumed '_PHP_FILE_' /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 201 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000237s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000257s ]
+NOTIC: [8] Undefined index: HTTP_X_PLATFORM /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 12 行.
+NOTIC: [8] Undefined index: HTTP_X_VERNAME /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 13 行.
+NOTIC: [8] Undefined index: HTTP_X_VERCODE /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 14 行.
+NOTIC: [8] Undefined index: HTTP_X_UUID /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 15 行.
+NOTIC: [8] Undefined index: HTTP_X_DEVICE /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 16 行.
+NOTIC: [8] Undefined index: HTTP_X_BUILDVERSION /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 17 行.
+NOTIC: [8] Undefined index: HTTP_X_API_VERSION /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 18 行.
+NOTIC: [8] Undefined index: HTTP_X_APP_TYPE /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 19 行.
+SQL: SHOW COLUMNS FROM `eggcoin_chicken` [ RunTime:0.0006s ]
+SQL: UPDATE `eggcoin_chicken` SET `user_id`='0',`state`='1' WHERE `state` = 3 AND `lock_time` < 1520524501 [ RunTime:0.6910s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000397s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000418s ]
+
+[ 2018-03-08T23:56:01+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000195s ]
+NOTIC: [8] Undefined index: REQUEST_METHOD /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/App.class.php 第 32 行.
+NOTIC: [8] Undefined index: HTTP_HOST /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 39 行.
+NOTIC: [8] Undefined index: HTTP_HOST /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 46 行.
+NOTIC: [8] Undefined index: REQUEST_URI /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 141 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 11 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 12 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 13 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 14 行.
+NOTIC: [8] Use of undefined constant _PHP_FILE_ - assumed '_PHP_FILE_' /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 201 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000194s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000210s ]
+ERR: 无法加载控制器:Eggcoin
+
+[ 2018-03-08T23:56:02+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000301s ]
+NOTIC: [8] Undefined index: REQUEST_METHOD /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/App.class.php 第 32 行.
+NOTIC: [8] Undefined index: HTTP_HOST /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 39 行.
+NOTIC: [8] Undefined index: HTTP_HOST /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 46 行.
+NOTIC: [8] Undefined index: REQUEST_URI /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 141 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 11 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 12 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 13 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 14 行.
+NOTIC: [8] Use of undefined constant _PHP_FILE_ - assumed '_PHP_FILE_' /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 201 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000213s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000241s ]
+NOTIC: [8] Undefined index: HTTP_X_PLATFORM /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 12 行.
+NOTIC: [8] Undefined index: HTTP_X_VERNAME /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 13 行.
+NOTIC: [8] Undefined index: HTTP_X_VERCODE /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 14 行.
+NOTIC: [8] Undefined index: HTTP_X_UUID /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 15 行.
+NOTIC: [8] Undefined index: HTTP_X_DEVICE /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 16 行.
+NOTIC: [8] Undefined index: HTTP_X_BUILDVERSION /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 17 行.
+NOTIC: [8] Undefined index: HTTP_X_API_VERSION /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 18 行.
+NOTIC: [8] Undefined index: HTTP_X_APP_TYPE /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 19 行.
+SQL: SHOW COLUMNS FROM `eggcoin_chicken` [ RunTime:0.0006s ]
+SQL: UPDATE `eggcoin_chicken` SET `user_id`='0',`state`='1' WHERE `state` = 3 AND `lock_time` < 1520524561 [ RunTime:0.6711s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000384s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000405s ]
+
+[ 2018-03-08T23:57:01+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000284s ]
+NOTIC: [8] Undefined index: REQUEST_METHOD /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/App.class.php 第 32 行.
+NOTIC: [8] Undefined index: HTTP_HOST /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 39 行.
+NOTIC: [8] Undefined index: HTTP_HOST /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 46 行.
+NOTIC: [8] Undefined index: REQUEST_URI /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 141 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 11 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 12 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 13 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 14 行.
+NOTIC: [8] Use of undefined constant _PHP_FILE_ - assumed '_PHP_FILE_' /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 201 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000363s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000387s ]
+ERR: 无法加载控制器:Eggcoin
+
+[ 2018-03-08T23:57:02+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000214s ]
+NOTIC: [8] Undefined index: REQUEST_METHOD /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/App.class.php 第 32 行.
+NOTIC: [8] Undefined index: HTTP_HOST /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 39 行.
+NOTIC: [8] Undefined index: HTTP_HOST /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 46 行.
+NOTIC: [8] Undefined index: REQUEST_URI /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 141 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 11 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 12 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 13 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 14 行.
+NOTIC: [8] Use of undefined constant _PHP_FILE_ - assumed '_PHP_FILE_' /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 201 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000207s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000223s ]
+NOTIC: [8] Undefined index: HTTP_X_PLATFORM /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 12 行.
+NOTIC: [8] Undefined index: HTTP_X_VERNAME /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 13 行.
+NOTIC: [8] Undefined index: HTTP_X_VERCODE /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 14 行.
+NOTIC: [8] Undefined index: HTTP_X_UUID /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 15 行.
+NOTIC: [8] Undefined index: HTTP_X_DEVICE /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 16 行.
+NOTIC: [8] Undefined index: HTTP_X_BUILDVERSION /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 17 行.
+NOTIC: [8] Undefined index: HTTP_X_API_VERSION /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 18 行.
+NOTIC: [8] Undefined index: HTTP_X_APP_TYPE /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 19 行.
+SQL: SHOW COLUMNS FROM `eggcoin_chicken` [ RunTime:0.0007s ]
+SQL: UPDATE `eggcoin_chicken` SET `user_id`='0',`state`='1' WHERE `state` = 3 AND `lock_time` < 1520524621 [ RunTime:0.6751s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000421s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000456s ]
+
+[ 2018-03-08T23:58:01+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000203s ]
+NOTIC: [8] Undefined index: REQUEST_METHOD /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/App.class.php 第 32 行.
+NOTIC: [8] Undefined index: HTTP_HOST /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 39 行.
+NOTIC: [8] Undefined index: HTTP_HOST /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 46 行.
+NOTIC: [8] Undefined index: REQUEST_URI /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 141 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 11 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 12 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 13 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 14 行.
+NOTIC: [8] Use of undefined constant _PHP_FILE_ - assumed '_PHP_FILE_' /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 201 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000202s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000223s ]
+ERR: 无法加载控制器:Eggcoin
+
+[ 2018-03-08T23:58:01+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000181s ]
+NOTIC: [8] Undefined index: REQUEST_METHOD /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/App.class.php 第 32 行.
+NOTIC: [8] Undefined index: HTTP_HOST /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 39 行.
+NOTIC: [8] Undefined index: HTTP_HOST /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 46 行.
+NOTIC: [8] Undefined index: REQUEST_URI /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 141 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 11 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 12 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 13 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 14 行.
+NOTIC: [8] Use of undefined constant _PHP_FILE_ - assumed '_PHP_FILE_' /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 201 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000202s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000219s ]
+NOTIC: [8] Undefined index: HTTP_X_PLATFORM /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 12 行.
+NOTIC: [8] Undefined index: HTTP_X_VERNAME /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 13 行.
+NOTIC: [8] Undefined index: HTTP_X_VERCODE /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 14 行.
+NOTIC: [8] Undefined index: HTTP_X_UUID /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 15 行.
+NOTIC: [8] Undefined index: HTTP_X_DEVICE /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 16 行.
+NOTIC: [8] Undefined index: HTTP_X_BUILDVERSION /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 17 行.
+NOTIC: [8] Undefined index: HTTP_X_API_VERSION /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 18 行.
+NOTIC: [8] Undefined index: HTTP_X_APP_TYPE /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 19 行.
+SQL: SHOW COLUMNS FROM `eggcoin_chicken` [ RunTime:0.0010s ]
+SQL: UPDATE `eggcoin_chicken` SET `user_id`='0',`state`='1' WHERE `state` = 3 AND `lock_time` < 1520524681 [ RunTime:0.6642s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000419s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000465s ]
+
+[ 2018-03-08T23:59:01+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000185s ]
+NOTIC: [8] Undefined index: REQUEST_METHOD /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/App.class.php 第 32 行.
+NOTIC: [8] Undefined index: HTTP_HOST /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 39 行.
+NOTIC: [8] Undefined index: HTTP_HOST /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 46 行.
+NOTIC: [8] Undefined index: REQUEST_URI /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 141 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 11 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 12 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 13 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 14 行.
+NOTIC: [8] Use of undefined constant _PHP_FILE_ - assumed '_PHP_FILE_' /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 201 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000197s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000213s ]
+ERR: 无法加载控制器:Eggcoin
+
+[ 2018-03-08T23:59:02+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000201s ]
+NOTIC: [8] Undefined index: REQUEST_METHOD /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/App.class.php 第 32 行.
+NOTIC: [8] Undefined index: HTTP_HOST /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 39 行.
+NOTIC: [8] Undefined index: HTTP_HOST /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 46 行.
+NOTIC: [8] Undefined index: REQUEST_URI /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 141 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 11 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 12 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 13 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 14 行.
+NOTIC: [8] Use of undefined constant _PHP_FILE_ - assumed '_PHP_FILE_' /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 201 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000213s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000229s ]
+NOTIC: [8] Undefined index: HTTP_X_PLATFORM /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 12 行.
+NOTIC: [8] Undefined index: HTTP_X_VERNAME /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 13 行.
+NOTIC: [8] Undefined index: HTTP_X_VERCODE /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 14 行.
+NOTIC: [8] Undefined index: HTTP_X_UUID /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 15 行.
+NOTIC: [8] Undefined index: HTTP_X_DEVICE /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 16 行.
+NOTIC: [8] Undefined index: HTTP_X_BUILDVERSION /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 17 行.
+NOTIC: [8] Undefined index: HTTP_X_API_VERSION /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 18 行.
+NOTIC: [8] Undefined index: HTTP_X_APP_TYPE /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 19 行.
+SQL: SHOW COLUMNS FROM `eggcoin_chicken` [ RunTime:0.0007s ]
+SQL: UPDATE `eggcoin_chicken` SET `user_id`='0',`state`='1' WHERE `state` = 3 AND `lock_time` < 1520524741 [ RunTime:0.6849s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000400s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000421s ]
+
