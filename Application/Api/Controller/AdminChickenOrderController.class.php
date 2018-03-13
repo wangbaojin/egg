@@ -42,7 +42,7 @@ class AdminChickenOrderController extends AdminPublicController
         $data['total_count'] = $this->_m->where($map)->count();
         $data['total_page']  = ceil($data['total_count']/$data['page_limit']);
         $data['now_page']    = ($page > 0 and $page <= $data['total_page']) ? $page : 1;
-        $list = $this->_m->where($map)->page($page,$data['page_limit'])->order('id')->select();
+        $list = $this->_m->where($map)->page($page,$data['page_limit'])->order('id desc')->select();
 
         // 处理数据
         foreach ($list as $k=>$v)
@@ -154,9 +154,18 @@ class AdminChickenOrderController extends AdminPublicController
 
     public function disposeData($arr)
     {
+        // 添加时间
+        $arr['create_date'] = date('Y-m-d  H:i:s',$arr['created']);
+
+        // 更新时间
+        $arr['update_date'] = date('Y-m-d  H:i:s',$arr['updated']);
+
+        // 支付时间
+        $arr['pay_date'] = date('Y-m-d H:i:s',$arr['pay_time']);
+
         // 商品详情
         $chicken_type = M('ChickenType')->find($arr['chicken_type']);
-        $arr['goods_info'] = $chicken_type['name'].'<br><s>'.$chicken_type['price'].'元</s><b>'.($chicken_type['price']-$chicken_type['discount']).'</b>元'.' X '.$arr['num'];
+        $arr['goods_info'] = $chicken_type['name'].'<br><s>'.$chicken_type['price'].'元</s><b>'.(round($chicken_type['price']-$chicken_type['discount'],2)).'</b>元'.' X '.$arr['num'];
 
         $chicken_batch = M('ChickenBatch')->find($arr['chicken_batch']);
         $arr['chicken_batch'] = $chicken_batch;
@@ -166,6 +175,7 @@ class AdminChickenOrderController extends AdminPublicController
 
         // 用户信息
         $userInfo = getUserInfoByUserId($arr['user_id']);
+
         $arr['user_info'] = $userInfo['data'];
         // 鸡认购状态
         return $arr;

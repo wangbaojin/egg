@@ -4,7 +4,7 @@
         手机号:<input  type="text" name="mobile" value="{$_GET.mobile}"><br><br>
         <input type="submit" class="btn btn-success" value="搜索"><br>
     </form>
-    共:{$count}条!{$_page}
+    共:{$count}条!{$page}
     <div class="table-responsive">
         <table class="table">
             <tr>
@@ -15,8 +15,10 @@
             </tr>
             <volist name="list" id="vo">
                 <tr>
-                    <td class="active" style="padding: 10px;width: 100px">ID:{$vo.id}<br>
-                        订单金额:{$vo.total_price} 支付金额:{$vo.pay_price}<br>
+                    <td class="active" style="padding: 10px;width: 100px">
+                        ID:{$vo.id}<br>
+                        {$vo.create_date}<br>
+                        订单金额:{$vo.total_price} 支付金额:{$vo.pay_price}[<small><b>{$vo.pay_date}</b></small>]<br>
 
                         {$vo.order_sn}<br>{$vo.pay_state_info} | {$vo.state_info}</td>
                     <td class="warning" style="padding: 10px">{$vo.goods_info}<br><hr>
@@ -38,5 +40,5 @@
             </volist>
         </table>
     </div>
-    共:{$count}条!{$_page}
+    共:{$count}条!{$page}
 </div>

@@ -1,5 +1,6 @@
 <?php
 namespace Wechat\Controller;
+use Com\Wechat\WechatMedia;
 use Think\Controller;
 use Com\Wechat\Wechat;
 use Com\Wechat\Wechatjssdk;
@@ -373,7 +374,7 @@ class ShareByChickenController extends PublicController
             $invite_m = M('InviteBuy');
             $invite_map['invite_user_id'] = $invite_user_id;
             $invite_map['user_id'] = $order_info['user_id'];
-            $invite_info = $invite_m->where($invite_map)->oder('add_time desc')->find();
+            $invite_info = $invite_m->where($invite_map)->order('add_time desc')->find();
             if(!$invite_info)
             {
                 $invite_add['invite_user_id'] = $invite_user_id;
@@ -453,7 +454,7 @@ class ShareByChickenController extends PublicController
         if ( $order['pay_state'] != 1 ) $this->api_error(20002, '订单已处理');
 
         $saveData = array();
-        $saveData['updated_at'] = time();
+        $saveData['updated_at'] = $saveData['pay_time'] = time();
 
         // 订单超时
         if (time() > $order['lock_time'])
@@ -461,7 +462,7 @@ class ShareByChickenController extends PublicController
 
             $saveData['state'] = 4;
             $saveData['pay_state'] = (($data['cash_fee']==$data['total_fee']) and ($data['total_fee']==$order['pay_price']*100)) ? 2 : 5;//支付状态：1.待支付，2.支付完成，3.退款中，4.已退款';5.支付金额异常
-            $saveData['err_msg'] = 'ORDER_TIMEOUT';
+            $saveData['err_code'] = 'ORDER_TIMEOUT';
             $change_res = $m->where('id=' . $order['id'])->save($saveData);
             //if (!$change_res) Log::record('订单支付超时状态修改失败,INFO:' . json_encode($saveData), 'BUY_ChICKEN', true);
             $this->api_error(20004, '订单超时');
@@ -470,6 +471,7 @@ class ShareByChickenController extends PublicController
         // 修改订单状态
         $saveData['state'] = 3;
         $saveData['pay_state'] = (($data['cash_fee']==$data['total_fee']) and ($data['total_fee']==$order['pay_price']*100)) ? 2 : 5;//支付状态：1.待支付，2.支付完成，3.退款中，4.已退款';5.支付金额异常
+        if($saveData['pay_state']==5) $saveData['err_code'] = 'ABNORMAL_PAYMENT';
         $change_res = $m->where('id=' . $order['id'])->save($saveData);
         if (!$change_res)
         {
@@ -481,8 +483,6 @@ class ShareByChickenController extends PublicController
         if($saveData['pay_state']==5) $this->api_error(20005, '订单支付金额异常');
 
         // 认购鸡,把下单锁定的鸡变为待绑定
-        $trans = M();
-        $trans->startTrans();
         $unlock_map = array();
         $unlock_map['user_id'] = $order['user_id'];
         $unlock_map['lock_time'] = array('GT', time());
@@ -492,8 +492,9 @@ class ShareByChickenController extends PublicController
         $clock_res = $c_m->where($unlock_map)->limit($order['num'])->save($lock_data);
         if ($order['num'] != $clock_res)
         {
-            $trans->rollback();
-            //Log::record('认购鸡失败,INFO:' . json_encode($saveData), 'BUY_ChICKEN', true);
+            $saveData['state'] = 1;
+            $saveData['err_code'] = 'CHICKEN_EMPTY';
+            $m->where('id=' . $order['id'])->save($saveData);
             $this->api_error(20006, '认购鸡失败');
         }
 
@@ -549,93 +550,9 @@ class ShareByChickenController extends PublicController
         return $data;
     }
 
-    public function test()
+    public function update_date()
     {
-        $str = '4617,215.35,0,3131,6.7,2.3,33115,1,33271&
-5687,269.25,2,3001,6.8,2.4,33111,2,33271&
-6931,327.2,2,3029,6.9,2.3,0,1,33269&
-8748,425.45,0,2953,7,2.3,33104,2,33267&
-10521,505.55,33,3195,7.1,2.4,33099,1,33267&
-12135,585.95,2,3280,7.2,2.3,0,2,33234&
-19101,931.9,2,3199,7.3,2.3,33088,1,33232&
-16002,785.2,2,3154,7.4,2.4,0,2,33230&
-18373,917.6,5,3018,7.5,2.3,0,1,33228&
-18968,963.8,0,3023,7.6,2.3,0,2,33223&
-21163,1071.45,4,3039,7.7,2.4,0,1,33223&
-21890,1128.25,2,3292,7.8,2.3,0,2,33219&
-22773,1180.9,4,3330,7.9,2.3,0,1,33217&
-24442,1262.65,4,3120,8,2.4,0,1,33213&
-25362,1339.8,1,3195,8.1,2.3,0,1,33209&
-25798,1353.6,5,3272,8.19999999999999,2.3,33099,1,33208&
-25863,1369.35,6,3338,8.29999999999999,2.4,33093,1,33203&
-27004,1427.4,4,3231,8.39999999999999,2.3,33088,1,33197&
-27994,1506.85,3,3285,8.49999999999999,2.3,0,1,33193&
-27050,1472.15,4,3315,8.4,2.4,0,1,33190&
-29068,1584.6,4,3477,8.30000000000001,2.3,0,1,33186&
-29321,1620.45,3,3310,8.20000000000002,2.3,0,1,33182&
-26985,1489.05,2,3326,8.10000000000003,2.4,0,1,33179&
-28790,1591.3,2,3326,8.00000000000004,2.3,0,2,33177&
-29563,1619.5,4,3309,7.90000000000006,2.3,0,1,33175&
-29030,1608.75,7,2170,7.80000000000007,2.4,0,2,33171&
-29348,1638.15,1,3334,7.70000000000008,2.3,0,1,33164&
-29893,1675.8,2,3418,7.60000000000009,2.3,0,2,33163&
-29550,1662.85,2,3348,7.5000000000001,2.4,0,1,33161&
-29547,1656.4,3,3390,7.40000000000011,2.3,0,2,33159&
-29599,1658.8,5,3355,7.30000000000012,2.3,0,1,33156&
-30129,1696.65,3,3422,7.20000000000013,2.4,0,2,33151&
-29990,1709.45,5,3418,7.10000000000014,2.4,0,1,33148&
-30416,1739.15,5,3467,7.00000000000016,2.3,0,2,33143&
-28826,1654.45,1,3580,6.90000000000017,2.3,0,1,33138&
-29895,1712.3,3,2712,6.80000000000018,2.4,0,1,33137&
-30191,1739.55,3,3372,6.70000000000019,2.3,0,1,33134&
-30084,1733.55,9,3299,6.6000000000002,2.3,0,1,33131&
-30107,1735,4,3301,6.7,2.3,33115,1,33122&
-30693,1755.65,3,3350,6.7999999999998,2.4,33111,1,33118&
-30240,1742.9,4,3312,6.8999999999996,2.4,33107,1,33115&
-30116,1738.05,4,3388,6.9999999999994,2.3,33104,1,33111&
-30571,1766.55,3,3446,7.0999999999992,2.3,33099,1,33107&
-29546,1711.95,5,3245,7.199999999999,2.4,33093,1,33104&
-30042,1726.45,6,3290,7.2999999999988,2.3,33088,1,33099&
-30752,1766.5,5,3314,7.3999999999986,2.4,0,0,33093&
-29702,1715.75,2,3396,7.4999999999984,2.4,0,1,33088';
-        $list_arr = explode('&',$str);
-        echo "<pre>";
-        $add_time = strtotime('2017-04-15');
-        $day = 132;
-        foreach ($list_arr as $k=>$v)
-        {
-            $tmp = array();
-            $row_tmp = explode(',',trim(strip_tags($v)));
-            foreach ($row_tmp as $kk=>$vv)
-            {
-                $row_tmp[$kk] = trim($vv);
-            }
-            $tmp['delivery_date'] = date('Y-m-d',$add_time);
-            $today_price = M('TodayPrice')->where('delivery_date="'.$tmp['delivery_date'].'"')->find();
-            $tmp['chicken_batch'] = 33;
-            $tmp['lay_eggs'] = $row_tmp[0];
-            $tmp['lay_eggs_weight'] = $row_tmp[1];
-            $tmp['egg_price'] = $tmp['lay_eggs_weight']*$today_price['egg_price'];
-            $tmp['death'] = $row_tmp[2];
-            $tmp['feed_weight'] = $row_tmp[3];
-            $tmp['feed_price'] = $tmp['feed_weight']*$today_price['feed_price'];
-            $tmp['expenses'] = $row_tmp[6];
-            $tmp['state'] = 2;
-            $tmp['age_in_days'] = $day;
-            $tmp['avg_eggcoin_income'] = $row_tmp[7];
-            $new_arr[] = $tmp;
-
-            $add_time += 86400;
-            $day ++;
-        }
-        die;
-        M('ChickenbatchTodayfeedDelivery')->addAll($new_arr);
-        //print_r($new_arr);die;
-        $sql = "INSET INTO eggcoin_today_price (delivery_date,egg_price,feed_price) VALUES ";
-        foreach ($new_arr as $nk=>$nv)
-        {
-            $sql .= '("'.$nv[0].'",'.$nv[1].','.$nv[2].'),';
-        }
-        echo $sql;
+        //$saveData['create_date'] = '2017-04-14';
+        //M('Chicken')->where('state=5')->save($saveData);
     }
 }

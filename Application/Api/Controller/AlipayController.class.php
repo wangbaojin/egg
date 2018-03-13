@@ -19,17 +19,21 @@ class AlipayController extends ApiController
     $data['order_sn'] = I('get.order_sn');
     $this->checkParam($data);
     $order_sn = $data['order_sn'];
-    $order = M('recharge')->where("order_sn = $order_sn")->find();
-    
 
+    $map["order_sn"] = $order_sn;
+    $order = M("recharge")->where($map)->find();
+    $pri = $order["total_price"];
+    // var_dump($order);
+    $bodyname = "饲料充值 ".$pri."元";
+   
     $order_info_array = array(
 
                     'partner' => $parter3,
                     'seller_id' => $seller3,
                     'out_trade_no' => $order_sn,
-                    'subject' => "饲料充值",
-                    'body' => "饲料充值",
-                    'total_fee' =>order['amount'],
+                    'subject' => $bodyname,
+                    'body' => $bodyname,
+                    'total_fee' => $pri,
                     'notify_url' => $notify_url,
                     'service' => "mobile.securitypay.pay",
                     'payment_type' => 1,
@@ -66,9 +70,10 @@ class AlipayController extends ApiController
     $this->checkParam($data);
     $order_sn = $data['order_sn'];
     $order = M('chicken_order')->where("order_sn = $order_sn")->find();
-    // $map['id'] =  $order['chicken_type'];
-    // $chicken = M('chicken_type')->where($map)->find();
+    $map['id'] =  $order['chicken_type'];
+    $chicken = M('chicken_type')->where($map)->find();
     // $price = round($chicken['price'] - $chicken['discount'],2);
+    $chickenName = $chicken['name'];
     $price = $order["total_price"];
 
      $order_info_array = array(
@@ -76,8 +81,8 @@ class AlipayController extends ApiController
                     'partner' => $parter3,
                     'seller_id' => $seller3,
                     'out_trade_no' => $order_sn,
-                    'subject' => "母鸡",
-                    'body' => "母鸡",
+                    'subject' => $chickenName,
+                    'body' => $chickenName,
                     'total_fee' =>$price,
                     'notify_url' => $notify_url,
                     'service' => "mobile.securitypay.pay",

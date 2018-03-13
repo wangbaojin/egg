@@ -1,5 +1,5 @@
 <?php
-namespace Com\WechatMsg;
+namespace Com\Wechat;
 /**
  * Created by PhpStorm.
  * User: lkk
@@ -136,7 +136,7 @@ class WechatMsg {
         //$postStr = $GLOBALS["HTTP_RAW_POST_DATA"];
         $postStr = file_get_contents("php://input");
         if (!empty($postStr)){
-            $this->logger("R ".$postStr);
+            //$this->logger("R ".$postStr);
             $postObj = simplexml_load_string($postStr, 'SimpleXMLElement', LIBXML_NOCDATA);
             $RX_TYPE = trim($postObj->MsgType);
 
@@ -167,7 +167,8 @@ class WechatMsg {
                     $result = "unknown msg type: ".$RX_TYPE;
                     break;
             }
-            $this->logger("T ".$result);
+            //$this->logger("T ".$result);
+            if(!$result) $this->receiveUnKnow($postObj);
             echo $result;
         }else {
             echo "";
@@ -175,33 +176,71 @@ class WechatMsg {
         }
     }
 
+    //  未知消息回复
+    public function receiveUnKnow($postObj)
+    {
+        $result = $this->transmitText($postObj, '你说神马?母鸡~母鸡~muji~~');
+        return $result;
+    }
+
     //接收事件消息
-    private function receiveEvent($object)
+    public function receiveEvent($object)
     {
         $content = "";
         switch ($object->Event)
         {
             case "subscribe":
-                $content = array();
-                $content[] = array("Title"=>"点击认证", "Description"=>"", "PicUrl"=>"http://discuz.comli.com/weixin/weather/icon/cartoon.jpg", "Url" =>"http://bmw.thefront.com.cn/bbawejoygroup/index.php");
+                $result = $this->transmitText($object, "欢迎关注链养鸡，在2018-03-13,会有空投EggCoin, 回复EggCoin地址即可领取EggCoin．
+软件安装： http://url.cn/5k2A7KA");
                 break;
             case "unsubscribe":
                 $content = "取消关注";
                 break;
+            case "CLICK":
+                $result =$this->receiveClickEvent($object);
+                break;
+            default :
+                break;
         }
-        if(is_array($content)){
+        /*if(is_array($content)){
             if (isset($content[0])){
                 $result = $this->transmitNews($object, $content);
-            }else if (isset($content['MusicUrl'])){
+            }
+            if (isset($content['MusicUrl'])){
                 $result = $this->transmitMusic($object, $content);
             }
         }else{
             $result = $this->transmitText($object, $content);
-        }
+        }*/
 
         return $result;
     }
 
+    //点击事件
+    public function receiveClickEvent($object)
+    {
+        switch ($object->EventKey)
+        {
+            case "jrhd":
+                $result = $this->transmitText($object, '欢迎关注链养鸡，在2018-03-13,会有空投EggCoin, 回复EggCoin地址即可领取EggCoin．
+软件安装： http://url.cn/5k2A7KA');
+                break;
+            case "wxjq":
+                $result = $this->transmitImage($object,array('MediaId'=>'016AZGlp1I7FQuvAXVtrAHEZDAbWzJtGcRA4jTM7gMM'));
+                //$result = $this->transmitText($object, 'Telegram');
+                break;
+            case "lx":
+                $result = $this->transmitText($object, 'Telegram：@lianyangji
+微信：wwwlianyangjiio
+微信公众号：lianyangjiio
+QQ:22472073
+QQ 群：711399308');
+                break;
+            default :
+                break;
+        }
+        return $result;
+    }
     //接收文本消息
     public function receiveText($object)
     {
@@ -209,6 +248,9 @@ class WechatMsg {
         {
             case "文本":
                 $content = "这是个文本消息";
+                break;
+            case "今日活动":
+                $content = "活动还未开始,请留意公众号信息噢!~";
                 break;
             case "图文":
             case "单图文":
@@ -225,7 +267,7 @@ class WechatMsg {
                 $content = array("Title"=>"最炫民族风", "Description"=>"歌手：凤凰传奇", "MusicUrl"=>"http://121.199.4.61/music/zxmzf.mp3", "HQMusicUrl"=>"http://121.199.4.61/music/zxmzf.mp3");
                 break;
             default:
-                $content = date("Y-m-d H:i:s",time());
+                $content = '你说神马?母鸡~母鸡~muji~~';
                 break;
         }
         if(is_array($content)){
@@ -241,7 +283,7 @@ class WechatMsg {
     }
 
     //接收图片消息
-    private function receiveImage($object)
+    public function receiveImage($object)
     {
         $content = array("MediaId"=>$object->MediaId);
         $result = $this->transmitImage($object, $content);
@@ -249,7 +291,7 @@ class WechatMsg {
     }
 
     //接收位置消息
-    private function receiveLocation($object)
+    public function receiveLocation($object)
     {
         $content = "你发送的是位置，纬度为：".$object->Location_X."；经度为：".$object->Location_Y."；缩放级别为：".$object->Scale."；位置为：".$object->Label;
         $result = $this->transmitText($object, $content);
@@ -257,7 +299,7 @@ class WechatMsg {
     }
 
     //接收语音消息
-    private function receiveVoice($object)
+    public function receiveVoice($object)
     {
         if (isset($object->Recognition) && !empty($object->Recognition)){
             $content = "你刚才说的是：".$object->Recognition;
@@ -271,7 +313,7 @@ class WechatMsg {
     }
 
     //接收视频消息
-    private function receiveVideo($object)
+    public function receiveVideo($object)
     {
         $content = array("MediaId"=>$object->MediaId, "ThumbMediaId"=>$object->ThumbMediaId, "Title"=>"", "Description"=>"");
         $result = $this->transmitVideo($object, $content);
@@ -279,7 +321,7 @@ class WechatMsg {
     }
 
     //接收链接消息
-    private function receiveLink($object)
+    public function receiveLink($object)
     {
         $content = "你发送的是链接，标题为：".$object->Title."；内容为：".$object->Description."；链接地址为：".$object->Url;
         $result = $this->transmitText($object, $content);

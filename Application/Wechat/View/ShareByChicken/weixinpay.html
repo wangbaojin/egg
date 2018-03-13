@@ -71,8 +71,12 @@
 			paySign: 'EB2F054911C1DAB0669DB2B290656CC4', // 支付签名*/
 			success: function (pay_success_res) {
 				// 支付成功后的回调函数
-				alert('认养成功!快去链养鸡APP获取收益吧!')
-				return false;
+				//alert('认养成功!快去链养鸡APP获取收益吧!')
+				layer.msg('认养成功!快去链养鸡APP获取收益吧!', {
+					icon: 1,
+					time:2000,
+				});
+				setTimeout("location.href='http://a.app.qq.com/o/simple.jsp?pkgname=io.jiwo.lianyangji'",2001);
 			},fail: function(pay_error_res){
 				alert(JSON.stringify(pay_error_res));
 				return false;

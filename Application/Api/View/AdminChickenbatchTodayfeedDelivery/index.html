@@ -5,7 +5,7 @@
         批次名称:<input  type="date" name="delivery_date" value="{$_GET.delivery_date}"><br>
         <input type="submit" class="btn btn-success" value="搜索">
     </form>
-    共:{$count}条!{$_page}
+    共:{$count}条!{$page}
     <div class="table-responsive">
         <table class="table">
             <tr>
@@ -47,7 +47,7 @@
             </volist>
         </table>
     </div>
-    共:{$count}条!{$_page}
+    共:{$count}条!{$page}
 </div>
 <script src="__STATIC__/layui/layui.js"></script>
 <script type="text/javascript">

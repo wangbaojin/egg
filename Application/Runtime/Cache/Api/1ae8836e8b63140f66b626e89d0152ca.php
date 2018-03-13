@@ -65,7 +65,7 @@
         手机号:<input  type="text" name="mobile" value="<?php echo ($_GET["mobile"]); ?>"><br><br>
         <input type="submit" class="btn btn-success" value="搜索"><br>
     </form>
-    共:<?php echo ($count); ?>条!<?php echo ($_page); ?>
+    共:<?php echo ($count); ?>条!<?php echo ($page); ?>
     <div class="table-responsive">
         <table class="table">
             <tr>
@@ -75,8 +75,10 @@
                 <th class="active">操作</th>
             </tr>
             <?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
-                    <td class="active" style="padding: 10px;width: 100px">ID:<?php echo ($vo["id"]); ?><br>
-                        订单金额:<?php echo ($vo["total_price"]); ?> 支付金额:<?php echo ($vo["pay_price"]); ?><br>
+                    <td class="active" style="padding: 10px;width: 100px">
+                        ID:<?php echo ($vo["id"]); ?><br>
+                        <?php echo ($vo["create_date"]); ?><br>
+                        订单金额:<?php echo ($vo["total_price"]); ?> 支付金额:<?php echo ($vo["pay_price"]); ?>[<small><b><?php echo ($vo["pay_date"]); ?></b></small>]<br>
 
                         <?php echo ($vo["order_sn"]); ?><br><?php echo ($vo["pay_state_info"]); ?> | <?php echo ($vo["state_info"]); ?></td>
                     <td class="warning" style="padding: 10px"><?php echo ($vo["goods_info"]); ?><br><hr>
@@ -97,5 +99,5 @@
                 </tr><?php endforeach; endif; else: echo "" ;endif; ?>
         </table>
     </div>
-    共:<?php echo ($count); ?>条!<?php echo ($_page); ?>
+    共:<?php echo ($count); ?>条!<?php echo ($page); ?>
 </div>

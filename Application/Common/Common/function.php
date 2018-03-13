@@ -323,7 +323,7 @@ function issueEggCoin($amount,$account_address)
     }
     //$amount=1;
     //$account_address = '1KofcVX71Zpq5imj9Vw9hahFxu843NcTxY';
-    $account_address = '16xnbGyGqzDeD52gMjHunfa2psZdCJPvYW';
+    //$account_address = '16xnbGyGqzDeD52gMjHunfa2psZdCJPvYW';
     $url  = "http://api.lianyangji.io:8080/HelloSpringMVC/eggcoin/sendEggcoin?amount=".$amount."&owner_account=".$account_address;
 
     $json = file_get_contents($url);
@@ -503,7 +503,7 @@ function newUserAction($user_id)
         $record['amount']  = $wallet_map['feed_amount']*1000;
         $record['reason_source_id'] = $user_id;
         $record['reason_type'] = 8;
-        $record['reason_narration'] = 'VIP内侧用户奖励';
+        $record['reason_narration'] = 'VIP内测用户奖励';
         $record['state'] = 1;
         $record['unit'] = 'g';
         $record = addRecord($record);

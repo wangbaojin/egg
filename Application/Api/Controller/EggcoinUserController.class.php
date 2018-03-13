@@ -201,6 +201,9 @@ class EggcoinUserController extends ApiController
         if(!$user_info)                $this->api_error(30002,'该手机号未注册');
         if($user_info['user_st'] != 1) $this->api_error(30003,'该手机号已被禁用,请联系客服');
 
+        // 鸡的数量
+        $chick_num = M('Chicken')->where(' user_id= '.$user_info['id'].' and (state=4 or state=5)')->count();
+        $user_info['buy_chicken_num'] = $chick_num ? $chick_num : 0;
 
         //为通过AppStore审核单独加的登录逻辑
         if($data['code'] == '888888')
@@ -273,6 +276,10 @@ class EggcoinUserController extends ApiController
         // 邮箱状态
         if(!$user_info['email']) $user_info['email_status'] = 3;
         $user_info['email_status_info'] = $this->_email_status[$user_info['email_status']];
+
+        // 鸡的数量
+        $chick_num = M('Chicken')->where(' user_id= '.$user_info['id'].' and (state=4 or state=5)')->count();
+        $user_info['buy_chicken_num'] = $chick_num ? $chick_num : 0;
 
         session('user_info',$user_info);
         $session_id = session_id();
@@ -392,7 +399,7 @@ class EggcoinUserController extends ApiController
         $time  = time();
         $token = 'uuid='.$user_id.'&email='.$email.'&date_time='.$time;
         $sign  = md5($token.$this->_miyao);
-        $url   = getSelf().':'.$_SERVER['SERVER_PORT'].'/EggcoinUser/bindEmailConfirm?token='.base64_encode($token).'&sign='.$sign;
+        $url   = getSelf().':'.$_SERVER['SERVER_PORT'].'/EggcoinUser/bindEmailConfirm/token/'.base64_encode($token).'/sign/'.$sign;
         $mail_m    = M('SendMail');
         $mail_data['contents'] = '感谢您使用！请点击以下链接完成激活邮箱：'.$url;
         $mail_data['receiver'] = $email;

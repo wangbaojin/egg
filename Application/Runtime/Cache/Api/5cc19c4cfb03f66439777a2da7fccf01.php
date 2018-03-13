@@ -62,11 +62,11 @@
 </div>
 <div class="container-fluid">
     <a href="<?php echo U('AdminTodayPrice/add');?>">添加今日价格</a><br><br>
-    <form class="form-inline" name="searchForm" action="/AdminTodayPrice/index.html?delivery_date=" method="get">
+    <form class="form-inline" name="searchForm" action="/AdminTodayPrice/index.html" method="get">
         下单日期:<input  type="date" name="delivery_date" value="<?php echo ($_GET["delivery_date"]); ?>"><br>
         <input type="submit" class="btn btn-success" value="搜索">
     </form>
-    共:<?php echo ($count); ?>条!<?php echo ($_page); ?>
+    共:<?php echo ($count); ?>条!<?php echo ($page); ?>
     <div class="table-responsive">
         <table class="table">
             <tr>
@@ -85,5 +85,5 @@
                 </tr><?php endforeach; endif; else: echo "" ;endif; ?>
         </table>
     </div>
-    共:<?php echo ($count); ?>条!<?php echo ($_page); ?>
+    共:<?php echo ($count); ?>条!<?php echo ($page); ?>
 </div>

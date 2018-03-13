@@ -66,7 +66,7 @@
         批次名称:<input  type="date" name="delivery_date" value="<?php echo ($_GET["delivery_date"]); ?>"><br>
         <input type="submit" class="btn btn-success" value="搜索">
     </form>
-    共:<?php echo ($count); ?>条!<?php echo ($_page); ?>
+    共:<?php echo ($count); ?>条!<?php echo ($page); ?>
     <div class="table-responsive">
         <table class="table">
             <tr>
@@ -104,7 +104,7 @@
                 </tr><?php endforeach; endif; else: echo "" ;endif; ?>
         </table>
     </div>
-    共:<?php echo ($count); ?>条!<?php echo ($_page); ?>
+    共:<?php echo ($count); ?>条!<?php echo ($page); ?>
 </div>
 <script src="/Public/static/layui/layui.js"></script>
 <script type="text/javascript">

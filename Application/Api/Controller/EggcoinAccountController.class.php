@@ -153,7 +153,7 @@ class EggcoinAccountController extends ApiController
            $find_map = array();
            $find_map['user_id'] = $data['user_id'];
            $find_map['id'] = $v;
-           $find_map['state'] = 4;//'状态：1.待认养，2.释放，3.锁定，4.待绑定;5.已认养
+           $find_map['state'] = array('in',array(4,5));//'状态：1.待认养，2.释放，3.锁定，4.待绑定;5.已认养
            if(!$m->where($find_map)->find()) $this->api_error(20004,'请传入正确的绑定鸡ID');
        }
 

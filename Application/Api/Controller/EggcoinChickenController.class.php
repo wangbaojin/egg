@@ -154,7 +154,7 @@ class EggcoinChickenController extends ApiController
         if(!I('get.user_id')) $this->api_error('请先登录');
 
         $map['user_id'] = I('user_id');
-        if(I('state')) $map['state'] = I('state');
+        if(I('state')) $map['state'] = array('in',explode(',',I('state')));
 
         $page = (int)I('page');
         $data['page_limit']  = 20;
@@ -273,6 +273,7 @@ class EggcoinChickenController extends ApiController
         $m = M('ChickenOrder');
         if ($res = $m->where('order_sn=' . $data['order_sn'])->find()) {
             //$this->api_error(20002, '订单号错误');
+            if($res['num'] != $data['num']) $this->api_error(20005,'认购数量已修改,请重现选择下单');
             $this->api_return('success');
         }
 
@@ -373,22 +374,22 @@ class EggcoinChickenController extends ApiController
         // 订单超时
         if (time() > $order['lock_time']) {
             $saveData = array();
-            $saveData['updated_at'] = time();
+            $saveData['updated_at'] = $saveData['pay_time'] = time();
             $saveData['state'] = 4;
             $saveData['pay_state'] = 2;
-            $saveData['err_msg'] = 'ORDER_TIMEOUT';
+            $saveData['err_code'] = 'ORDER_TIMEOUT';
             $change_res = $m->where('id=' . $order['id'])->save($saveData);
-            if (!$change_res) Log::record('订单支付超时状态修改失败,INFO:' . json_encode($saveData), 'BUY_ChICKEN', true);
+            //if (!$change_res) Log::record('订单支付超时状态修改失败,INFO:' . json_encode($saveData), 'BUY_ChICKEN', true);
             $this->api_error(20004, '订单超时');
         }
 
         $saveData = array();
-        $saveData['updated_at'] = time();
+        $saveData['updated_at'] = $saveData['pay_time'] = time();
         $saveData['state'] = 3;
         $saveData['pay_state'] = 2;
         $change_res = $m->where('id=' . $order['id'])->save($saveData);
         if (!$change_res) {
-            Log::record('订单状态修改失败,INFO:' . json_encode($saveData), 'BUY_ChICKEN', true);
+            //Log::record('订单状态修改失败,INFO:' . json_encode($saveData), 'BUY_ChICKEN', true);
             $this->api_error(20005, '订单状态修改失败');
         }
 
@@ -398,13 +399,13 @@ class EggcoinChickenController extends ApiController
         $unlock_map['lock_time'] = array('GT', time());
         $unlock_map['state'] = 3;
 
-        $trans = M();
-        $trans->startTrans();
         $lock_data['state'] = 4;// 状态：1.待认养，2.释放，3.锁定，4.待绑定;5.已认养
         $clock_res = $c_m->where($unlock_map)->limit($order['num'])->save($lock_data);
         if ($order['num'] != $clock_res) {
-            $trans->rollback();
-            Log::record('认购鸡失败,INFO:' . json_encode($saveData), 'BUY_ChICKEN', true);
+            //Log::record('认购鸡失败,INFO:' . json_encode($saveData), 'BUY_ChICKEN', true);
+            $saveData['state'] = 1;
+            $saveData['err_code'] = 'CHICKEN_EMPTY';
+            $m->where('id=' . $order['id'])->save($saveData);
             $this->api_error(20006, '认购鸡失败');
         }
 
@@ -425,10 +426,9 @@ class EggcoinChickenController extends ApiController
             else
             {
                 // 记录邀请码无效
-                Log::record('邀请奖励状态修改失败,INFO:' . json_encode($order), 'buyChickenNotifyUrl', true);
+                //Log::record('邀请奖励状态修改失败,INFO:' . json_encode($order), 'buyChickenNotifyUrl', true);
             }
         }
-        $trans->commit();
         $this->api_return('success');
     }
 
@@ -452,7 +452,7 @@ class EggcoinChickenController extends ApiController
         $clock_res = $m->where($lock_map)->limit($num)->save($lock_data);
 
         if ($clock_res != $num) {
-            $data['msg'] = '认购数量已不足';
+            $data['msg'] = '啊偶!该发行批次的鸡已被认养完,稍后再来碰碰运气吧~~~';
             return $data;
         }
         $data['msg'] = 'success';

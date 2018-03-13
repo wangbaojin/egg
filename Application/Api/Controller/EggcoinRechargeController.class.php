@@ -54,6 +54,7 @@ class EggcoinRechargeController extends ApiController
         foreach ($list as $k=>$v)
         {
             $list[$k]['reason_type_info'] = $this->_reason_type[$v['reason_type']];
+            if($v['state'] == 3)            $v['state'] = 2;
             $list[$k]['state_info']       = $this->_state[$v['state']];
             $list[$k]['created_date'] = date('Y-m-d H:i:s',$v['created_at']);
         }

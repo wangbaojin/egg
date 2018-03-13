@@ -107,7 +107,7 @@ class Wechatjssdk {
         return $ticket;
     }
 
-    private function getAccessToken()
+    public function getAccessToken()
     {
         // access_token 应该全局存储与更新
         $key = 'access_token_'.$this->appId;

@@ -2,6 +2,7 @@
 namespace WeChat\Controller;
 
 use Think\Controller;
+use Com\Wechat\WechatMsg;
 
 class WeChatMsgController extends Controller
 {
@@ -12,44 +13,54 @@ class WeChatMsgController extends Controller
         $echoStr = $_GET["echostr"];
 
         //valid signature , option
-        if($this->checkSignature()){
+        if($echoStr && $this->checkSignature()){
             echo $echoStr;
             exit;
         }
+
+        $this->responseMsg();
     }
+
+    //响应消息
     public function responseMsg()
     {
-        //get post data, May be due to the different environments
-        $postStr = $GLOBALS["HTTP_RAW_POST_DATA"];
-
-        //extract post data
+        //$postStr = $GLOBALS["HTTP_RAW_POST_DATA"];
+        $m = new WechatMsg();
+        $postStr = file_get_contents("php://input");
         if (!empty($postStr)){
-            /* libxml_disable_entity_loader is to prevent XML eXternal Entity Injection,
-               the best way is to check the validity of xml by yourself */
-            libxml_disable_entity_loader(true);
-            $postObj = simplexml_load_string($postStr, 'SimpleXMLElement', LIBXML_NOCDATA);
-            $fromUsername = $postObj->FromUserName;
-            $toUsername = $postObj->ToUserName;
-            $keyword = trim($postObj->Content);
-            $time = time();
-            $textTpl = "<xml>
-							<ToUserName><![CDATA[%s]]></ToUserName>
-							<FromUserName><![CDATA[%s]]></FromUserName>
-							<CreateTime>%s</CreateTime>
-							<MsgType><![CDATA[%s]]></MsgType>
-							<Content><![CDATA[%s]]></Content>
-							<FuncFlag>0</FuncFlag>
-							</xml>";
-            if(!empty( $keyword ))
-            {
-                $msgType = "text";
-                $contentStr = "Welcome to wechat world!";
-                $resultStr = sprintf($textTpl, $fromUsername, $toUsername, $time, $msgType, $contentStr);
-                echo $resultStr;
-            }else{
-                echo "Input something...";
-            }
+            //$m->logger("R ".$postStr);
+            $postObj = simplexml_load_string($postStr,'SimpleXMLElement', LIBXML_NOCDATA);
+            $RX_TYPE = trim($postObj->MsgType);
 
+            switch ($RX_TYPE)
+            {
+                case "event":
+                    $result = $m->receiveEvent($postObj);
+                    break;
+                case "text":
+                    $result = $m->receiveText($postObj);
+                    break;
+                case "image":
+                    $result = $m->receiveImage($postObj);
+                    break;
+                case "location":
+                    $result = $m->receiveLocation($postObj);
+                    break;
+                case "voice":
+                    $result = $m->receiveVoice($postObj);
+                    break;
+                case "video":
+                    $result = $m->receiveVideo($postObj);
+                    break;
+                case "link":
+                    $result = $m->receiveLink($postObj);
+                    break;
+                default:
+                    $result = "unknown msg type: ".$RX_TYPE;
+                    break;
+            }
+            //$this->logger("T ".$result);
+            echo $result;
         }else {
             echo "";
             exit;
