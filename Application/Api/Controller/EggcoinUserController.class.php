@@ -118,21 +118,12 @@ class EggcoinUserController extends ApiController
         $m   =   M('User');
         $wechat_m  = M('UserWechatinfo');
 
-        $user_info = $m->where('mobile='.$data['mobile'])->find();
-        if($user_info) $this->api_error(20002,'该手机号已被绑定!');
-
         $trans = M();
         $trans->startTrans();
 
-
-        // 不存在则手机号注册
-        $add_res = addUserByMobile($data['mobile']);
-        if( $add_res['code'] != 1 ) $this->api_error($add_res['code'],'用户注册失败!'.$add_res['msg']);
-        $user_id = $add_res['data']['user_id'];
-
         // 微信信息
         $wechat_data = array();
-        $wechat_data['user_id'] = $user_id;
+        //$wechat_data['user_id'] = $user_id;
         $wechat_data['created_at'] = time();
         $wechat_data['unionid'] = $data['unionid'];
         if ($data['wx_pic'])       $wechat_data['wx_pic']   = $data['wx_pic'];
@@ -147,16 +138,33 @@ class EggcoinUserController extends ApiController
         if(!$use_wechat_info)
         {
             // 绑定微信
-            $bind_res = bindWeChat( $user_id , $wechat_data );
-            if( $bind_res['code'] != 1 and $bind_res['code']!=20003) {
+            $add_user_res = addUserByWechat( $wechat_data );
+            if( $add_user_res['code'] != 1 and $add_user_res['code']!=20003)
+            {
                 $trans->rollback();
-                $this->api_error($add_res['code'],'用户注册失败!'.$bind_res['msg']);
+                $this->api_error($add_user_res['code'],'用户注册失败!'.$add_user_res['msg']);
             }
+            $use_wechat_info = $wechat_m->where('unionid="'.$data['unionid'].'"')->find();
         }
         else
         {
-            $wechat_m->where('user_id='.$user_id.' and unionid="'.$data['unionid'].'"')->save($wechat_data);
+            $wechat_m->where('unionid="'.$data['unionid'].'"')->save($wechat_data);
         }
+
+        // 手机号已绑定看看是否是绑定的当前微信
+        $user_info = $m->where('mobile='.$data['mobile'])->find();
+        if($user_info && ($user_info['id'] != $use_wechat_info['user_id'])) $this->api_error(20002,'该手机号已被绑定!');
+
+        // 未绑定手机则绑定手机号
+        if(!$user_info)
+        {
+            $bind_mobile_res = bindMobile($use_wechat_info['user_id'],$data['mobile']);
+            if( $bind_mobile_res['code'] != 1) {
+                $trans->rollback();
+                $this->api_error($bind_mobile_res['code'],'用户注册失败!'.$bind_mobile_res['msg']);
+            }
+        }
+
         $trans->commit();
         // 发送短信验证码
         $result = send_sms_code($data['mobile']);
@@ -204,6 +212,8 @@ class EggcoinUserController extends ApiController
         // 鸡的数量
         $chick_num = M('Chicken')->where(' user_id= '.$user_info['id'].' and (state=4 or state=5)')->count();
         $user_info['buy_chicken_num'] = $chick_num ? $chick_num : 0;
+
+        M('User')->where('invite_code = "" and id='.$user_info['id'])->setField('invite_code',strtoupper(substr(md5($user_info['id'].'teemo'),8,16)));
 
         //为通过AppStore审核单独加的登录逻辑
         if($data['code'] == '888888')
@@ -281,6 +291,7 @@ class EggcoinUserController extends ApiController
         $chick_num = M('Chicken')->where(' user_id= '.$user_info['id'].' and (state=4 or state=5)')->count();
         $user_info['buy_chicken_num'] = $chick_num ? $chick_num : 0;
 
+        M('User')->where('invite_code = "" and id='.$user_info['id'])->setField('invite_code',strtoupper(substr(md5($user_info['id'].'teemo'),8,16)));
         session('user_info',$user_info);
         $session_id = session_id();
         $user_info['token'] = $session_id;

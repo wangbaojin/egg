@@ -3,7 +3,7 @@ namespace Api\Controller;
 
 use Think\Controller;
 
-class IndexController extends Controller
+class IndexController extends ApiController
 {
     public function index()
     {
@@ -32,5 +32,12 @@ class IndexController extends Controller
     public function activity()
     {
         $this->display();
+    }
+
+    /*开关*/
+    public function buttonOff()
+    {
+        $list['state'] = 1;
+        $this->api_return('success', $list);
     }
 }

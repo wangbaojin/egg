@@ -61,11 +61,11 @@
     <hr>
 </div>
 <div class="container-fluid">
-    <form class="form-inline" name="searchForm" action="/AdminUser/index.html" method="get">
+    <form class="form-inline" name="searchForm" action="/AdminUser/index/mobile=15652972114?mobile=17600105804" method="get">
         手机号:<input  type="text" name="mobile" value="<?php echo ($_GET["mobile"]); ?>"><br>
         <input type="submit" class="btn btn-success" value="搜索">
     </form>
-    共:<?php echo ($count); ?>条!<?php echo ($_page); ?>
+    共:<?php echo ($count); ?>条!<?php echo ($page); ?>
     <div class="table-responsive">
         <table class="table">
             <tr>
@@ -79,7 +79,7 @@
                         <img src="<?php echo ($vo["pic"]); ?>" width="100px"><br>
                         ID:<?php echo ($vo["id"]); ?>&nbsp; <?php echo ($vo["full_name"]); ?><br>
                         <small><?php echo ($vo["vip_info"]); ?> [<?php echo ($vo["created_date"]); ?>]</small><br>
-                        <?php echo ($vo["mobile"]); ?> &nbsp;<br>
+                        <?php echo ($vo["mobile"]); ?> &nbsp<br>
                         <?php echo ($vo["email"]); echo ($vo["email_status_info"]); ?>
                     </td>
                     <td class="active" style="padding: 10px">
@@ -96,5 +96,5 @@
                 </tr><?php endforeach; endif; else: echo "" ;endif; ?>
         </table>
     </div>
-    共:<?php echo ($count); ?>条!<?php echo ($_page); ?>
+    共:<?php echo ($count); ?>条!<?php echo ($page); ?>
 </div>

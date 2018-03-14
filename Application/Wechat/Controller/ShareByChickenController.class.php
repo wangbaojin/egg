@@ -38,8 +38,9 @@ class ShareByChickenController extends PublicController
         {
             // 回调地址
             $redirect_uri = 'http://wechat.jiagehao.cn/ShareByChicken';
-
-            if($_GET['wx_info'])
+            $start = cookie('start');
+            if($_GET['wx_info'] && $start)
+            //if($_GET['wx_info'])
             {
                 $wx_info = json_decode(base64_decode($_GET['wx_info']),true);
                 if(!$wx_info) die('请在微信授权登录');
@@ -56,7 +57,14 @@ class ShareByChickenController extends PublicController
                 if($wx_info['openid'])       $wechat_data['openid']   = $wx_info['openid'];
                 $res = addUserByWechat($wechat_data);
                 if($res['code']!=1 and $res['code']!=20003) die('请在微信授权登录'.$res['msg']);
+                if($_GET['debug'])
+                {
 
+                    echo "<pre>";
+                    print_r($_SERVER);
+                    print_r($_GET);
+                    print_r($res);die;
+                }
                 // 记录登录
                 $this->_user_id = $res['data']['user_id'];
                 session('user_id',$res['data']['user_id']);
@@ -64,6 +72,8 @@ class ShareByChickenController extends PublicController
             }
             else
             {
+                cookie('start',1,10);
+                unset($_GET['wx_info']);
                 $_GET['redirect_uri'] = $redirect_uri;
                 $url = 'http://wechat.jiagehao.cn/WeChat/getWechatInfo?'.'wx_state='.base64_encode(json_encode($_GET));
                 header("Location:".$url);die;
@@ -79,7 +89,12 @@ class ShareByChickenController extends PublicController
     public function index()
     {
         //echo "<pre>";
-        //echo $this->_user_id;
+        /*if($_SERVER['REMOTE_ADDR']=='61.148.244.250')
+        {
+            echo $this->_user_id;
+            echo "<hr>";
+            echo $this->_wx_state['invite_code'];
+        }*/
         $m = M('User');
         $user_info = $m->where('state=1')->find($this->_user_id);
         if(!$user_info) die('该用户不存在');
@@ -489,6 +504,8 @@ class ShareByChickenController extends PublicController
         $unlock_map['state'] = 3;
 
         $lock_data['state'] = 4;// 状态：1.待认养，2.释放，3.锁定，4.待绑定;5.已认养
+        $lock_data['create_date'] = date('Y-m-d',time());// 购买时间、根据此计算日龄
+        $lock_data['created']     = time();
         $clock_res = $c_m->where($unlock_map)->limit($order['num'])->save($lock_data);
         if ($order['num'] != $clock_res)
         {

@@ -556,8 +556,8 @@ function bindWeChat($user_id,$wechat_info)
     $not_null_param = array(
         //'wx_open_id'   => '获取微信open_id失败',
         'unionid'   => '获取微信信息失败',
-        'wx_pic'       => '缺少微信用户头像',
-        'wx_nick_name' => '缺少微信用户昵称',
+        //'wx_pic'       => '缺少微信用户头像',
+        //'wx_nick_name' => '缺少微信用户昵称',
     );
 
     // 检查参数

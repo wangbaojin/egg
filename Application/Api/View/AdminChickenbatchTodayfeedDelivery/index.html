@@ -14,6 +14,7 @@
                 <th class="danger">饲料</th>
                 <th class="active">现金支出</th>
                 <th class="active">数字资产发行</th>
+                <th class="active">平均每只数字资产发行</th>
                 <th class="active">操作</th>
             </tr>
             <volist name="list" id="vo">
@@ -32,6 +33,7 @@
                     </td>
                     <td class="active" style="padding: 10px">{$vo.expenses}元</td>
                     <td class="active" style="padding: 10px">{$vo.eggcoin_income}枚</td>
+                    <td class="active" style="padding: 10px">{$vo.avg_eggcoin_income}枚</td>
                     <td class="active" style="padding: 10px">
 
                         <a href="{:U('AdminChickenbatchTodayfeedDelivery/edit')}?id={$vo.id}">编辑</a><br><br>

@@ -24,12 +24,12 @@ class AdminUserController extends AdminPublicController
         // 分页
         $map = array();
         if(I('get.mobile')) $map['mobile'] = array('like',"%".I('get.mobile')."%");
-        $page = (int)I('page');
+        $page = (int)I('p');
         $data['page_limit']  = 20;
         $data['total_count'] = $this->_m->where($map)->count();
         $data['total_page']  = ceil($data['total_count']/$data['page_limit']);
         $data['now_page']    = ($page > 0 and $page <= $data['total_page']) ? $page : 1;
-        $list = $this->_m->where($map)->page($page,$data['page_limit'])->order('id')->select();
+        $list = $this->_m->where($map)->page($page,$data['page_limit'])->order('id desc')->select();
 
         // 处理数据
         foreach ($list as $k=>$v)

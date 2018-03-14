@@ -62,7 +62,7 @@
 </div>
 <div class="container-fluid">
     <a href="<?php echo U('AdminChickenbatchTodayfeedDelivery/add');?>">添加结算</a><br><br>
-    <form class="form-inline" name="searchForm" action="/AdminChickenbatchTodayfeedDelivery/index.html" method="get">
+    <form class="form-inline" name="searchForm" action="/AdminChickenbatchTodayfeedDelivery/index.html?delivery_date=" method="get">
         批次名称:<input  type="date" name="delivery_date" value="<?php echo ($_GET["delivery_date"]); ?>"><br>
         <input type="submit" class="btn btn-success" value="搜索">
     </form>
@@ -75,6 +75,7 @@
                 <th class="danger">饲料</th>
                 <th class="active">现金支出</th>
                 <th class="active">数字资产发行</th>
+                <th class="active">平均每只数字资产发行</th>
                 <th class="active">操作</th>
             </tr>
             <?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
@@ -92,6 +93,7 @@
                     </td>
                     <td class="active" style="padding: 10px"><?php echo ($vo["expenses"]); ?>元</td>
                     <td class="active" style="padding: 10px"><?php echo ($vo["eggcoin_income"]); ?>枚</td>
+                    <td class="active" style="padding: 10px"><?php echo ($vo["avg_eggcoin_income"]); ?>枚</td>
                     <td class="active" style="padding: 10px">
 
                         <a href="<?php echo U('AdminChickenbatchTodayfeedDelivery/edit');?>?id=<?php echo ($vo["id"]); ?>">编辑</a><br><br>

@@ -28,7 +28,10 @@ class EggcoinCronController extends ApiController
             // 批次结算详情
             $delivery_info = $this->getDelivery($v['chicken_batch'],$v['age_in_days']);
 
-            if(!$delivery_info) die('获取该批次'.$v['age_in_days'].'日龄的结算信息失败,可能是还未结算');
+            if(!$delivery_info) {
+                echo ('获取该批次'.$v['age_in_days'].'日龄的结算信息失败,可能是还未结算'),'<br>';
+                continue;
+            }
 
             // 结算单只鸡
             $delivery_res = $this->deliveryChickenIncome($v,$delivery_info,$delivery_date);
@@ -36,13 +39,13 @@ class EggcoinCronController extends ApiController
         }
     }
 
-    /*获取需要结算的鸡,规则为认养且绑定成功,时间至少提前一天*/
+    /*获取需要结算的鸡,计算日期及结算日期之前的*/
     private function getChicken($delivery_date,$ChickenIdAry=array())
     {
-        $map['state'] = 5;
+        $map['state'] = array('in',array(4,5));
         if($ChickenIdAry) $map['id'] = array('not in',$ChickenIdAry);
-        $map['create_date'] = array('lt',$delivery_date);
-        $delivery_list = M('Chicken')->field('chicken_code,created,chicken_code,updated,lock_time,state',true)->where($map)->limit(100)->select();
+        $map['create_date'] = array('elt',$delivery_date);
+        $delivery_list = M('Chicken')->field('chicken_code,created,chicken_code,updated,lock_time,state',true)->where($map)->limit(10)->select();
 
         if($delivery_list)
         {

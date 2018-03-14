@@ -174,7 +174,7 @@ class EggcoinChickenController extends ApiController
             $list[$k]['breed'] = $chicken_batch['breed'];
 
             //日龄, 如果是已认养则为:领养时间+初始日龄,其他均是初始日龄
-            $list[$k]['age'] = $v['state']==5 ? $chicken_batch['egg_in_days']+(int)ceil((time()-$v['created'])/86400) : $chicken_batch['egg_in_days'];
+            $list[$k]['age'] = $v['state']==5 ? $chicken_batch['age_in_days']+(int)ceil((time()-$v['created'])/86400) : $chicken_batch['egg_in_days'];
         }
 
         $data['data'] = $list;
@@ -400,6 +400,8 @@ class EggcoinChickenController extends ApiController
         $unlock_map['state'] = 3;
 
         $lock_data['state'] = 4;// 状态：1.待认养，2.释放，3.锁定，4.待绑定;5.已认养
+        $lock_data['create_date'] = date('Y-m-d',time());
+        $lock_data['created']     = time();
         $clock_res = $c_m->where($unlock_map)->limit($order['num'])->save($lock_data);
         if ($order['num'] != $clock_res) {
             //Log::record('认购鸡失败,INFO:' . json_encode($saveData), 'BUY_ChICKEN', true);

@@ -4,7 +4,7 @@
         手机号:<input  type="text" name="mobile" value="{$_GET.mobile}"><br>
         <input type="submit" class="btn btn-success" value="搜索">
     </form>
-    共:{$count}条!{$_page}
+    共:{$count}条!{$page}
     <div class="table-responsive">
         <table class="table">
             <tr>
@@ -19,7 +19,7 @@
                         <img src="{$vo.pic}" width="100px"><br>
                         ID:{$vo.id}&nbsp; {$vo.full_name}<br>
                         <small>{$vo.vip_info} [{$vo.created_date}]</small><br>
-                        {$vo.mobile} &nbsp;<br>
+                        {$vo.mobile} &nbsp<br>
                         {$vo.email}{$vo.email_status_info}
                     </td>
                     <td class="active" style="padding: 10px">
@@ -37,5 +37,5 @@
             </volist>
         </table>
     </div>
-    共:{$count}条!{$_page}
+    共:{$count}条!{$page}
 </div>
