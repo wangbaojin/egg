@@ -233,7 +233,7 @@
 		});
     });
 	wx.error(function(res){
-		alert(res.err_msg);
+		//alert(res.err_msg);
 	});
 	$(".share").click(function (){
         $(".sharediv").show();

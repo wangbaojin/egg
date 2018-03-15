@@ -28,7 +28,8 @@ class EggcoinCronController extends ApiController
             // 批次结算详情
             $delivery_info = $this->getDelivery($v['chicken_batch'],$v['age_in_days']);
 
-            if(!$delivery_info) {
+            if(!$delivery_info)
+            {
                 echo ('获取该批次'.$v['age_in_days'].'日龄的结算信息失败,可能是还未结算'),'<br>';
                 continue;
             }
@@ -184,13 +185,6 @@ class EggcoinCronController extends ApiController
         if($chicken_info['eggcoin_account_id']) $arr['eggcoin_account_id'] = $chicken_info['eggcoin_account_id'];
         $arr['created_at'] = strtotime($delivery_date)+(time()-strtotime(date('Y-m-d')));
         $arr['state'] = 2;//1.待确认；2.待结算；3.已结算
-        /*echo "delivery";
-        print_r($delivery_info);
-        echo "<hr>";
-        echo "chicken_info";
-        print_r($chicken_info);
-        echo "<hr>";
-        print_r($arr);*/
 
         $trans = M();
         $trans->startTrans();
@@ -326,7 +320,7 @@ class EggcoinCronController extends ApiController
             else
             {
                 $issueEggCoin_res = issueEggCoin($eggcoin_data['amount'],$eggcoin_account['account_address']);
-                if($issueEggCoin_res['retcode']!=1)
+                if($issueEggCoin_res['code']!=1)
                 {
                     $eggcoin_data['state']    = 3;//状态：1.成功;2.失败;3.待处理'
                     $eggcoin_data['err_code'] = 'ISSUE_ERROR';

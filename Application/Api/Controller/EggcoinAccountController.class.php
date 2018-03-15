@@ -8,6 +8,8 @@ namespace Api\Controller;
  */
 class EggcoinAccountController extends ApiController
 {
+    private $_custom_name_length = 30;
+    private $_eggcoin_account_address = 64;
 
     /*
      *  添加常用数字货币钱包
@@ -21,6 +23,9 @@ class EggcoinAccountController extends ApiController
         );
         $check_res = check_not_null_param($not_null_param,I('post.'));
         if($check_res) $this->api_error(20001,$check_res);
+
+        // 验证参数规则
+        $this->checkEggcoinAccountParam(I('post.'));
 
         // 钱包地址id
         $eggcoin_account_id = getEggcoinAccountId(I('post.eggcoin_account_address'));
@@ -65,6 +70,8 @@ class EggcoinAccountController extends ApiController
         );
         $check_res = check_not_null_param($not_null_param,I('post.'));
         if($check_res) $this->api_error(20001,$check_res);
+        // 验证参数规则
+        $this->checkEggcoinAccountParam(I('post.'));
 
         $map['user_id'] = I('post.user_id');
         $map['eggcoin_account_id'] = I('post.eggcoin_account_id');
@@ -142,9 +149,8 @@ class EggcoinAccountController extends ApiController
         $chicken_id_ary = explode(',',$data['chicken_id']);
 
         // 钱包地址id
-        $eggcoin_account = getEggcoinAccountId($data['eggcoin_account_address']);
-        //if(!$eggcoin_account or !$eggcoin_account['id']) $this->api_error(20005,'钱包记录失败,请稍后重试');
-        if(!$eggcoin_account) $this->api_error(20005,'钱包记录失败,请稍后重试');
+        $eggcoin_account_id    = getEggcoinAccountId($data['eggcoin_account_address']);
+        if(!$eggcoin_account_id) $this->api_error(20005,'钱包记录失败,请稍后重试');
 
         $m = M('Chicken');
         $trans = M();
@@ -161,7 +167,7 @@ class EggcoinAccountController extends ApiController
             if(!$check_info) $this->api_error(20004,'请传入正确的绑定鸡ID');
 
             $bind_data = array();
-            $bind_data['eggcoin_account_id'] = $eggcoin_account;
+            $bind_data['eggcoin_account_id'] = $eggcoin_account_id;
             $bind_data['updated'] = time();
             $bind_data['state'] = 5;
             $find_map['id']     = $v;
@@ -170,5 +176,22 @@ class EggcoinAccountController extends ApiController
         // 检查鸡
         $trans->commit();
         $this->api_return('绑定成功');
+    }
+
+    /*检查参数*/
+    private function checkEggcoinAccountParam($arr)
+    {
+        if(isset($arr['custom_name']))
+        {
+            if(mb_strlen($arr['custom_name'],'UTF-8') > $this->_custom_name_length ) $this->api_error(20001,'自定义名称长度不可超过'.$this->_custom_name_length.'个字符');
+        }
+
+        if(isset($arr['eggcoin_account_address']))
+        {
+            // 长度
+            if(mb_strlen($arr['eggcoin_account_address'],'UTF-8') > $this->_eggcoin_account_address ) $this->api_error(20001,'地址长度不可超过'.$this->_eggcoin_account_address.'个字符');
+            // 中文
+            if(preg_match('/[\x7f-\xff]/',$arr['eggcoin_account_address'])) $this->api_error(20001,'请输入正确格式的地址');
+        }
     }
 }

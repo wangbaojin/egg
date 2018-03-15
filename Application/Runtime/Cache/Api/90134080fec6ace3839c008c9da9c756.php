@@ -62,7 +62,7 @@
 </div>
 <div class="container-fluid">
     <a href="<?php echo U('AdminChickenbatchTodayfeedDelivery/add');?>">添加结算</a><br><br>
-    <form class="form-inline" name="searchForm" action="/AdminChickenbatchTodayfeedDelivery/index.html?delivery_date=" method="get">
+    <form class="form-inline" name="searchForm" action="/AdminChickenbatchTodayfeedDelivery/index.html" method="get">
         批次名称:<input  type="date" name="delivery_date" value="<?php echo ($_GET["delivery_date"]); ?>"><br>
         <input type="submit" class="btn btn-success" value="搜索">
     </form>

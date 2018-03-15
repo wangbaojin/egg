@@ -158,7 +158,10 @@ class TaskController extends ApiController
         $trans->startTrans();
 
         // 签到
-        $res = $m->add($map);
+        $u_map = array();
+        $u_map['user_id']  = $user_id;
+        $u_map['add_date'] = array('neq',date('Y-m-d'));
+        $res = $m->where($u_map)->add($map);
         if(!$res)
         {
             $this->api_error(20003,'啊偶!系统出问题了,请稍后重试');
@@ -224,7 +227,10 @@ class TaskController extends ApiController
         $trans->startTrans();
 
         // 签到
-        $res = $m->add($map);
+        $u_map = array();
+        $u_map['user_id']  = $user_id;
+        $u_map['add_date'] = array('neq',date('Y-m-d'));
+        $res = $m->where($u_map)->add($map);
         if(!$res)
         {
             $this->api_error(20003,'啊偶!系统出问题了,请稍后重试');
@@ -293,7 +299,10 @@ class TaskController extends ApiController
         $trans->startTrans();
 
         // 签到
-        $res = $m->add($map);
+        $u_map = array();
+        $u_map['user_id']  = $user_id;
+        $u_map['add_date'] = array('neq',date('Y-m-d'));
+        $res = $m->where($u_map)->add($map);
         if(!$res)
         {
             $this->api_error(20003,'啊偶!系统出问题了,请稍后重试');
@@ -355,7 +364,6 @@ class TaskController extends ApiController
         $map['invite_user_id'] = $user_id;
         $map['user_id']        = $friend_id;
         $map['add_date']       = date('Y-m-d');
-        $map['add_time']       = time();
         if($m->where($map)->find())
         {
             $this->api_error(20002,'今天已经邀请过TA了噢!');
@@ -365,6 +373,7 @@ class TaskController extends ApiController
         $trans->startTrans();
 
         // 邀请
+        $map['add_time'] = time();
         $res = $m->add($map);
         if(!$res)
         {
@@ -376,7 +385,7 @@ class TaskController extends ApiController
         $mobile = M('User')->where('id='.$friend_id)->getField('mobile');
         $openid = M('UserWechatinfo')->where('user_id='.$friend_id)->getField('openid');
         if($mobile) send_sms($mobile,'您的好友'.$user_info['data']['full_name'].'邀请你一起来区块链养鸡,快来领养鸡赚取收益吧!');
-        if($openid) $this->sendTemplateMsg($openid);
+        //if($openid) $this->sendTemplateMsg($openid);
 
         $trans->commit();
         $this->api_return('success');
@@ -385,13 +394,12 @@ class TaskController extends ApiController
     public function test()
     {
         $openid = M('UserWechatinfo')->where('user_id=24')->getField('openid');
-        $this->sendTemplateMsg($openid);
+        //$this->sendTemplateMsg($openid);
     }
 
     // 发送模版消息
     function sendTemplateMsg($openid='oCA61jkiwssJ36igRtgovvCg45bo',$template_id='aku34mBdGuLJTcz5nFOB7bXHtWSBLuGtEEuoyw5Xo5Q',$data=array())
     {
-        echo $openid;
         $data = array(
             'first'=> array(
                 'value' => '您的好友邀请你一起来链养鸡',
@@ -410,7 +418,7 @@ class TaskController extends ApiController
                 'color' => '#173177',
             ),
             'remark'=> array(
-                'value' => '点击详情，快来领养鸡赚取收益吧',
+                'value' => '快来领养鸡赚取收益吧',
                 'color' => '#173177',
             )
         );
@@ -421,8 +429,7 @@ class TaskController extends ApiController
         );
         $arr['touser'] = $openid;
 
-        $m = new Wechatjssdk();
+        $m   = new Wechatjssdk();
         $res = $m->send_template_msg($arr);
-        //print_r($res);
     }
 }

@@ -50,6 +50,9 @@ class EggcoinWithdrawalsController extends ApiController
         // 检查可提取金额
         if($wallet['amount'] < $data['apply_amount']) $this->api_error(20004,'可提取金额不足');
 
+        // 检查是否有欠款
+        if( $wallet['feed_amount'] < 0 or $wallet['arrears_amount'] > 0 ) $this->api_error(20004,'你还有饲料或支出欠额,请先补足再申请提现');
+
         $trans = M();
         $trans->startTrans();
 
@@ -69,8 +72,9 @@ class EggcoinWithdrawalsController extends ApiController
         }
 
         // 冻结金额
-        $wallet_change_data['amount'] = $wallet['amount'] - $data['apply_amount'];
-        $wallet_change_data['freezing_amount'] = $data['apply_amount']+$wallet['freezing_amount'];
+        $wallet_change_data['amount']          = $wallet['amount']     - $data['apply_amount'];
+        $wallet_change_data['freezing_amount'] = $data['apply_amount'] + $wallet['freezing_amount'];
+
         if(!$w_m->where('amount >= '.$data['apply_amount'].' and user_id='.$data['user_id'])->save($wallet_change_data))
         {
             $trans->rollback();

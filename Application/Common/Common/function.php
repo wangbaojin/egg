@@ -607,7 +607,7 @@ function getUserInfoByUserId($user_id)
 
     $map['user_id'] = $m_map['id'] = $user_id;
 
-    $info = $m->where($m_map)->field('code,send_time,trade_pass_wd,user_st',true)->find();
+    $info = $m->where($m_map)->field('code,send_time,trade_pass_wd',true)->find();
     if(!$info)
     {
         $re_data['code'] = 20002;
@@ -697,7 +697,11 @@ function invite_success_reward($user_id,$invite_id)
     $eggcoin_data['state'] = 1;//状态：1.成功;2.失败;3.待处理'
 
     // 钱包地址
-    $eggcoin_account_id = M('Chicken')->where('state=5 and user_id='.$user_id)->order('created desc')->getField('eggcoin_account_id');
+    $chicken_map = array();
+    $chicken_map['state']   = array('in',array(4,5));
+    $chicken_map['user_id'] = $user_id;
+    $chicken_info = M('Chicken')->where($chicken_map)->order('created desc')->find();
+    $eggcoin_account_id = $chicken_info['eggcoin_account_id'];
     if($eggcoin_account_id) $eggcoin_account = getEggcoinAccountInfoById($eggcoin_account_id);
     if(!$eggcoin_account_id or !$eggcoin_account or !$eggcoin_account['account_address'])
     {
@@ -708,10 +712,11 @@ function invite_success_reward($user_id,$invite_id)
     {
         // 发放币
         $issueEggCoin_res = issueEggCoin($eggcoin_data['amount'], $eggcoin_account['account_address']);
-        if ($issueEggCoin_res['retcode'] != 0) {
+        if ($issueEggCoin_res['code'] != 0) {
             $eggcoin_data['state'] = 3;//状态：1.成功;2.失败;3.待处理'
             $eggcoin_data['err_code'] = 'ISSUE_ERROR';
         }
+        $chicken_info['chicken_id']   = $chicken_info['id'];
         $eggcoin_data['eggcoin_account_id'] = $eggcoin_account_id;
     }
 
@@ -742,4 +747,51 @@ function getCurrentBatch()
     //$map['start_time'] = array('lt',time());
     //$map['end_time']   = array('gt',time());
     return $m->where($map)->find();
+}
+
+function reissue()
+{
+    $c_m   = M('Chicken');
+    $e_r_m = M('EggcoinRecord');
+    $map = array();
+    //echo "<pre>";
+    // 找出3点半之前发放的币;
+    $recordList = $e_r_m->where("created_at <= 1521012480")->select();
+    //$recordList = $e_r_m->where("chicken_id is null")->select();
+    // REISSUE reissue
+    foreach ($recordList as $rk=>$rv)
+    {
+        // 钱包地址
+        $chicken_map = array();
+        $chicken_map['state']   = array('in',array(4,5));
+        $chicken_map['id']      = $rv['chicken_id'];
+        $chicken_map['user_id'] = $rv['user_id'];
+        $chicken_info = $c_m->where($chicken_map)->find();
+        if($chicken_info && $chicken_info['eggcoin_account_id'] && ($chicken_info['eggcoin_account_id']!=$rv['eggcoin_account_id']) && ($rv['err_code'] != 'REISSUE_SUCCESS'))
+        {
+            // 钱包地址
+            $eggcoin_account = getEggcoinAccountInfoById($chicken_info['eggcoin_account_id']);
+            if($eggcoin_account and $eggcoin_account['account_address'])
+            {
+                $issueEggCoin_res = issueEggCoin((int)$rv['amount'],$eggcoin_account['account_address']);
+                $update_data = array();
+                $update_data['state']    = 1;//状态：1.成功;2.失败;3.待处理'
+                if($issueEggCoin_res['code']==1)
+                {
+
+                    $update_data['err_code'] = 'REISSUE_SUCCESS';
+                }
+                else
+                {
+                    $update_data['err_code'] = 'REISSUE_ERROR';
+                }
+
+                // 如果补发成功把发放地址修改回来
+                if($update_data['err_code']=='REISSUE_SUCCESS') $update_data['eggcoin_account_id'] = $chicken_info['eggcoin_account_id'];
+                $res = $e_r_m->where('id='.$rv['id'])->save($update_data);
+                //echo $res,'<br>';
+            }
+        }
+        //if($chicken_info) $e_r_m->where('id='.$rv['id'])->setField('chicken_id',$chicken_info['id']);
+    }
 }

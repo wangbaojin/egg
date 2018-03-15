@@ -1,0 +1,30 @@
+<include file="Public/header" />
+<div class="container-fluid">
+    <a href="{:U('AdminTodayPrice/add')}">添加今日价格</a><br><br>
+    <form class="form-inline" name="searchForm" action="__SELF__" method="get">
+        下单日期:<input  type="date" name="delivery_date" value="{$_GET.delivery_date}"><br>
+        <input type="submit" class="btn btn-success" value="搜索">
+    </form>
+    共:{$count}条!{$page}
+    <div class="table-responsive">
+        <table class="table">
+            <tr>
+                <th class="active">时间</th>
+                <th class="success">鸡蛋价格</th>
+                <th class="warning">饲料价格</th>
+                <th class="danger">更新时间</th>
+                <th class="active">操作</th>
+            </tr>
+            <volist name="list" id="vo">
+                <tr>
+                    <td class="active" style="padding: 10px">{$vo.delivery_date}</td>
+                    <td class="success" style="padding: 10px">{$vo.egg_price}元/kg</td>
+                    <td class="warning" style="padding: 10px">{$vo.feed_price}元/kg</td>
+                    <td class="danger" style="padding: 10px">{$vo.updated_date}</td>
+                    <td class="active" style="padding: 10px"><a href="{:U('AdminTodayPrice/edit')}?id={$vo.id}">编辑</a></td>
+                </tr>
+            </volist>
+        </table>
+    </div>
+    共:{$count}条!{$page}
+</div>

@@ -31,13 +31,14 @@ class ShareByChickenController extends PublicController
             session_destroy();
         }
 
-        //判断接口是否需要微信登录
-        $res = in_array(ACTION_NAME,$this->_need_login);
+        //$res = in_array(ACTION_NAME,$this->_need_login);
 
+        // 回调地址
+        $redirect_uri = 'http://wechat.jiagehao.cn/ShareByChicken';
+
+        //判断接口是否需要微信登录
         if(!$this->_user_id && in_array(ACTION_NAME,$this->_need_login))
         {
-            // 回调地址
-            $redirect_uri = 'http://wechat.jiagehao.cn/ShareByChicken';
             $start = cookie('start');
             if($_GET['wx_info'] && $start)
             //if($_GET['wx_info'])
@@ -142,7 +143,7 @@ class ShareByChickenController extends PublicController
                     }
 
                     // 赠送饲料奖励 20g 饲料
-                    $feed_amount = 20;
+                    $feed_amount = task_reward('friend_login_reward');
 
                     $wallet_m = M('Wallet');
                     $wallet_map['user_id'] = $invite_user_info['id'];
@@ -499,13 +500,14 @@ class ShareByChickenController extends PublicController
 
         // 认购鸡,把下单锁定的鸡变为待绑定
         $unlock_map = array();
-        $unlock_map['user_id'] = $order['user_id'];
-        $unlock_map['lock_time'] = array('GT', time());
-        $unlock_map['state'] = 3;
+        $unlock_map['user_id']      = $order['user_id'];
+        $unlock_map['lock_time']    = array('GT', time());
+        $unlock_map['state']        = 3;
+        $unlock_map['chicken_type'] = $order['chicken_type'];
 
         $lock_data['state'] = 4;// 状态：1.待认养，2.释放，3.锁定，4.待绑定;5.已认养
         $lock_data['create_date'] = date('Y-m-d',time());// 购买时间、根据此计算日龄
-        $lock_data['created']     = time();
+        $lock_data['created']     = $lock_data['updated'] = time();
         $clock_res = $c_m->where($unlock_map)->limit($order['num'])->save($lock_data);
         if ($order['num'] != $clock_res)
         {
@@ -535,7 +537,7 @@ class ShareByChickenController extends PublicController
                 //Log::record('邀请奖励状态修改失败,INFO:' . json_encode($order), 'buyChickenNotifyUrl', true);
             }
         }
-        $trans->commit();
+        //$trans->commit();
         $this->api_return('success');
     }
 

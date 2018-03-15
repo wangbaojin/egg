@@ -39,7 +39,11 @@ class WeChatController extends Controller
                 session_destroy();
                 $stateData = json_decode(base64_decode($wx_state),true);
                 //print_r($stateData);die;
-                if(!$stateData['redirect_uri']) die('回调参数错误');
+                if(!$stateData['redirect_uri'])
+                {
+                    //die('回调参数错误'); 未传回调地址
+                    $stateData['redirect_uri'] = 'http://wechat.jiagehao.cn/ShareByChicken';
+                }
                 header("Location:".urldecode($stateData['redirect_uri']).'?wx_state='.$wx_state.'&wx_info='.base64_encode(json_encode($res)));die;
             }
             else

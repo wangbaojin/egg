@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="../../js/layui/css/layui.css">
+	<script type="text/javascript" src="../../js/layui/layui.js"></script>
+	<title>发币发钱</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		li{
+			list-style-type:none;
+		}
+		#option{
+			padding: 20px;
+		}
+		.form-group{
+			margin:20px 0 !important;
+		}
+		.form-group label{
+			float:left !important;
+			width: 100px !important;
+		}
+		.col-sm-10{
+			display: flex;
+    		align-items: center;
+		}
+	</style>
+</head>
+<body>
+	<include file="index.html" />
+	<ul class="layui-nav layui-nav-tree" lay-filter="test">
+		<!-- 侧边导航: <ul class="layui-nav layui-nav-tree layui-nav-side"> -->
+		<li class="layui-nav-item"><a href="">首页</a></li>
+		<li class="layui-nav-item "><!-- layui-nav-itemed 移出默认展开-->
+			<a href="javascript:;">用户管理</a>
+			<dl class="layui-nav-child">
+				<dd><a href="javascript:;">用户列表</a></dd>
+				<dd><a href="javascript:;">用户详情</a></dd>
+			</dl>
+		</li>
+		<li class="layui-nav-item">
+			<a href="javascript:;">鸡舍管理</a>
+			<dl class="layui-nav-child">
+				<dd><a href="javascript:;">鸡舍列表</a></dd>
+				<dd><a href="javascript:;">新建鸡舍</a></dd>
+				<dd><a href="javascript:;">发币发钱</a></dd>
+				<dd><a href="javascript:;">帖子评论</a></dd>
+			</dl>
+		</li>
+		<li class="layui-nav-item">
+			<a href="javascript:;">通知新闻</a>
+			<dl class="layui-nav-child">
+				<dd><a href="javascript:;">新闻列表</a></dd>
+				<dd><a href="javascript:;">新建新闻</a></dd>
+			</dl>
+		</li>
+		<li class="layui-nav-item">
+			<a href="javascript:;">活动</a>
+			<dl class="layui-nav-child">
+				<dd><a href="javascript:;">活动列表</a></dd>
+				<dd><a href="javascript:;">新建活动</a></dd>
+			</dl>
+		</li>
+		<li class="layui-nav-item">
+			<a href="javascript:;">提现管理</a>
+			<dl class="layui-nav-child">
+				<dd><a href="javascript:;">提现列表</a></dd>
+			</dl>
+		</li>
+	</ul>
+	<div class="layui-body">
+		<!-- 内容主体区域 -->
+		<!-- <iframe id="xuanxiang" name="xuanxiang" src="add.html" style="overflow: visible;" scrolling="no" frameborder="no" width="100%" height="100%"></iframe> -->
+		<div id="option" name="option" style="overflow: visible;" scrolling="no" frameborder="no" width="100%" height="100%">
+			
+			<div class="jumbotron">
+		        <h5>发币发钱</h5>
+		    </div>
+
+			<form class="form-horizontal">
+
+				<div class="form-group">
+					<label >结算鸡场</label>
+					<div class="col-sm-10">
+						<select type="text" name="article_url" id="article_url" class="form-control" style="width:200px;margin-right: 10px;">
+							<option>批次鸡场1</option>
+							<option>批次鸡场2</option>
+							<option>批次鸡场3</option>
+							<option>批次鸡场4</option>
+							<option>批次鸡场5</option>
+						</select>
+					</div>
+				</div>
+				<div class="form-group">
+		            <label>结算日期</label>
+		            <div class="col-sm-10">
+		            	<input type="datetime" name="newstime" id="newstime" onclick="layui.laydate({elem: this, istime: true, format: 'YYYY-MM-DD 00:00:00'})" class="layui-input form-control" value="{$info.newstime}" placeholder="时间">
+		            </div>
+		        </div>
+		        <div class="form-group">
+					<label>当日蛋价</label>
+					<div class="col-sm-10">
+						<input  type="text" name="title" id="title" class="form-control" placeholder="">
+						<span>元/kg</span>
+					</div>
+				</div>
+				<div class="form-group">
+					<label>当日饲料价格</label>
+					<div class="col-sm-10">
+						<input  type="text" name="title" id="title" class="form-control" placeholder="">
+						<span>元/kg</span>
+					</div>
+				</div>
+				<div class="form-group">
+					<label>当日总死淘数</label>
+					<div class="col-sm-10">
+						<select type="text" name="article_url" id="article_url" class="form-control" style="width:200px;margin-right: 10px;">
+							<option>1</option>
+							<option>2</option>
+							<option>3</option>
+							<option>4</option>
+							<option>5</option>
+							<option>6</option>
+							<option>7</option>
+							<option>8</option>
+							<option>9</option>
+							<option>10</option>
+							<option>11</option>
+							<option>12</option>
+							<option>13</option>
+							<option>14</option>
+							<option>15</option>
+							<option>16</option>
+							<option>17</option>
+							<option>18</option>
+							<option>19</option>
+							<option>20</option>
+						</select>
+						<span>羽</span>
+					</div>
+				</div>
+				<div class="form-group">
+					<label>当日总投料重量</label>
+					<div class="col-sm-10">
+						<select type="text" name="article_url" id="article_url" class="form-control" style="width:200px;margin-right: 10px;">
+							<option>1</option>
+							<option>2</option>
+							<option>3</option>
+							<option>4</option>
+							<option>5</option>
+							<option>6</option>
+							<option>7</option>
+							<option>8</option>
+							<option>9</option>
+							<option>10</option>
+							<option>11</option>
+							<option>12</option>
+							<option>13</option>
+							<option>14</option>
+							<option>15</option>
+							<option>16</option>
+							<option>17</option>
+							<option>18</option>
+							<option>19</option>
+							<option>20</option>
+						</select>
+						<span>kg</span>
+					</div>
+				</div>
+				<div class="form-group">
+					<label>当日总产蛋枚数</label>
+					<div class="col-sm-10">
+						<input  type="text" name="title" id="title" class="form-control" placeholder="">
+						<span>枚</span>
+					</div>
+				</div>
+				<div class="form-group">
+					<label>当日其他支出</label>
+					<div class="col-sm-10">
+						<input  type="text" name="title" id="title" class="form-control" placeholder="">
+						<span>元</span>
+					</div>
+				</div>
+				<div class="form-group">
+					<label>当日发token/鸡</label>
+					<div class="col-sm-10">
+						<input  type="text" name="title" id="title" class="form-control" placeholder="">
+						<span>Eggcoin</span>
+					</div>
+				</div>
+
+		        <button type="button" onclick="add()" id="tj" class="btn btn-default" style="width: 200px;height: 50px;">保存</button>
+		        <button type="button" onclick="add()" id="tj" class="btn btn-default" style="width: 200px;height: 50px;">清空</button>
+			</form>
+		</div>
+</body>
+<script type="text/javascript" src="../../js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="../../js/layui/layui.js"></script>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script type="text/javascript" charset="utf-8">
+	layui.use('element', function(){
+		var element = layui.element(); //导航的hover效果、二级菜单等功能，需要依赖element模块
+		//监听导航点击
+		element.on('nav(demo)', function(elem){
+		//console.log(elem)
+		layer.msg(elem.text());
+		});
+	});
+	layui.use('layer', function(){ //独立版的layer无需执行这一句
+        //var $ = layui.jquery,
+        layer = layui.layer; //独立版的layer无需执行这一句
+    });
+    layui.use('laydate', function(){
+        var laydate = layui.laydate;
+        var start = {
+            min: laydate.now(),
+            istoday: true,
+            choose: function(datas){
+                end.min = datas; //开始日选好后，重置结束日的最小日期
+                end.start = datas //将结束日的初始值设定为开始日
+            }
+        };
+    });
+
+</script>
+</html>

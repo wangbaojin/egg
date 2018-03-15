@@ -37,7 +37,7 @@ class AdminChickenOrderController extends AdminPublicController
         // 分页
         $map = array();
         if(I('get.name')) $map['name'] = array('like',"%".I('get.name')."%");
-        $page = (int)I('page');
+        $page = (int)I('p');
         $data['page_limit']  = 20;
         $data['total_count'] = $this->_m->where($map)->count();
         $data['total_page']  = ceil($data['total_count']/$data['page_limit']);

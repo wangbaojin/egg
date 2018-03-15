@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=2.0, user-scalable=no, width=device-width">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title></title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<h1> <img width="100%" src="/data/uploads/kuailededan/logo.jpg"></h1>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<div class="container-fluid">
+    <div class="jumbotron">
+        <h6>下单</h6>
+        <small>请确认后再下单噢!下单后有五分钟的时间撤单,不然你就得找讨厌得客服小姐姐了!</small>
+    </div>
+
+    <form method="post" id="create_form">
+        <div class="form-group">
+            <label>下单人:</label>
+            <input type="text" class="form-control" readonly value="{$name}" maxlength="11" placeholder="">
+        </div>
+        <div class="form-group">
+            <label>商品:</label>
+            <select name="goods_id" id="goods_id" >
+                <option value="">--请选择--</option>
+                <volist name="goodsList" id="vo">
+                    <option value="{$vo.id}" <if condition="$bindGoodsId eq $vo['id']">selected</if>>{$vo.come_from_info}--{$vo.goods_name}--</option>
+                </volist>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>数量:</label>
+            <input type="text" name="goods_name" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" class="form-control" placeholder="Number" value="1">
+        </div>
+        <div class="form-group">
+            <label>联系人:</label>
+            <input type="text" name="real_name" class="form-control" placeholder="Name">
+        </div>
+        <div class="form-group">
+            <label>配送电话:</label>
+            <input type="text" name="tel" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" class="form-control" maxlength="11"  placeholder="Tel">
+        </div>
+        <div class="form-group">
+            <label>配送区域:</label><br>
+            <select name='province' id="province" onchange="changeProvince()">
+                <option>--请选择--</option>
+                <volist name="provinceList" id="p_vo">
+                    <option value="{$p_vo.id}">--{$p_vo.name}--</option>
+                </volist>
+            </select>
+            <select name='city' id="city" onchange="changeCity()">
+                <option>--请选择--</option>
+            </select>
+            <select name='district' id="district">
+                <option>--请选择--</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>配送详细地址:</label>
+            <input type="text" name="address" class="form-control"   placeholder="Address">
+        </div>
+        <div class="form-group">
+            <label>发货时间:</label>
+            <input type="date" name="delivery_time" class="form-control" placeholder="Delivery time">
+        </div>
+        <div class="form-group">
+            <label>配送备注:</label>
+            <input type="text" name="delivery_note" class="form-control"  placeholder="Delivery note">
+        </div>
+        <button type="button" onclick="add()" id="tj" class="btn btn-default">提交</button> &nbsp;&nbsp;&nbsp;&nbsp;
+        <button type="button" class="btn btn-link"><a href="{:U('OfflineQudaoOrder/index')}">订单列表</a></button><br><br>
+    </form>
+</div>
+<br>
+
+<script src="__STATIC__/layui/layui.js"></script>
+<script type="text/javascript">
+    layui.use('layer', function(){ //独立版的layer无需执行这一句
+        //var $ = layui.jquery,
+        layer = layui.layer; //独立版的layer无需执行这一句
+    });
+    function changeGoods() {
+        goods_id      = $( "#goods_id" ).val();
+        alert(goods_id)
+    }
+    function changeProvince()
+    {
+        province = $('#province').val()
+        $('#district').html("<option value=''>--请选择--</option>")
+        if(province=='')
+        {
+            $('#city').html("<option value=''>--请选择--</option>")
+            return false;
+        }
+        $.ajax({
+            type: 'get',
+            url: "{:U('OfflineQudaoOrder/getLoction')}"+"?parent_id="+province,
+            dataType: 'json',
+            success:function(msg){
+                str = "<option value=''>--请选择--</option>";
+                $.each(msg,function(key,val){
+                    str += "<option value='"+val.id+"'>--"+val.name+"--</option>";
+                })
+                $('#city').html(str)
+            },
+            error:function(){
+                layer.msg('程序员小哥哥提示你:未知错误!请稍后重试!',{
+                    icon:2,
+                    time:2000
+                });
+            }
+        });
+    }
+
+    function changeCity()
+    {
+        city = $('#city').val()
+        if(city=='')
+        {
+            $('#district').html("<option value=''>--请选择--</option>")
+            return false;
+        }
+
+        $.ajax({
+            type: 'get',
+            url: "{:U('OfflineQudaoOrder/getLoction')}"+"?parent_id="+city,
+            dataType: 'json',
+            success:function(msg){
+                str = "<option value=''>--请选择--</option>";
+                $.each(msg,function(key,val){
+                    str += "<option value='"+val.id+"'>--"+val.name+"--</option>";
+                })
+                $('#district').html(str)
+            },
+            error:function(){
+                layer.msg('程序员小哥哥提示你:未知错误!请稍后重试!',{
+                    icon:2,
+                    time:2000
+                });
+            }
+        });
+    }
+
+    function add(){
+
+
+        url = "{:U('OfflineQudaoOrder/add')}"
+
+        var formData = new FormData($( "#create_form" )[0]);
+
+        goods_id      = $( "#goods_id" ).val();
+        real_name     = $('input[name=real_name]').val();
+        tel           = $('input[name=tel]').val();
+        address       = $('input[name=address]').val();
+        province      = $( "#province" ).val();
+        district      = $( "#district" ).val();
+        city          = $( "#city" ).val();
+        delivery_time = $('input[name=delivery_time]').val();
+        delivery_note = $('input[name=delivery_note]').val();
+        if(!goods_id || !real_name || !tel || !address || !delivery_time || !province || !city || !district) {
+            layer.msg('程序员小哥哥提示你:信息都不填全就提交?是我拿不动刀了还是你飘了?',{
+                icon:2,
+                time:2000
+            });return false;
+        }
+
+        $('#tj').attr('disabled',true)
+        $('#tj').html('正在提交。。。')
+
+        $.ajax({
+            type: 'POST',
+            url: url,
+            data:formData,
+            processData: false,
+            contentType: false,
+            dataType: 'text',
+            success:function(msg){
+                if(msg=='success') {
+                    layer.msg('下单成功!',{
+                        icon:1,
+                        time:2000
+                    });
+                    $('#tj').html('提交')
+                    $('#tj').attr('disabled',false)
+                    setTimeout("parent.location.reload()", 2000);
+                }
+                else
+                {
+                    layer.msg(msg,{
+                        icon:2,
+                        time:2000
+                    });
+                    $('#tj').html('提交')
+                    $('#tj').attr('disabled',false)
+                }
+            },
+            error:function(){
+                layer.msg('程序员小哥哥提示你:未知错误!请稍后重试!',{
+                    icon:2,
+                    time:2000
+                });
+                $('#tj').html('提交')
+                $('#tj').attr('disabled',false)
+            }
+        });
+    }
+</script>
+</body>
+</html>

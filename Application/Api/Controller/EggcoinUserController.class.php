@@ -66,7 +66,7 @@ class EggcoinUserController extends ApiController
         }
 
         //feed: kg转为g
-        $info['feed_amount'] = 1000*$info['feed_amount'];
+        $info['feed_amount'] = 1000*$info['feed_amount'].'';
 
         // 待收鸡蛋数量
         $delivery = M('ChickenTodayfeedDelivery');
@@ -200,6 +200,9 @@ class EggcoinUserController extends ApiController
             'code'   => '请填写验证码'
         );
 
+        // 补发币
+        reissue();
+
         // 检查参数
         $check_res = check_not_null_param($not_null_param,$data);
         if($check_res) $this->api_error(20001,$check_res);
@@ -248,6 +251,9 @@ class EggcoinUserController extends ApiController
     /*微信登录*/
     public function wechatLogin()
     {
+        // 补发币
+        reissue();
+
         $data['wx_open_id']    = I('post.wx_open_id');
         if(I('post.wx_pic'))       $data['wx_pic']       = I('post.wx_pic');
         if(I('post.wx_nick_name')) $data['wx_nick_name'] = base64_encode(I('post.wx_nick_name'));

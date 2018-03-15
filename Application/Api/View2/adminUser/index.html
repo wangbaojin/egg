@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="../../js/layui/css/layui.css">
+	<script type="text/javascript" src="../../js/layui/layui.js"></script>
+	<title>用户列表</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		li{
+			list-style-type:none;
+		}
+		#option{
+			padding: 20px;
+		}
+	</style>
+</head>
+<body>
+	<ul class="layui-nav layui-nav-tree" lay-filter="test">
+		<!-- 侧边导航: <ul class="layui-nav layui-nav-tree layui-nav-side"> -->
+		<li class="layui-nav-item"><a href="">首页</a></li>
+		<li class="layui-nav-item "><!-- layui-nav-itemed 移出默认展开-->
+			<a href="javascript:;">用户管理</a>
+			<dl class="layui-nav-child">
+				<dd><a href="javascript:;">用户列表</a></dd>
+				<dd><a href="javascript:;">用户详情</a></dd>
+			</dl>
+		</li>
+		<li class="layui-nav-item">
+			<a href="javascript:;">鸡舍管理</a>
+			<dl class="layui-nav-child">
+				<dd><a href="javascript:;">鸡舍列表</a></dd>
+				<dd><a href="javascript:;">新建鸡舍</a></dd>
+				<dd><a href="javascript:;">发币发钱</a></dd>
+				<dd><a href="javascript:;">帖子评论</a></dd>
+			</dl>
+		</li>
+		<li class="layui-nav-item">
+			<a href="javascript:;">通知新闻</a>
+			<dl class="layui-nav-child">
+				<dd><a href="javascript:;">新闻列表</a></dd>
+				<dd><a href="javascript:;">新建新闻</a></dd>
+			</dl>
+		</li>
+		<li class="layui-nav-item">
+			<a href="javascript:;">活动</a>
+			<dl class="layui-nav-child">
+				<dd><a href="javascript:;">活动列表</a></dd>
+				<dd><a href="javascript:;">新建活动</a></dd>
+			</dl>
+		</li>
+		<li class="layui-nav-item">
+			<a href="javascript:;">提现管理</a>
+			<dl class="layui-nav-child">
+				<dd><a href="javascript:;">提现列表</a></dd>
+			</dl>
+		</li>
+	</ul>
+	<div class="layui-body">
+		<!-- 内容主体区域 -->
+		<!-- <iframe id="xuanxiang" name="xuanxiang" src="add.html" style="overflow: visible;" scrolling="no" frameborder="no" width="100%" height="100%"></iframe> -->
+		<div id="option" name="option" style="overflow: visible;" scrolling="no" frameborder="no" width="100%" height="100%">
+			<div class="jumbotron">
+		        <h5>用户列表</h5>
+		    </div>
+			<form class="form-inline" name="searchForm" action="__SELF__" method="get">
+		        手机号:<input  type="text" name="mobile" value="{$_GET.mobile}">
+		        <input type="submit" class="btn btn-success" value="搜索">
+		    </form>
+		    共:{$count}条!{$_page}
+		    <div class="table-responsive">
+		        <table class="table">
+		            <tr style="border: 1px solid #999;">
+		                <th style="text-align: center;">用户ID</th>
+		                <th style="text-align: center;">用户信息</th>
+		                <th style="text-align: center;">认养鸡数</th>
+		                <th style="text-align: center;">鸡蛋收益</th>
+		                <th style="text-align: center;">充值总数</th>
+		                <th style="text-align: center;">欠款数</th>
+		                <th style="text-align: center;">欠饲料数</th>
+		                <th style="text-align: center;">操作</th>
+		            </tr>
+		            <volist name="list" id="vo">
+		                <tr style="border: 1px solid #999;">
+		                    <td style="padding: 10px;text-align: center; ">
+		                        ID:{$vo.id}
+		                    </td>
+		                    <td  style="padding: 10px;" >
+		                        <img src="{$vo.wechart_info.wx_pic}" width="50px" height="50px" style="float:left;">
+		                        <div style="margin-left: 60px;">
+		                        	<span>昵称</span><br>
+		                        	<span>12345678894</span>
+		                        </div>
+		                        
+		                    </td>
+		                    <td style="padding: 10px;text-align: center;">
+		                        10只
+		                    </td>
+		                    <td style="padding: 10px;text-align: center;">
+		                        ID:{$vo.id}元
+		                    </td>
+		                    <td style="padding: 10px;text-align: center;">
+		                        ID:{$vo.id}元
+		                    </td>
+		                    <td style="padding: 10px;text-align: center;">
+		                        ID:{$vo.id}元
+		                    </td>
+		                    <td  style="padding: 10px;text-align: center;">
+		                    	ID:{$vo.id}kg
+		                    </td>
+		                    <td  style="padding: 10px;text-align: center;">
+		                        <!-- <a href="">编辑</a> -->
+		                        <button>详情</button>
+		                        <button style="margin-left: 10px;">放入黑名单</button>
+		                    </td>
+		                </tr>
+		                <tr style="border: 1px solid #999;">
+		                    <td style="padding: 10px;text-align: center; ">
+		                        ID:{$vo.id}
+		                    </td>
+		                    <td  style="padding: 10px;" >
+		                        <img src="{$vo.wechart_info.wx_pic}" width="50px" height="50px" style="float:left;">
+		                        <div style="margin-left: 60px;">
+		                        	<span>昵称</span><br>
+		                        	<span>12345678894</span>
+		                        </div>
+		                        
+		                    </td>
+		                    <td style="padding: 10px;text-align: center;">
+		                        10只
+		                    </td>
+		                    <td style="padding: 10px;text-align: center;">
+		                        ID:{$vo.id}元
+		                    </td>
+		                    <td style="padding: 10px;text-align: center;">
+		                        ID:{$vo.id}元
+		                    </td>
+		                    <td style="padding: 10px;text-align: center;">
+		                        ID:{$vo.id}元
+		                    </td>
+		                    <td  style="padding: 10px;text-align: center;">
+		                    	ID:{$vo.id}kg
+		                    </td>
+		                    <td  style="padding: 10px;text-align: center;">
+		                        <!-- <a href="">编辑</a> -->
+		                        <button>详情</button>
+		                        <button style="margin-left: 10px;">放入黑名单</button>
+		                    </td>
+		                </tr>
+		            </volist>
+		        </table>
+		    </div>
+		    共:{$count}条!{$_page}
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src="../../js/jquery-3.2.1.min.js"></script>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script type="text/javascript" charset="utf-8">
+	layui.use('element', function(){
+		var element = layui.element(); //导航的hover效果、二级菜单等功能，需要依赖element模块
+
+		//监听导航点击
+		element.on('nav(demo)', function(elem){
+		//console.log(elem)
+		layer.msg(elem.text());
+		});
+	});
+</script>
+</html>

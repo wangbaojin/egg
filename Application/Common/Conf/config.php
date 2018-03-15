@@ -3,7 +3,7 @@ return array(
     /* 模块相关配置 */
     'DEFAULT_MODULE' => 'Home',
     'MODULE_DENY_LIST' => array('Common'),
-    'MODULE_ALLOW_LIST'  => array('Home','Api','Common','Wechat','Wechat2'),
+    'MODULE_ALLOW_LIST'  => array('Home','Api','Common','Wechat','Wechat2','Admin'),
     /* 系统数据加密设置 */
     'DATA_AUTH_KEY' => 'c;goZsfBGAy*|pedW^80nKtY.X[Urvx=6Quh#JO{', //默认数据加>密KEY
 
@@ -19,6 +19,7 @@ return array(
         'api.lianyangji.io'    => 'Api',
         'wechat.jiagehao.cn'    => 'Wechat',
         'www.jiagehao.cn'    => 'Wechat2',
+        'lianyangjiadmin.jiwo.io'  => 'Admin',
     ),
     'DB_TYPE'               =>  'mysql',     // 数据库类型
     'DB_HOST'               =>  '127.0.0.1', // 服务器地址
@@ -28,5 +29,5 @@ return array(
     'DB_PORT'               =>  '3306',        // 端口
     'DB_PREFIX'             =>  'eggcoin_',    // 数据库表前缀
     'DB_CHARSET'            =>  'utf8',      // 数据库编码
-    'DB_DEBUG'  =>  TRUE, // 数据库调试模式 开启后可以记录SQL日志
+    'DB_DEBUG'  =>  true, // 数据库调试模式 开启后可以记录SQL日志
 );

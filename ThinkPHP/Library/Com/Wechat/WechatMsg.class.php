@@ -179,7 +179,7 @@ class WechatMsg {
     //  未知消息回复
     public function receiveUnKnow($postObj)
     {
-        $result = $this->transmitText($postObj, '你说神马?母鸡~母鸡~muji~~');
+        $result = $this->transmitText($postObj, '您的消息我们已经收到，处理完毕后会及时跟您联系。');
         return $result;
     }
 
@@ -190,8 +190,7 @@ class WechatMsg {
         switch ($object->Event)
         {
             case "subscribe":
-                $result = $this->transmitText($object, "欢迎关注链养鸡，在2018-03-13,会有空投EggCoin, 回复EggCoin地址即可领取EggCoin．
-软件安装： http://url.cn/5k2A7KA");
+                $result = $this->transmitText($object, "欢迎关注链养鸡!请大家给微信公众号【链养鸡】发送您的钱包地址，每人随机可获得空投若干EggCoin（2018-03-15 0:00~2018-03-16 24:00）");
                 break;
             case "unsubscribe":
                 $content = "取消关注";
@@ -222,8 +221,7 @@ class WechatMsg {
         switch ($object->EventKey)
         {
             case "jrhd":
-                $result = $this->transmitText($object, '欢迎关注链养鸡，在2018-03-13,会有空投EggCoin, 回复EggCoin地址即可领取EggCoin．
-软件安装： http://url.cn/5k2A7KA');
+                $result = $this->transmitText($object, '请大家给微信公众号【链养鸡】发送您的钱包地址，每人随机可获得空投若干EggCoin（2018-03-15 0:00~2018-03-16 24:00）');
                 break;
             case "wxjq":
                 $result = $this->transmitImage($object,array('MediaId'=>'016AZGlp1I7FQuvAXVtrAHEZDAbWzJtGcRA4jTM7gMM'));
@@ -267,7 +265,7 @@ QQ 群：711399308');
                 $content = array("Title"=>"最炫民族风", "Description"=>"歌手：凤凰传奇", "MusicUrl"=>"http://121.199.4.61/music/zxmzf.mp3", "HQMusicUrl"=>"http://121.199.4.61/music/zxmzf.mp3");
                 break;
             default:
-                $content = '你说神马?母鸡~母鸡~muji~~';
+                $content = '您的消息我们已经收到，处理完毕后会及时跟您联系。';
                 break;
         }
         if(is_array($content)){
