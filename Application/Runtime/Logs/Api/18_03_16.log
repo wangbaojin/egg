@@ -15934,3 +15934,571 @@ SQL: SHOW COLUMNS FROM `eggcoin_wallet` [ RunTime:0.0004s ]
 SQL: SELECT * FROM `eggcoin_wallet` WHERE ( user_id=58 ) LIMIT 1   [ RunTime:0.0002s ]
 SQL: INSERT INTO `eggcoin_recharge_info` (`order_id`,`recharge_price`,`goods_id`,`created_at`,`updated_at`,`state`) VALUES ('78','10','2','1521182720','1521182720','1') [ RunTime:0.0001s ]
 
+[ 2018-03-16T14:45:26+08:00 ] 60.194.185.2 /Alipay/getAlipayInfo?order_sn=201803168272079903001351&signature=6CCB332D4E0F82BE3C32340BCCDB7114&timestamp=1521182725&version=1.0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000164s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000218s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000236s ]
+NOTIC: [8] Undefined index: HTTP_X_UUID /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 15 行.
+SQL: SHOW COLUMNS FROM `eggcoin_recharge` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `eggcoin_recharge` WHERE `order_sn` = '201803168272079903001351' LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2018-03-16T14:45:40+08:00 ] 101.226.33.220 /EggcoinRecharge/recharge&timestamp=1521182546&user_id=58&total_price=10&signature=D88220D76AA354AC7606BBCD5BB2FDE2&version=1.0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000206s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000226s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000244s ]
+NOTIC: [8] Undefined index: HTTP_X_PLATFORM /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 12 行.
+NOTIC: [8] Undefined index: HTTP_X_VERNAME /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 13 行.
+NOTIC: [8] Undefined index: HTTP_X_VERCODE /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 14 行.
+NOTIC: [8] Undefined index: HTTP_X_UUID /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 15 行.
+NOTIC: [8] Undefined index: HTTP_X_DEVICE /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 16 行.
+NOTIC: [8] Undefined index: HTTP_X_BUILDVERSION /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 17 行.
+NOTIC: [8] Undefined index: HTTP_X_API_VERSION /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 18 行.
+NOTIC: [8] Undefined index: HTTP_X_APP_TYPE /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 19 行.
+SQL: SHOW COLUMNS FROM `eggcoin_user` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `eggcoin_user` WHERE ( id=58 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `eggcoin_recharge` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `eggcoin_recharge_info` [ RunTime:0.0004s ]
+SQL: INSERT INTO `eggcoin_recharge` (`user_id`,`updated_at`,`created_at`,`total_price`,`pay_price`,`order_sn`,`pay_state`,`state`) VALUES ('58','1521182740','1521182740','10','10','201803168274040491009956','1','1') [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `eggcoin_wallet` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `eggcoin_wallet` WHERE ( user_id=58 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: INSERT INTO `eggcoin_recharge_info` (`order_id`,`recharge_price`,`goods_id`,`created_at`,`updated_at`,`state`) VALUES ('79','10','2','1521182740','1521182740','1') [ RunTime:0.0001s ]
+
+[ 2018-03-16T14:45:42+08:00 ] 60.194.185.2 /EggcoinChicken/getUserChickenProfit?page=1&signature=49EEDF8A378FE0609C3E6185D059B361&timestamp=1521182742&user_id=58&version=1.0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000170s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000252s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000273s ]
+NOTIC: [8] Undefined index: HTTP_X_UUID /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 15 行.
+SQL: SHOW COLUMNS FROM `eggcoin_chicken_todayfeed_delivery` [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `eggcoin_chicken_todayfeed_delivery` WHERE `state` = 3 AND `user_id` = 58 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `eggcoin_wallet` [ RunTime:0.0005s ]
+SQL: SELECT `amount` FROM `eggcoin_wallet` WHERE ( user_id=58 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `delivery_date` FROM `eggcoin_chicken_todayfeed_delivery` WHERE `state` = 3 AND `user_id` = 58 GROUP BY delivery_date ORDER BY `delivery_date` desc LIMIT 0,20   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `eggcoin_chicken_todayfeed_delivery` WHERE `delivery_date` = '2018-03-15' AND `state` = 3 AND `user_id` = 58  [ RunTime:0.0006s ]
+SQL: SELECT * FROM `eggcoin_chicken_todayfeed_delivery` WHERE `delivery_date` = '2018-03-14' AND `state` = 3 AND `user_id` = 58  [ RunTime:0.0006s ]
+SQL: SELECT * FROM `eggcoin_chicken_todayfeed_delivery` WHERE `delivery_date` = '2018-03-13' AND `state` = 3 AND `user_id` = 58  [ RunTime:0.0006s ]
+
+[ 2018-03-16T14:46:01+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000190s ]
+NOTIC: [8] Undefined index: REQUEST_METHOD /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/App.class.php 第 32 行.
+NOTIC: [8] Undefined index: HTTP_HOST /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 39 行.
+NOTIC: [8] Undefined index: HTTP_HOST /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 46 行.
+NOTIC: [8] Undefined index: REQUEST_URI /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 141 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 11 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 12 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 13 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 14 行.
+NOTIC: [8] Use of undefined constant _PHP_FILE_ - assumed '_PHP_FILE_' /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 201 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000212s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000228s ]
+NOTIC: [8] Undefined index: HTTP_X_PLATFORM /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 12 行.
+NOTIC: [8] Undefined index: HTTP_X_VERNAME /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 13 行.
+NOTIC: [8] Undefined index: HTTP_X_VERCODE /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 14 行.
+NOTIC: [8] Undefined index: HTTP_X_UUID /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 15 行.
+NOTIC: [8] Undefined index: HTTP_X_DEVICE /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 16 行.
+NOTIC: [8] Undefined index: HTTP_X_BUILDVERSION /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 17 行.
+NOTIC: [8] Undefined index: HTTP_X_API_VERSION /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 18 行.
+NOTIC: [8] Undefined index: HTTP_X_APP_TYPE /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 19 行.
+SQL: SHOW COLUMNS FROM `eggcoin_chicken` [ RunTime:0.0006s ]
+SQL: UPDATE `eggcoin_chicken` SET `user_id`='0',`state`='1' WHERE `state` = 3 AND `lock_time` < 1521182761 [ RunTime:0.0008s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000302s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000321s ]
+
+[ 2018-03-16T14:46:01+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000267s ]
+NOTIC: [8] Undefined index: REQUEST_METHOD /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/App.class.php 第 32 行.
+NOTIC: [8] Undefined index: HTTP_HOST /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 39 行.
+NOTIC: [8] Undefined index: HTTP_HOST /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 46 行.
+NOTIC: [8] Undefined index: REQUEST_URI /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 141 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 11 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 12 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 13 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 14 行.
+NOTIC: [8] Use of undefined constant _PHP_FILE_ - assumed '_PHP_FILE_' /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 201 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000326s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000346s ]
+NOTIC: [8] Undefined index: HTTP_X_PLATFORM /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 12 行.
+NOTIC: [8] Undefined index: HTTP_X_VERNAME /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 13 行.
+NOTIC: [8] Undefined index: HTTP_X_VERCODE /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 14 行.
+NOTIC: [8] Undefined index: HTTP_X_UUID /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 15 行.
+NOTIC: [8] Undefined index: HTTP_X_DEVICE /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 16 行.
+NOTIC: [8] Undefined index: HTTP_X_BUILDVERSION /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 17 行.
+NOTIC: [8] Undefined index: HTTP_X_API_VERSION /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 18 行.
+NOTIC: [8] Undefined index: HTTP_X_APP_TYPE /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 19 行.
+SQL: SHOW COLUMNS FROM `eggcoin_chicken_todayfeed_delivery` [ RunTime:0.0008s ]
+SQL: SELECT `chicken_id` FROM `eggcoin_chicken_todayfeed_delivery` WHERE `delivery_date` = '2018-03-15'  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `eggcoin_chicken` [ RunTime:0.0006s ]
+SQL: SELECT `id`,`user_id`,`eggcoin_account_id`,`chicken_type`,`chicken_batch`,`create_date` FROM `eggcoin_chicken` WHERE `state` IN (4,5) AND `id` NOT IN ('11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','128','129','130','131','132','133','134','135','136','137','138','139','140','141','142','143','144','145','146','147','148','149','150','151','152','153','154','155','156','157','158','159','160','161','162','163','164','165','166','167','168','169','170','171','172','173','174','175','176','177','178','179','180','181','182','183','184','185','186','187','188','189','190','191','192','193','194','195','196','197','198','199','200','201','202','203','204','205','206','207','208','209','210','211','212','213','214','215','216','217','218','219','220','221','222','223','224','225','226','227','228','229','230','231','232','233','234','235','236','237','238','239','240','241','242','243','244','245','246','247','248','249','250','251','252','253','254','255','256','257','258','259','260','261','262','263','264','265','266','267','268','269','270','271','272','273','274','275','276','277','278','279','280','281','282','283') AND `create_date` <= '2018-03-15' LIMIT 10   [ RunTime:0.0023s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000530s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000557s ]
+
+[ 2018-03-16T14:46:23+08:00 ] 114.242.249.128 /EggcoinRecharge/getUserFeedRecord?page=1&user_id=1&sign=69C6EAB95C01D51DBB87CFD32748EBA6&timestamp=1521182783&token=rc09dpnoqvvu51fnodfos9ml1j&version=1.0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000165s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000272s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000290s ]
+SQL: SHOW COLUMNS FROM `eggcoin_chicken_raise_record` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `eggcoin_chicken_raise_record` WHERE `user_id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `eggcoin_chicken_raise_record` WHERE `user_id` = 1 ORDER BY `id` desc LIMIT 0,20   [ RunTime:0.0008s ]
+
+[ 2018-03-16T14:46:25+08:00 ] 114.242.249.128 /EggcoinRecharge/getUserFeedRecord?page=1&user_id=1&sign=871CA5F2740F97C1D0977FDE0FBD8B8E&timestamp=1521182784&token=rc09dpnoqvvu51fnodfos9ml1j&version=1.0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000174s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000225s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000242s ]
+SQL: SHOW COLUMNS FROM `eggcoin_chicken_raise_record` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `eggcoin_chicken_raise_record` WHERE `user_id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `eggcoin_chicken_raise_record` WHERE `user_id` = 1 ORDER BY `id` desc LIMIT 0,20   [ RunTime:0.0008s ]
+
+[ 2018-03-16T14:46:26+08:00 ] 114.242.249.128 /News/todayPrice?sign=0E704C06B9BBDF2DDCC4B733B32717C3&timestamp=1521182785&token=rc09dpnoqvvu51fnodfos9ml1j&version=1.0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000240s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000203s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000221s ]
+SQL: SHOW COLUMNS FROM `eggcoin_today_price` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `eggcoin_today_price` ORDER BY `delivery_date` LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2018-03-16T14:47:01+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000202s ]
+NOTIC: [8] Undefined index: REQUEST_METHOD /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/App.class.php 第 32 行.
+NOTIC: [8] Undefined index: HTTP_HOST /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 39 行.
+NOTIC: [8] Undefined index: HTTP_HOST /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 46 行.
+NOTIC: [8] Undefined index: REQUEST_URI /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 141 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 11 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 12 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 13 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 14 行.
+NOTIC: [8] Use of undefined constant _PHP_FILE_ - assumed '_PHP_FILE_' /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 201 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000224s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000240s ]
+NOTIC: [8] Undefined index: HTTP_X_PLATFORM /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 12 行.
+NOTIC: [8] Undefined index: HTTP_X_VERNAME /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 13 行.
+NOTIC: [8] Undefined index: HTTP_X_VERCODE /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 14 行.
+NOTIC: [8] Undefined index: HTTP_X_UUID /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 15 行.
+NOTIC: [8] Undefined index: HTTP_X_DEVICE /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 16 行.
+NOTIC: [8] Undefined index: HTTP_X_BUILDVERSION /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 17 行.
+NOTIC: [8] Undefined index: HTTP_X_API_VERSION /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 18 行.
+NOTIC: [8] Undefined index: HTTP_X_APP_TYPE /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 19 行.
+SQL: SHOW COLUMNS FROM `eggcoin_chicken` [ RunTime:0.0006s ]
+SQL: UPDATE `eggcoin_chicken` SET `user_id`='0',`state`='1' WHERE `state` = 3 AND `lock_time` < 1521182821 [ RunTime:0.0008s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000277s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000296s ]
+
+[ 2018-03-16T14:47:01+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000222s ]
+NOTIC: [8] Undefined index: REQUEST_METHOD /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/App.class.php 第 32 行.
+NOTIC: [8] Undefined index: HTTP_HOST /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 39 行.
+NOTIC: [8] Undefined index: HTTP_HOST /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 46 行.
+NOTIC: [8] Undefined index: REQUEST_URI /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 141 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 11 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 12 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 13 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 14 行.
+NOTIC: [8] Use of undefined constant _PHP_FILE_ - assumed '_PHP_FILE_' /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 201 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000312s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000336s ]
+NOTIC: [8] Undefined index: HTTP_X_PLATFORM /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 12 行.
+NOTIC: [8] Undefined index: HTTP_X_VERNAME /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 13 行.
+NOTIC: [8] Undefined index: HTTP_X_VERCODE /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 14 行.
+NOTIC: [8] Undefined index: HTTP_X_UUID /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 15 行.
+NOTIC: [8] Undefined index: HTTP_X_DEVICE /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 16 行.
+NOTIC: [8] Undefined index: HTTP_X_BUILDVERSION /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 17 行.
+NOTIC: [8] Undefined index: HTTP_X_API_VERSION /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 18 行.
+NOTIC: [8] Undefined index: HTTP_X_APP_TYPE /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 19 行.
+SQL: SHOW COLUMNS FROM `eggcoin_chicken_todayfeed_delivery` [ RunTime:0.0009s ]
+SQL: SELECT `chicken_id` FROM `eggcoin_chicken_todayfeed_delivery` WHERE `delivery_date` = '2018-03-15'  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `eggcoin_chicken` [ RunTime:0.0006s ]
+SQL: SELECT `id`,`user_id`,`eggcoin_account_id`,`chicken_type`,`chicken_batch`,`create_date` FROM `eggcoin_chicken` WHERE `state` IN (4,5) AND `id` NOT IN ('11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','128','129','130','131','132','133','134','135','136','137','138','139','140','141','142','143','144','145','146','147','148','149','150','151','152','153','154','155','156','157','158','159','160','161','162','163','164','165','166','167','168','169','170','171','172','173','174','175','176','177','178','179','180','181','182','183','184','185','186','187','188','189','190','191','192','193','194','195','196','197','198','199','200','201','202','203','204','205','206','207','208','209','210','211','212','213','214','215','216','217','218','219','220','221','222','223','224','225','226','227','228','229','230','231','232','233','234','235','236','237','238','239','240','241','242','243','244','245','246','247','248','249','250','251','252','253','254','255','256','257','258','259','260','261','262','263','264','265','266','267','268','269','270','271','272','273','274','275','276','277','278','279','280','281','282','283') AND `create_date` <= '2018-03-15' LIMIT 10   [ RunTime:0.0018s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000307s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000326s ]
+
+[ 2018-03-16T14:47:18+08:00 ] 114.242.249.128 /News/todayPrice?sign=D80E46A632DEF7A2BCFE9A094F172681&timestamp=1521182837&token=rc09dpnoqvvu51fnodfos9ml1j&version=1.0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000189s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000207s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000224s ]
+SQL: SHOW COLUMNS FROM `eggcoin_today_price` [ RunTime:0.0157s ]
+SQL: SELECT * FROM `eggcoin_today_price` ORDER BY `delivery_date` LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2018-03-16T14:47:20+08:00 ] 114.242.249.128 /EggcoinRecharge/recharge?total_price=2&user_id=1&sign=0AA602DC7A67AFBEF02F345CE576B829&timestamp=1521182839&token=rc09dpnoqvvu51fnodfos9ml1j&version=1.0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000196s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000243s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000265s ]
+SQL: SHOW COLUMNS FROM `eggcoin_user` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `eggcoin_user` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `eggcoin_recharge` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `eggcoin_recharge_info` [ RunTime:0.0005s ]
+SQL: INSERT INTO `eggcoin_recharge` (`user_id`,`updated_at`,`created_at`,`total_price`,`pay_price`,`order_sn`,`pay_state`,`state`) VALUES ('1','1521182840','1521182840','2','2','201803168284032659005705','1','1') [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `eggcoin_wallet` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `eggcoin_wallet` WHERE ( user_id=1 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: INSERT INTO `eggcoin_recharge_info` (`order_id`,`recharge_price`,`goods_id`,`created_at`,`updated_at`,`state`) VALUES ('80','2','2','1521182840','1521182840','1') [ RunTime:0.0001s ]
+
+[ 2018-03-16T14:47:20+08:00 ] 114.242.249.128 /Alipay/getAlipayInfo?order_sn=201803168284032659005705&type=0&sign=96A4B5E3D8326D2C4A1C5CF6FF9E9A88&timestamp=1521182839&token=rc09dpnoqvvu51fnodfos9ml1j&version=1.0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000249s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000252s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000275s ]
+SQL: SHOW COLUMNS FROM `eggcoin_recharge` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `eggcoin_recharge` WHERE `order_sn` = '201803168284032659005705' LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2018-03-16T14:47:27+08:00 ] 114.242.249.128 /EggcoinChicken/getCollectChickenDelivery?page=1&user_id=1&sign=827CDD995DC8CA2E097ED1EDC8330683&timestamp=1521182846&token=rc09dpnoqvvu51fnodfos9ml1j&version=1.0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000169s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000249s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000270s ]
+SQL: SHOW COLUMNS FROM `eggcoin_chicken_todayfeed_delivery` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `eggcoin_chicken_todayfeed_delivery` WHERE `state` = 2 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `id`,`egg_weight`,`income` FROM `eggcoin_chicken_todayfeed_delivery` WHERE `state` = 2 AND `user_id` = 1 LIMIT 0,10   [ RunTime:0.0003s ]
+
+[ 2018-03-16T14:47:27+08:00 ] 114.242.249.128 /EggcoinUser/getUserWallet?user_id=1&sign=63AAD935CA841C9C6E24CC66CF40D7F5&timestamp=1521182846&token=rc09dpnoqvvu51fnodfos9ml1j&version=1.0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000217s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000246s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000263s ]
+SQL: SHOW COLUMNS FROM `eggcoin_wallet` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `eggcoin_wallet` WHERE `user_id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `eggcoin_chicken_todayfeed_delivery` [ RunTime:0.0005s ]
+SQL: SELECT SUM(egg_num) AS tp_SUM FROM `eggcoin_chicken_todayfeed_delivery` WHERE `user_id` = 1 AND `state` = 2 LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2018-03-16T14:47:29+08:00 ] 114.242.249.128 /EggcoinRecharge/getUserFeedRecord?page=1&user_id=1&sign=CAD62623ABA024761FF19D0F50A2DC86&timestamp=1521182849&token=rc09dpnoqvvu51fnodfos9ml1j&version=1.0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000184s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000202s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000219s ]
+SQL: SHOW COLUMNS FROM `eggcoin_chicken_raise_record` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `eggcoin_chicken_raise_record` WHERE `user_id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `eggcoin_chicken_raise_record` WHERE `user_id` = 1 ORDER BY `id` desc LIMIT 0,20   [ RunTime:0.0008s ]
+
+[ 2018-03-16T14:47:39+08:00 ] 114.242.249.128 /EggcoinChicken/getCollectChickenDelivery?page=1&user_id=1&sign=5A0A1367AC88307CA3D7410ABF9DF3A5&timestamp=1521182858&token=rc09dpnoqvvu51fnodfos9ml1j&version=1.0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000300s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000315s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000337s ]
+SQL: SHOW COLUMNS FROM `eggcoin_chicken_todayfeed_delivery` [ RunTime:0.0020s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `eggcoin_chicken_todayfeed_delivery` WHERE `state` = 2 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `id`,`egg_weight`,`income` FROM `eggcoin_chicken_todayfeed_delivery` WHERE `state` = 2 AND `user_id` = 1 LIMIT 0,10   [ RunTime:0.0003s ]
+
+[ 2018-03-16T14:47:39+08:00 ] 114.242.249.128 /EggcoinUser/getUserWallet?user_id=1&sign=031904DA95D71163C5DC666B72ABE771&timestamp=1521182858&token=rc09dpnoqvvu51fnodfos9ml1j&version=1.0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000265s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000273s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000292s ]
+SQL: SHOW COLUMNS FROM `eggcoin_wallet` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `eggcoin_wallet` WHERE `user_id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `eggcoin_chicken_todayfeed_delivery` [ RunTime:0.0005s ]
+SQL: SELECT SUM(egg_num) AS tp_SUM FROM `eggcoin_chicken_todayfeed_delivery` WHERE `user_id` = 1 AND `state` = 2 LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2018-03-16T14:47:39+08:00 ] 114.242.248.68 /EggcoinChicken/getCollectChickenDelivery?page=1&signature=744A349EDCD1A21D33B9D92C060568AC&timestamp=1521182859&user_id=6&version=1.0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000211s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000281s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000299s ]
+NOTIC: [8] Undefined index: HTTP_X_UUID /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 15 行.
+SQL: SHOW COLUMNS FROM `eggcoin_chicken_todayfeed_delivery` [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `eggcoin_chicken_todayfeed_delivery` WHERE `state` = 2 AND `user_id` = 6 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `id`,`egg_weight`,`income` FROM `eggcoin_chicken_todayfeed_delivery` WHERE `state` = 2 AND `user_id` = 6 LIMIT 0,10   [ RunTime:0.0004s ]
+
+[ 2018-03-16T14:47:39+08:00 ] 114.242.248.68 /EggcoinUser/getUserWallet?signature=B4748F40ADD16EA40F49921C5CDFDA72&timestamp=1521182859&user_id=6&version=1.0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000183s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000273s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000294s ]
+NOTIC: [8] Undefined index: HTTP_X_UUID /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 15 行.
+SQL: SHOW COLUMNS FROM `eggcoin_wallet` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `eggcoin_wallet` WHERE `user_id` = 6 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `eggcoin_chicken_todayfeed_delivery` [ RunTime:0.0005s ]
+SQL: SELECT SUM(egg_num) AS tp_SUM FROM `eggcoin_chicken_todayfeed_delivery` WHERE `user_id` = 6 AND `state` = 2 LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2018-03-16T14:47:40+08:00 ] 114.242.249.128 /EggcoinUser/getUserInfo?user_id=1&sign=DBFE65A48832C1D528048EFB05AF9CD0&timestamp=1521182859&token=rc09dpnoqvvu51fnodfos9ml1j&version=1.0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000211s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000299s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000322s ]
+SQL: SHOW COLUMNS FROM `eggcoin_user` [ RunTime:0.0008s ]
+SQL: SELECT `id`,`mobile`,`email`,`email_status`,`full_name`,`created_at`,`updated_at`,`invite_code`,`pic` FROM `eggcoin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `eggcoin_user_wechatinfo` [ RunTime:0.0005s ]
+SQL: SELECT `wx_open_id`,`wx_pic`,`wx_nick_name`,`unionid`,`province`,`city`,`country`,`sex`,`openid` FROM `eggcoin_user_wechatinfo` WHERE ( user_id=1 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `eggcoin_user_vip` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `eggcoin_user_vip` WHERE ( user_id=1 ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2018-03-16T14:47:46+08:00 ] 114.242.249.128 /Index/about_us
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000171s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000211s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000229s ]
+NOTIC: [8] Undefined index: HTTP_X_PLATFORM /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 12 行.
+NOTIC: [8] Undefined index: HTTP_X_VERNAME /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 13 行.
+NOTIC: [8] Undefined index: HTTP_X_VERCODE /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 14 行.
+NOTIC: [8] Undefined index: HTTP_X_UUID /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 15 行.
+NOTIC: [8] Undefined index: HTTP_X_DEVICE /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 16 行.
+NOTIC: [8] Undefined index: HTTP_X_BUILDVERSION /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 17 行.
+NOTIC: [8] Undefined index: HTTP_X_API_VERSION /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 18 行.
+NOTIC: [8] Undefined index: HTTP_X_APP_TYPE /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 19 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000030s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000063s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003064s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003080s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000072s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000084s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000244s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000260s ]
+
+[ 2018-03-16T14:47:49+08:00 ] 114.242.249.128 /Friend/getInviteBuyList?page=1&user_id=1&sign=5D2DE34FFB551C7D3C8978607CE18CD3&timestamp=1521182868&token=rc09dpnoqvvu51fnodfos9ml1j&version=1.0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000196s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000258s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000280s ]
+SQL: SHOW COLUMNS FROM `eggcoin_invite_buy` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `eggcoin_friends` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `eggcoin_friends` WHERE `user_id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT friend_id as user_id FROM `eggcoin_friends` WHERE `user_id` = 1 GROUP BY friend_id ORDER BY `id` desc LIMIT 0,20   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `eggcoin_user` [ RunTime:0.0004s ]
+SQL: SELECT `id`,`mobile`,`email`,`email_status`,`full_name`,`user_st`,`created_at`,`updated_at`,`invite_code`,`pic` FROM `eggcoin_user` WHERE `id` = 140 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `eggcoin_user_wechatinfo` [ RunTime:0.0004s ]
+SQL: SELECT `wx_open_id`,`wx_pic`,`wx_nick_name`,`unionid`,`province`,`city`,`country`,`sex`,`openid` FROM `eggcoin_user_wechatinfo` WHERE `user_id` = 140 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `eggcoin_user_vip` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `eggcoin_user_vip` WHERE `user_id` = 140 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `eggcoin_chicken` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `eggcoin_chicken` WHERE ( user_id=140 ) LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT * FROM `eggcoin_invite_buy` WHERE `invite_user_id` = 1 AND `user_id` = 140 AND `add_date` = '2018-03-16' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id`,`mobile`,`email`,`email_status`,`full_name`,`user_st`,`created_at`,`updated_at`,`invite_code`,`pic` FROM `eggcoin_user` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `wx_open_id`,`wx_pic`,`wx_nick_name`,`unionid`,`province`,`city`,`country`,`sex`,`openid` FROM `eggcoin_user_wechatinfo` WHERE `user_id` = 6 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `eggcoin_user_vip` WHERE `user_id` = 6 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `eggcoin_chicken` WHERE ( user_id=6 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `id`,`mobile`,`email`,`email_status`,`full_name`,`user_st`,`created_at`,`updated_at`,`invite_code`,`pic` FROM `eggcoin_user` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `id`,`mobile`,`email`,`email_status`,`full_name`,`user_st`,`created_at`,`updated_at`,`invite_code`,`pic` FROM `eggcoin_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `wx_open_id`,`wx_pic`,`wx_nick_name`,`unionid`,`province`,`city`,`country`,`sex`,`openid` FROM `eggcoin_user_wechatinfo` WHERE `user_id` = 2 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `eggcoin_user_vip` WHERE `user_id` = 2 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `eggcoin_chicken` WHERE ( user_id=2 ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2018-03-16T14:47:49+08:00 ] 114.242.249.128 /Task/todayTask?user_id=1&sign=2FC7AE506C5DAC61F1A3A1CF90ACC11A&timestamp=1521182868&token=rc09dpnoqvvu51fnodfos9ml1j&version=1.0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000174s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000292s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000318s ]
+SQL: SHOW COLUMNS FROM `eggcoin_user` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `eggcoin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `eggcoin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: debug /usr/local/nginx/html/lianyangji/Application/Api/Controller/TaskController.class.php 第 137 行.
+SQL: SHOW COLUMNS FROM `eggcoin_sign_in` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `eggcoin_sign_in` WHERE `user_id` = 1 AND `add_date` = '2018-03-16' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `eggcoin_share` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `eggcoin_share` WHERE `user_id` = 1 AND `add_date` = '2018-03-16' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `eggcoin_transfer_success` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `eggcoin_transfer_success` WHERE `user_id` = 1 AND `add_date` = '2018-03-16' LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2018-03-16T14:47:53+08:00 ] 114.242.249.128 /Task/signIn?user_id=1&sign=187573B973469C62D0CDBA69B25268A7&timestamp=1521182872&token=rc09dpnoqvvu51fnodfos9ml1j&version=1.0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000170s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000235s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000273s ]
+SQL: SHOW COLUMNS FROM `eggcoin_sign_in` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `eggcoin_sign_in` WHERE `user_id` = 1 AND `add_date` = '2018-03-16' LIMIT 1   [ RunTime:0.0003s ]
+SQL: INSERT INTO `eggcoin_sign_in` (`user_id`,`add_date`) VALUES ('1','2018-03-16') [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `eggcoin_wallet` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `eggcoin_wallet` WHERE `user_id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: UPDATE `eggcoin_wallet` SET `feed_amount`=feed_amount+0.01 WHERE `user_id` = 1 [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `eggcoin_chicken_raise_record` [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: chicken_id /usr/local/nginx/html/lianyangji/Application/Common/Common/function.php 第 298 行.
+SQL: INSERT INTO `eggcoin_chicken_raise_record` (`user_id`,`amount`,`unit`,`reason_source_id`,`reason_type`,`reason_narration`,`created_at`,`state`) VALUES ('1','10','g','54','9','签到','1521182873','1') [ RunTime:0.0002s ]
+
+[ 2018-03-16T14:47:53+08:00 ] 114.242.249.128 /Task/todayTask?user_id=1&sign=187573B973469C62D0CDBA69B25268A7&timestamp=1521182872&token=rc09dpnoqvvu51fnodfos9ml1j&version=1.0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000187s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000244s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000261s ]
+SQL: SHOW COLUMNS FROM `eggcoin_user` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `eggcoin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `eggcoin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+NOTIC: [8] Undefined index: debug /usr/local/nginx/html/lianyangji/Application/Api/Controller/TaskController.class.php 第 137 行.
+SQL: SHOW COLUMNS FROM `eggcoin_sign_in` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `eggcoin_sign_in` WHERE `user_id` = 1 AND `add_date` = '2018-03-16' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `eggcoin_share` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `eggcoin_share` WHERE `user_id` = 1 AND `add_date` = '2018-03-16' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `eggcoin_transfer_success` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `eggcoin_transfer_success` WHERE `user_id` = 1 AND `add_date` = '2018-03-16' LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2018-03-16T14:48:01+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000244s ]
+NOTIC: [8] Undefined index: REQUEST_METHOD /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/App.class.php 第 32 行.
+NOTIC: [8] Undefined index: HTTP_HOST /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 39 行.
+NOTIC: [8] Undefined index: HTTP_HOST /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 46 行.
+NOTIC: [8] Undefined index: REQUEST_URI /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 141 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 11 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 12 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 13 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 14 行.
+NOTIC: [8] Use of undefined constant _PHP_FILE_ - assumed '_PHP_FILE_' /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 201 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000260s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000277s ]
+NOTIC: [8] Undefined index: HTTP_X_PLATFORM /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 12 行.
+NOTIC: [8] Undefined index: HTTP_X_VERNAME /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 13 行.
+NOTIC: [8] Undefined index: HTTP_X_VERCODE /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 14 行.
+NOTIC: [8] Undefined index: HTTP_X_UUID /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 15 行.
+NOTIC: [8] Undefined index: HTTP_X_DEVICE /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 16 行.
+NOTIC: [8] Undefined index: HTTP_X_BUILDVERSION /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 17 行.
+NOTIC: [8] Undefined index: HTTP_X_API_VERSION /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 18 行.
+NOTIC: [8] Undefined index: HTTP_X_APP_TYPE /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 19 行.
+SQL: SHOW COLUMNS FROM `eggcoin_chicken` [ RunTime:0.0015s ]
+SQL: UPDATE `eggcoin_chicken` SET `user_id`='0',`state`='1' WHERE `state` = 3 AND `lock_time` < 1521182881 [ RunTime:0.0015s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000333s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000357s ]
+
+[ 2018-03-16T14:48:01+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000207s ]
+NOTIC: [8] Undefined index: REQUEST_METHOD /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/App.class.php 第 32 行.
+NOTIC: [8] Undefined index: HTTP_HOST /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 39 行.
+NOTIC: [8] Undefined index: HTTP_HOST /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 46 行.
+NOTIC: [8] Undefined index: REQUEST_URI /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 141 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 11 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 12 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 13 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /usr/local/nginx/html/lianyangji/Application/Api/Conf/config.php 第 14 行.
+NOTIC: [8] Use of undefined constant _PHP_FILE_ - assumed '_PHP_FILE_' /usr/local/nginx/html/lianyangji/ThinkPHP/Library/Think/Dispatcher.class.php 第 201 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000246s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000279s ]
+NOTIC: [8] Undefined index: HTTP_X_PLATFORM /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 12 行.
+NOTIC: [8] Undefined index: HTTP_X_VERNAME /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 13 行.
+NOTIC: [8] Undefined index: HTTP_X_VERCODE /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 14 行.
+NOTIC: [8] Undefined index: HTTP_X_UUID /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 15 行.
+NOTIC: [8] Undefined index: HTTP_X_DEVICE /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 16 行.
+NOTIC: [8] Undefined index: HTTP_X_BUILDVERSION /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 17 行.
+NOTIC: [8] Undefined index: HTTP_X_API_VERSION /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 18 行.
+NOTIC: [8] Undefined index: HTTP_X_APP_TYPE /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 19 行.
+SQL: SHOW COLUMNS FROM `eggcoin_chicken_todayfeed_delivery` [ RunTime:0.0007s ]
+SQL: SELECT `chicken_id` FROM `eggcoin_chicken_todayfeed_delivery` WHERE `delivery_date` = '2018-03-15'  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `eggcoin_chicken` [ RunTime:0.0005s ]
+SQL: SELECT `id`,`user_id`,`eggcoin_account_id`,`chicken_type`,`chicken_batch`,`create_date` FROM `eggcoin_chicken` WHERE `state` IN (4,5) AND `id` NOT IN ('11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','128','129','130','131','132','133','134','135','136','137','138','139','140','141','142','143','144','145','146','147','148','149','150','151','152','153','154','155','156','157','158','159','160','161','162','163','164','165','166','167','168','169','170','171','172','173','174','175','176','177','178','179','180','181','182','183','184','185','186','187','188','189','190','191','192','193','194','195','196','197','198','199','200','201','202','203','204','205','206','207','208','209','210','211','212','213','214','215','216','217','218','219','220','221','222','223','224','225','226','227','228','229','230','231','232','233','234','235','236','237','238','239','240','241','242','243','244','245','246','247','248','249','250','251','252','253','254','255','256','257','258','259','260','261','262','263','264','265','266','267','268','269','270','271','272','273','274','275','276','277','278','279','280','281','282','283') AND `create_date` <= '2018-03-15' LIMIT 10   [ RunTime:0.0018s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000315s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000336s ]
+
+[ 2018-03-16T14:48:28+08:00 ] 114.242.249.128 /EggcoinChicken/index?signature=4DB44610C6E28DD262F4271C6EB77DF1&timestamp=1521182908&user_id=58&version=1.0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000244s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000208s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000226s ]
+NOTIC: [8] Undefined index: HTTP_X_UUID /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 15 行.
+SQL: SHOW COLUMNS FROM `eggcoin_news_readed` [ RunTime:0.0007s ]
+SQL: SELECT `news_id` FROM `eggcoin_news_readed` WHERE ( user_id=58 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `eggcoin_news` [ RunTime:0.0005s ]
+SQL: SELECT `id` FROM `eggcoin_news` ORDER BY `id` desc LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `eggcoin_chicken` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `eggcoin_chicken` WHERE ( (state=5 or state=4) and user_id=58 ) LIMIT 1   [ RunTime:0.0005s ]
+
+[ 2018-03-16T14:48:29+08:00 ] 114.242.249.128 /EggcoinUser/getUserWallet?signature=58CDAC6F205521E7831FEED524C0EA36&timestamp=1521182909&user_id=58&version=1.0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000249s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000311s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000329s ]
+NOTIC: [8] Undefined index: HTTP_X_UUID /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 15 行.
+SQL: SHOW COLUMNS FROM `eggcoin_wallet` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `eggcoin_wallet` WHERE `user_id` = 58 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `eggcoin_chicken_todayfeed_delivery` [ RunTime:0.0005s ]
+SQL: SELECT SUM(egg_num) AS tp_SUM FROM `eggcoin_chicken_todayfeed_delivery` WHERE `user_id` = 58 AND `state` = 2 LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2018-03-16T14:48:29+08:00 ] 114.242.249.128 /EggcoinChicken/getCollectChickenDelivery?page=1&signature=F004EE40520E2D13B77F407791C1823B&timestamp=1521182909&user_id=58&version=1.0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000226s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000321s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000342s ]
+NOTIC: [8] Undefined index: HTTP_X_UUID /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 15 行.
+SQL: SHOW COLUMNS FROM `eggcoin_chicken_todayfeed_delivery` [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `eggcoin_chicken_todayfeed_delivery` WHERE `state` = 2 AND `user_id` = 58 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id`,`egg_weight`,`income` FROM `eggcoin_chicken_todayfeed_delivery` WHERE `state` = 2 AND `user_id` = 58 LIMIT 0,10   [ RunTime:0.0004s ]
+
+[ 2018-03-16T14:48:35+08:00 ] 114.242.249.128 /EggcoinChicken/index?signature=62B691D3BF5AF8FC4E59B2ABD5360E77&timestamp=1521182915&user_id=58&version=1.0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000239s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000361s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000385s ]
+NOTIC: [8] Undefined index: HTTP_X_UUID /usr/local/nginx/html/lianyangji/Application/Api/Controller/ApiController.class.php 第 15 行.
+SQL: SHOW COLUMNS FROM `eggcoin_news_readed` [ RunTime:0.0006s ]
+SQL: SELECT `news_id` FROM `eggcoin_news_readed` WHERE ( user_id=58 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `eggcoin_news` [ RunTime:0.0005s ]
+SQL: SELECT `id` FROM `eggcoin_news` ORDER BY `id` desc LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `eggcoin_chicken` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `eggcoin_chicken` WHERE ( (state=5 or state=4) and user_id=58 ) LIMIT 1   [ RunTime:0.0005s ]
+
