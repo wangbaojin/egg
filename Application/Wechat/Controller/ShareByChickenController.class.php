@@ -537,7 +537,6 @@ class ShareByChickenController extends PublicController
                 //Log::record('邀请奖励状态修改失败,INFO:' . json_encode($order), 'buyChickenNotifyUrl', true);
             }
         }
-        //$trans->commit();
         $this->api_return('success');
     }
 

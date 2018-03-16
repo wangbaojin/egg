@@ -639,6 +639,7 @@ function getUserInfoByUserId($user_id)
 
     // 注册时间
     $info['created_date'] = date('Y-m-d',$info['created_at']);
+    $info['updated_date'] = date('Y-m-d',$info['updated_at']);
 
     // 微博
     $info['weibo_info'] = array();
@@ -685,7 +686,7 @@ function task_reward($task='')
 }
 
 /*邀请购买成功奖励*/
-function invite_success_reward($user_id,$invite_id)
+function invite_success_reward($user_id,$invite_id='')
 {
     // 数字发行
     $eggcoin_data = array();
@@ -693,7 +694,7 @@ function invite_success_reward($user_id,$invite_id)
     $eggcoin_data['amount'] = task_reward('invite_reward');
     $eggcoin_data['reason_type'] = 3;//事由类型id：1.收益；2.赠送；3.奖励'
     $eggcoin_data['reason_narration'] = '邀请购买';//事由名称
-    $eggcoin_data['reason_source_id'] = $invite_id;
+    if($invite_id) $eggcoin_data['reason_source_id'] = $invite_id;
     $eggcoin_data['state'] = 1;//状态：1.成功;2.失败;3.待处理'
 
     // 钱包地址

@@ -36,65 +36,66 @@
 			<div class="jumbotron">
 		        <h5>用户详情</h5> 
 		    </div>
-			<div  style="display: flex;justify-content: space-between;align-items: center;width: 100%;height: 40px;border: 1px solid #999;padding: 0 15px;">
-				<div>用户ID<?php echo ($user_id); ?></div>
-				<div>注册时间<?php echo ($date_time); ?></div>
+			<div  style="display: flex;justify-content: space-between;align-items: center;width: 100%;height: 40px;border: 1px solid #999;">
+				<div>用户ID<?php echo ($info["id"]); ?></div>
+				<div>注册时间<?php echo ($info["created_date"]); ?></div>
 			</div>
 			<div style="border: 1px solid #999;border-top: 0; display: flex;">
 				<span style="margin: 10px 50px 10px 10px;">头像</span>
-				<img src="<?php echo ($vo["user_info"]["pic"]); ?>" alt="" style="width:100px;height: 100px;margin: 10px;background: red;">
-				<span style="margin: auto;" >{VIP}</span>
+				<img src="<?php echo ($info["wechart_info"]["wx_pic"]); ?>" alt="" style="width:100px;height: 100px;margin: 10px;background: red;">
+				<span style="margin: auto;" ><?php echo ($info["vip_info"]); ?></span>
 			</div>
 			<div class="col-sm-10">
-				<p class="text-left" style="width: 30%;">微信昵称</p><p class="text-left">{}</p>
+				<p class="text-left" style="width: 30%;">微信昵称</p><p class="text-left"><?php echo ($info["full_name"]); ?></p>
 			</div>
 			<div class="col-sm-10">
-				<p class="text-left" style="width: 30%;">手机号</p><p class="text-left">{18612347674}</p>
+				<p class="text-left" style="width: 30%;">手机号</p><p class="text-left"><?php if($info['mobile']): echo ($info["mobile"]); else: ?>暂未绑定<?php endif; ?></p>
 			</div>
 			<div class="col-sm-10">
-				<p class="text-left" style="width: 30%;">认养鸡数</p><p class="text-left">{5羽}</p>
+				<p class="text-left" style="width: 30%;">认养鸡数</p><p class="text-left"><?php echo ($info["buy_chicken_num"]); ?>只</p>
 			</div>
 			<div class="col-sm-10">
-				<p class="text-left" style="width: 30%;">鸡蛋收益</p><p class="text-left">{120.34元}</p>
+				<p class="text-left" style="width: 30%;">鸡蛋收益</p><p class="text-left"><?php echo ($info["wallet"]["amount"]); ?>元</p>
 			</div>
 			<div class="col-sm-10">
-				<p class="text-left" style="width: 30%;">已累计提现</p><p class="text-left">{210.90元}</p>
+				<p class="text-left" style="width: 30%;">已累计提现</p><p class="text-left"><?php echo ($info["withdrawals"]); ?>元</p>
 			</div>
 			<div class="col-sm-10">
-				<p class="text-left" style="width: 30%;">已累计充值</p><p class="text-left">{1678.01元}</p>
+				<p class="text-left" style="width: 30%;">已累计充值</p><p class="text-left"><?php echo ($info["recharge"]); ?>元</p>
 			</div>
 			<div class="col-sm-10">
-				<p class="text-left" style="width: 30%;">当前饲料余额</p><p class="text-left">{12333g}</p>
+				<p class="text-left" style="width: 30%;">当前饲料余额</p><p class="text-left"><?php echo ($info["wallet"]["feed_amount"]); ?>kg</p>
 			</div>
 			<div class="col-sm-10">
-				<p class="text-left" style="width: 30%;">当前欠款</p><p class="text-left">{4.775元}</p>
+				<p class="text-left" style="width: 30%;">当前欠款</p><p class="text-left"><?php echo ($info["wallet"]["arrears_amount"]); ?>元</p>
 			</div>
 			<div class="col-sm-10">
-				<p class="text-left" style="width: 30%;">当前欠饲料</p><p class="text-left">{12275g}</p>
+				<p class="text-left" style="width: 30%;">生蛋发token</p><p class="text-left"><?php echo ($info["chick_eggcoin"]); ?>枚</p>
 			</div>
 			<div class="col-sm-10">
-				<p class="text-left" style="width: 30%;">生蛋发token</p><p class="text-left">{780}</p>
+				<p class="text-left" style="width: 30%;">邀请好友数<small>[成功购买数/总数]</small></p><p class="text-left"><?php echo ($info["invite_success_buy"]); ?>人 / <?php echo ($info["invite_buy"]); ?> 人</p>
 			</div>
 			<div class="col-sm-10">
-				<p class="text-left" style="width: 30%;">邀请好友数</p><p class="text-left">{3人}</p>
+				<p class="text-left" style="width: 30%;">邀请发token</p><p class="text-left"><?php echo ($info["invite_eggcoin"]); ?>枚</p>
 			</div>
 			<div class="col-sm-10">
-				<p class="text-left" style="width: 30%;">邀请发token</p><p class="text-left">{3}</p>
+				<p class="text-left" style="width: 30%;">手机系统</p><p class="text-left">IOS</p>
 			</div>
 			<div class="col-sm-10">
-				<p class="text-left" style="width: 30%;">手机系统</p><p class="text-left">{IOS}</p>
+				<p class="text-left" style="width: 30%;">软件版本号</p><p class="text-left">v1.0</p>
 			</div>
 			<div class="col-sm-10">
-				<p class="text-left" style="width: 30%;">软件版本号</p><p class="text-left">{v1.0}</p>
+				<p class="text-left" style="width: 30%;">提现支付宝账户</p><p class="text-left">
+					<?php if($info['zfb_list']): if(is_array($info["zfb_list"])): $i = 0; $__LIST__ = $info["zfb_list"];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$zfb_vo): $mod = ($i % 2 );++$i; echo ($zfb_vo); ?><br><?php endforeach; endif; else: echo "" ;endif; ?>
+					<?php else: ?>
+						暂无<?php endif; ?>
+				</p>
 			</div>
 			<div class="col-sm-10">
-				<p class="text-left" style="width: 30%;">提现支付宝账户</p><p class="text-left">{未知}</p>
+				<p class="text-left" style="width: 30%;">用户邮箱</p><p class="text-left"><?php echo ($info["email"]); ?></p>
 			</div>
 			<div class="col-sm-10">
-				<p class="text-left" style="width: 30%;">用户邮箱</p><p class="text-left">{未知}</p>
-			</div>
-			<div class="col-sm-10">
-				<p class="text-left" style="width: 30%;">最近登录时间</p><p class="text-left">{2018-12-31 19:09:08}</p>
+				<p class="text-left" style="width: 30%;">最近登录时间</p><p class="text-left"><?php echo ($info["updated_date"]); ?></p>
 			</div>
 
 		</div>

@@ -102,6 +102,10 @@
             <label>数字币[枚]:</label>
             <input type="number" name="eggcoin_income" value="<?php echo ($info["eggcoin_income"]); ?>" id="eggcoin_income" class="form-control"   placeholder="数字币">
         </div>
+        <div class="form-group">
+            <label>平均数字币[枚]:</label>
+            <input type="number" name="avg_eggcoin_income" value="<?php echo ($info["avg_eggcoin_income"]); ?>" id="avg_eggcoin_income" class="form-control"   placeholder="数字币">
+        </div>
         <button type="button" onclick="edit()" id="tj" class="btn btn-default">提交</button><br><br>
     </form>
 </div>

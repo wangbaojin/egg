@@ -6,6 +6,9 @@
 	<script type="text/javascript" src="/Public/js/Wechat/resize.js"></script>
 	<title>分享好友</title>
 	<style>
+		body{
+			position:fixed
+		}
 		*{
 			margin: 0;
 			padding: 0;

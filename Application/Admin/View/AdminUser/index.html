@@ -29,9 +29,9 @@
 		    </div>
 			<form class="form-inline" name="searchForm" action="__SELF__" method="get">
 		        手机号:<input  type="text" name="mobile" value="{$_GET.mobile}">
-		        <input type="submit" class="btn btn-success" value="搜索">
+		        <input type="submit" class="btn btn-success btn-xs" value="搜索">
 		    </form>
-		    共:{$count}条!{$_page}
+			<div id="page">共:{$count}条!{$page}</div>
 		    <div class="table-responsive">
 		        <table class="table">
 		            <tr style="border: 1px solid #999;">
@@ -61,7 +61,7 @@
 		                        {$vo.buy_chicken_num}只
 		                    </td>
 		                    <td style="padding: 10px;text-align: center;">
-								{$vo.buy_chicken_num}元
+								{$vo.wallet.amount}元
 		                    </td>
 		                    <td style="padding: 10px;text-align: center;">
 								{$vo.recharge}元
@@ -74,67 +74,86 @@
 		                    </td>
 		                    <td  style="padding: 10px;text-align: center;">
 		                        <!-- <a href="">编辑</a> -->
-		                        <button onclick="edit({$vo.id})">详情</button>
-		                        <if condition="$vo['user_st'] eq 1"><button onclick="changeSt({$vo.id})" style="margin-left: 10px;">放入黑名单</button></if>
+		                        <button onclick="edit({$vo.id})" class="btn btn-info btn-xs">详情</button>
+		                        <if condition="$vo['user_st'] eq 1"><button onclick="changeSt({$vo.id})" class="btn btn-warning btn-xs">加入黑名单</button></if>
+		                        <if condition="$vo['user_st'] eq 2"><button onclick="changeSt({$vo.id})" class="btn btn-danger btn-xs">移除黑名单</button></if>
 		                    </td>
 		                </tr>
 		                
 		            </volist>
 		        </table>
 		    </div>
-		    共:{$count}条!{$_page}
+		    <div id="page">共:{$count}条!{$page}</div>
 		</div>
 	</div>
 </body>
 <script type="text/javascript" charset="utf-8">
-		layer.msg('程序员小哥哥提示你:未知错误!请稍后重试!',{
-			icon:2,
-			time:2000
-		});
-		function edit(val) {
-			layer.open({
-				type: 2,
-				title: '编辑',
-				shadeClose: false,
-				maxmin: true,
-				area: ['893px', '600px'],
-				content: 'edit?id='+val, //iframe的url
-				cancel: function(index, layero){
-						layer.close(index)
-						location.reload();
-					return false;
-				}
-			});
-		}
+	layui.use('layer', function(){
+        var layer = layui.layer;
+    });
 
-		function changeSt(val) {
+    function edit(val) {
+    	layer.open({
+            type: 2,
+            title: '编辑',
+            shadeClose: false,
+            maxmin: true,
+            area: ['893px', '600px'],
+            content: '{:U("AdminUser/edit")}?id='+val, //iframe的url
+            cancel: function(index, layero){
+                    layer.close(index)
+                    location.reload();
+                return false;
+            }
+        });
+    }
+
+    function changeSt(val) {
+
+
+		layer.open({
+			content: '是否加入黑名单',
+			btn: ['确定', '取消'],
+			yes: function(index, layero){
+			//按钮【按钮一】的回调
 			$.ajax({
-				type: 'GET',
-				url: 'changeSt?id='+val,
-				dataType: 'text',
-				success:function(msg){
-					if(msg=='success') {
-						layer.msg('成功!',{
-							icon:1,
-							time:2000
-						});
-						location.reload();
-					}
-					else
-					{
-						layer.msg(msg,{
-							icon:2,
-							time:2000
-						});
-					}
-				},
-				error:function(){
-					layer.msg('程序员小哥哥提示你:未知错误!请稍后重试!',{
-						icon:2,
-						time:2000
-					});
-				}
-			});
-		}
+		        type: 'GET',
+		        url: '{:U("AdminUser/changeSt")}?id='+val, 
+		        dataType: 'text',
+		        success:function(msg){
+		            if(msg=='success') {
+		                layer.msg('成功!',{
+		                    icon:1,
+		                    time:2000
+		                });
+		                location.reload();
+		            }
+		            else
+		            {
+		                layer.msg(msg,{
+		                    icon:2,
+		                    time:2000
+		                });
+		            }
+		        },
+		        error:function(){
+		            layer.msg('程序员小哥哥提示你:未知错误!请稍后重试!',{
+		                icon:2,
+		                time:2000
+		            });
+		        }
+		    });
+			},btn2: function(index, layero){
+			//按钮【按钮二】的回调
+
+			//return false 开启该代码可禁止点击该按钮关闭
+			},cancel: function(){ 
+			//右上角关闭回调
+
+			//return false 开启该代码可禁止点击该按钮关闭
+			}
+		});
+		
+    }
 </script>
 </html>

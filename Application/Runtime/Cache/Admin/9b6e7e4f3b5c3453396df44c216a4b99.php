@@ -51,6 +51,20 @@
 			float:left !important;
 			width: 100px !important;
 		}
+		#page {
+			padding: 20px;
+		}
+		#page .num{
+			 font-size: 18px;
+			 width: 50px;
+			 color: #01AAED;
+			 letter-spacing: 2px;
+		 }
+		 #page .current{
+			font-size: 20px;
+			width: 50px;
+			letter-spacing: 2px;
+		}
 	</style>
 </head>
 <body>
@@ -60,37 +74,37 @@
 		<li class="layui-nav-item "><!-- layui-nav-itemed 移出默认展开-->
 			<a href="javascript:;">用户管理</a>
 			<dl class="layui-nav-child">
-				<dd><a href="<?php echo U('adminUser/index');?>">用户列表</a></dd>
-				<dd><a href="javascript:;">用户详情</a></dd>
+				<dd><a href="<?php echo U('AdminUser/index');?>">用户列表</a></dd>
+				<!-- <dd><a href="javascript:;">用户详情</a></dd> -->
 			</dl>
 		</li>
 		<li class="layui-nav-item">
 			<a href="javascript:;">鸡舍管理</a>
 			<dl class="layui-nav-child">
 				<dd><a href="javascript:;">鸡舍列表</a></dd>
-				<dd><a href="<?php echo U('adminChickenhome/index');?>">新建鸡舍</a></dd>
-				<dd><a href="<?php echo U('adminChickenhome/add');?>">发币发钱</a></dd>
+				<dd><a href="<?php echo U('AdminChickenBatch/index');?>">新建鸡舍</a></dd>
+				<dd><a href="<?php echo U('AdminChickenBatch/add');?>">发币发钱</a></dd>
 				<dd><a href="javascript:;">帖子评论</a></dd>
 			</dl>
 		</li>
 		<li class="layui-nav-item">
 			<a href="javascript:;">通知新闻</a>
 			<dl class="layui-nav-child">
-				<dd><a href="<?php echo U('adminNews/index');?>">新闻列表</a></dd>
-				<dd><a href="<?php echo U('adminNews/add');?>">新建新闻</a></dd>
+				<dd><a href="<?php echo U('AdminNews/index');?>">新闻列表</a></dd>
+				<dd><a href="<?php echo U('AdminNews/add');?>">新建新闻</a></dd>
 			</dl>
 		</li>
 		<li class="layui-nav-item">
 			<a href="javascript:;">活动</a>
 			<dl class="layui-nav-child">
-				<dd><a href="<?php echo U('adminActivity/index');?>">活动列表</a></dd>
-				<dd><a href="<?php echo U('adminActivity/add');?>">新建活动</a></dd>
+				<dd><a href="<?php echo U('AdminActivity/index');?>">活动列表</a></dd>
+				<dd><a href="<?php echo U('AdminActivity/add');?>">新建活动</a></dd>
 			</dl>
 		</li>
 		<li class="layui-nav-item">
 			<a href="javascript:;">提现管理</a>
 			<dl class="layui-nav-child">
-				<dd><a href="<?php echo U('adminWithdraw/index');?>">提现列表</a></dd>
+				<dd><a href="<?php echo U('AdminWithdrawals/index');?>">提现列表</a></dd>
 			</dl>
 		</li>
 	</ul>
@@ -126,11 +140,11 @@
 			<div class="jumbotron">
 		        <h5>用户列表</h5>
 		    </div>
-			<form class="form-inline" name="searchForm" action="/AdminUser" method="get">
+			<form class="form-inline" name="searchForm" action="/AdminUser/index/p/3.html" method="get">
 		        手机号:<input  type="text" name="mobile" value="<?php echo ($_GET["mobile"]); ?>">
-		        <input type="submit" class="btn btn-success" value="搜索">
+		        <input type="submit" class="btn btn-success btn-xs" value="搜索">
 		    </form>
-		    共:<?php echo ($count); ?>条!<?php echo ($_page); ?>
+			<div id="page">共:<?php echo ($count); ?>条!<?php echo ($page); ?></div>
 		    <div class="table-responsive">
 		        <table class="table">
 		            <tr style="border: 1px solid #999;">
@@ -159,7 +173,7 @@
 		                        <?php echo ($vo["buy_chicken_num"]); ?>只
 		                    </td>
 		                    <td style="padding: 10px;text-align: center;">
-								<?php echo ($vo["buy_chicken_num"]); ?>元
+								<?php echo ($vo["wallet"]["amount"]); ?>元
 		                    </td>
 		                    <td style="padding: 10px;text-align: center;">
 								<?php echo ($vo["recharge"]); ?>元
@@ -172,65 +186,84 @@
 		                    </td>
 		                    <td  style="padding: 10px;text-align: center;">
 		                        <!-- <a href="">编辑</a> -->
-		                        <button onclick="edit(<?php echo ($vo["id"]); ?>)">详情</button>
-		                        <?php if($vo['user_st'] == 1): ?><button onclick="changeSt(<?php echo ($vo["id"]); ?>)" style="margin-left: 10px;">放入黑名单</button><?php endif; ?>
+		                        <button onclick="edit(<?php echo ($vo["id"]); ?>)" class="btn btn-info btn-xs">详情</button>
+		                        <?php if($vo['user_st'] == 1): ?><button onclick="changeSt(<?php echo ($vo["id"]); ?>)" class="btn btn-warning btn-xs">加入黑名单</button><?php endif; ?>
+		                        <?php if($vo['user_st'] == 2): ?><button onclick="changeSt(<?php echo ($vo["id"]); ?>)" class="btn btn-danger btn-xs">移除黑名单</button><?php endif; ?>
 		                    </td>
 		                </tr><?php endforeach; endif; else: echo "" ;endif; ?>
 		        </table>
 		    </div>
-		    共:<?php echo ($count); ?>条!<?php echo ($_page); ?>
+		    <div id="page">共:<?php echo ($count); ?>条!<?php echo ($page); ?></div>
 		</div>
 	</div>
 </body>
 <script type="text/javascript" charset="utf-8">
-		layer.msg('程序员小哥哥提示你:未知错误!请稍后重试!',{
-			icon:2,
-			time:2000
-		});
-		function edit(val) {
-			layer.open({
-				type: 2,
-				title: '编辑',
-				shadeClose: false,
-				maxmin: true,
-				area: ['893px', '600px'],
-				content: 'edit?id='+val, //iframe的url
-				cancel: function(index, layero){
-						layer.close(index)
-						location.reload();
-					return false;
-				}
-			});
-		}
+	layui.use('layer', function(){
+        var layer = layui.layer;
+    });
 
-		function changeSt(val) {
+    function edit(val) {
+    	layer.open({
+            type: 2,
+            title: '编辑',
+            shadeClose: false,
+            maxmin: true,
+            area: ['893px', '600px'],
+            content: '<?php echo U("AdminUser/edit");?>?id='+val, //iframe的url
+            cancel: function(index, layero){
+                    layer.close(index)
+                    location.reload();
+                return false;
+            }
+        });
+    }
+
+    function changeSt(val) {
+
+
+		layer.open({
+			content: '是否加入黑名单',
+			btn: ['确定', '取消'],
+			yes: function(index, layero){
+			//按钮【按钮一】的回调
 			$.ajax({
-				type: 'GET',
-				url: 'changeSt?id='+val,
-				dataType: 'text',
-				success:function(msg){
-					if(msg=='success') {
-						layer.msg('成功!',{
-							icon:1,
-							time:2000
-						});
-						location.reload();
-					}
-					else
-					{
-						layer.msg(msg,{
-							icon:2,
-							time:2000
-						});
-					}
-				},
-				error:function(){
-					layer.msg('程序员小哥哥提示你:未知错误!请稍后重试!',{
-						icon:2,
-						time:2000
-					});
-				}
-			});
-		}
+		        type: 'GET',
+		        url: '<?php echo U("AdminUser/changeSt");?>?id='+val, 
+		        dataType: 'text',
+		        success:function(msg){
+		            if(msg=='success') {
+		                layer.msg('成功!',{
+		                    icon:1,
+		                    time:2000
+		                });
+		                location.reload();
+		            }
+		            else
+		            {
+		                layer.msg(msg,{
+		                    icon:2,
+		                    time:2000
+		                });
+		            }
+		        },
+		        error:function(){
+		            layer.msg('程序员小哥哥提示你:未知错误!请稍后重试!',{
+		                icon:2,
+		                time:2000
+		            });
+		        }
+		    });
+			},btn2: function(index, layero){
+			//按钮【按钮二】的回调
+
+			//return false 开启该代码可禁止点击该按钮关闭
+			},cancel: function(){ 
+			//右上角关闭回调
+
+			//return false 开启该代码可禁止点击该按钮关闭
+			}
+		});
+		
+    }
 </script>
 </html>

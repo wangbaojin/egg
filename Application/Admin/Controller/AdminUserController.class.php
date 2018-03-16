@@ -45,75 +45,11 @@ class AdminUserController extends AdminPublicController
         $this->display();
     }
 
-    public function add()
-    {
-        $data = I('post.');
-
-        if($data) {
-            if($data['amount']<1 or $data['amount']>999999) die('发行数量超出!');
-            if($this->_m->where('out_code="'.$data['out_code'].'"')->find()) die('对外批次编码必须唯一,'.$data['out_code'].'的编码已被使用!');
-            $data['create_time'] = time();
-            $data['start_time']  = strtotime($data['start_time']);
-            $data['end_time']    = strtotime($data['end_time']);
-            $trans = M();
-            $trans->startTrans();
-
-            // 是否默认
-            if($data['is_default']=='on')
-            {
-                $this->_m->where('is_default=1')->setField('is_default',2);
-                $data['is_default']=1;
-            }
-            else
-            {
-                $data['is_default']=2;
-            }
-            $res = $this->_m->add($data);
-            if(!$res)
-            {
-                $trans->rollback();
-                die('添加失败');
-            }
-
-            // 生成鸡
-            $i = 1;
-            $y = 1;
-            while ($i<=$data['amount'])
-            {
-                $tmp = array();
-                $tmp['user_id'] = 0;
-                $tmp['chicken_code']  = $data['out_code'].str_pad($i,6,0,STR_PAD_LEFT);
-                $tmp['chicken_batch'] = $res;
-                $tmp['state']   = 1;
-                $chicken_data[] = $tmp;
-                unset($tmp);
-                if($y>10000 or ($i==$data['amount']))
-                {
-                    $add_res = M('Chicken')->addAll($chicken_data);
-                    if(!$add_res)
-                    {
-                        $trans->rollback();
-                        die('鸡舍鸡入栏失败');
-                    }
-                    unset($chicken_data);
-                    $chicken_data = array();
-                    $y=1;
-                }
-                $i++;
-                $y++;
-            }
-            $trans->commit();
-            die('success');
-        }
-        $this->assign('delivery_date',date('Y-m-d'));
-        $this->display();
-    }
-
     public function edit()
     {
         $id   = I('get.id');
         $data = I('post.');
-
+        if(!$id) die('参数错误');
         $info = $this->_m->where('id='.$id)->find();
         if(!$info) die('该记录不存在!');
 
@@ -131,11 +67,17 @@ class AdminUserController extends AdminPublicController
     public function changeSt()
     {
         $id   = I('get.id');
+        if(!$id) die('参数错误');
         $info = $this->_m->where('id='.$id)->find();
 
-        if(!$info) die('该记录不存在!');
+        if(!$info) die('该记录不存在');
 
-        //if()
+        $st = $info['user_st'] == 1 ? 2 : 1;
+        if($this->_m->where('id='.$id)->setField('user_st',$st))
+        {
+            die('success');
+        }
+        die('修改失败!请刷新重试');
     }
 
     public function disposeData($arr)
@@ -158,6 +100,40 @@ class AdminUserController extends AdminPublicController
         // 充值
         $pay_price = M('Recharge')->where('user_id='.$arr['id'])->SUM('pay_price');
         $arr['recharge'] = $pay_price ? $pay_price : 0;
+
+        // 累计提现
+        $withdrawals_map = array();
+        $withdrawals_map['user_id']   = $arr['id'];
+        $withdrawals_map['pay_state'] = 4;
+        $withdrawals_map['state']     = 2;
+        $withdrawals = M('Withdrawals')->where($withdrawals_map)->SUM('pay_price');
+        // 支付宝账户
+        $arr['zfb_list'] = M('Withdrawals')->where($withdrawals_map)->getField('zhifubao_account',true);
+
+        // 邀请好友
+        $invite__map = array();
+        $invite__map['invite_user_id'] = $arr['id'];
+        $invite_buy = M('InviteBuy')->where($invite__map)->count();
+        $arr['invite_buy'] = $invite_buy ? $invite_buy : 0;
+        $invite__map['buy_state'] = 1;
+        $invite_success_buy = M('InviteBuy')->where($invite__map)->count();
+        $arr['invite_success_buy'] = $invite_success_buy ? $invite_success_buy : 0;
+
+        $eggcoin_map = array();
+        $eggcoin_map['user_id']     = $arr['id'];
+        $eggcoin_map['state']       = 1;
+
+        // 查看收益奖励发放token
+        $eggcoin_map['reason_type'] = 1;
+        $chick_eggcoin = M('EggcoinRecord')->where($eggcoin_map)->SUM('amount');
+        $arr['chick_eggcoin'] = $chick_eggcoin ? $chick_eggcoin : 0;
+
+        // 查看任务奖励发放token
+        $eggcoin_map['reason_type'] = 3;
+        $invite_eggcoin = M('EggcoinRecord')->where($eggcoin_map)->SUM('amount');
+        $arr['invite_eggcoin'] = $invite_eggcoin ? $invite_eggcoin : 0;
+
+        $arr['withdrawals'] =  $withdrawals ? $withdrawals : 0;
         return $arr;
     }
 }

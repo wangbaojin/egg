@@ -30,6 +30,20 @@
 			float:left !important;
 			width: 100px !important;
 		}
+		#page {
+			padding: 20px;
+		}
+		#page .num{
+			 font-size: 18px;
+			 width: 50px;
+			 color: #01AAED;
+			 letter-spacing: 2px;
+		 }
+		 #page .current{
+			font-size: 20px;
+			width: 50px;
+			letter-spacing: 2px;
+		}
 	</style>
 </head>
 <body>
@@ -39,37 +53,37 @@
 		<li class="layui-nav-item "><!-- layui-nav-itemed 移出默认展开-->
 			<a href="javascript:;">用户管理</a>
 			<dl class="layui-nav-child">
-				<dd><a href="{:U('adminUser/index')}">用户列表</a></dd>
-				<dd><a href="javascript:;">用户详情</a></dd>
+				<dd><a href="{:U('AdminUser/index')}">用户列表</a></dd>
+				<!-- <dd><a href="javascript:;">用户详情</a></dd> -->
 			</dl>
 		</li>
 		<li class="layui-nav-item">
 			<a href="javascript:;">鸡舍管理</a>
 			<dl class="layui-nav-child">
 				<dd><a href="javascript:;">鸡舍列表</a></dd>
-				<dd><a href="{:U('adminChickenhome/index')}">新建鸡舍</a></dd>
-				<dd><a href="{:U('adminChickenhome/add')}">发币发钱</a></dd>
+				<dd><a href="{:U('AdminChickenBatch/index')}">新建鸡舍</a></dd>
+				<dd><a href="{:U('AdminChickenBatch/add')}">发币发钱</a></dd>
 				<dd><a href="javascript:;">帖子评论</a></dd>
 			</dl>
 		</li>
 		<li class="layui-nav-item">
 			<a href="javascript:;">通知新闻</a>
 			<dl class="layui-nav-child">
-				<dd><a href="{:U('adminNews/index')}">新闻列表</a></dd>
-				<dd><a href="{:U('adminNews/add')}">新建新闻</a></dd>
+				<dd><a href="{:U('AdminNews/index')}">新闻列表</a></dd>
+				<dd><a href="{:U('AdminNews/add')}">新建新闻</a></dd>
 			</dl>
 		</li>
 		<li class="layui-nav-item">
 			<a href="javascript:;">活动</a>
 			<dl class="layui-nav-child">
-				<dd><a href="{:U('adminActivity/index')}">活动列表</a></dd>
-				<dd><a href="{:U('adminActivity/add')}">新建活动</a></dd>
+				<dd><a href="{:U('AdminActivity/index')}">活动列表</a></dd>
+				<dd><a href="{:U('AdminActivity/add')}">新建活动</a></dd>
 			</dl>
 		</li>
 		<li class="layui-nav-item">
 			<a href="javascript:;">提现管理</a>
 			<dl class="layui-nav-child">
-				<dd><a href="{:U('adminWithdraw/index')}">提现列表</a></dd>
+				<dd><a href="{:U('AdminWithdrawals/index')}">提现列表</a></dd>
 			</dl>
 		</li>
 	</ul>

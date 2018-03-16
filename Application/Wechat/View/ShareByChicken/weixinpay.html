@@ -82,7 +82,10 @@
 				return false;
 			},cancel: function () {
 				// 用户取消分享后执行的回调函数
-				alert('您取消了支付!')
+				layer.msg('您取消了支付!', {
+					icon: 2,
+					time:2000,
+				});
 			}
 		});
 	});

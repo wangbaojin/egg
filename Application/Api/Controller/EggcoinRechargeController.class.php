@@ -78,7 +78,7 @@ class EggcoinRechargeController extends ApiController
        if($check_res) $this->api_error(20001,$check_res);
 
        // 检查用户
-       if(!M('User')->where('id='.(int)I('get.total_price'))->find()) $this->api_error(20005,'获取用户信息失败,请重现登录');
+       if(!M('User')->where('id='.(int)I('get.user_id'))->find()) $this->api_error(20005,'获取用户信息失败,请重现登录');
 
        // 检查有没有未完成的订单,未完成之前让其先支付前一单(待定)
 

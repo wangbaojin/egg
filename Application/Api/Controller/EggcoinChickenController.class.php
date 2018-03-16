@@ -63,7 +63,7 @@ class EggcoinChickenController extends ApiController
         $map['state'] = 2;
         $map['user_id'] = $user_id;
         $page = (int)I('page');
-        $data['page_limit'] = 5;
+        $data['page_limit'] = 10;
         $data['total_count'] = $m->where($map)->count();
         $data['total_page'] = ceil($data['total_count'] / $data['page_limit']);
         $data['now_page'] = ($page > 0 and $page <= $data['total_page']) ? $page : 1;
@@ -453,7 +453,7 @@ class EggcoinChickenController extends ApiController
             if($change_invite_st)
             {
                 // 发放奖励
-                invite_success_reward($invite_info['invite_user_id']);
+                invite_success_reward($invite_info['invite_user_id'],$invite_info['id']);
             }
             else
             {
