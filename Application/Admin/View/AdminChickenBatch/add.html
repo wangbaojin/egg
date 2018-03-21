@@ -13,6 +13,12 @@
 		li{
 			list-style-type:none;
 		}
+		.form-group label{
+			line-height: 34px !important;
+		}
+		.col-sm-10>input{
+			width: 500px !important;
+		}
 	</style>
 </head>
 <body>
@@ -27,30 +33,36 @@
 		        <h5>新建鸡舍</h5>
 		    </div>
 			
-			<form class="form-horizontal">
+			<form class="form-horizontal" id="create_form">
 
 				<div class="form-group">
-					<label>鸡舍名称</label>
+					<label><span style="color: red;">*</span>鸡舍ID</label>
 					<div class="col-sm-10">
 						{id123456}
 					</div>
 				</div>
 				<div class="form-group">
-					<label>批次名称</label>
+					<label><span style="color: red;">*</span>鸡舍名称</label>
+					<div class="col-sm-10">
+						<input type="text" name="coop_name" id="coop_name" class="form-control" maxlength="11"  placeholder="请输入养殖场名称">
+					</div>
+				</div>
+				<div class="form-group">
+					<label><span style="color: red;">*</span>批次名称</label>
 					<div class="col-sm-10">
 						<input type="text" name="name" id="name" class="form-control" maxlength="11"  placeholder="批次名称">
 					</div>
 				</div>
 				<div class="form-group">
-					<label>鸡舍坐标</label>
+					<label><span style="color: red;">*</span>鸡舍坐标</label>
 					<div class="col-sm-10">
-						<input type="text" name="latitude_longitude" id="latitude_longitude" class="form-control"   placeholder="经纬度">
+						<input type="text" name="latitude_longitude" id="latitude_longitude" class="form-control"   placeholder="请输入养殖场坐标">
 					</div>
 				</div>
 				<div class="form-group">
-					<label>蛋鸡品种</label>
+					<label><span style="color: red;">*</span>蛋鸡品种</label>
 					<div class="col-sm-10" style="display: flex;">
-						<select type="text" name="article_url" id="article_url" class="form-control"  placeholder=".input-lg" style="width:100px;margin-right: 10px;" >
+						<select type="text" name="breed" id="breed" class="form-control"  placeholder="品种" style="width:100px;margin-right: 10px;" >
 							<option>海兰褐</option>
 							<option>海兰灰</option>
 							<option>海兰白</option>
@@ -70,39 +82,55 @@
 					</div>
 				</div>
 				<div class="form-group">
-		            <label>入栏日期</label>
+		            <label><span style="color: red;">*</span>入栏日期</label>
 		            <div class="col-sm-10">
-		            	<input type="datetime" name="newstime" id="newstime" onclick="layui.laydate({elem: this, istime: true, format: 'YYYY-MM-DD 00:00:00'})" class="layui-input form-control" value="{$info.newstime}" placeholder="时间">
+		            	<input type="datetime" name="lairage_date" id="lairage_date" onclick="layui.laydate({elem: this,value: new Date(), istime: true, format: 'YYYY-MM-DD'})" class="layui-input form-control" value="{$delivery_date}" placeholder="入栏日期">
 		            </div>
 		        </div>
 				<div class="form-group">
-					<label>入栏日龄</label>
+					<label><span style="color: red;">*</span>入栏日龄</label>
 					<div class="col-sm-10">
-						<input type="text" name="age_in_days" id="age_in_days" class="form-control"   placeholder="日龄">
+						<input type="number" name="age_in_days" id="age_in_days" class="form-control" maxlength="11"  placeholder="仅限整数1-720">
 					</div>
 				</div>
 				<div class="form-group">
-					<label>开放认购日龄</label>
+					<label><span style="color: red;">*</span>入栏数量</label>
 					<div class="col-sm-10">
-						<input type="datetime" name="start_time" id="start_time" onclick="layui.laydate({elem: this, istime: true, format: 'YYYY-MM-DD 00:00:00'})" class="layui-input form-control" value="{$start_time}" placeholder="开始时间">
+						<input type="number" name="age_in_num" id="age_in_num" class="form-control" maxlength="11"  placeholder="数量">
 					</div>
 				</div>
 				<div class="form-group">
-					<label>截止认购日龄</label>
+					<label><span style="color: red;">*</span>开放认购日龄</label>
 					<div class="col-sm-10">
-						<input type="datetime" name="end_time" id="end_time" onclick="layui.laydate({elem: this, istime: true, format: 'YYYY-MM-DD 00:00:00'})" class="layui-input form-control" value="{$end_time}" placeholder="结束时间">
+						<input type="number"  id="start_date" class="form-control" maxlength="11"  placeholder="请务必填写入栏日龄">
+						
+					</div>
+					<div class="col-sm-10" style="width:510px;">
+						<span name="start_time" id="start_time" style="display:inline-block;height: 30px;line-height: 30px;float: right;"></span>
+						<!-- <input   id="start_date" class="form-control" style="display:inline-block;width: 100px;height: 30px; border: 0px;outline:none;-webkit-appearance: none;" readonly="readonly"> -->
 					</div>
 				</div>
 				<div class="form-group">
-					<label>开放认购数量</label>
+					<label><span style="color: red;">*</span>截止认购日龄</label>
 					<div class="col-sm-10">
-						<input type="number" name="amount" id="amount" class="form-control"   placeholder="发行数量">
+						<input type="number"  id="end_date" class="form-control" maxlength="11"  placeholder="请务必填写入栏日龄">
+						
+					</div>
+					<div class="col-sm-10" style="width:510px;">
+						<span name="end_time" id="end_time"  style="display:inline-block;height: 30px;line-height: 30px;float: right;"></span>
+						<!-- <input   id="end_date" class="form-control" style="display:inline-block;width: 100px;height: 30px; border: 0px;outline:none;-webkit-appearance: none;" readonly="readonly"> -->
 					</div>
 				</div>
 				<div class="form-group">
-					<label>养殖方式</label>
+					<label><span style="color: red;">*</span>开放认购数量</label>
+					<div class="col-sm-10">
+						<input type="number" name="amount" id="amount" class="form-control" maxlength="11"  placeholder="发行数量">
+					</div>
+				</div>
+				<div class="form-group">
+					<label><span style="color: red;">*</span>养殖方式</label>
 					<div class="col-sm-10" style="display: flex;">
-						<select type="text" name="article_url" id="article_url" class="form-control"  placeholder=".input-lg" style="width:200px;margin-right: 10px;" >
+						<select type="text" name="feed_type" id="feed_type" class="form-control"  placeholder="养殖方式" style="width:200px;margin-right: 10px;" >
 							<option>快乐的蛋定制养殖</option>
 							<option>普通标准养殖</option>
 							<option>无抗养殖</option>
@@ -111,9 +139,9 @@
 					</div>
 				</div>
 				<div class="form-group">
-					<label>产蛋颜色</label>
+					<label><span style="color: red;">*</span>产蛋颜色</label>
 					<div class="col-sm-10" style="display: flex;">
-						<select type="text" name="article_url" id="article_url" class="form-control"  placeholder=".input-lg" style="width:100px;margin-right: 10px;" >
+						<select type="text" name="egg_color" id="egg_color" class="form-control"  placeholder=".input-lg" style="width:100px;margin-right: 10px;" >
 							<option>红壳蛋</option>
 							<option>粉壳蛋</option>
 							<option>白壳蛋</option>
@@ -123,15 +151,15 @@
 					</div>
 				</div>
 				<div class="form-group">
-					<label>预计产蛋</label>
+					<label><span style="color: red;">*</span>预计产蛋</label>
 					<div class="col-sm-10">
-						<input type="text" name="lay_eggs" id="lay_eggs" class="form-control"   placeholder="预计产蛋">
+						<input type="number" name="lay_eggs" id="lay_eggs" class="form-control" maxlength="11"  placeholder="预计产蛋">
 					</div>
 				</div>
 				<div class="form-group">
-					<label>限购数量/人</label>
+					<label><span style="color: red;">*</span>限购数量/人</label>
 					<div class="col-sm-10">
-						<select type="text" name="article_url" id="article_url" class="form-control"  placeholder=".input-lg" style="width:100px;margin-right: 10px;" >
+						<select type="number"  class="form-control"  placeholder="" style="width:100px;margin-right: 10px;" >
 							<option>1</option>
 							<option>2</option>
 							<option>3</option>
@@ -158,21 +186,21 @@
 					</div>
 				</div>
 				<div class="form-group">
-					<label>认购价格/鸡</label>
+					<label><span style="color: red;">*</span>认购价格/鸡</label>
 					<div class="col-sm-10">
-						<input type="text" name="egg_price" id="egg_price" class="form-control" maxlength="11"  placeholder="Egg Price">
+						<input type="number" name="egg_price" id="egg_price" class="form-control" maxlength="11"  placeholder="Egg Price">
 					</div>
 				</div>
 				<div class="form-group">
-					<label>认购价格/套餐</label>
+					<label><span style="color: red;">*</span>认购价格/套餐</label>
 					<div class="col-sm-10">
-						<input type="text" name="feed_price" id="feed_price" class="form-control" maxlength="11"  placeholder="Feed Price">
+						<input type="number" name="feed_price" id="feed_price" class="form-control" maxlength="11"  placeholder="Feed Price">
 					</div>
 				</div>
 				<div class="form-group">
-					<label>蛋鸡编码</label>
+					<label><span style="color: red;">*</span>蛋鸡编码</label>
 					<div class="col-sm-10" style="display: flex;">
-						<select type="text" name="article_url" id="article_url" class="form-control"  placeholder=".input-lg" style="width:100px;margin-right: 10px;" >
+						<select type="text" name="out_code" MAXLENGTH="5" id="out_code" class="form-control"   placeholder="对外批次编码" style="width:100px;margin-right: 10px;" >
 							<option>A</option>
 							<option>B</option>
 							<option>C</option>
@@ -181,13 +209,13 @@
 							<option>F</option>
 							<option>G</option>
 							<option>H</option>
-							<option>I</option>
+							<!-- <option>I</option> -->
 							<option>J</option>
 							<option>K</option>
 							<option>L</option>
 							<option>M</option>
 							<option>N</option>
-							<option>O</option>
+							<!-- <option>O</option> -->
 							<option>P</option>
 							<option>Q</option>
 							<option>R</option>
@@ -204,20 +232,24 @@
 					</div>
 				</div>
 				<div class="form-group">
-					<label>app显示鸡场</label>
-					<div class="col-sm-10" style="display: flex;">
+					<label><span style="color: red;">*</span>app显示鸡场</label>
+					<div class="col-sm-10">
 						<!-- <input type="checkbox" name="top_num" id="top_num" class="" style="width: 20px;height: 20px;">
 		            	<span>显示</span>
 		            	<input type="checkbox" name="top_num" id="top_num" class="" style="width: 20px;height: 20px;">
 		            	<span>不显示</span> -->
-		            	<button type="button" onclick="add()" id="tj" class="btn btn-default" style="width: 100px;height: 40px;margin-right: 10px;">显示</button>
-		            	<button type="button" onclick="add()" id="tj" class="btn btn-default" style="width: 100px;height: 40px;">不显示</button>
+		            	<div  style="display: flex;">
+			            	<input type="checkbox" style="width: 25px;height: 25px;margin-right: 10px;"><span style="line-height: 32px;">显示</span>
+			            	<input type="checkbox" style="width: 25px;height: 25px;margin:5px 10px 0 20px;"><span style="line-height: 32px;">不显示</span>
+			            </div>
 					</div>
+
 				</div>
 				<button type="button" onclick="add()" id="tj" class="btn btn-default" style="width: 200px;height: 50px;">保存</button>
 				<button type="button" onclick="add()" id="tj" class="btn btn-default" style="width: 200px;height: 50px;">清空</button>
 
-				
+
+
 			</form>
 		</div>
 </body>
@@ -238,6 +270,95 @@
             }
         };
     });
+    function addDate(date,days){ 
+	    var d=new Date(date); 
+	    d.setDate(d.getDate()+days); 
+	    var m=d.getMonth()+1; 
+	    return d.getFullYear()+'-'+m+'-'+d.getDate(); 
+	}
+    $('#start_date').on('input',function(e) {
+        var beginTimeVal=$('#lairage_date').val(),  //获取页面中的开始时间val（），格式为2017-01-11类型
+            date='"'+beginTimeVal+'"', //拼接字符串【如果不拼接会被当做减法运算，传入的结果就为2005】
+            days=$(this).val()-$('#age_in_days').val(),  //获取页面中的提前提醒时间（天）val（）
+            daysInt=parseInt(days);//强制转换为int类型【不转换不会报错但是时间不准确】
+        var val=addDate(date,daysInt);//调用已经封装好的函数addDate
+        $('#start_time').html(val); 
+    })
+    $('#end_date').on('input',function(e) {
+        var beginTimeVal=$('#lairage_date').val(),  //获取页面中的开始时间val（），格式为2017-01-11类型
+            date='"'+beginTimeVal+'"', //拼接字符串【如果不拼接会被当做减法运算，传入的结果就为2005】
+            days=$(this).val()-$('#age_in_days').val(),  //获取页面中的提前提醒时间（天）val（）
+            daysInt=parseInt(days);//强制转换为int类型【不转换不会报错但是时间不准确】
+        var val=addDate(date,daysInt);//调用已经封装好的函数addDate
+        $('#end_time').html(val); 
+    })
 
+    function add(){
+
+
+        url = "{:U('AdminChickenBatch/add')}"
+
+        var formData = new FormData($( "#create_form" )[0]);
+
+        coop_name     = $( "#coop_name" ).val();
+        latitude_longitude    = $( "#latitude_longitude" ).val();
+        breed    = $( "#breed" ).val();
+        age_in_days    = $( "#age_in_days" ).val();
+        lay_eggs    = $( "#lay_eggs" ).val();
+        egg_color    = $( "#egg_color" ).val();
+        feed_type    = $( "#feed_type" ).val();
+        out_code    = $( "#out_code" ).val();
+        name    = $( "#name" ).val();
+        amount    = $( "#amount" ).val();
+        start_time    = $( "#start_time" ).html();
+        end_time    = $( "#end_time" ).html();
+        lairage_date    = $( "#lairage_date" ).val();
+        if(!lairage_date || !out_code || !start_time || !end_time || !coop_name || !latitude_longitude || !breed || !age_in_days || !lay_eggs || !egg_color || !feed_type || !name || !amount) {
+            layer.msg('程序员小哥哥提示你:信息都不填全就提交?是我拿不动刀了还是你飘了?',{
+                icon:2,
+                time:2000
+            });return false;
+        }
+
+        $('#tj').attr('disabled',true)
+        $('#tj').html('正在提交。。。')
+
+        $.ajax({
+            type: 'POST',
+            url: url,
+            data:formData,
+            processData: false,
+            contentType: false,
+            dataType: 'text',
+            success:function(msg){
+                if(msg=='success') {
+                    layer.msg('添加成功!',{
+                        icon:1,
+                        time:2000
+                    });
+                    $('#tj').html('提交')
+                    $('#tj').attr('disabled',false)
+                    // setTimeout("parent.location.reload()", 2000);
+                }
+                else
+                {
+                    layer.msg(msg,{
+                        icon:2,
+                        time:2000
+                    });
+                    $('#tj').html('提交')
+                    $('#tj').attr('disabled',false)
+                }
+            },
+            error:function(){
+                layer.msg('程序员小哥哥提示你:未知错误!请稍后重试!',{
+                    icon:2,
+                    time:2000
+                });
+                $('#tj').html('提交')
+                $('#tj').attr('disabled',false)
+            }
+        });
+    }
 </script>
 </html>

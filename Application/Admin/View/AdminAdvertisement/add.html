@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>新建活动</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		li{
+			list-style-type:none;
+		}
+		#option{
+			padding: 20px;
+		}
+		.form-group{
+			margin:20px 0 !important;
+		}
+		.form-group label{
+			float:left !important;
+			width: 100px !important;
+		}
+	</style>
+</head>
+<body>
+	<include file="Public/left"/>
+	
+	<div class="layui-body">
+		<!-- 内容主体区域 -->
+		<!-- <iframe id="xuanxiang" name="xuanxiang" src="add.html" style="overflow: visible;" scrolling="no" frameborder="no" width="100%" height="100%"></iframe> -->
+		<div id="option" name="option" style="overflow: visible;" scrolling="no" frameborder="no" width="100%" height="100%">
+			
+			<div class="jumbotron">
+		        <h5>添加活动</h5>
+		    </div>
+
+			<form class="form-horizontal" id="create_form">
+
+				<div class="form-group">
+					<label>广告位</label>
+					<div class="col-sm-10">
+						<select type="text" name="article_type" id="article_type" class="form-control"  placeholder="" style="width:150px;margin-right: 10px;" >
+							<option>首页卡片</option>
+						</select>
+					</div>
+				</div>
+				<div class="form-group">
+					<label >活动图片</label>
+					<div class="col-sm-10">
+						<input type="file" name="pic" id="pic" value="{$info.pic}">
+						<p class="help-block">760*120分辨率的图片300像素*300像素，其他尺寸会影响页面效果，格式png，jpeg，jpg，gif。大小不超过3M</p>
+					</div>
+				</div>
+				<div class="form-group">
+					<label>活动标题</label>
+					<div class="col-sm-10">
+						<input  type="text" name="title" id="title" class="form-control" placeholder="请填写活动标题">
+					</div>
+				</div>
+				<div class="form-group">
+					<label>活动H5链接</label>
+					<div class="col-sm-10" >
+						<input name="article_url" id="article_url" class="form-control"  placeholder="请填写活动链接地址">
+					</div>  
+				</div>
+				<div class="form-group">
+		            <label>发布时间:</label>
+		            <div class="col-sm-10">
+		            	<input type="datetime" name="newstime" id="newstime" onclick="layui.laydate({elem: this, istime: true, format: 'YYYY-MM-DD 00:00:00'})" class="layui-input form-control" " placeholder="发布时间">
+		            </div>
+		        </div>
+		        <div class="form-group">
+		            <label>截止时间:</label>
+		            <div class="col-sm-10">
+		            	<input type="datetime" name="end_time" id="end_time" onclick="layui.laydate({elem: this, istime: true, format: 'YYYY-MM-DD 00:00:00'})" class="layui-input form-control"  placeholder="截止时间">
+		            </div>
+		        </div>
+		        
+		        <button type="button" onclick="add()" id="tj" class="btn btn-default" style="width: 200px;height: 50px;">保存并发布</button>
+			</form>
+		</div>
+</body>
+<script type="text/javascript" charset="utf-8">
+
+	layui.use('layer', function(){ //独立版的layer无需执行这一句
+        //var $ = layui.jquery,
+        layer = layui.layer; //独立版的layer无需执行这一句
+    });
+    layui.use('laydate', function(){
+        var laydate = layui.laydate;
+        var start = {
+            min: laydate.now(),
+            istoday: true,
+            choose: function(datas){
+                end.min = datas; //开始日选好后，重置结束日的最小日期
+                end.start = datas //将结束日的初始值设定为开始日
+            }
+        };
+    });
+
+    
+    function add(){
+
+
+        url = "{:U('AdminAdvertisement/add')}"
+
+        var formData = new FormData($( "#create_form" )[0]);
+
+        title       = $( "#title" ).val();
+        article_url = $( "#article_url" ).val();
+		newstime  = $( "#newstime" ).val();
+        end_time = $( "#end_time" ).val();
+
+        if(!title || !article_url  || !newstime || !end_time) {
+            layer.msg('程序员小哥哥提示你:信息都不填全就提交?是我拿不动刀了还是你飘了?',{
+                icon:2,
+                time:2000
+            });return false;
+        }
+
+        $('#tj').attr('disabled',true)
+        $('#tj').html('正在提交。。。')
+
+        $.ajax({
+            type: 'POST',
+            url: url,
+            data:formData,
+            processData: false,
+            contentType: false,
+            dataType: 'text',
+            success:function(msg){
+                if(msg=='success') {
+                    layer.msg('添加成功!',{
+                        icon:1,
+                        time:2000
+                    });
+                    $('#tj').html('提交')
+                    $('#tj').attr('disabled',false)
+                    setTimeout("parent.location.reload()", 2000);
+                }
+                else
+                {
+                    layer.msg(msg,{
+                        icon:2,
+                        time:2000
+                    });
+                    $('#tj').html('提交')
+                    $('#tj').attr('disabled',false)
+                }
+            },
+            error:function(){
+                layer.msg('程序员小哥哥提示你:未知错误!请稍后重试!',{
+                    icon:2,
+                    time:2000
+                });
+                $('#tj').html('提交')
+                $('#tj').attr('disabled',false)
+            }
+        });
+    }
+</script>
+</html>

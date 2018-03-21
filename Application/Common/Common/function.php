@@ -631,7 +631,7 @@ function getUserInfoByUserId($user_id)
     // vip
     $vip = M('UserVip')->where($map)->find();
     $info['vip'] = $vip ? 1 : 2;
-    $info['vip_info'] = $info['vip']==1 ? '内侧会员' : '普通会员';
+    $info['vip_info'] = $info['vip']==1 ? '内测会员' : '普通会员';
 
     // 昵称
     if(!$info['full_name']) $info['full_name'] = $info['wechart_info']['wx_nick_name'];
@@ -695,15 +695,17 @@ function invite_success_reward($user_id,$invite_id='')
     $eggcoin_data['reason_type'] = 3;//事由类型id：1.收益；2.赠送；3.奖励'
     $eggcoin_data['reason_narration'] = '邀请购买';//事由名称
     if($invite_id) $eggcoin_data['reason_source_id'] = $invite_id;
-    $eggcoin_data['state'] = 1;//状态：1.成功;2.失败;3.待处理'
 
     // 钱包地址
     $chicken_map = array();
     $chicken_map['state']   = array('in',array(4,5));
     $chicken_map['user_id'] = $user_id;
-    $chicken_info = M('Chicken')->where($chicken_map)->order('created desc')->find();
-    $eggcoin_account_id = $chicken_info['eggcoin_account_id'];
+    $chicken_info           = M('Chicken')->where($chicken_map)->order('created desc')->find();
+
+    if($chicken_info) $eggcoin_account_id = $chicken_info['eggcoin_account_id'];
+
     if($eggcoin_account_id) $eggcoin_account = getEggcoinAccountInfoById($eggcoin_account_id);
+
     if(!$eggcoin_account_id or !$eggcoin_account or !$eggcoin_account['account_address'])
     {
         $eggcoin_data['state']    = 3;//状态：1.成功;2.失败;3.待处理'
@@ -712,8 +714,14 @@ function invite_success_reward($user_id,$invite_id='')
     else
     {
         // 发放币
-        $issueEggCoin_res = issueEggCoin($eggcoin_data['amount'], $eggcoin_account['account_address']);
-        if ($issueEggCoin_res['code'] != 0) {
+        $issueEggCoin_res = issueEggCoin((int)$eggcoin_data['amount'], $eggcoin_account['account_address']);
+        //send_sms(18510249173,json_encode($issueEggCoin_res));
+        if( $issueEggCoin_res['code'] == 1 )
+        {
+            $eggcoin_data['state'] = 1;//状态：1.成功;2.失败;3.待处理'
+        }
+        else
+        {
             $eggcoin_data['state'] = 3;//状态：1.成功;2.失败;3.待处理'
             $eggcoin_data['err_code'] = 'ISSUE_ERROR';
         }
@@ -752,6 +760,7 @@ function getCurrentBatch()
 
 function reissue()
 {
+    return;
     $c_m   = M('Chicken');
     $e_r_m = M('EggcoinRecord');
     $map = array();

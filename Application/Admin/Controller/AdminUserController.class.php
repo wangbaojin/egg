@@ -24,6 +24,17 @@ class AdminUserController extends AdminPublicController
         // 分页
         $map = array();
         if(I('get.mobile')) $map['mobile'] = array('like',"%".I('get.mobile')."%");
+        if(I('get.id'))     $map['id']     = I('get.id');
+        if(I('get.full_name'))
+        {
+            $full_name = trim(I('get.full_name'));
+            //if($full_name) $map['full_name'] = $full_name;
+            // 微信昵称
+            $idAry = M('UserWechatinfo')->where('wx_nick_name="'.base64_encode($full_name).'"')->getField('user_id',true);
+            //echo M('UserWechatinfo')->getLastSql();die;
+            if($idAry) $map['id'] = array('in',$idAry);
+        }
+
         $page = (int)I('p');
         $data['page_limit']  = 20;
         $data['total_count'] = $this->_m->where($map)->count();
@@ -43,6 +54,22 @@ class AdminUserController extends AdminPublicController
         $this->assign('list',$list);
         $this->assign('count',$data['total_count']);
         $this->display();
+    }
+
+    public function changeMobile()
+    {
+        $id     = I('get.id');
+        $mobile = I('get.mobile');
+
+        if(!$id) die('参数错误');
+
+        $info = $this->_m->where('id='.$id)->find();
+        if(!$info) die('该记录不存在!');
+
+        if($this->_m->where('id != '.$id.' and mobile='.$mobile)->find()) die('该手机号已被绑定!');
+
+        if(!$this->_m->where('id='.$id)->setField('mobile',$mobile)) die('修改失败,请刷新重试');
+        die('success');
     }
 
     public function edit()
@@ -101,14 +128,17 @@ class AdminUserController extends AdminPublicController
         $pay_price = M('Recharge')->where('user_id='.$arr['id'])->SUM('pay_price');
         $arr['recharge'] = $pay_price ? $pay_price : 0;
 
-        // 累计提现
         $withdrawals_map = array();
         $withdrawals_map['user_id']   = $arr['id'];
+        // 支付宝账户
+        $arr['zfb_list'] = M('Withdrawals')->where($withdrawals_map)->getField('zhifubao_account',true);
+        $arr['zfb_list'] = array_unique($arr['zfb_list']);
+
+        // 累计提现
         $withdrawals_map['pay_state'] = 4;
         $withdrawals_map['state']     = 2;
         $withdrawals = M('Withdrawals')->where($withdrawals_map)->SUM('pay_price');
-        // 支付宝账户
-        $arr['zfb_list'] = M('Withdrawals')->where($withdrawals_map)->getField('zhifubao_account',true);
+
 
         // 邀请好友
         $invite__map = array();
@@ -134,6 +164,7 @@ class AdminUserController extends AdminPublicController
         $arr['invite_eggcoin'] = $invite_eggcoin ? $invite_eggcoin : 0;
 
         $arr['withdrawals'] =  $withdrawals ? $withdrawals : 0;
+
         return $arr;
     }
 }

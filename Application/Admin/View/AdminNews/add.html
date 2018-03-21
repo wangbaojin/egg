@@ -27,19 +27,16 @@
 		        <h5>添加新闻</h5>
 		    </div>
 
-			<form class="form-horizontal">
+			<form class="form-horizontal" id="create_form">
 				<div class="form-group">
 					<label>文章来源</label>
-					<div class="col-sm-10" style="display: flex;">
-						<select type="text" name="article_type" id="article_type" class="form-control" style="width:150px;margin-right: 10px;">
-							<option>微信公众号</option>
-							<option>微博</option>
-							<option>腾讯新闻</option>
-							<option>网易新闻</option>
-							<option>今日头条</option>
-							<option>其他</option> 
+					<div class="col-sm-10"  style="display: flex;">
+						<select type="text" name="come_from" id="c_vo" class="form-control" style="width:150px;margin-right: 10px;">
+							<option>--请选择--</option>
+							<volist name="come_from" id="c_vo" style="width:150px;margin-right: 10px;">
+								<option>{$c_vo}</option>
+							</volist>
 						</select>
-						<!-- <input  class="form-control" placeholder="请填写新闻采编链接"> -->
 					</div>
 				</div>
 
@@ -112,12 +109,12 @@
 	function add(){
 
 
-        url = "{:U('adminNews/add')}"
+        url = "{:U('AdminNews/add')}"
 
         var formData = new FormData($( "#create_form" )[0]);
 
         title       = $( "#title" ).val();
-        article_url = $( "#article_url" ).val();
+        article_url = $( "#url_title" ).val() + $( "#article_url" ).val();
         newstime = $( "#newstime" ).val();
         top_num  = $( "#top_num" ).val();
         abstract = $( "#abstract" ).val();

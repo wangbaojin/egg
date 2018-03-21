@@ -8,6 +8,76 @@ namespace Api\Controller;
  */
 class EggcoinCronController extends ApiController
 {
+    /*合并账单数据*/
+    public function mergeBill()
+    {
+        $m   = M('MergeBill');
+        $w_m = M('Withdrawals');
+        $c_m = M('ChickenTodayfeedDelivery');
+
+        // 查询结算合并
+        $c_come_from = 1;
+        $oid_c       = $m->where('come_from='.$c_come_from)->order('oid desc')->getField('oid');
+
+        if($oid_c)
+        {
+            $c_list = $c_m->where('id > '.$oid_c)->limit(1000)->select();
+        }
+        else
+        {
+            $c_list = $c_m->limit(1000)->select();
+        }
+
+        if($c_list)
+        {
+            $c_add_list = array();
+            foreach ($c_list as $ck=>$cv)
+            {
+                $c_tmp = array();
+                $c_tmp['oid']         = $cv['id'];
+                $c_tmp['user_id']     = $cv['user_id'];
+                $c_tmp['come_from']   = $c_come_from;
+                $c_tmp['create_time'] = $cv['created_at'];
+                $c_tmp['create_year'] = date('Y',$cv['created_at']);
+                $c_tmp['create_year_month'] = date('Y-m',$cv['created_at']);
+                $c_tmp['create_date'] = date('Y-m-d',$cv['created_at']);
+                $c_add_list[] = $c_tmp;
+            }
+            $res = $m->addAll($c_add_list);
+            if($res) echo '收益记录合并成功:'.$res.'<br>';
+        }
+
+        // 查询提现合并
+        $w_come_from = 2;
+        $oid_w       = $m->where('come_from='.$w_come_from)->order('oid desc')->getField('oid');
+        if($oid_w)
+        {
+            $w_list = $w_m->where('id > '.$oid_w)->limit(1000)->select();
+        }
+        else
+        {
+            $w_list = $w_m->limit(1000)->select();
+        }
+
+        if($w_list)
+        {
+            $w_add_list = array();
+            foreach ($w_list as $wk=>$wv)
+            {
+                $w_tmp = array();
+                $w_tmp['oid']         = $wv['id'];
+                $w_tmp['user_id']     = $wv['user_id'];
+                $w_tmp['come_from']   = $w_come_from;
+                $w_tmp['create_time'] = $wv['created_at'];
+                $w_tmp['create_year'] = date('Y',$wv['created_at']);
+                $w_tmp['create_year_month'] = date('Y-m',$wv['created_at']);
+                $w_tmp['create_date'] = date('Y-m-d',$wv['created_at']);
+                $w_add_list[] = $w_tmp;
+            }
+            $res = $m->addAll($w_add_list);
+            if($res) echo '提现记录合并成功:'.$res.'<br>';
+        }
+    }
 
     /*各个鸡结算,每天12点以后到5点结算前一天的收益*/
     public function chicken_todayfeed_delivery()

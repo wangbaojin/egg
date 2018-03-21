@@ -1,0 +1,34 @@
+[ 2018-03-18T00:50:32+08:00 ] 182.138.215.235 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000162s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000229s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000267s ]
+ERR: 无法加载控制器:Index
+
+[ 2018-03-18T19:36:38+08:00 ] 111.206.36.15 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000165s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000213s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000229s ]
+ERR: 无法加载控制器:Index
+
+[ 2018-03-18T21:08:13+08:00 ] 115.239.212.72 /AdminUser/index/p/1.html?User-Agent=Mozilla%2F5.0+%28Linux%3B+Android+6.0.1%3B+Nexus+6P+Build%2FMMB29P%29+AppleWebKit%2F537.36+%28KHTML%2C+like+Gecko%29+Chrome%2F47.0.2526.83+Mobile+Safari%2F537.36%0A
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000206s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000241s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000263s ]
+
+[ 2018-03-18T21:28:13+08:00 ] 115.239.212.67 /AdminIndex/index.html?User-Agent=IUC%28U%3BiOS+5.1.1%3BZh-cn%3B320%2A480%3B%29%2FUCWEB8.9.1.271%2F42%2F800%0A
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000172s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000227s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000245s ]
+

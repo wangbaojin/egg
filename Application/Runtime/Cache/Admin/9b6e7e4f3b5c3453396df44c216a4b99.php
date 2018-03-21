@@ -49,21 +49,34 @@
 		}
 		.form-group label{
 			float:left !important;
-			width: 100px !important;
+			width: 110px !important;
 		}
 		#page {
 			padding: 20px;
 		}
 		#page .num{
-			 font-size: 18px;
-			 width: 50px;
-			 color: #01AAED;
-			 letter-spacing: 2px;
-		 }
-		 #page .current{
-			font-size: 20px;
-			width: 50px;
-			letter-spacing: 2px;
+		    display: inline-block;
+			font-size: 18px;
+			width: 40px;
+			height: 30px;
+			color: #01AAED;
+			line-height: 30px;
+			text-align: center;
+			border: 1px solid #ddd;
+		}
+		#page .current{
+			display: inline-block;
+			font-size: 18px;
+			width: 40px;
+			height: 30px;
+			color: #000;
+			line-height: 30px;
+			text-align: center;
+			border: 1px solid #ddd;
+		}
+		dd>a{
+			font-size: 12px ;
+			margin-left: 10px ;
 		}
 	</style>
 </head>
@@ -81,9 +94,9 @@
 		<li class="layui-nav-item">
 			<a href="javascript:;">鸡舍管理</a>
 			<dl class="layui-nav-child">
-				<dd><a href="javascript:;">鸡舍列表</a></dd>
-				<dd><a href="<?php echo U('AdminChickenBatch/index');?>">新建鸡舍</a></dd>
-				<dd><a href="<?php echo U('AdminChickenBatch/add');?>">发币发钱</a></dd>
+				<dd><a href="<?php echo U('AdminChickenBatch/index');?>">鸡舍列表</a></dd>
+				<dd><a href="<?php echo U('AdminChickenBatch/add');?>">新建鸡舍</a></dd>
+				<dd><a href="<?php echo U('AdminChickenbatchTodayfeedDelivery/add');?>">发币发钱</a></dd>
 				<dd><a href="javascript:;">帖子评论</a></dd>
 			</dl>
 		</li>
@@ -97,8 +110,8 @@
 		<li class="layui-nav-item">
 			<a href="javascript:;">活动</a>
 			<dl class="layui-nav-child">
-				<dd><a href="<?php echo U('AdminActivity/index');?>">活动列表</a></dd>
-				<dd><a href="<?php echo U('AdminActivity/add');?>">新建活动</a></dd>
+				<dd><a href="<?php echo U('AdminAdvertisement/index');?>">活动列表</a></dd>
+				<dd><a href="<?php echo U('AdminAdvertisement/add');?>">新建活动</a></dd>
 			</dl>
 		</li>
 		<li class="layui-nav-item">
@@ -111,7 +124,7 @@
 	<div class="layui-body">
 		<!-- 内容主体区域 -->
 		<!-- <iframe id="xuanxiang" name="xuanxiang" src="add.html" style="overflow: visible;" scrolling="no" frameborder="no" width="100%" height="100%"></iframe> -->
-		<div id="option" name="option" style="overflow: visible;" scrolling="no" frameborder="no" width="100%" height="100%"></div>
+		<!-- <div id="option" name="option" style="overflow: visible;" scrolling="no" frameborder="no" width="100%" height="100%"></div> -->
 	</div>
 </body>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -140,55 +153,58 @@
 			<div class="jumbotron">
 		        <h5>用户列表</h5>
 		    </div>
-			<form class="form-inline" name="searchForm" action="/AdminUser/index/p/3.html" method="get">
-		        手机号:<input  type="text" name="mobile" value="<?php echo ($_GET["mobile"]); ?>">
-		        <input type="submit" class="btn btn-success btn-xs" value="搜索">
+			<form class="form-inline" name="searchForm" action="/AdminUser/index.html" method="get" >
+		        手机号:<input  type="text" name="mobile" value="<?php echo ($_GET["mobile"]); ?>" style="width: 200px;height: 30px;margin: 0 40px 0 10px;">
+		        昵称:<input  type="text" name="full_name" value="<?php echo ($_GET["full_name"]); ?>" style="width: 200px;height: 30px;margin: 0 40px 0 10px;">
+		        ID:<input  type="text" name="id" value="<?php echo ($_GET["id"]); ?>" style="width: 200px;height: 30px;margin: 0 40px 0 10px;">
+				<input  type="hidden" name="p" value="1">
+				<input type="submit" class="btn btn-success " value="搜索" style="float: right;">
 		    </form>
-			<div id="page">共:<?php echo ($count); ?>条!<?php echo ($page); ?></div>
-		    <div class="table-responsive">
+			<!-- <div id="page">共:<?php echo ($count); ?>条!<?php echo ($page); ?></div> -->
+		    <div class="table-responsive" style="width: 100%;margin-top: 30px;">
 		        <table class="table">
-		            <tr style="border: 1px solid #999;">
-		                <th style="text-align: center;">用户ID</th>
-		                <th style="text-align: center;">用户信息</th>
-		                <th style="text-align: center;">认养鸡数</th>
-		                <th style="text-align: center;">鸡蛋收益</th>
-		                <th style="text-align: center;">充值总数</th>
-		                <th style="text-align: center;">欠款数</th>
-		                <th style="text-align: center;">饲料余额</th>
-		                <th style="text-align: center;">操作</th>
+		            <tr style="border: 1px solid rgb(206,206,206);background: rgb(243,244,247);">
+		                <th style="text-align: center;color: rgb(135,135,135);">用户ID</th>
+		                <th style="color: rgb(135,135,135);width: 250px;">用户信息</th>
+		                <th style="text-align: center;color: rgb(135,135,135);">认养鸡数</th>
+		                <th style="text-align: center;color: rgb(135,135,135);">鸡蛋收益</th>
+		                <th style="text-align: center;color: rgb(135,135,135);">充值总数</th>
+		                <th style="text-align: center;color: rgb(135,135,135);">欠款数</th>
+		                <th style="text-align: center;color: rgb(135,135,135);">饲料余额</th>
+		                <th style="color: rgb(135,135,135);">操作</th>
 		            </tr>
-		            <?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr style="border: 1px solid #999;">
-		                    <td style="padding: 10px;text-align: center; ">
+		            <?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr style="border: 1px solid rgb(206,206,206);">
+		                    <td style="padding: 10px;text-align: center;line-height: 60px;">
 		                        ID:<?php echo ($vo["id"]); ?>
 		                    </td>
 		                    <td  style="padding: 10px;" >
-		                        <img src="<?php echo ($vo["wechart_info"]["wx_pic"]); ?>" width="50px" height="50px" style="float:left;">
-		                        <div style="margin-left: 60px;">
-		                        	<span><?php echo ($vo["full_name"]); ?></span><br>
-		                        	<span><?php echo ($vo["mobile"]); ?></span>
+		                        <img src="<?php echo ($vo["wechart_info"]["wx_pic"]); ?>" width="60px" height="60px" style="float:left;">
+		                        <div style="margin-left: 70px;width: auto;height: 60px;position: relative;">
+		                        	<span style="display: inline-block;height: 20px;overflow: hidden;"><?php echo ($vo["full_name"]); ?></span><br>
+		                        	<span style="bottom: 0;position: absolute;color: rgb(83,83,83);"><?php echo ($vo["mobile"]); ?></span>
 		                        </div>
 		                        
 		                    </td>
-		                    <td style="padding: 10px;text-align: center;">
+		                    <td style="padding: 10px;text-align: center;line-height: 60px;">
 		                        <?php echo ($vo["buy_chicken_num"]); ?>只
 		                    </td>
-		                    <td style="padding: 10px;text-align: center;">
+		                    <td style="padding: 10px;text-align: center;line-height: 60px;">
 								<?php echo ($vo["wallet"]["amount"]); ?>元
 		                    </td>
-		                    <td style="padding: 10px;text-align: center;">
+		                    <td style="padding: 10px;text-align: center;line-height: 60px;">
 								<?php echo ($vo["recharge"]); ?>元
 		                    </td>
-		                    <td style="padding: 10px;text-align: center;">
+		                    <td style="padding: 10px;text-align: center;line-height: 60px;">
 								<?php echo ($vo["wallet"]["arrears_amount"]); ?>元
 		                    </td>
-		                    <td  style="padding: 10px;text-align: center;">
+		                    <td  style="padding: 10px;text-align: center;line-height: 60px;">
 								<?php echo ($vo["wallet"]["feed_amount"]); ?>kg
 		                    </td>
-		                    <td  style="padding: 10px;text-align: center;">
+		                    <td  style="padding: 10px;line-height: 60px;">
 		                        <!-- <a href="">编辑</a> -->
-		                        <button onclick="edit(<?php echo ($vo["id"]); ?>)" class="btn btn-info btn-xs">详情</button>
-		                        <?php if($vo['user_st'] == 1): ?><button onclick="changeSt(<?php echo ($vo["id"]); ?>)" class="btn btn-warning btn-xs">加入黑名单</button><?php endif; ?>
-		                        <?php if($vo['user_st'] == 2): ?><button onclick="changeSt(<?php echo ($vo["id"]); ?>)" class="btn btn-danger btn-xs">移除黑名单</button><?php endif; ?>
+								<a href='<?php echo U("AdminUser/edit");?>?id=<?php echo ($vo["id"]); ?>' class="btn btn-success btn-xs" target="_blank">详情</a> &nbsp;
+		                        <?php if($vo['user_st'] == 1): ?><button onclick="changeSt(<?php echo ($vo["id"]); ?>)" class="btn btn-danger btn-xs">加入黑名单</button><?php endif; ?>
+		                        <?php if($vo['user_st'] == 2): ?><button onclick="changeSt(<?php echo ($vo["id"]); ?>)" class="btn btn-danger btn-xs" >移除黑名单</button><?php endif; ?>
 		                    </td>
 		                </tr><?php endforeach; endif; else: echo "" ;endif; ?>
 		        </table>

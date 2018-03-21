@@ -2,6 +2,7 @@
 <div class="container-fluid">
     <form class="form-inline" name="searchForm" action="__SELF__" method="get">
         手机号:<input  type="text" name="mobile" value="{$_GET.mobile}"><br>
+        <input  type="hidden" name="p" value="1">
         <input type="submit" class="btn btn-success" value="搜索">
     </form>
     共:{$count}条!{$page}

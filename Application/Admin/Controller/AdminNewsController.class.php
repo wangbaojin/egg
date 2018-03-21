@@ -156,6 +156,8 @@ class AdminNewsController extends AdminPublicController
         $id   = I('get.id');
         $data = I('post.');
 
+        if(!$id) die('参数错误');
+
         if($data) {
 
             foreach ($this->_not_null as $k=>$v)
@@ -165,7 +167,7 @@ class AdminNewsController extends AdminPublicController
 
             if($data['top_num'])
             {
-                $this->_m->where('top_num=1 and id !='.$data['id'])->setField('top_num',0);
+                $this->_m->where('top_num=1 and id !='.$id)->setField('top_num',0);
                 $data['top_num'] = 1;
             }
             else
@@ -175,7 +177,7 @@ class AdminNewsController extends AdminPublicController
 
             $data['newstime'] = strtotime($data['newstime']);
             $data['newstime_date'] = date('Y-m-d',$data['newstime']);
-            $res = $this->_m->where('id='.$data['id'])->save($data);
+            $res = $this->_m->where('id='.$id)->save($data);
             $msg = 'success';
 
             // 上传商品图片
@@ -188,7 +190,7 @@ class AdminNewsController extends AdminPublicController
                     {
                         if($fk=='news_cover') $change_data['news_cover']  = $file['savepath'].$file['savename'];
                     }
-                    $change_img_res = $this->_m->where('id='.$data['id'])->save($change_data);
+                    $change_img_res = $this->_m->where('id='.$id)->save($change_data);
                 }
                 else
                 {

@@ -63,6 +63,7 @@
 <div class="container-fluid">
     <form class="form-inline" name="searchForm" action="/AdminUser/index.html" method="get">
         手机号:<input  type="text" name="mobile" value="<?php echo ($_GET["mobile"]); ?>"><br>
+        <input  type="hidden" name="p" value="1">
         <input type="submit" class="btn btn-success" value="搜索">
     </form>
     共:<?php echo ($count); ?>条!<?php echo ($page); ?>

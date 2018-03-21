@@ -48,6 +48,9 @@ class EggcoinChickenController extends ApiController
         $last_id = M('News')->order('id desc')->limit(1)->getField('id');
         $return_data['news_update'] = $readed_id < $last_id ? 1 : 2;
 
+        // 更新用户登陆时间
+        M('User')->where('id='.$user_id)->setField('updated_at',time());
+
         // 认养鸡数
         $return_data['chicken_count'] = M('Chicken')->where('(state=5 or state=4) and user_id=' . $user_id)->count();
         $this->api_return('success', $return_data);
@@ -194,7 +197,6 @@ class EggcoinChickenController extends ApiController
      * */
     public function getUserChickenProfit()
     {
-
         $m = M('ChickenTodayfeedDelivery');
 
         $map['state']   = 3;
@@ -231,6 +233,67 @@ class EggcoinChickenController extends ApiController
             $data['data'][] = $f_tmp;
         }
         $this->api_return('success', $data);
+    }
+
+
+    /*
+     * 收益
+     * */
+    public function getUserChickenProfitNew()
+    {
+        $m   = M('MergeBill');
+        $w_m = M('Withdrawals');
+        $c_m = M('ChickenTodayfeedDelivery');
+
+        $user_id  = (int)I('user_id');
+        $month    = I('month');
+        $month    = strtotime($month) ? $month : date('Y-m');
+        if(!$user_id) die('参数错误');
+
+
+        $map['user_id']      = $user_id;
+        $map['create_year_month'] = $month;
+        $page                = (int)I('page');
+        $data['page_limit']  = 20;
+        $data['total_count'] = $m->where($map)->count();
+        $data['total_page']  = ceil($data['total_count'] / $data['page_limit']);
+        $data['now_page']    = ($page > 0 and $page <= $data['total_page']) ? $page : 1;
+        $list                = $m->where($map)->page($page, $data['page_limit'])->field('id,user_id',true)->order('create_time desc')->select();
+        if (!$list) $this->api_error(20003, '暂无可收取收益');
+
+        // 处理列表
+        foreach ($list as $dk => $dv)
+        {
+            $tmp_map = $f_tmp = array();
+            if($dv['come_from']==1)
+            {
+                $c_info    = $c_m->where('user_id='.$user_id.' and id='.$dv['oid'])->find();
+
+                if(!$c_info) continue;
+
+                $f_tmp['come_from'] = '海兰褐';
+                $f_tmp['title']     = $c_info['age_in_days'].'-'.$c_info['income'].'g';
+                $f_tmp['f_title']   = '';
+                $f_tmp['date']      = ''; // 月-日 时:分
+                $f_tmp['state']     = '';
+                $f_tmp['unit']      = '6.22元/kg'; //
+            }
+            if($dv['come_from']==2)
+            {
+                $c_info    = $c_m->where('user_id='.$user_id.' and id='.$dv['oid'])->find();
+
+                if(!$c_info) continue;
+
+                $f_tmp['come_from'] = '支付宝';
+                $f_tmp['title']     = '';
+                $f_tmp['f_title']   = '';
+                $f_tmp['date']      = ''; // 月-日 时:分
+                $f_tmp['state']     = '';
+                $f_tmp['unit']      = '6.22元/kg'; //
+            }
+            $data['data'][] = $f_tmp;
+        }
+        $this->api_return('success', $list);
     }
 
     /*

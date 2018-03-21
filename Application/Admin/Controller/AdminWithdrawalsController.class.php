@@ -10,17 +10,18 @@ class AdminWithdrawalsController extends AdminPublicController
 {
     private $pay_state_info = array(
         1=>'待确认',
-        2=>'已确认',
-        3=>'拒绝',
+        2=>'待放款',
+        3=>'放款中',
         4=>'已完成',
-        5=>'部分退款',
-        6=>'退款失败',
+        5=>'放款失败'
     );
 
     private $state_info = array(
-        1=>'申请退款',
-        2=>'已完成',
-        3=>'撤销'
+        1=>'申请中',
+        2=>'已同意',
+        3=>'已完成',
+        4=>'已拒绝',
+        5=>'已撤销'
     );
 
     public function _initialize()
@@ -56,61 +57,69 @@ class AdminWithdrawalsController extends AdminPublicController
         $this->display();
     }
 
-    /*
-     * 交易记录
-     * */
-    public function apply_withdrawals()
+    // 确认放款
+    public function confirmPay()
     {
-        $not_null_param = array(
-            'user_id'       => '请先登录',
-            'zhifubao_account' => '请输入支付宝账号',
-            'apply_amount' => '您要提多少钱呢?',
-        );
-        $data = I('post.');
-        $check_res = check_not_null_param($not_null_param,$data);
-        if($check_res) $this->api_error(20001,$check_res);
+        $id = I('get.id');
 
-        $withdrawals_amount = array(100,50,20);
-        if(!in_array($data['apply_amount'],$withdrawals_amount)) $this->api_error(20002,'请输入正确的提现金额');
+        if(!$id) die('参数错误');
 
+        $save['pay_state'] = 3;
 
-        $m = M('Withdrawals');
-        $w_m = M('Wallet');
-        $map['user_id'] = $data['user_id'];
-        $wallet = $w_m->where($map)->find();
-        if(!$wallet) $this->api_error(20003,'获取用户钱包信息失败,请尝试重现登录');
+        if($this->_m->where('state=2 and pay_state=2 and id='.$id)->save($save)) die('success');
+    }
 
-        // 检查可提取金额
-        if($wallet['amount'] < $data['apply_amount']) $this->api_error(20004,'可提取金额不足');
+    // 完成放款
+    public function completePay()
+    {
+        $id = I('get.id');
 
-        $trans = M();
-        $trans->startTrans();
+        if(!$id) die('参数错误');
 
-        // 添加申请
-        $add_data['order_sn'] = order_no();
-        $add_data['created']  = $add_data['updated']      = time();
-        $add_data['pay_price']= $add_data['apply_amount'] = $data['apply_amount'];
-        $add_data['pay_state']= 1;
-        $add_data['state']    = 1;
-        $add_data['user_id']  = $data['user_id'];
-        $add_data['apply_amount']     = $data['apply_amount'];
-        $add_data['zhifubao_account'] = $data['zhifubao_account'];
-        if(!$m->add($add_data))
-        {
-            $trans->rollback();
-            $this->api_error(20005,'啊偶!服务器开小差了,请稍后重试');
-        }
+        $save['state']     = 3;
+        $save['pay_state'] = 4;
 
-        // 冻结金额
-        $wallet_change_data['amount'] = $wallet['amount'] - $data['apply_amount'];
-        $wallet_change_data['freezing_amount'] = $data['apply_amount']+$wallet['freezing_amount'];
-        if(!$w_m->where('amount >= '.$data['apply_amount'].' and user_id='.$data['user_id'])->save($wallet_change_data))
-        {
-            $trans->rollback();
-            $this->api_error(20005,'啊偶!申请提现金额失败,请稍后重试');
-        }
-        $trans->commit();
-        $this->api_return('success');
+        if($this->_m->where('state=2 and pay_state=3 and id='.$id)->save($save)) die('success');
+    }
+
+    // 设置备注
+    public function setNote()
+    {
+        $id       = I('get.id');
+        $note_msg = I('get.note_msg');
+
+        if(!$id) die('参数错误');
+
+        if($this->_m->where('id='.$id)->setField('note_msg',$note_msg)) die('success');
+
+        die('修改失败');
+    }
+
+    // 同意提现
+    public function agreeWithdrawals()
+    {
+        $id = I('get.id');
+
+        if(!$id) die('参数错误');
+
+        $save['state']     = 2;
+        $save['pay_state'] = 2;
+
+        if($this->_m->where('id='.$id)->save($save)) die('success');
+
+        die('修改失败');
+    }
+
+    // 拒绝提现
+    public function disagreeWithdrawals()
+    {
+        $id = I('get.id');
+
+        if(!$id) die('参数错误');
+
+        if($this->_m->where('id='.$id)->setField('state',4)) die('success');
+
+        die('修改失败');
     }
 
     private function disposeData($arr)
@@ -126,7 +135,7 @@ class AdminWithdrawalsController extends AdminPublicController
         // 用户钱包
         $wallet = M('Wallet')->field('id,user_id',true)->where('user_id='.$arr['user_id'])->find();
         $arr['wallet'] = $wallet;
-        $arr['created_date'] = date('Y-m-d',$arr['created']);
+        $arr['created_date'] = date('Y-m-d',$arr['created_at']);
         return $arr;
     }
 }

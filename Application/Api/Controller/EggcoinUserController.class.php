@@ -218,16 +218,6 @@ class EggcoinUserController extends ApiController
 
         M('User')->where('invite_code = "" and id='.$user_info['id'])->setField('invite_code',strtoupper(substr(md5($user_info['id'].'teemo'),8,16)));
 
-        //为通过AppStore审核单独加的登录逻辑
-        if($data['code'] == '888888')
-        {
-            session('user_info',$user_info);
-            $session_id = session_id();
-            $user_info['token'] = $session_id;
-            $this->api_return('登录成功',$user_info);
-        }
-
-
         //判断验证码是否失效
         if(time() - $user_info['send_time'] > 300)
         {
@@ -238,7 +228,8 @@ class EggcoinUserController extends ApiController
         if(!$user_info['email']) $user_info['email_status'] = 3;
         $user_info['email_status_info'] = $this->_email_status[$user_info['email_status']];
 
-        if($user_info['code'] == $data['code'] || $data['code'] == '888888')
+        if( $user_info['code'] == $data['code'] || ($data['code'] == '888888' and ($data['mobile']=='18612969948')) )
+        //if( $user_info['code'] == $data['code'] || ($data['code'] == '888888' and ($data['mobile']=='18612969948')) )
         {
             session('user_info',$user_info);
             $session_id = session_id();
@@ -325,7 +316,11 @@ class EggcoinUserController extends ApiController
 
         $m   =   M('User');
         $user_info = $m->where('id='.$user_id)->find();
-        if($m->where('mobile='.$mobile)->find()) $this->api_error(20002,'该手机号已注册');
+
+        // 检查帐户状态
+        $mobile_user = $m->field('trade_pass_wd',true)->where('mobile='.$mobile)->find();
+        if($mobile_user['id']==$user_info['id']) $this->api_error(20002,'请输入要更换的手机号');
+        if($mobile_user) $this->api_error(20002,'该手机号已注册');
 
 
         // 发送短信验证码
@@ -369,7 +364,9 @@ class EggcoinUserController extends ApiController
         $user_info = $m->field('trade_pass_wd',true)->where('id='.$user_id)->find();
 
         // 检查帐户状态
-        if($m->field('trade_pass_wd',true)->where('mobile='.$mobile)->find()) $this->api_error(20002,'该手机号已注册');
+        $mobile_user = $m->field('trade_pass_wd',true)->where('mobile='.$mobile)->find();
+        if($mobile_user['id']==$user_info['id']) $this->api_error(20002,'请输入要更换的手机号');
+        if($mobile_user) $this->api_error(20002,'该手机号已注册');
 
 
         //判断验证码是否失效
@@ -379,7 +376,7 @@ class EggcoinUserController extends ApiController
         }
 
 
-        if($user_info['code'] == $code || $code== '888888')
+        if($user_info['code'] == $code)
         {
             $change_res = $m->where('id='.$user_id)->setField('mobile',$mobile);
             $this->api_return('修改成功',$user_info);

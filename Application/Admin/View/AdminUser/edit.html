@@ -18,74 +18,77 @@
 		}
 		.col-sm-10{
 			display: flex; 
-			width: 100%;
+			width: 100% !important;
 			height: 40px;
 			align-items: center;
-			border: 1px solid #999;
+			border: 1px solid rgb(206,206,206);
 			border-top: 0;
+		}
+		.text-left{
+			width: 30%;
 		}
 	</style>
 </head>
 <body>
-	
-	<div class="layui-body">
+	<include file="Public/left"/>
+	<div class="layui-body" >
 		<!-- 内容主体区域 -->
 		<!-- <iframe id="xuanxiang" name="xuanxiang" src="add.html" style="overflow: visible;" scrolling="no" frameborder="no" width="100%" height="100%"></iframe> -->
-		<div id="option" name="option" style="overflow: visible;" scrolling="no" frameborder="no" width="100%" height="100%">
+		<div id="option" name="option" style="overflow: visible; margin-bottom: 200px;" scrolling="no" frameborder="no" width="100%" height="100%">
 			
 			<div class="jumbotron">
 		        <h5>用户详情</h5> 
 		    </div>
-			<div  style="display: flex;justify-content: space-between;align-items: center;width: 100%;height: 40px;border: 1px solid #999;">
+			<div  style="display: flex;justify-content: space-between;align-items: center;width: 100%;height: 40px;border: 1px solid rgb(206,206,206); background: rgb(243,244,247);padding: 0 15px;">
 				<div>用户ID{$info.id}</div>
 				<div>注册时间{$info.created_date}</div>
 			</div>
-			<div style="border: 1px solid #999;border-top: 0; display: flex;">
-				<span style="margin: 10px 50px 10px 10px;">头像</span>
+			<div style="border: 1px solid rgb(206,206,206);border-top: 0; display: flex;width: 100%;padding: 0 15px;">
+				<span style="width: 30%;">头像</span>
 				<img src="{$info.wechart_info.wx_pic}" alt="" style="width:100px;height: 100px;margin: 10px;background: red;">
 				<span style="margin: auto;" >{$info.vip_info}</span>
 			</div>
 			<div class="col-sm-10">
-				<p class="text-left" style="width: 30%;">微信昵称</p><p class="text-left">{$info.full_name}</p>
+				<p class="text-left" >微信昵称</p><p class="text-left">{$info.full_name}</p><p class="btn btn-default btn-xs" onclick="changeMobile({$vo.id})">修改</p>
 			</div>
 			<div class="col-sm-10">
-				<p class="text-left" style="width: 30%;">手机号</p><p class="text-left"><if condition="$info['mobile']">{$info.mobile}<else />暂未绑定</if></p>
+				<p class="text-left" >手机号</p><p class="text-left"><if condition="$info['mobile']">{$info.mobile}<else />暂未绑定</if></p>
 			</div>
 			<div class="col-sm-10">
-				<p class="text-left" style="width: 30%;">认养鸡数</p><p class="text-left">{$info.buy_chicken_num}只</p>
+				<p class="text-left" >认养鸡数</p><p class="text-left">{$info.buy_chicken_num}只</p>
 			</div>
 			<div class="col-sm-10">
-				<p class="text-left" style="width: 30%;">鸡蛋收益</p><p class="text-left">{$info.wallet.amount}元</p>
+				<p class="text-left" >鸡蛋收益</p><p class="text-left">{$info.wallet.amount}元</p>
 			</div>
 			<div class="col-sm-10">
-				<p class="text-left" style="width: 30%;">已累计提现</p><p class="text-left">{$info.withdrawals}元</p>
+				<p class="text-left" >已累计提现</p><p class="text-left">{$info.withdrawals}元</p>
 			</div>
 			<div class="col-sm-10">
-				<p class="text-left" style="width: 30%;">已累计充值</p><p class="text-left">{$info.recharge}元</p>
+				<p class="text-left" >已累计充值</p><p class="text-left">{$info.recharge}元</p>
 			</div>
 			<div class="col-sm-10">
-				<p class="text-left" style="width: 30%;">当前饲料余额</p><p class="text-left">{$info.wallet.feed_amount}kg</p>
+				<p class="text-left" >当前饲料余额</p><p class="text-left">{$info.wallet.feed_amount}kg</p>
 			</div>
 			<div class="col-sm-10">
-				<p class="text-left" style="width: 30%;">当前欠款</p><p class="text-left">{$info.wallet.arrears_amount}元</p>
+				<p class="text-left" >当前欠款</p><p class="text-left">{$info.wallet.arrears_amount}元</p>
 			</div>
 			<div class="col-sm-10">
-				<p class="text-left" style="width: 30%;">生蛋发token</p><p class="text-left">{$info.chick_eggcoin}枚</p>
+				<p class="text-left" >生蛋发token</p><p class="text-left">{$info.chick_eggcoin}枚</p>
 			</div>
 			<div class="col-sm-10">
-				<p class="text-left" style="width: 30%;">邀请好友数<small>[成功购买数/总数]</small></p><p class="text-left">{$info.invite_success_buy}人 / {$info.invite_buy} 人</p>
+				<p class="text-left" >邀请好友数<small>[成功购买数/总数]</small></p><p class="text-left">{$info.invite_success_buy}人 / {$info.invite_buy} 人</p>
 			</div>
 			<div class="col-sm-10">
-				<p class="text-left" style="width: 30%;">邀请发token</p><p class="text-left">{$info.invite_eggcoin}枚</p>
+				<p class="text-left" >邀请发token</p><p class="text-left">{$info.invite_eggcoin}枚</p>
 			</div>
 			<div class="col-sm-10">
-				<p class="text-left" style="width: 30%;">手机系统</p><p class="text-left">IOS</p>
+				<p class="text-left" >手机系统</p><p class="text-left">未知</p>
 			</div>
 			<div class="col-sm-10">
-				<p class="text-left" style="width: 30%;">软件版本号</p><p class="text-left">v1.0</p>
+				<p class="text-left" >软件版本号</p><p class="text-left">未知</p>
 			</div>
 			<div class="col-sm-10">
-				<p class="text-left" style="width: 30%;">提现支付宝账户</p><p class="text-left">
+				<p class="text-left" >提现支付宝账户</p><p class="text-left">
 					<if condition="$info['zfb_list']">
 						<volist name="info.zfb_list" id="zfb_vo">
 							{$zfb_vo}<br>
@@ -96,15 +99,53 @@
 				</p>
 			</div>
 			<div class="col-sm-10">
-				<p class="text-left" style="width: 30%;">用户邮箱</p><p class="text-left">{$info.email}</p>
+				<p class="text-left" >用户邮箱</p><p class="text-left">{$info.email}</p>
 			</div>
-			<div class="col-sm-10">
-				<p class="text-left" style="width: 30%;">最近登录时间</p><p class="text-left">{$info.updated_date}</p>
+			<div class="col-sm-10" style="margin-bottom: 200px;">
+				<p class="text-left" >最近登录时间</p><p class="text-left">{$info.updated_date}</p>
 			</div>
 
 		</div>
+	</div>
 </body>
 <script type="text/javascript" charset="utf-8">
+	function changeMobile(val) {
 
+		layer.prompt(function(value, index, elem){
+			// alert(value); //得到value
+			
+			$.ajax({
+		        type: 'GET',
+		        url: '{:U("AdminUser/edit")}?id='+val+'&mobile='+value, 
+		        dataType: 'text',
+		        success:function(msg){
+		            if(msg=='success') {
+		                layer.msg('成功!',{
+		                    icon:1,
+		                    time:2000
+		                });
+		                layer.close(index);
+		                setTimeout(location.reload(),2000)
+		                
+		            }
+		            else
+		            {
+		                layer.msg(msg,{
+		                    icon:2,
+		                    time:2000
+		                });
+		            }
+		        },
+		        error:function(){
+		            layer.msg('程序员小哥哥提示你:未知错误!请稍后重试!',{
+		                icon:2,
+		                time:2000
+		            });
+		        }
+		    });
+
+		});
+		
+	}
 </script>
 </html>

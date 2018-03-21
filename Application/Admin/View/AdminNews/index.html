@@ -26,33 +26,79 @@
 			<div class="jumbotron">
 		        <h5>新闻列表</h5>
 		    </div>
-		    共:{$count}条!{$_page}
+		    <div id="page">共:{$count}条!{$page}</div>
 		    <div class="table-responsive">
 		        <table class="table">
-		            <tr style="border: 1px solid #999;">
-		                <th >标题</th>
-		                <th >发布时间</th>
-		                <th >操作</th>
+		            <tr style="border: 1px solid rgb(206,206,206);background: rgb(243,244,247);">
+		                <th style="color: rgb(135,135,135);">标题</th>
+		                <th style="color: rgb(135,135,135);">发布时间</th>
+		                <th style="color: rgb(135,135,135);">操作</th>
 		            </tr>
 		            <volist name="list" id="vo">
-		                <tr style="border: 1px solid #999;">
+		                <tr style="border: 1px solid rgb(206,206,206);">
 		                    <td style="padding: 10px">
-		                    	<span>{$vo.news_info}</span>
+		                    	<span>{$vo.title}</span> &nbsp;&nbsp; &nbsp;<img src="{$vo.news_cover}" width="100px" alt="">
 		                    </td>
 		                    <td  style="padding: 10px">{$vo.newstime_date}</td>
 		                    <td>
-		                        <a href="{:U('AdminNews/edit')}?id={$vo.id}">编辑</a>
-		                        <a href="{:U('AdminNews/del')}?id={$vo.id}">删除</a>
+		                        <a href="{:U('AdminNews/edit')}?id={$vo.id}" class="btn btn-info btn-xs" style="margin-right: 10px;">编辑</a>
+		                        <button class="btn btn-danger btn-xs" onclick="del({$vo.id})">删除</button>
 		                    </td>
 		                </tr>
 		            </volist>
 		        </table>
 		    </div>
-			共:{$count}条!{$_page}
+			<div id="page">共:{$count}条!{$page}</div>
 		</div>
 	</div>
 </body>
 <script type="text/javascript" charset="utf-8">
+	
+	function del(val) {
 
+
+		layer.open({
+			content: '是否删除',
+			btn: ['确定', '取消'],
+			yes: function(index, layero){
+			//按钮【按钮一】的回调
+			$.ajax({
+		        type: 'GET',
+		        url: '{:U("AdminNews/del")}?id='+val, 
+		        dataType: 'text',
+		        success:function(msg){
+		            if(msg=='success') {
+		                layer.msg('成功!',{
+		                    icon:1,
+		                    time:2000
+		                });
+		                location.reload();
+		            }
+		            else
+		            {
+		                layer.msg(msg,{
+		                    icon:2,
+		                    time:2000
+		                });
+		            }
+		        },
+		        error:function(){
+		            layer.msg('程序员小哥哥提示你:未知错误!请稍后重试!',{
+		                icon:2,
+		                time:2000
+		            });
+		        }
+		    });
+			},btn2: function(index, layero){
+			//按钮【按钮二】的回调
+
+			//return false 开启该代码可禁止点击该按钮关闭
+			},cancel: function(){ 
+			//右上角关闭回调
+
+			//return false 开启该代码可禁止点击该按钮关闭
+			}
+		});
+	}
 </script>
 </html>

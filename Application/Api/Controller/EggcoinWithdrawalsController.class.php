@@ -58,7 +58,7 @@ class EggcoinWithdrawalsController extends ApiController
 
         // 添加申请
         $add_data['order_sn'] = order_no();
-        $add_data['created']  = $add_data['updated']      = time();
+        $add_data['created_at'] = $add_data['updated']    = time();
         $add_data['pay_price']= $add_data['apply_amount'] = $data['apply_amount'];
         $add_data['pay_state']= 1;
         $add_data['state']    = 1;

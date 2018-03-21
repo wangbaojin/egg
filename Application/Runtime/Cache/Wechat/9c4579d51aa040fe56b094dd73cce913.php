@@ -6,9 +6,6 @@
 	<script type="text/javascript" src="/Public/js/Wechat/resize.js"></script>
 	<title>分享好友</title>
 	<style>
-		body{
-			position:fixed
-		}
 		*{
 			margin: 0;
 			padding: 0;
@@ -142,9 +139,21 @@
 			z-index: 12;
 		}
 	</style>
+	<style type="text/css">  
+        .scroll{  
+        position:absolute;   
+        overflow:scroll;   
+        -webkit-overflow-scrolling: touch;   
+        top:0;   
+        left:0;   
+        bottom:0;   
+        right:0;  
+    }
+    </style> 
 </head>
-<body>
+<body><div class="scroll">
 	<div class="jiwoshare" v-title='"分享好友"'>
+
 		<!--<div class="black">分享好友</div>-->
 		<div class="jiwosharebox">
 			<img src="/Public/images/Wechat/background_01.png" width="100%">
@@ -184,13 +193,51 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div></div>
 </body>
 <script type="text/javascript" src="/Public/js/Wechat/jquery-3.2.1.min.js"></script>
 <script src="/Public/static/layui/layui.js"></script>
 <script src="/Public/js/Wechat/jquery.cookie.js"></script>
 <script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
 <script type="text/javascript">
+	 //禁止下拉  
+    var overscroll = function(el) {  
+	  el.addEventListener('touchstart', function() {  
+	    var top = el.scrollTop  
+	      , totalScroll = el.scrollHeight  
+	      , currentScroll = top + el.offsetHeight  
+	    //If we're at the top or the bottom of the containers  
+	    //scroll, push up or down one pixel.  
+	    //  
+	    //this prevents the scroll from "passing through" to  
+	    //the body.  
+	    if(top === 0) {  
+	      el.scrollTop = 1  
+	    } else if(currentScroll === totalScroll) {  
+	      el.scrollTop = top - 1  
+	    }  
+	  })  
+	  el.addEventListener('touchmove', function(evt) {  
+	    //if the content is actually scrollable, i.e. the content is long enough  
+	    //that scrolling can occur  
+	    if(el.offsetHeight < el.scrollHeight)  
+	      evt._isScroller = true  
+	  })  
+	}  
+	overscroll(document.querySelector('.scroll'));  
+	document.body.addEventListener('touchmove', function(evt) {  
+	  //In this case, the default behavior is scrolling the body, which  
+	  //would result in an overflow.  Since we don't want that, we preventDefault.  
+	  if(!evt._isScroller) {  
+	    evt.preventDefault()  
+	  }  
+	})  
+	$(document).ready(function(){
+		function stopScrolling(event){
+			event.preventDefault();
+		}
+		document.addEventListener('touchmove','stopScrolling',false)
+	})
 	layui.use('layer', function(){ //独立版的layer无需执行这一句
 		//var $ = layui.jquery,
 		layer = layui.layer; //独立版的layer无需执行这一句

@@ -475,7 +475,6 @@ class ShareByChickenController extends PublicController
         // 订单超时
         if (time() > $order['lock_time'])
         {
-
             $saveData['state'] = 4;
             $saveData['pay_state'] = (($data['cash_fee']==$data['total_fee']) and ($data['total_fee']==$order['pay_price']*100)) ? 2 : 5;//支付状态：1.待支付，2.支付完成，3.退款中，4.已退款';5.支付金额异常
             $saveData['err_code'] = 'ORDER_TIMEOUT';

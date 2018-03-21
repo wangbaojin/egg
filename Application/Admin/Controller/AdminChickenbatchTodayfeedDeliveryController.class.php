@@ -51,11 +51,11 @@ class AdminChickenbatchTodayfeedDeliveryController extends AdminPublicController
         if($data) {
 
             // 其他价格
-            $today_price = M('TodayPrice')->where('delivery_date="'.$data['delivery_date'].'"')->find();
-            if(!$today_price) die($data['delivery_date'].'的价格还未填写!');
+            //$today_price = M('TodayPrice')->where('delivery_date="'.$data['delivery_date'].'"')->find();
+            if(!$data['today_egg_price'] or !$data['today_feed_price']) die($data['delivery_date'].'的价格还未填写!');
             if($this->_m->where('chicken_batch = '.$data['chicken_batch'].' and delivery_date="'.$data['delivery_date'].'"')->find()) die('该批次'.$data['delivery_date'].'已经结算!');
-            $data['egg_price']  = $data['lay_eggs_weight']*$today_price['egg_price'];
-            $data['feed_price'] = $data['feed_weight']*$today_price['feed_price'];
+            $data['egg_price']  = $data['lay_eggs_weight'] * $data['today_egg_price'];
+            $data['feed_price'] = $data['feed_weight'] * $data['today_feed_price'];
 
             // 结算日龄
             $chicken_batch = M('ChickenBatch')->where('id='.$data['chicken_batch'])->find();
@@ -87,11 +87,11 @@ class AdminChickenbatchTodayfeedDeliveryController extends AdminPublicController
 
         if($data) {
             // 其他价格
-            $today_price = M('TodayPrice')->where('delivery_date="'.$data['delivery_date'].'"')->find();
-            if(!$today_price) die($data['delivery_date'].'的价格还未填写!');
+            //$today_price = M('TodayPrice')->where('delivery_date="'.$data['delivery_date'].'"')->find();
+            if(!$data['today_egg_price'] or !$data['today_feed_price']) die($data['delivery_date'].'的价格还未填写!');
             if($this->_m->where('id != '.$data['id'].' and chicken_batch = '.$data['chicken_batch'].' and delivery_date="'.$data['delivery_date'].'"')->find()) die('该批次'.$data['delivery_date'].'已经结算!');
-            $data['egg_price']   = $data['lay_eggs_weight']*$today_price['egg_price'];
-            $data['feed_price']  = $data['feed_weight']*$today_price['feed_price'];
+            $data['egg_price']   = $data['lay_eggs_weight'] * $data['today_egg_price'];
+            $data['feed_price']  = $data['feed_weight'] * $data['today_feed_price'];
             $data['age_in_days'] = $data['age_in_days'];
 
             // 结算日龄

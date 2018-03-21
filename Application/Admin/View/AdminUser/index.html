@@ -27,56 +27,59 @@
 			<div class="jumbotron">
 		        <h5>用户列表</h5>
 		    </div>
-			<form class="form-inline" name="searchForm" action="__SELF__" method="get">
-		        手机号:<input  type="text" name="mobile" value="{$_GET.mobile}">
-		        <input type="submit" class="btn btn-success btn-xs" value="搜索">
+			<form class="form-inline" name="searchForm" action="__SELF__" method="get" >
+		        手机号:<input  type="text" name="mobile" value="{$_GET.mobile}" style="width: 200px;height: 30px;margin: 0 40px 0 10px;">
+		        昵称:<input  type="text" name="full_name" value="{$_GET.full_name}" style="width: 200px;height: 30px;margin: 0 40px 0 10px;">
+		        ID:<input  type="text" name="id" value="{$_GET.id}" style="width: 200px;height: 30px;margin: 0 40px 0 10px;">
+				<input  type="hidden" name="p" value="1">
+				<input type="submit" class="btn btn-success " value="搜索" style="float: right;">
 		    </form>
-			<div id="page">共:{$count}条!{$page}</div>
-		    <div class="table-responsive">
+			<!-- <div id="page">共:{$count}条!{$page}</div> -->
+		    <div class="table-responsive" style="width: 100%;margin-top: 30px;">
 		        <table class="table">
-		            <tr style="border: 1px solid #999;">
-		                <th style="text-align: center;">用户ID</th>
-		                <th style="text-align: center;">用户信息</th>
-		                <th style="text-align: center;">认养鸡数</th>
-		                <th style="text-align: center;">鸡蛋收益</th>
-		                <th style="text-align: center;">充值总数</th>
-		                <th style="text-align: center;">欠款数</th>
-		                <th style="text-align: center;">饲料余额</th>
-		                <th style="text-align: center;">操作</th>
+		            <tr style="border: 1px solid rgb(206,206,206);background: rgb(243,244,247);">
+		                <th style="text-align: center;color: rgb(135,135,135);">用户ID</th>
+		                <th style="color: rgb(135,135,135);width: 250px;">用户信息</th>
+		                <th style="text-align: center;color: rgb(135,135,135);">认养鸡数</th>
+		                <th style="text-align: center;color: rgb(135,135,135);">鸡蛋收益</th>
+		                <th style="text-align: center;color: rgb(135,135,135);">充值总数</th>
+		                <th style="text-align: center;color: rgb(135,135,135);">欠款数</th>
+		                <th style="text-align: center;color: rgb(135,135,135);">饲料余额</th>
+		                <th style="color: rgb(135,135,135);">操作</th>
 		            </tr>
 		            <volist name="list" id="vo">
-		                <tr style="border: 1px solid #999;">
-		                    <td style="padding: 10px;text-align: center; ">
+		                <tr style="border: 1px solid rgb(206,206,206);">
+		                    <td style="padding: 10px;text-align: center;line-height: 60px;">
 		                        ID:{$vo.id}
 		                    </td>
 		                    <td  style="padding: 10px;" >
-		                        <img src="{$vo.wechart_info.wx_pic}" width="50px" height="50px" style="float:left;">
-		                        <div style="margin-left: 60px;">
-		                        	<span>{$vo.full_name}</span><br>
-		                        	<span>{$vo.mobile}</span>
+		                        <img src="{$vo.wechart_info.wx_pic}" width="60px" height="60px" style="float:left;">
+		                        <div style="margin-left: 70px;width: auto;height: 60px;position: relative;">
+		                        	<span style="display: inline-block;height: 20px;overflow: hidden;">{$vo.full_name}</span><br>
+		                        	<span style="bottom: 0;position: absolute;color: rgb(83,83,83);">{$vo.mobile}</span>
 		                        </div>
 		                        
 		                    </td>
-		                    <td style="padding: 10px;text-align: center;">
+		                    <td style="padding: 10px;text-align: center;line-height: 60px;">
 		                        {$vo.buy_chicken_num}只
 		                    </td>
-		                    <td style="padding: 10px;text-align: center;">
+		                    <td style="padding: 10px;text-align: center;line-height: 60px;">
 								{$vo.wallet.amount}元
 		                    </td>
-		                    <td style="padding: 10px;text-align: center;">
+		                    <td style="padding: 10px;text-align: center;line-height: 60px;">
 								{$vo.recharge}元
 		                    </td>
-		                    <td style="padding: 10px;text-align: center;">
+		                    <td style="padding: 10px;text-align: center;line-height: 60px;">
 								{$vo.wallet.arrears_amount}元
 		                    </td>
-		                    <td  style="padding: 10px;text-align: center;">
+		                    <td  style="padding: 10px;text-align: center;line-height: 60px;">
 								{$vo.wallet.feed_amount}kg
 		                    </td>
-		                    <td  style="padding: 10px;text-align: center;">
+		                    <td  style="padding: 10px;line-height: 60px;">
 		                        <!-- <a href="">编辑</a> -->
-		                        <button onclick="edit({$vo.id})" class="btn btn-info btn-xs">详情</button>
-		                        <if condition="$vo['user_st'] eq 1"><button onclick="changeSt({$vo.id})" class="btn btn-warning btn-xs">加入黑名单</button></if>
-		                        <if condition="$vo['user_st'] eq 2"><button onclick="changeSt({$vo.id})" class="btn btn-danger btn-xs">移除黑名单</button></if>
+								<a href='{:U("AdminUser/edit")}?id={$vo.id}' class="btn btn-success btn-xs" target="_blank">详情</a> &nbsp;
+		                        <if condition="$vo['user_st'] eq 1"><button onclick="changeSt({$vo.id})" class="btn btn-danger btn-xs">加入黑名单</button></if>
+		                        <if condition="$vo['user_st'] eq 2"><button onclick="changeSt({$vo.id})" class="btn btn-danger btn-xs" >移除黑名单</button></if>
 		                    </td>
 		                </tr>
 		                

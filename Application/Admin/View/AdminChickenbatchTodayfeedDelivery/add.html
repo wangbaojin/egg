@@ -1,59 +1,159 @@
-<include file="Public/header" />
-<div class="container-fluid">
-    <div class="jumbotron">
-        <small>当日结算!所有信息必填</small>
-    </div>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>发币发钱</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		li{
+			list-style-type:none;
+		}
+		.col-sm-10{
+			display: flex;
+    		align-items: center;
+		}
+		.col-sm-10 span{
+			margin-left: 10px !important;
+		}
+		.col-sm-10 input{
+			width: 500px !important;
+		}
+		/*.form-group{
+			width: 600px !important;
+		}*/
+		.form-group label{
+			line-height: 34px !important;
+		}
+	</style>
+</head>
+<body>
+	<include file="Public/left"/>
 
-    <form method="post" id="create_form">
-        <div class="form-group">
-            <label>批次:</label>
-            <select name="chicken_batch" id="chicken_batch">
-                <option value="">--请选择--</option>
-                <volist name="chicken_batch" id="vo">
-                    <option value="{$vo.id}" <if condition="$vo['id'] eq $_GET['chicken_batch']">selected</if>>--{$vo.name}--</option>
-                </volist>
-            </select>
-        </div>
-        <div class="form-group">
-            <label>结算时间:<if condition="$chicken_batch['guess_age_in_days']">今日日龄提示:{$guess_age_in_days}</if></label>
-            <input type="datetime" name="delivery_date" id="delivery_date" onclick="layui.laydate({elem: this, istime: true, format: 'YYYY-MM-DD'})" class="layui-input form-control" value="{$delivery_date}" placeholder="开始时间">
-        </div>
-        <div class="form-group">
-            <label>产蛋数量[个]:</label>
-            <input type="number" name="lay_eggs" id="lay_eggs" class="form-control"   placeholder="产蛋数量">
-        </div>
-        <div class="form-group">
-            <label>总蛋重[kg]:</label>
-            <input type="number" name="lay_eggs_weight" id="lay_eggs_weight" class="form-control"   placeholder="总蛋重">
-        </div>
-        <div class="form-group">
-            <label>死淘[只]:</label>
-            <input type="number" name="death" id="death" value="0" class="form-control"   placeholder="死淘">
-        </div>
-        <div class="form-group">
-            <label>投料[kg]:</label>
-            <input type="number" name="feed_weight" id="feed_weight" class="form-control"   placeholder="投料">
-        </div>
-        <div class="form-group">
-            <label>现金支出[元]:</label>
-            <input type="number" name="expenses" id="expenses" class="form-control"   placeholder="现金支出">
-        </div>
-        <div class="form-group">
-            <label>数字币[枚]:</label>
-            <input type="number" name="eggcoin_income" id="eggcoin_income" class="form-control"   placeholder="数字币">
-        </div>
-        <div class="form-group">
-            <label>平均每只鸡获得数字币[枚]:</label>
-            <input type="number" name="avg_eggcoin_income" id="avg_eggcoin_income" class="form-control" value=0  placeholder="平均每只鸡获得数字币">
-        </div>
-        <button type="button" onclick="add()" id="tj" class="btn btn-default">提交</button><br><br>
-    </form>
-</div>
-<br>
+	<div class="layui-body">
+		<!-- 内容主体区域 -->
+		<!-- <iframe id="xuanxiang" name="xuanxiang" src="add.html" style="overflow: visible;" scrolling="no" frameborder="no" width="100%" height="100%"></iframe> -->
+		<div id="option" name="option" style="overflow: visible;" scrolling="no" frameborder="no" width="100%" height="100%">
+			
+			<div class="jumbotron">
+		        <h5>发币发钱</h5>
+		    </div>
 
-<script src="__STATIC__/layui/layui.js"></script>
-<script type="text/javascript">
-    layui.use('layer', function(){ //独立版的layer无需执行这一句
+			<form class="form-horizontal" id="create_form">
+
+				<div class="form-group">
+					<label ><span style="color: red;">*</span>结算鸡场</label>
+					<div class="col-sm-10">
+						<select type="text" name="chicken_batch" id="chicken_batch" class="form-control" style="width:200px;margin-right: 10px;">
+							<option value="">--请选择--</option>
+			                <volist name="chicken_batch" id="vo">
+			                    <option value="{$vo.id}" <if condition="$vo['id'] eq $_GET['chicken_batch']">selected</if>>--{$vo.name}--</option>
+			                </volist>
+							<!-- <option>批次鸡场1</option>
+							<option>批次鸡场2</option>
+							<option>批次鸡场3</option>
+							<option>批次鸡场4</option>
+							<option>批次鸡场5</option> -->
+						</select>
+					</div>
+				</div>
+				<div class="form-group">
+		            <label><span style="color: red;">*</span>结算日期<if condition="$chicken_batch['guess_age_in_days']">今日日龄提示:{$guess_age_in_days}</if></label>
+		            <div class="col-sm-10">
+            			<input type="datetime" name="delivery_date" id="delivery_date" onclick="layui.laydate({elem: this, istime: true, format: 'YYYY-MM-DD'})" class="layui-input form-control" value="{$delivery_date}" placeholder="开始时间">
+		            </div>
+		        </div>
+		        <div class="form-group">
+					<label><span style="color: red;">*</span>当日蛋价</label>
+					<div class="col-sm-10">
+						<input  type="text" name="today_egg_price" id="today_egg_price" class="form-control" placeholder="请看清是公斤价格">
+						<span>元/kg</span>
+					</div>
+				</div>
+				<div class="form-group">
+					<label><span style="color: red;">*</span>当日饲料价格</label>
+					<div class="col-sm-10">
+						<input  type="text" name="today_feed_price" id="today_feed_price" class="form-control" placeholder="请看清是公斤价格">
+						<span>元/kg</span>
+					</div>
+				</div>
+				<div class="form-group">
+					<label><span style="color: red;">*</span>当日总死淘数</label>
+					<div class="col-sm-10">
+						<select type="number" name="death" id="death" class="form-control"  style="width:200px;margin-right: 10px;" >
+							<option>0</option>
+							<option>1</option>
+							<option>2</option>
+							<option>3</option>
+							<option>4</option>
+							<option>5</option>
+							<option>6</option>
+							<option>7</option>
+							<option>8</option>
+							<option>9</option>
+							<option>10</option>
+							<option>11</option>
+							<option>12</option>
+							<option>13</option>
+							<option>14</option>
+							<option>15</option>
+							<option>16</option>
+							<option>17</option>
+							<option>18</option>
+							<option>19</option>
+							<option>20</option>
+						</select>
+						<span>羽</span>
+					</div>
+				</div>
+				<div class="form-group">
+					<label><span style="color: red;">*</span>当日投料重量</label>
+					<div class="col-sm-10">
+						<input  type="number" name="feed_weight" id="feed_weight" class="form-control"   placeholder="请输入总投料数">
+						<span>kg</span>
+					</div>
+				</div>
+				<div class="form-group">
+					<label><span style="color: red;">*</span>当日总产蛋数</label>
+					<div class="col-sm-10">
+						<input  type="number" name="lay_eggs" id="lay_eggs" class="form-control" maxlength="11"  placeholder="产蛋数量">
+						<span>枚</span>
+					</div>
+				</div>
+				<div class="form-group">
+					<label><span style="color: red;">*</span>当日产蛋重量</label>
+					<div class="col-sm-10">
+						<input type="number" name="lay_eggs_weight" id="lay_eggs_weight" class="form-control"   placeholder="总蛋重">
+						<span>kg</span>
+					</div>
+				</div>
+				<div class="form-group">
+					<label><span style="color: red;">*</span>当日其他支出</label>
+					<div class="col-sm-10">
+						<input  type="number" name="expenses" id="expenses" class="form-control"   placeholder="现金支出">
+						<span>元</span>
+					</div>
+				</div>
+				<div class="form-group">
+					<label><span style="color: red;">*</span>当日发token/鸡</label>
+					<div class="col-sm-10">
+						<input  type="number" name="eggcoin_income" id="eggcoin_income" class="form-control"   placeholder="数字币">
+						<span>Eggcoin</span>
+					</div>
+				</div>
+
+		        <button type="button" onclick="add()" id="tj" class="btn btn-default" style="width: 200px;height: 50px;">保存</button>
+		        <button type="button" onclick="clear()" id="tj" class="btn btn-default" style="width: 200px;height: 50px;">清空</button>
+			</form>
+		</div>
+</body>
+<script type="text/javascript" charset="utf-8">
+
+	layui.use('layer', function(){ //独立版的layer无需执行这一句
         //var $ = layui.jquery,
         layer = layui.layer; //独立版的layer无需执行这一句
     });
@@ -68,7 +168,6 @@
             }
         };
     });
-
     function add(){
 
 
@@ -84,7 +183,10 @@
         expenses    = $( "#expenses" ).val();
         delivery_date    = $( "#delivery_date" ).val();
         eggcoin_income    = $( "#eggcoin_income" ).val();
-        if(!eggcoin_income || !chicken_batch || !lay_eggs || !lay_eggs_weight || !death || !feed_weight || !expenses || !delivery_date) {
+        today_egg_price    = $( "#today_egg_price" ).val();
+        today_feed_price    = $( "#today_feed_price" ).val();
+
+        if(!eggcoin_income || !chicken_batch || !lay_eggs || !lay_eggs_weight || !death || !feed_weight || !expenses || !delivery_date || !today_egg_price || !today_feed_price) {
             layer.msg('程序员小哥哥提示你:信息都不填全就提交?是我拿不动刀了还是你飘了?',{
                 icon:2,
                 time:2000
@@ -132,5 +234,4 @@
         });
     }
 </script>
-</body>
 </html>

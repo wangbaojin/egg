@@ -260,8 +260,8 @@
          	
          	switch(cookieid){
          		case "1":
-         			$(".paynum").val(168.8)
-         			price=168.8
+         			$(".paynum").val(168)
+         			price=168
          			break;
          		case "2":
 					$(".paynum").val(29.9)
