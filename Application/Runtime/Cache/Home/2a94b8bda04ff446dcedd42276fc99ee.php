@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>链养鸡</title>
+	<title>链养鸡—区块链实体养鸡</title>
 	<style>
 		*{
 			margin: 0;

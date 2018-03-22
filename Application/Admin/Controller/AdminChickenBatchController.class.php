@@ -75,6 +75,39 @@ class AdminChickenBatchController extends AdminPublicController
                 die('添加失败');
             }
 
+            // 添加类型
+            $chicken_type_data = array();
+            if($data['chicken_price'])
+            {
+                $chicken_price = array();
+                $chicken_price['name']    = $data['name'];
+                $chicken_price['details'] = '鸡:'.$data['name'];
+                $chicken_price['price']   = $data['chicken_price'];
+                $chicken_price['state']   = 1;
+                $chicken_price['chicken_batch'] = $res;
+                $chicken_price['chicken_type']   = 2; // 1.套餐;2.单品
+                if(!M('ChickenType')->add($chicken_price))
+                {
+                    $trans->rollback();
+                    die('单品价格录入失败');
+                }
+            }
+            if($data['chicken_with_feed_price'])
+            {
+                $chicken_price = array();
+                $chicken_price['name']    = $data['name'];
+                $chicken_price['details'] = '套餐:'.$data['name'];
+                $chicken_price['price']   = $data['chicken_with_feed_price'];
+                $chicken_price['state']   = 1;
+                $chicken_price['chicken_batch'] = $res;
+                $chicken_price['chicken_type']   = 1; // 1.套餐;2.单品
+                if(!M('ChickenType')->add($chicken_price))
+                {
+                    $trans->rollback();
+                    die('套餐价格录入失败');
+                }
+            }
+
             // 生成鸡
             $i = 1;
             $y = 1;

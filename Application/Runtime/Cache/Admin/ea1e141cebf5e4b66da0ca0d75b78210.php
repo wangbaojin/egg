@@ -107,7 +107,7 @@
 		<li class="layui-nav-item">
 			<a href="javascript:;">鸡舍管理</a>
 			<dl class="layui-nav-child">
-				<dd><a href="javascript:;">鸡舍列表</a></dd>
+				<dd><a href="<?php echo U('AdminChickenBatch/index');?>">鸡舍列表</a></dd>
 				<dd><a href="<?php echo U('AdminChickenBatch/add');?>">新建鸡舍</a></dd>
 				<dd><a href="<?php echo U('AdminChickenbatchTodayfeedDelivery/add');?>">发币发钱</a></dd>
 				<dd><a href="javascript:;">帖子评论</a></dd>

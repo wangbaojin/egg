@@ -638,8 +638,8 @@ function getUserInfoByUserId($user_id)
     if(!$info['pic']) $info['pic'] = $info['wechart_info']['wx_pic'];
 
     // 注册时间
-    $info['created_date'] = date('Y-m-d',$info['created_at']);
-    $info['updated_date'] = date('Y-m-d',$info['updated_at']);
+    $info['created_date'] = date('Y-m-d H:i:s',$info['created_at']);
+    $info['updated_date'] = date('Y-m-d H:i:s',$info['updated_at']);
 
     // 微博
     $info['weibo_info'] = array();
@@ -745,13 +745,20 @@ function invite_success_reward($user_id,$invite_id='')
 /*
      *  获取当前发行批次鸡
      * */
-function getCurrentBatch()
+function getCurrentBatch($type=1)
 {
     $m = M('ChickenBatch');
     $map = array();
     $map['state'] = 1;
     $map['is_default'] = 1;
 
+    if($type==2)
+    {
+        $map = array();
+        $map['start_time'] = array('lt',time());
+        $map['end_time']   = array('gt',time());
+        $map['id'] = 2;
+    }
     // 发行时间
     //$map['start_time'] = array('lt',time());
     //$map['end_time']   = array('gt',time());
@@ -804,4 +811,42 @@ function reissue()
         }
         //if($chicken_info) $e_r_m->where('id='.$rv['id'])->setField('chicken_id',$chicken_info['id']);
     }
+}
+
+// 提现状态
+function withdrawls_state($state)
+{
+    $state_info = array(
+        1=>'申请中',
+        2=>'已同意',
+        3=>'已完成',
+        4=>'已拒绝',
+        5=>'已撤销'
+    );
+    if(isset($state_info[$state])) return $state_info[$state];
+}
+
+//提现放款状态
+function withdrawls_pay_state($pay_state)
+{
+    $pay_state_info = array(
+        1=>'待确认',
+        2=>'待放款',
+        3=>'放款中',
+        4=>'已完成',
+        5=>'放款失败'
+    );
+    if(isset($pay_state_info[$pay_state])) return $pay_state_info[$pay_state];
+}
+
+//结算状态
+function chicken_delivery_state($state)
+{
+    $state_info = array(
+        1=>'待确认',
+        2=>'待收取',
+        3=>'成功',
+        4=>'失败',
+    );
+    if(isset($state_info[$state])) return $state_info[$state];
 }

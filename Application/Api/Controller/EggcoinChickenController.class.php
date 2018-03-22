@@ -235,11 +235,10 @@ class EggcoinChickenController extends ApiController
         $this->api_return('success', $data);
     }
 
-
     /*
-     * 收益
+     * 获取用户账单
      * */
-    public function getUserChickenProfitNew()
+    public function getUserBill()
     {
         $m   = M('MergeBill');
         $w_m = M('Withdrawals');
@@ -247,23 +246,26 @@ class EggcoinChickenController extends ApiController
 
         $user_id  = (int)I('user_id');
         $month    = I('month');
-        $month    = strtotime($month) ? $month : date('Y-m');
+        //$month    = strtotime($month) ? $month : date('Y-m');
         if(!$user_id) die('参数错误');
 
 
         $map['user_id']      = $user_id;
-        $map['create_year_month'] = $month;
+        if($month) $map['create_year_month'] = $month;
         $page                = (int)I('page');
         $data['page_limit']  = 20;
         $data['total_count'] = $m->where($map)->count();
         $data['total_page']  = ceil($data['total_count'] / $data['page_limit']);
         $data['now_page']    = ($page > 0 and $page <= $data['total_page']) ? $page : 1;
-        $list                = $m->where($map)->page($page, $data['page_limit'])->field('id,user_id',true)->order('create_time desc')->select();
+        $list                = $m->where($map)->page($page, $data['page_limit'])->field('user_id',true)->order('create_time desc')->select();
         if (!$list) $this->api_error(20003, '暂无可收取收益');
 
         // 处理列表
+        $newList  = array();
         foreach ($list as $dk => $dv)
         {
+            $first_id =  $m->where('user_id='.$user_id.' and create_year_month="'.$dv['create_year_month'].'"')->order('create_time desc')->getField('id');
+            
             $tmp_map = $f_tmp = array();
             if($dv['come_from']==1)
             {
@@ -271,29 +273,79 @@ class EggcoinChickenController extends ApiController
 
                 if(!$c_info) continue;
 
-                $f_tmp['come_from'] = '海兰褐';
-                $f_tmp['title']     = $c_info['age_in_days'].'-'.$c_info['income'].'g';
-                $f_tmp['f_title']   = '';
-                $f_tmp['date']      = ''; // 月-日 时:分
-                $f_tmp['state']     = '';
-                $f_tmp['unit']      = '6.22元/kg'; //
+                // 鸡舍信息
+                $chicken_info = M('Chicken')->where('id='.$c_info['chicken_id'])->find();
+
+                if($chicken_info) $batch_info = M('ChickenBatch')->where('id='.$chicken_info['chicken_batch'])->find();
+
+                $f_tmp['id'] = $dv['id'];
+                $f_tmp['come_from'] = $dv['come_from'];
+                $f_tmp['come_from_info'] = $batch_info ? $batch_info['breed'] : '海兰褐';
+                $f_tmp['title']     = $c_info['age_in_days'].'日龄';
+                $f_tmp['egg_weight'] = $c_info['egg_weight'];
+                $f_tmp['f_title']   = '编号:'.$chicken_info['chicken_code'];
+                $f_tmp['state']     = chicken_delivery_state($c_info['state']);
+                $f_tmp['egg_price'] = round($c_info['income'] / $c_info['egg_weight'] * 1000, 2).'元/kg'; //
+                $f_tmp['create_date']     = date('m-d H:i',$dv['create_time']); // 月-日 时:分
+                $f_tmp['amount_of_money'] = $c_info['income'];
+                $f_tmp['create_year_month'] = $dv['create_year_month'];
             }
             if($dv['come_from']==2)
             {
-                $c_info    = $c_m->where('user_id='.$user_id.' and id='.$dv['oid'])->find();
+                $w_info    = $w_m->where('user_id='.$user_id.' and id='.$dv['oid'])->find();
 
-                if(!$c_info) continue;
+                if(!$w_info) continue;
 
-                $f_tmp['come_from'] = '支付宝';
-                $f_tmp['title']     = '';
+                $f_tmp['id'] = $dv['id'];
+                $f_tmp['come_from'] = $dv['come_from'];
+                $f_tmp['come_from_info'] = '支付宝';
+                $f_tmp['title']     = '提现-'.$w_info['zhifubao_account'];
+                $f_tmp['egg_weight'] = '';
                 $f_tmp['f_title']   = '';
-                $f_tmp['date']      = ''; // 月-日 时:分
-                $f_tmp['state']     = '';
-                $f_tmp['unit']      = '6.22元/kg'; //
+                $f_tmp['state']     = $w_info['state'] != 2 ? withdrawls_state($w_info['state']) : withdrawls_pay_state($w_info['pay_state']);
+                $f_tmp['egg_price'] = '';
+                $f_tmp['create_date']     = date('m-d H:i',$dv['create_time']); // 月-日 时:分
+                $f_tmp['amount_of_money'] = $w_info['apply_amount'];
+                $f_tmp['create_year_month'] = $dv['create_year_month'];
             }
-            $data['data'][] = $f_tmp;
+            if($first_id==$dv['id']) $f_tmp['is_first'] = 1;
+            $newList[] = $f_tmp;
         }
-        $this->api_return('success', $list);
+        $data['data'] = $newList;
+        $this->api_return('success', $data);
+    }
+
+    /*
+     * 收益月份
+     * */
+    public function getUserBillMonth()
+    {
+        $m   = M('MergeBill');
+
+        $user_id  = (int)I('user_id');
+
+        if(!$user_id) die('参数错误');
+
+
+        $map['user_id']      = $user_id;
+        $page                = (int)I('page');
+        $data['page_limit']  = 20;
+        $data['total_count'] = $m->where($map)->group('create_year_month')->count();
+        $data['total_page']  = ceil($data['total_count'] / $data['page_limit']);
+        $data['now_page']    = ($page > 0 and $page <= $data['total_page']) ? $page : 1;
+        $list                = $m->where($map)->page($page, $data['page_limit'])->group('create_year_month')->field('count(*) as total_count,create_year_month')->order('create_time desc')->select();
+        if (!$list) $this->api_error(20003, '暂无可收取收益');
+
+        $page_limit = 20;
+        foreach ($list as $k=>$v)
+        {
+            $list[$k]['page_limit'] = $page_limit;
+            $list[$k]['total_page'] = ceil($v['total_count']/$page_limit);
+        }
+
+        // 处理列表
+        $data['data'] = $list;
+        $this->api_return('success', $data);
     }
 
     /*
@@ -301,7 +353,9 @@ class EggcoinChickenController extends ApiController
      * */
     public function getChickenType()
     {
-        $list = M('ChickenType')->where('state=1')->select();
+        $batch_info = getCurrentBatch();
+        if (!$batch_info) $this->api_error(20002, 暂无可认养的鸡);
+        $list = M('ChickenType')->where('state=1 and chicken_batch='.$batch_info['id'])->select();
         if (!$list) $this->api_error(20002, '暂无可认养的鸡');
 
         foreach ($list as $k => $v)
@@ -369,12 +423,16 @@ class EggcoinChickenController extends ApiController
 
         if (!$type_info) $this->api_error(20004, '该类型不存在');
 
+        // 核对批次类型
+        if($type_info['chicken_batch'] != $data['chicken_batch']) $this->api_error(20004, '该批次对应类型不存在');
+
         $price = round($type_info['price'] - $type_info['discount'],2);
         if (!$price) $this->api_error(20004, '该类型母鸡已暂停认养');
 
         // 是否认购成功、主要判断改该批次是否还有剩余的鸡:
         // $bind_res['code']为1:则成功,0.则失败,失败原因为:$bind_res['msg']
-        $bind_res = $this->lockChicken($data['user_id'], $data['chicken_batch'], $data['chicken_type'], $data['num']);
+        //$bind_res = $this->lockChicken($data['user_id'], $data['chicken_batch'], $data['chicken_type'], $data['num']);
+        $bind_res = $this->lockChicken($data['user_id'], $data['chicken_batch'], $type_info['chicken_type'], $data['num']);
 
         // 鸡认购锁定成功则继续下单,否则告知已发行完
         if ($bind_res['code'] == 0)
@@ -481,12 +539,17 @@ class EggcoinChickenController extends ApiController
             $this->api_error(20005, '订单状态修改失败');
         }
 
+        // 类型判断
+        $type_info = M('chicken_type')->where('state=1 && id=' . $order['chicken_type'])->find();
+
+        if (!$type_info) $this->api_error(20004, '该类型不存在');
+
         // 改鸡状态
         $unlock_map = array();
         $unlock_map['user_id']      = $order['user_id'];
         $unlock_map['lock_time']    = array('GT', time());
         $unlock_map['state']        = 3;
-        $unlock_map['chicken_type'] = $order['chicken_type'];
+        $unlock_map['chicken_type'] = $type_info['chicken_type'];
 
         $lock_data['state']       = 4; // 状态：1.待认养，2.释放，3.锁定，4.待绑定;5.已认养
         $lock_data['create_date'] = date('Y-m-d',time());

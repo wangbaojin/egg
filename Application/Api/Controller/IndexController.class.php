@@ -41,8 +41,10 @@ class IndexController extends ApiController
         $this->api_return('success', $list);
     }
 
+    // 检测订单
     public function reOrder()
     {
+        return;
         $m = M('ChickenOrder');
         $c_m = M('Chicken');
         $map['pay_state'] = 2;
@@ -69,8 +71,6 @@ class IndexController extends ApiController
         //die;
         foreach ($new_list as $ok=>$ov)
         {
-
-
             $tmp_map = array();
             $tmp_map['user_id'] = $ov['user_id'];
             $tmp_map['state']   = array('in',array(4,5));
@@ -91,5 +91,43 @@ class IndexController extends ApiController
             }
         }
         print_r($new_list);
+    }
+
+    public function getUserEggCoinInfo()
+    {
+        if($_GET['pwd']!=110) die;
+        echo "<pre>";
+        $m    = M('EggcoinRecord');
+        $user_idAry = $m->group('user_id')->getField('user_id',true);
+        $new_list = array();
+        //print_r($user_idAry);die;
+        foreach ($user_idAry as $v)
+        {
+            $tmp = array();
+            $tmp_map['user_id'] = $v;
+            $tmp['user_id'] = $v;
+            $tmp['amount'] = $m->where($tmp_map)->sum('amount');
+            $eggcoin_account_idAry = $m->where($tmp_map)->group('eggcoin_account_id')->getField('eggcoin_account_id',true);
+            if($eggcoin_account_idAry)
+            {
+                $address_map['id'] = array('in',$eggcoin_account_idAry);
+                $tmp['address_list'] = M('EggcoinAccount ')->where($address_map)->getField('account_address',true);
+            }
+            $new_list[] = $tmp;
+        }
+
+        echo "<table border='1px'><tr><th>用户id</th><th>投放数量</th><th>地址</th></tr>";
+        foreach ($new_list as $nk=>$nv)
+        {
+            echo "<tr><th>".$nv['user_id']."</th><th>".$nv['amount']."</th><th>";
+            //print_r($nv);die;
+            foreach ($nv['address_list'] as $nnv)
+            {
+                echo $nnv.'<br>';
+            }
+            echo "</th></tr>";
+        }
+        echo "</table>";
+        //print_r($new_list);
     }
 }

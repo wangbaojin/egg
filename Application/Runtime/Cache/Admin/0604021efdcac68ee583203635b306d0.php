@@ -222,28 +222,28 @@
 				<div class="form-group">
 					<label><span style="color: red;">*</span>入栏数量</label>
 					<div class="col-sm-10">
-						<input type="number" name="age_in_num" id="age_in_num" class="form-control" maxlength="11"  placeholder="数量">
+						<input type="number" name="chicken_num" id="chicken_num" class="form-control" maxlength="11"  placeholder="数量">
 					</div>
 				</div>
 				<div class="form-group">
 					<label><span style="color: red;">*</span>开放认购日龄</label>
 					<div class="col-sm-10">
-						<input type="number"  id="start_date" class="form-control" maxlength="11"  placeholder="请务必填写入栏日龄">
-						
+						<input type="number" name="start_times" id="start_times" class="form-control" maxlength="11"  placeholder="请务必填写入栏日龄">
+						<input  type="hidden" name="start_time" id="start_time">
 					</div>
 					<div class="col-sm-10" style="width:510px;">
-						<span name="start_time" id="start_time" style="display:inline-block;height: 30px;line-height: 30px;float: right;"></span>
+						<span id="start_date" style="display:inline-block;height: 30px;line-height: 30px;float: right;"></span>
 						<!-- <input   id="start_date" class="form-control" style="display:inline-block;width: 100px;height: 30px; border: 0px;outline:none;-webkit-appearance: none;" readonly="readonly"> -->
 					</div>
 				</div>
 				<div class="form-group">
 					<label><span style="color: red;">*</span>截止认购日龄</label>
 					<div class="col-sm-10">
-						<input type="number"  id="end_date" class="form-control" maxlength="11"  placeholder="请务必填写入栏日龄">
-						
+						<input type="number" name="end_times" id="end_times" class="form-control" maxlength="11"  placeholder="请务必填写入栏日龄">
+						<input  type="hidden" name="end_time" id="end_time">
 					</div>
 					<div class="col-sm-10" style="width:510px;">
-						<span name="end_time" id="end_time"  style="display:inline-block;height: 30px;line-height: 30px;float: right;"></span>
+						<span id="end_date"  style="display:inline-block;height: 30px;line-height: 30px;float: right;"></span>
 						<!-- <input   id="end_date" class="form-control" style="display:inline-block;width: 100px;height: 30px; border: 0px;outline:none;-webkit-appearance: none;" readonly="readonly"> -->
 					</div>
 				</div>
@@ -314,13 +314,13 @@
 				<div class="form-group">
 					<label><span style="color: red;">*</span>认购价格/鸡</label>
 					<div class="col-sm-10">
-						<input type="number" name="egg_price" id="egg_price" class="form-control" maxlength="11"  placeholder="Egg Price">
+						<input type="number" name="chicken_price" id="chicken_price" class="form-control" maxlength="11"  placeholder="">
 					</div>
 				</div>
 				<div class="form-group">
 					<label><span style="color: red;">*</span>认购价格/套餐</label>
 					<div class="col-sm-10">
-						<input type="number" name="feed_price" id="feed_price" class="form-control" maxlength="11"  placeholder="Feed Price">
+						<input type="number" name="chicken_with_feed_price" id="chicken_with_feed_price" class="form-control" maxlength="11"  placeholder="">
 					</div>
 				</div>
 				<div class="form-group">
@@ -365,14 +365,14 @@
 		            	<input type="checkbox" name="top_num" id="top_num" class="" style="width: 20px;height: 20px;">
 		            	<span>不显示</span> -->
 		            	<div  style="display: flex;">
-			            	<input type="checkbox" style="width: 25px;height: 25px;margin-right: 10px;"><span style="line-height: 32px;">显示</span>
-			            	<input type="checkbox" style="width: 25px;height: 25px;margin:5px 10px 0 20px;"><span style="line-height: 32px;">不显示</span>
+			            	<input type="checkbox" name="is_default" id="is_default" style="width: 25px;height: 25px;margin-right: 10px;"><span style="line-height: 32px;">显示<small>[选择后当前发行批次会变为该添加批次]</small></span>
+			            	<!-- <input type="checkbox" style="width: 25px;height: 25px;margin:5px 10px 0 20px;"><span style="line-height: 32px;">不显示</span> -->
 			            </div>
 					</div>
 
 				</div>
 				<button type="button" onclick="add()" id="tj" class="btn btn-default" style="width: 200px;height: 50px;">保存</button>
-				<button type="button" onclick="add()" id="tj" class="btn btn-default" style="width: 200px;height: 50px;">清空</button>
+				<button type="button" onclick="clear()" id="clear" class="btn btn-default" style="width: 200px;height: 50px;">清空</button>
 
 
 
@@ -402,21 +402,23 @@
 	    var m=d.getMonth()+1; 
 	    return d.getFullYear()+'-'+m+'-'+d.getDate(); 
 	}
-    $('#start_date').on('input',function(e) {
+    $('#start_times').on('input',function(e) {
         var beginTimeVal=$('#lairage_date').val(),  //获取页面中的开始时间val（），格式为2017-01-11类型
             date='"'+beginTimeVal+'"', //拼接字符串【如果不拼接会被当做减法运算，传入的结果就为2005】
             days=$(this).val()-$('#age_in_days').val(),  //获取页面中的提前提醒时间（天）val（）
             daysInt=parseInt(days);//强制转换为int类型【不转换不会报错但是时间不准确】
         var val=addDate(date,daysInt);//调用已经封装好的函数addDate
-        $('#start_time').html(val); 
+        $('#start_date').html(val);
+        $('#start_time').val(val);
     })
-    $('#end_date').on('input',function(e) {
+    $('#end_times').on('input',function(e) {
         var beginTimeVal=$('#lairage_date').val(),  //获取页面中的开始时间val（），格式为2017-01-11类型
             date='"'+beginTimeVal+'"', //拼接字符串【如果不拼接会被当做减法运算，传入的结果就为2005】
             days=$(this).val()-$('#age_in_days').val(),  //获取页面中的提前提醒时间（天）val（）
             daysInt=parseInt(days);//强制转换为int类型【不转换不会报错但是时间不准确】
         var val=addDate(date,daysInt);//调用已经封装好的函数addDate
-        $('#end_time').html(val); 
+        $('#end_date').html(val);
+        $('#end_time').val(val);
     })
 
     function add(){
@@ -436,10 +438,13 @@
         out_code    = $( "#out_code" ).val();
         name    = $( "#name" ).val();
         amount    = $( "#amount" ).val();
-        start_time    = $( "#start_time" ).html();
-        end_time    = $( "#end_time" ).html();
+        start_time    = $( "#start_time" ).val();
+        end_time    = $( "#end_time" ).val();
         lairage_date    = $( "#lairage_date" ).val();
-        if(!lairage_date || !out_code || !start_time || !end_time || !coop_name || !latitude_longitude || !breed || !age_in_days || !lay_eggs || !egg_color || !feed_type || !name || !amount) {
+        chicken_num    = $( "#chicken_num" ).val();
+        chicken_price    = $( "#chicken_price" ).val();
+        chicken_with_feed_price    = $( "#chicken_with_feed_price" ).val();
+        if(!lairage_date || !out_code || !start_time || !end_time || !coop_name || !latitude_longitude || !breed || !age_in_days || !lay_eggs || !egg_color || !feed_type || !name || !amount || !chicken_price || !chicken_with_feed_price || !chicken_num) {
             layer.msg('程序员小哥哥提示你:信息都不填全就提交?是我拿不动刀了还是你飘了?',{
                 icon:2,
                 time:2000
